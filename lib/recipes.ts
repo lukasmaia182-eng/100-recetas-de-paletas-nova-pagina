@@ -33,6 +33,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/hero-paleta.png",
     categoria: "Cremosas",
+    posterImage: "/images/poster-fresa-con-crema.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -173,6 +174,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/product-2.png",
     categoria: "Cremosas",
+    posterImage: "/images/poster-dulce-de-leche-con-nuez.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -213,6 +215,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/product-3.png",
     categoria: "Premium",
+    posterImage: "/images/poster-pistacho.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -257,6 +260,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/receta-mango.png",
     categoria: "Frutales",
+    posterImage: "/images/poster-mango-con-chamoy.png",
     ingredientes: [
       "2 tazas de pulpa de mango maduro",
       "1 taza de crema de leche (200 ml)",
@@ -300,6 +304,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/receta-coco.png",
     categoria: "Cremosas",
+    posterImage: "/images/poster-coco-cremosa.png",
     ingredientes: [
       "2 tazas de leche de coco (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -343,6 +348,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/social-4.png",
     categoria: "Premium",
+    posterImage: "/images/poster-cheesecake-frutos-rojos.png",
     ingredientes: [
       "200 g de queso crema",
       "1 taza de crema de leche (200 ml)",
@@ -387,6 +393,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/receta-cafe.png",
     categoria: "Cremosas",
+    posterImage: "/images/poster-cafe-capuchino.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -427,6 +434,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/receta-limon.png",
     categoria: "Económicas",
+    posterImage: "/images/poster-limon-cremosa.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -466,6 +474,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/receta-maracuya.png",
     categoria: "Frutales",
+    posterImage: "/images/poster-maracuya-cremosa.png",
     ingredientes: [
       "1 taza de pulpa de maracuyá",
       "2 tazas de leche entera (500 ml)",
@@ -509,6 +518,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/social-1.png",
     categoria: "Económicas",
+    posterImage: "/images/poster-vainilla-con-chispas.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
