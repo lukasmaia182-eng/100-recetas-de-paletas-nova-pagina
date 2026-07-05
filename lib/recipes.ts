@@ -1,0 +1,539 @@
+export type Recipe = {
+  id: number
+  slug: string
+  numero: string
+  titulo: string
+  subtitulo: string
+  descripcion: string
+  rinde: number
+  image: string
+  categoria: "Cremosas" | "Frutales" | "Premium" | "Económicas"
+  ingredientes: string[]
+  ingredientesExtra?: { titulo: string; items: string[] }
+  dica: string
+  idealPara: string
+  pasos: string[]
+  listo: string
+  consejos: string[]
+  conservacion: string
+  costoPaleta: string
+  precioVenta: string
+}
+
+export const recipes: Recipe[] = [
+  {
+    id: 1,
+    slug: "fresa-con-crema",
+    numero: "RECETA 01",
+    titulo: "Paleta de Fresa",
+    subtitulo: "con crema y trozos de fruta",
+    descripcion:
+      "Cremosa, refrescante y con trozos reales de fresa. Un clásico que todos aman y que se vende solo.",
+    rinde: 10,
+    image: "/images/hero-paleta.png",
+    categoria: "Cremosas",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1 cucharadita de esencia de vainilla",
+      "1 taza de fresas frescas picadas",
+      "2 cucharadas de azúcar",
+    ],
+    ingredientesExtra: {
+      titulo: "Extra para decorar (opcional):",
+      items: ["Trozos de fresa fresca", "1 cucharada de leche condensada"],
+    },
+    dica: "Usa fresas bien maduras para un sabor más dulce y natural. Macera las fresas con azúcar 10 minutos antes.",
+    idealPara: "Postres en familia, fiestas, emprender y vender.",
+    pasos: [
+      "En un bol, mezcla la leche entera, la crema de leche, la leche condensada y la esencia de vainilla. Revuelve bien.",
+      "Macera las fresas picadas con el azúcar durante 10 minutos hasta que suelten su jugo.",
+      "Incorpora las fresas maceradas a la mezcla cremosa y revuelve suavemente.",
+      "Vierte la mezcla en los moldes para paletas, llenando aproximadamente 3/4 de su capacidad.",
+      "Agrega trozos de fresa extra y coloca los palitos en el centro.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta cremosa paleta de fresa con trozos de fruta. ¡Un clásico irresistible!",
+    consejos: [
+      "Decora con más trozos de fresa antes de congelar.",
+      "Para vender, envuelve en bolsitas y sella bien.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.20 – 0.28",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 2,
+    slug: "chocolate-caramelo-salado",
+    numero: "RECETA 02",
+    titulo: "Paleta de Chocolate",
+    subtitulo: "con caramelo salado",
+    descripcion:
+      "Intenso chocolate combinado con un centro de caramelo salado. ¡Irresistible, gourmet y perfecta para vender!",
+    rinde: 10,
+    image: "/images/product-1.png",
+    categoria: "Premium",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "100 g de chocolate semiamargo picado",
+      "1 cucharadita de esencia de vainilla",
+      "1 pizca de sal",
+      "1 cucharada de cacao en polvo",
+    ],
+    ingredientesExtra: {
+      titulo: "Para el caramelo salado:",
+      items: [
+        "1 taza de azúcar",
+        "1/2 taza de crema de leche (120 ml)",
+        "1 cucharada de mantequilla",
+        "1/2 cucharadita de sal marina",
+      ],
+    },
+    dica: "El toque de sal resalta el sabor del chocolate y el caramelo. Usa sal marina en escamas para un acabado profesional.",
+    idealPara: "Postres en familia, fiestas, emprender y vender.",
+    pasos: [
+      "En una olla, mezcla la leche entera, la crema de leche, la leche condensada, el cacao en polvo y la esencia de vainilla. Revuelve bien.",
+      "Lleva a fuego medio sin dejar de mover hasta que el chocolate se derrita por completo y la mezcla esté caliente (pero sin hervir). Retira del fuego.",
+      "Para el caramelo: en una olla seca, derrite el azúcar a fuego medio hasta obtener un caramelo dorado. Agrega la mantequilla, mezcla y luego la crema de leche (¡con cuidado!).",
+      "Cocina por 2-3 minutos hasta que espese. Agrega la sal marina y mezcla. Deja enfriar.",
+      "Vierte un poco de mezcla de chocolate en los moldes. Agrega una cucharadita de caramelo salado en el centro y cubre con más mezcla. Coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta paleta de chocolate con caramelo salado. ¡Un sabor gourmet que enamora!",
+    consejos: [
+      "Usa chocolate de buena calidad para un sabor más intenso.",
+      "Puedes decorar con sal marina en escamas antes de congelar.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.28 – 0.35",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 3,
+    slug: "cookies-and-cream",
+    numero: "RECETA 03",
+    titulo: "Paleta de Cookies & Cream",
+    subtitulo: "con trozos de galleta Oreo",
+    descripcion:
+      "Cremosa, crujiente y llena de sabor. Con trozos de galleta Oreo en cada mordida. ¡Irresistible y perfecta para vender!",
+    rinde: 10,
+    image: "/images/receta-cookies.png",
+    categoria: "Cremosas",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1 cucharadita de esencia de vainilla",
+      "100 g de chocolate blanco picado",
+      "6 galletas Oreo (trituradas en trozos)",
+    ],
+    ingredientesExtra: {
+      titulo: "Extra para decorar (opcional):",
+      items: ["2 galletas Oreo (trituradas finas)", "1 cucharada de chispas de chocolate"],
+    },
+    dica: "Usa galletas Oreo originales para mejor sabor y textura. Puedes picarlas a mano para que queden trozos más grandes y crujientes.",
+    idealPara: "Postres en familia, fiestas, emprender y vender.",
+    pasos: [
+      "En una olla, mezcla la leche entera, la crema de leche, la leche condensada, el chocolate blanco picado y la esencia de vainilla. Revuelve bien.",
+      "Lleva a fuego medio bajo sin dejar de mover hasta que el chocolate se derrita por completo y la mezcla esté caliente (pero sin hervir).",
+      "Retira del fuego y deja enfriar unos minutos. Agrega las galletas Oreo trituradas y mezcla suavemente.",
+      "Vierte la mezcla en los moldes para paletas, llenando aproximadamente 3/4 de su capacidad.",
+      "Espolvorea trozos de Oreo por encima y presiona ligeramente para que se integren. Coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta deliciosa paleta cremosa con trozos de Oreo. ¡Un clásico que a todos les encanta!",
+    consejos: [
+      "Decora con más trozos de Oreo antes de congelar.",
+      "Para vender, envuelve en bolsitas y sella bien.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.25 – 0.30",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 4,
+    slug: "dulce-de-leche-con-nuez",
+    numero: "RECETA 04",
+    titulo: "Paleta de Dulce de Leche",
+    subtitulo: "con nueces",
+    descripcion:
+      "Suave, dulce y con el crujiente de la nuez. Una paleta cremosa de sabor tradicional que conquista a todos.",
+    rinde: 10,
+    image: "/images/product-2.png",
+    categoria: "Cremosas",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "3/4 taza de dulce de leche (200 g)",
+      "1/2 taza de leche condensada (150 g)",
+      "1 cucharadita de esencia de vainilla",
+      "1/2 taza de nueces picadas",
+    ],
+    dica: "Reserva un poco de dulce de leche para hacer un remolino visible dentro de la paleta antes de congelar.",
+    idealPara: "Postres en familia, fiestas, emprender y vender.",
+    pasos: [
+      "En un bol, mezcla la leche entera, la crema de leche, el dulce de leche, la leche condensada y la vainilla.",
+      "Bate bien hasta que el dulce de leche se integre por completo y la mezcla quede homogénea.",
+      "Agrega la mitad de las nueces picadas y mezcla suavemente.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+      "Espolvorea el resto de las nueces por encima y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta cremosa paleta de dulce de leche con nueces. ¡Puro sabor casero!",
+    consejos: [
+      "Tuesta ligeramente las nueces para más sabor.",
+      "Haz un remolino de dulce de leche para una presentación premium.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.26 – 0.32",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 5,
+    slug: "pistacho",
+    numero: "RECETA 05",
+    titulo: "Paleta de Pistacho",
+    subtitulo: "cremosa y gourmet",
+    descripcion:
+      "Una paleta premium de color verde natural, cremosa y con el sabor delicado del pistacho. Elegante y muy rentable.",
+    rinde: 10,
+    image: "/images/product-3.png",
+    categoria: "Premium",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1/2 taza de pistachos pelados",
+      "1 cucharadita de esencia de vainilla",
+      "1 pizca de sal",
+    ],
+    ingredientesExtra: {
+      titulo: "Extra para decorar (opcional):",
+      items: ["Pistachos picados", "Chocolate blanco derretido"],
+    },
+    dica: "Procesa los pistachos hasta formar una pasta fina para que el sabor se distribuya en toda la paleta.",
+    idealPara: "Postres gourmet, fiestas, emprender y vender.",
+    pasos: [
+      "Procesa los pistachos con un poco de leche hasta obtener una pasta fina.",
+      "En un bol, mezcla la pasta de pistacho con la leche entera, la crema, la leche condensada, la vainilla y la sal.",
+      "Bate bien hasta que la mezcla quede homogénea y de color verde suave.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+      "Espolvorea pistachos picados por encima y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta elegante paleta de pistacho. ¡Un sabor gourmet de alto valor!",
+    consejos: [
+      "Usa pistachos naturales sin sal para controlar el sabor.",
+      "Baña la punta en chocolate blanco para una presentación premium.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.35 – 0.45",
+    precioVenta: "US$ 1.50 – 2.00",
+  },
+  {
+    id: 6,
+    slug: "mango-con-chamoy",
+    numero: "RECETA 06",
+    titulo: "Paleta de Mango",
+    subtitulo: "con chamoy",
+    descripcion:
+      "El dulzor tropical del mango con el toque picante del chamoy. Refrescante, vibrante y muy popular.",
+    rinde: 10,
+    image: "/images/receta-mango.png",
+    categoria: "Frutales",
+    ingredientes: [
+      "2 tazas de pulpa de mango maduro",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1/2 taza de leche entera (120 ml)",
+      "1 cucharada de jugo de limón",
+    ],
+    ingredientesExtra: {
+      titulo: "Para decorar:",
+      items: ["Chamoy al gusto", "Chile en polvo (opcional)"],
+    },
+    dica: "Pinta el interior del molde con chamoy antes de verter la mezcla para un efecto marmoleado y más sabor.",
+    idealPara: "Postres refrescantes, fiestas, emprender y vender.",
+    pasos: [
+      "Licúa la pulpa de mango con la leche entera, la crema de leche, la leche condensada y el jugo de limón.",
+      "Prueba y ajusta el dulzor según la madurez del mango.",
+      "Pinta el interior de los moldes con un poco de chamoy.",
+      "Vierte la mezcla de mango en los moldes, llenando 3/4 de su capacidad.",
+      "Agrega un hilo de chamoy por encima y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta paleta de mango con chamoy. ¡Dulce, cremosa y con el toque picante perfecto!",
+    consejos: [
+      "Usa mango bien maduro para más dulzor natural.",
+      "Añade chile en polvo al servir para un toque extra.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.22 – 0.30",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 7,
+    slug: "coco-cremosa",
+    numero: "RECETA 07",
+    titulo: "Paleta de Coco",
+    subtitulo: "cremosa con ralladura",
+    descripcion:
+      "Suave, tropical y cubierta de coco rallado. Una paleta cremosa que transporta a la playa en cada mordida.",
+    rinde: 10,
+    image: "/images/receta-coco.png",
+    categoria: "Cremosas",
+    ingredientes: [
+      "2 tazas de leche de coco (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1/2 taza de coco rallado",
+      "1 cucharadita de esencia de vainilla",
+    ],
+    ingredientesExtra: {
+      titulo: "Extra para decorar (opcional):",
+      items: ["Coco rallado tostado", "Chocolate blanco derretido"],
+    },
+    dica: "Tuesta ligeramente parte del coco rallado para intensificar el aroma y dar un contraste crujiente.",
+    idealPara: "Postres tropicales, fiestas, emprender y vender.",
+    pasos: [
+      "En un bol, mezcla la leche de coco, la crema de leche, la leche condensada y la vainilla.",
+      "Agrega el coco rallado y revuelve hasta integrar bien.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+      "Espolvorea coco rallado por encima y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      "Al desmoldar, puedes bañar la punta en chocolate blanco y rebozar en coco.",
+    ],
+    listo: "Desmolda y disfruta esta cremosa paleta de coco. ¡Tropical, suave y deliciosa!",
+    consejos: [
+      "Usa leche de coco de buena calidad para más cremosidad.",
+      "Combina coco natural y tostado para más textura.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.25 – 0.32",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 8,
+    slug: "cheesecake-frutos-rojos",
+    numero: "RECETA 08",
+    titulo: "Paleta de Cheesecake",
+    subtitulo: "con frutos rojos",
+    descripcion:
+      "La cremosidad del cheesecake con el toque ácido de los frutos rojos y base de galleta. Una paleta premium irresistible.",
+    rinde: 10,
+    image: "/images/social-4.png",
+    categoria: "Premium",
+    ingredientes: [
+      "200 g de queso crema",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1/2 taza de leche entera (120 ml)",
+      "1 cucharadita de esencia de vainilla",
+      "1/2 taza de mermelada de frutos rojos",
+    ],
+    ingredientesExtra: {
+      titulo: "Para la base:",
+      items: ["6 galletas tipo María trituradas", "2 cucharadas de mantequilla derretida"],
+    },
+    dica: "Agrega la mermelada al final con movimientos suaves para lograr un efecto marmoleado bonito.",
+    idealPara: "Postres premium, fiestas, emprender y vender.",
+    pasos: [
+      "Bate el queso crema con la crema de leche, la leche condensada, la leche entera y la vainilla hasta que quede suave.",
+      "Mezcla las galletas trituradas con la mantequilla derretida para la base.",
+      "Vierte la mezcla de cheesecake en los moldes, llenando 3/4 de su capacidad.",
+      "Agrega cucharaditas de mermelada de frutos rojos y haz un remolino suave.",
+      "Presiona la mezcla de galleta en la parte superior (que será la base) y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta paleta de cheesecake con frutos rojos. ¡Cremosa, elegante y deliciosa!",
+    consejos: [
+      "Usa queso crema a temperatura ambiente para batir mejor.",
+      "Puedes usar frutos rojos frescos además de la mermelada.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.35 – 0.45",
+    precioVenta: "US$ 1.50 – 2.00",
+  },
+  {
+    id: 9,
+    slug: "cafe-capuchino",
+    numero: "RECETA 09",
+    titulo: "Paleta de Café",
+    subtitulo: "estilo capuchino",
+    descripcion:
+      "Cremosa, con el aroma intenso del café y un toque de cacao. Perfecta para los amantes del café.",
+    rinde: 10,
+    image: "/images/receta-cafe.png",
+    categoria: "Cremosas",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "2 cucharadas de café soluble",
+      "1 cucharadita de esencia de vainilla",
+      "1 cucharada de cacao en polvo",
+    ],
+    dica: "Disuelve el café en un poco de leche caliente antes de mezclar para que no queden grumos.",
+    idealPara: "Postres para adultos, cafeterías, emprender y vender.",
+    pasos: [
+      "Disuelve el café soluble en 1/4 de taza de leche caliente.",
+      "En un bol, mezcla el café disuelto con el resto de la leche, la crema, la leche condensada y la vainilla.",
+      "Bate bien hasta que la mezcla quede homogénea.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+      "Espolvorea cacao en polvo por encima y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta paleta de café estilo capuchino. ¡Cremosa y con aroma irresistible!",
+    consejos: [
+      "Ajusta la cantidad de café según tu gusto.",
+      "Decora con cacao o chocolate rallado.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.22 – 0.28",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 10,
+    slug: "limon-cremosa",
+    numero: "RECETA 10",
+    titulo: "Paleta de Limón",
+    subtitulo: "cremosa y refrescante",
+    descripcion:
+      "El equilibrio perfecto entre lo ácido y lo cremoso. Refrescante, ligera y económica de preparar.",
+    rinde: 10,
+    image: "/images/receta-limon.png",
+    categoria: "Económicas",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "1/3 taza de jugo de limón",
+      "Ralladura de 1 limón",
+    ],
+    dica: "Agrega el jugo de limón poco a poco y al final para evitar que la mezcla se corte.",
+    idealPara: "Postres refrescantes, fiestas, emprender y vender.",
+    pasos: [
+      "En un bol, mezcla la leche entera, la crema de leche y la leche condensada.",
+      "Agrega la ralladura de limón y mezcla bien.",
+      "Incorpora el jugo de limón poco a poco, batiendo constantemente.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+      "Coloca los palitos en el centro.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta paleta de limón cremosa. ¡Refrescante y con el punto ácido perfecto!",
+    consejos: [
+      "Usa limones frescos para mejor sabor y aroma.",
+      "No excedas el jugo de limón para que no se corte.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.18 – 0.24",
+    precioVenta: "US$ 0.80 – 1.20",
+  },
+  {
+    id: 11,
+    slug: "maracuya-cremosa",
+    numero: "RECETA 11",
+    titulo: "Paleta de Maracuyá",
+    subtitulo: "cremosa tropical",
+    descripcion:
+      "El sabor tropical y ácido del maracuyá en una paleta suave y cremosa. Exótica y muy solicitada.",
+    rinde: 10,
+    image: "/images/receta-maracuya.png",
+    categoria: "Frutales",
+    ingredientes: [
+      "1 taza de pulpa de maracuyá",
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "2 cucharadas de azúcar",
+    ],
+    ingredientesExtra: {
+      titulo: "Extra (opcional):",
+      items: ["Semillas de maracuyá para decorar"],
+    },
+    dica: "Reserva algunas semillas de maracuyá para dar un toque visual y textura a la paleta.",
+    idealPara: "Postres tropicales, fiestas, emprender y vender.",
+    pasos: [
+      "Licúa la pulpa de maracuyá y cuélala si prefieres sin semillas.",
+      "En un bol, mezcla la pulpa con la leche entera, la crema, la leche condensada y el azúcar.",
+      "Prueba y ajusta el dulzor según la acidez del maracuyá.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+      "Agrega algunas semillas de maracuyá y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta paleta de maracuyá cremosa. ¡Tropical, ácida y deliciosa!",
+    consejos: [
+      "Ajusta el azúcar según la acidez de la fruta.",
+      "Combina con un poco de mango para suavizar la acidez.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.24 – 0.30",
+    precioVenta: "US$ 1.00 – 1.50",
+  },
+  {
+    id: 12,
+    slug: "vainilla-con-chispas",
+    numero: "RECETA 12",
+    titulo: "Paleta de Vainilla",
+    subtitulo: "con chispas de chocolate",
+    descripcion:
+      "Suave, dulce y con chispas de chocolate crujientes. Una base cremosa clásica, económica y fácil de vender.",
+    rinde: 10,
+    image: "/images/social-1.png",
+    categoria: "Económicas",
+    ingredientes: [
+      "2 tazas de leche entera (500 ml)",
+      "1 taza de crema de leche (200 ml)",
+      "1/2 taza de leche condensada (150 g)",
+      "2 cucharaditas de esencia de vainilla",
+      "1/2 taza de chispas de chocolate",
+    ],
+    dica: "Enfría bien la mezcla antes de agregar las chispas para que no se hundan todas al fondo.",
+    idealPara: "Postres en familia, fiestas, emprender y vender.",
+    pasos: [
+      "En un bol, mezcla la leche entera, la crema de leche, la leche condensada y la esencia de vainilla.",
+      "Bate bien hasta que la mezcla quede homogénea.",
+      "Enfría la mezcla en el refrigerador por 10 minutos.",
+      "Agrega las chispas de chocolate y revuelve suavemente.",
+      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad, y coloca los palitos.",
+      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+    ],
+    listo: "Desmolda y disfruta esta cremosa paleta de vainilla con chispas. ¡Un clásico que nunca falla!",
+    consejos: [
+      "Usa esencia de vainilla de buena calidad para más sabor.",
+      "Puedes mezclar chispas de chocolate blanco y negro.",
+      "Conserva siempre en congelación.",
+    ],
+    conservacion:
+      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
+    costoPaleta: "US$ 0.18 – 0.24",
+    precioVenta: "US$ 0.80 – 1.20",
+  },
+]
+
+export const categorias = ["Todas", "Cremosas", "Frutales", "Premium", "Económicas"] as const
