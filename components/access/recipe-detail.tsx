@@ -60,23 +60,8 @@ const THEMES: Record<string, Theme> = {
   },
 }
 
-const ACCENT_BY_SLUG: Record<string, keyof typeof THEMES | undefined> = {
-  "fresa-con-crema": "morango",
-  "chocolate-caramelo-salado": "chocolate",
-  "cookies-and-cream": "azul",
-  "dulce-de-leche-con-nuez": "naranja",
-  pistacho: "pistache",
-  "mango-con-chamoy": "naranja",
-  "coco-cremosa": "pistache",
-  "cheesecake-frutos-rojos": "morango",
-  "cafe-capuchino": "chocolate",
-  "limon-cremosa": "pistache",
-  "maracuya-cremosa": "naranja",
-  "vainilla-con-chispas": "chocolate",
-}
-
 export function RecipeDetail({ recipe }: { recipe: Recipe }) {
-  const theme = THEMES[ACCENT_BY_SLUG[recipe.slug] ?? "morango"]
+  const theme = THEMES[recipe.theme] ?? THEMES.morango
 
   if (recipe.posterImage) {
     return (

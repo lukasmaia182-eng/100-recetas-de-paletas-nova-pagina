@@ -7,7 +7,8 @@ export type Recipe = {
   descripcion: string
   rinde: number
   image: string
-  categoria: "Cremosas" | "Frutales" | "Premium" | "Económicas"
+  categoria: string
+  theme: string
   posterImage?: string
   ingredientes: string[]
   ingredientesExtra?: { titulo: string; items: string[] }
@@ -21,532 +22,550 @@ export type Recipe = {
   precioVenta: string
 }
 
-export const recipes: Recipe[] = [
+type Tech =
+  | "chocolate"
+  | "cremosa"
+  | "rellena"
+  | "galleta"
+  | "postre"
+  | "gourmet"
+  | "tropical"
+  | "economica"
+  | "vender"
+  | "especial"
+
+type Flavor = {
+  photo: string
+  theme: string
+  nombre: string
+  tipo: "fruta" | "cremoso"
+  ing: string
+}
+
+const FLAVORS: Record<string, Flavor> = {
+  chocolate: { photo: "chocolate", theme: "chocolate", nombre: "chocolate", tipo: "cremoso", ing: "150 g de chocolate semiamargo picado" },
+  "chocolate-blanco": { photo: "vainilla", theme: "naranja", nombre: "chocolate blanco", tipo: "cremoso", ing: "150 g de chocolate blanco picado" },
+  fresa: { photo: "fresa", theme: "morango", nombre: "fresa", tipo: "fruta", ing: "1 y 1/2 tazas de fresas frescas" },
+  mango: { photo: "mango", theme: "naranja", nombre: "mango", tipo: "fruta", ing: "1 y 1/2 tazas de pulpa de mango" },
+  maracuya: { photo: "maracuya", theme: "naranja", nombre: "maracuyá", tipo: "fruta", ing: "1 taza de pulpa de maracuyá" },
+  pina: { photo: "pina", theme: "naranja", nombre: "piña", tipo: "fruta", ing: "1 y 1/2 tazas de piña picada" },
+  coco: { photo: "coco", theme: "azul", nombre: "coco", tipo: "cremoso", ing: "1 taza de coco rallado y 1 taza de leche de coco" },
+  banana: { photo: "banana", theme: "naranja", nombre: "banana", tipo: "fruta", ing: "2 bananas maduras" },
+  durazno: { photo: "durazno", theme: "naranja", nombre: "durazno", tipo: "fruta", ing: "1 y 1/2 tazas de durazno en trozos" },
+  guayaba: { photo: "guayaba", theme: "morango", nombre: "guayaba", tipo: "fruta", ing: "1 y 1/2 tazas de pulpa de guayaba" },
+  mora: { photo: "mora", theme: "morango", nombre: "mora", tipo: "fruta", ing: "1 y 1/2 tazas de moras" },
+  papaya: { photo: "papaya", theme: "naranja", nombre: "papaya", tipo: "fruta", ing: "1 y 1/2 tazas de papaya en trozos" },
+  vainilla: { photo: "vainilla", theme: "naranja", nombre: "vainilla", tipo: "cremoso", ing: "2 cucharaditas de esencia de vainilla" },
+  limon: { photo: "limon", theme: "pistache", nombre: "limón", tipo: "fruta", ing: "1/2 taza de jugo de limón y ralladura de 1 limón" },
+  cafe: { photo: "cafe", theme: "chocolate", nombre: "café", tipo: "cremoso", ing: "2 cucharadas de café soluble" },
+  pistacho: { photo: "pistacho", theme: "pistache", nombre: "pistacho", tipo: "cremoso", ing: "1/2 taza de pistachos pelados" },
+  "frutos-rojos": { photo: "frutos-rojos", theme: "morango", nombre: "frutos rojos", tipo: "fruta", ing: "1 y 1/2 tazas de frutos rojos" },
+  "dulce-de-leche": { photo: "dulce-de-leche", theme: "naranja", nombre: "dulce de leche", tipo: "cremoso", ing: "1 taza de dulce de leche" },
+  galleta: { photo: "galleta", theme: "azul", nombre: "galleta", tipo: "cremoso", ing: "8 galletas trituradas" },
+  mani: { photo: "mani", theme: "chocolate", nombre: "maní", tipo: "cremoso", ing: "1/2 taza de maní tostado y 3 cucharadas de crema de maní" },
+  naranja: { photo: "naranja", theme: "naranja", nombre: "naranja", tipo: "fruta", ing: "1 taza de jugo de naranja natural" },
+  sandia: { photo: "sandia", theme: "morango", nombre: "sandía", tipo: "fruta", ing: "2 tazas de sandía sin semillas" },
+  melon: { photo: "mango", theme: "naranja", nombre: "melón", tipo: "fruta", ing: "2 tazas de melón en trozos" },
+  arcoiris: { photo: "arcoiris", theme: "morango", nombre: "frutas variadas", tipo: "fruta", ing: "2 tazas de frutas variadas picadas" },
+  yogur: { photo: "yogur", theme: "morango", nombre: "yogur natural", tipo: "cremoso", ing: "2 tazas de yogur natural" },
+  cheesecake: { photo: "frutos-rojos", theme: "morango", nombre: "cheesecake", tipo: "cremoso", ing: "200 g de queso crema y 4 galletas maría" },
+  tiramisu: { photo: "cafe", theme: "chocolate", nombre: "tiramisú", tipo: "cremoso", ing: "200 g de queso mascarpone y 2 cucharadas de café" },
+  "arroz-con-leche": { photo: "postre", theme: "naranja", nombre: "arroz con leche", tipo: "cremoso", ing: "1 taza de arroz cocido en leche con canela" },
+  flan: { photo: "dulce-de-leche", theme: "naranja", nombre: "flan", tipo: "cremoso", ing: "1 taza de flan preparado con caramelo" },
+  "tres-leches": { photo: "postre", theme: "naranja", nombre: "tres leches", tipo: "cremoso", ing: "1 taza de bizcocho remojado en tres leches" },
+  brownie: { photo: "chocolate", theme: "chocolate", nombre: "brownie", tipo: "cremoso", ing: "1 taza de brownie en trozos" },
+  cocada: { photo: "coco", theme: "azul", nombre: "cocada", tipo: "cremoso", ing: "1 y 1/2 tazas de coco rallado" },
+  "queso-guayaba": { photo: "guayaba", theme: "morango", nombre: "queso con guayaba", tipo: "cremoso", ing: "200 g de queso crema y 1 taza de guayaba" },
+  avellana: { photo: "chocolate", theme: "chocolate", nombre: "crema de avellanas", tipo: "cremoso", ing: "1/2 taza de crema de avellanas" },
+  "leche-polvo": { photo: "vainilla", theme: "naranja", nombre: "leche en polvo", tipo: "cremoso", ing: "1/2 taza de leche en polvo" },
+  caramelo: { photo: "dulce-de-leche", theme: "naranja", nombre: "caramelo", tipo: "cremoso", ing: "1 taza de caramelo" },
+  postre: { photo: "postre", theme: "chocolate", nombre: "crema de postre", tipo: "cremoso", ing: "1 taza de crema pastelera" },
+}
+
+const ADDONS: Record<string, string> = {
+  "dulce de leche": "1/2 taza de dulce de leche",
+  "crema de avellanas": "1/2 taza de crema de avellanas",
+  fresa: "1/2 taza de fresas picadas",
+  mango: "1/2 taza de pulpa de mango",
+  banana: "1 banana en rodajas",
+  galleta: "6 galletas trituradas",
+  "galleta triturada": "6 galletas trituradas",
+  "galleta rellena": "6 galletas rellenas troceadas",
+  coco: "1/2 taza de coco rallado",
+  "coco rallado": "1/2 taza de coco rallado",
+  maní: "1/2 taza de maní tostado",
+  café: "1 cucharada de café soluble",
+  caramelo: "1/2 taza de caramelo",
+  vainilla: "1 cucharadita extra de esencia de vainilla",
+  "leche condensada": "1/2 taza extra de leche condensada",
+  "crema blanca": "1/2 taza de crema batida",
+  crema: "1/2 taza de crema batida",
+  "queso crema": "150 g de queso crema",
+  almendras: "1/3 taza de almendras picadas",
+  nueces: "1/3 taza de nueces picadas",
+  naranja: "ralladura y jugo de 1 naranja",
+  maracuyá: "1/2 taza de pulpa de maracuyá",
+  "frutos rojos": "1/2 taza de frutos rojos",
+  chocolate: "100 g de chocolate picado",
+  "chocolate blanco": "80 g de chocolate blanco",
+  avellanas: "1/3 taza de avellanas picadas",
+  "maní tostado": "1/2 taza de maní tostado",
+  "caramelo salado": "1/2 taza de caramelo con una pizca de sal marina",
+  hierbabuena: "unas hojas de hierbabuena picadas",
+  "chocolate crujiente": "80 g de chocolate para derretir",
+  "cobertura de chocolate": "100 g de chocolate para cobertura",
+  "relleno cremoso": "1/2 taza de relleno de crema",
+  "crema de maní": "3 cucharadas de crema de maní",
+  "mermelada de fresa": "1/2 taza de mermelada de fresa",
+  "dulce de leche con cobertura": "1/2 taza de dulce de leche y 100 g de chocolate",
+}
+
+function addonIngrediente(add: string) {
+  return ADDONS[add] ?? `1/2 taza de ${add}`
+}
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+}
+
+function pad(n: number) {
+  return n < 10 ? `0${n}` : `${n}`
+}
+
+function pasosFor(tech: Tech, f: Flavor, add?: string): string[] {
+  const articulo = f.tipo === "fruta" ? "la" : "el"
+  switch (tech) {
+    case "chocolate":
+      return [
+        "En una olla, coloca la leche entera, la crema de leche y la leche condensada.",
+        `Agrega el ${f.nombre} picado${add ? ` y ${add}` : ""} y lleva a fuego medio, moviendo sin parar hasta que se derrita por completo (sin dejar hervir).`,
+        "Retira del fuego, incorpora la esencia de vainilla y deja entibiar unos minutos.",
+        "Vierte la mezcla en los moldes para paletas, llenando 3/4 de su capacidad.",
+        "Coloca los palitos en el centro de cada molde y deja reposar 5 minutos.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "cremosa":
+      return [
+        `Lava y trocea ${articulo} ${f.nombre}. Reserva algunos trozos para decorar.`,
+        `En la licuadora, coloca la leche entera, la crema de leche, la leche condensada y ${articulo} ${f.nombre}.`,
+        "Licúa hasta obtener una mezcla cremosa y homogénea. Agrega la esencia de vainilla.",
+        `Vierte la mezcla en los moldes${add ? ` e incorpora ${add}` : ""}, llenando 3/4 de su capacidad. Añade los trozos reservados.`,
+        "Coloca los palitos en el centro de cada molde.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "rellena":
+      return [
+        `Prepara la mezcla base licuando la leche entera, la crema de leche y la leche condensada con el ${f.nombre}.`,
+        "Vierte una primera capa de mezcla en los moldes, llenando hasta la mitad.",
+        `Agrega en el centro una cucharadita de relleno de ${add ?? "leche condensada"}, cuidando que quede en el medio.`,
+        "Cubre con más mezcla hasta llenar 3/4 del molde, sellando bien el relleno.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "galleta":
+      return [
+        `Licúa la leche entera, la crema de leche, la leche condensada y el ${f.nombre} hasta integrar.`,
+        "Tritura las galletas dejando algunos trozos grandes para dar textura.",
+        `Incorpora las galletas trituradas${add ? ` y ${add}` : ""} a la mezcla y revuelve suavemente.`,
+        "Vierte en los moldes, llenando 3/4 de su capacidad, y reparte más trozos de galleta por encima.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "postre":
+      return [
+        `Prepara la base combinando la crema de leche, la leche condensada y el ${f.nombre}.`,
+        "Bate hasta obtener una mezcla cremosa y bien integrada.",
+        `Arma capas en los moldes alternando la mezcla${add ? ` con ${add}` : ""} para lograr el efecto de postre.`,
+        "Vierte hasta llenar 3/4 de la capacidad de cada molde.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "gourmet":
+      return [
+        "En una olla, entibia la leche entera con la crema de leche y la leche condensada (sin hervir).",
+        `Incorpora el ${f.nombre}${add ? ` y ${add}` : ""} y mezcla hasta integrar por completo.`,
+        "Deja enfriar la mezcla y añade la esencia de vainilla.",
+        "Vierte en los moldes, llenando 3/4 de su capacidad.",
+        "Coloca los palitos y reserva un poco de mezcla para decorar la punta.",
+        "Congela por mínimo 6 horas y baña la punta en chocolate para un acabado premium.",
+      ]
+    case "tropical":
+      return [
+        `Licúa ${articulo} ${f.nombre} con la leche de coco (o leche entera) y la leche condensada.`,
+        `Agrega${add ? ` ${add} y` : ""} la crema de leche y licúa hasta integrar.`,
+        "Prueba y ajusta el dulzor según la madurez de la fruta.",
+        "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "economica":
+      return [
+        "En un bol, mezcla la leche entera con la leche condensada hasta integrar.",
+        `Agrega el ${f.nombre} y la esencia de vainilla, y revuelve muy bien.`,
+        "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Acomoda los moldes bien nivelados en el congelador.",
+        "Congela por mínimo 6 horas o hasta que estén completamente firmes.",
+      ]
+    case "vender":
+      return [
+        `Prepara la mezcla base licuando la leche entera, la crema de leche y la leche condensada con el ${f.nombre}.`,
+        `Incorpora ${add ?? "el relleno o cobertura elegida"} para dar un valor agregado a tu producto.`,
+        "Vierte en los moldes, llenando 3/4 de su capacidad.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Congela por mínimo 6 horas o hasta que estén completamente firmes.",
+        "Desmolda, envuelve en bolsitas individuales y etiqueta para la venta.",
+      ]
+    case "especial":
+      return [
+        `Combina el ${f.nombre} con la crema de leche y la leche condensada hasta obtener una mezcla suave.`,
+        `Agrega${add ? ` ${add} y` : ""} la esencia de vainilla y mezcla bien.`,
+        "Vierte en los moldes, llenando 3/4 de su capacidad.",
+        "Coloca los palitos en el centro de cada molde.",
+        "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
+        "Desmolda con cuidado y decora al gusto antes de servir.",
+      ]
+  }
+}
+
+const CONSEJOS: Record<Tech, string[]> = {
+  chocolate: [
+    "Usa chocolate de buena calidad para un sabor más intenso.",
+    "No dejes hervir la mezcla para que no se corte.",
+    "Conserva siempre en congelación.",
+  ],
+  cremosa: [
+    "Usa fruta bien madura para más dulzor natural.",
+    "Reserva trozos de fruta para decorar cada paleta.",
+    "Conserva siempre en congelación.",
+  ],
+  rellena: [
+    "Mantén el relleno bien centrado para la sorpresa perfecta.",
+    "Sella bien la última capa para que no se salga el relleno.",
+    "Conserva siempre en congelación.",
+  ],
+  galleta: [
+    "Deja trozos grandes de galleta para más textura.",
+    "Agrega las galletas al final para que queden crujientes.",
+    "Conserva siempre en congelación.",
+  ],
+  postre: [
+    "Arma las capas con paciencia para un efecto bonito.",
+    "Puedes decorar con migas o crumble por encima.",
+    "Conserva siempre en congelación.",
+  ],
+  gourmet: [
+    "Baña la punta en chocolate para una presentación premium.",
+    "Usa ingredientes de primera calidad para destacar.",
+    "Conserva siempre en congelación.",
+  ],
+  tropical: [
+    "Usa fruta tropical madura para un sabor vibrante.",
+    "La leche de coco realza el sabor tropical.",
+    "Conserva siempre en congelación.",
+  ],
+  economica: [
+    "Aprovecha ingredientes básicos para bajar el costo.",
+    "Ideal para producir en cantidad con poca inversión.",
+    "Conserva siempre en congelación.",
+  ],
+  vender: [
+    "Envuelve en bolsitas individuales y sella bien.",
+    "Etiqueta con sabor y precio para vender más rápido.",
+    "Conserva siempre en congelación.",
+  ],
+  especial: [
+    "Combina bien los sabores antes de congelar.",
+    "Decora al gusto para sorprender a tus clientes.",
+    "Conserva siempre en congelación.",
+  ],
+}
+
+const CONSERVACION =
+  "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas."
+
+type Group = {
+  cat: string
+  tech: Tech
+  ideal: string
+  costo: string
+  precio: string
+  dica: string
+  entries: { t: string; s: string; f: keyof typeof FLAVORS; add?: string }[]
+}
+
+const GROUPS: Group[] = [
   {
-    id: 1,
-    slug: "fresa-con-crema",
-    numero: "RECETA 01",
-    titulo: "Paleta de Fresa",
-    subtitulo: "con crema y trozos de fruta",
-    descripcion:
-      "Cremosa, refrescante y con trozos reales de fresa. Un clásico que todos aman y que se vende solo.",
-    rinde: 10,
-    image: "/images/hero-paleta.png",
-    categoria: "Cremosas",
-    posterImage: "/images/poster-fresa-con-crema.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1 cucharadita de esencia de vainilla",
-      "1 taza de fresas frescas picadas",
-      "2 cucharadas de azúcar",
+    cat: "Chocolate",
+    tech: "chocolate",
+    ideal: "Postres en familia, fiestas, emprender y vender.",
+    costo: "US$ 0.28 – 0.38",
+    precio: "US$ 1.00 – 1.50",
+    dica: "No dejes que la mezcla hierva; retírala del fuego apenas el chocolate se derrita para una textura sedosa.",
+    entries: [
+      { t: "Paleta de Chocolate", s: "con dulce de leche", f: "chocolate", add: "dulce de leche" },
+      { t: "Paleta de Chocolate", s: "con crema de avellanas", f: "chocolate", add: "crema de avellanas" },
+      { t: "Paleta de Chocolate Blanco", s: "con fresa", f: "chocolate-blanco", add: "fresa" },
+      { t: "Paleta de Chocolate", s: "con galleta", f: "chocolate", add: "galleta" },
+      { t: "Paleta de Chocolate", s: "con coco", f: "chocolate", add: "coco" },
+      { t: "Paleta de Chocolate", s: "con maní", f: "chocolate", add: "maní" },
+      { t: "Paleta de Chocolate", s: "con café", f: "chocolate", add: "café" },
+      { t: "Paleta de Chocolate", s: "con caramelo", f: "chocolate", add: "caramelo" },
+      { t: "Paleta de Chocolate", s: "con vainilla", f: "chocolate", add: "vainilla" },
+      { t: "Paleta de Chocolate", s: "con leche condensada", f: "chocolate", add: "leche condensada" },
     ],
-    ingredientesExtra: {
-      titulo: "Extra para decorar (opcional):",
-      items: ["Trozos de fresa fresca", "1 cucharada de leche condensada"],
-    },
-    dica: "Usa fresas bien maduras para un sabor más dulce y natural. Macera las fresas con azúcar 10 minutos antes.",
-    idealPara: "Postres en familia, fiestas, emprender y vender.",
-    pasos: [
-      "En un bol, mezcla la leche entera, la crema de leche, la leche condensada y la esencia de vainilla. Revuelve bien.",
-      "Macera las fresas picadas con el azúcar durante 10 minutos hasta que suelten su jugo.",
-      "Incorpora las fresas maceradas a la mezcla cremosa y revuelve suavemente.",
-      "Vierte la mezcla en los moldes para paletas, llenando aproximadamente 3/4 de su capacidad.",
-      "Agrega trozos de fresa extra y coloca los palitos en el centro.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta cremosa paleta de fresa con trozos de fruta. ¡Un clásico irresistible!",
-    consejos: [
-      "Decora con más trozos de fresa antes de congelar.",
-      "Para vender, envuelve en bolsitas y sella bien.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.20 – 0.28",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 2,
-    slug: "pistacho",
-    numero: "RECETA 02",
-    titulo: "Paleta de Pistacho",
-    subtitulo: "cremosa y gourmet",
-    descripcion:
-      "Una paleta premium de color verde natural, cremosa y con el sabor delicado del pistacho. Elegante y muy rentable.",
-    rinde: 10,
-    image: "/images/product-3.png",
-    categoria: "Premium",
-    posterImage: "/images/poster-pistacho.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1/2 taza de pistachos pelados",
-      "1 cucharadita de esencia de vainilla",
-      "1 pizca de sal",
+    cat: "Frutas Cremosas",
+    tech: "cremosa",
+    ideal: "Postres refrescantes, meriendas, emprender y vender.",
+    costo: "US$ 0.22 – 0.30",
+    precio: "US$ 1.00 – 1.50",
+    dica: "Reserva algunos trozos de fruta para añadirlos al molde y lograr paletas con pedacitos reales.",
+    entries: [
+      { t: "Paleta Cremosa de Fresa", s: "fresca y natural", f: "fresa" },
+      { t: "Paleta Cremosa de Mango", s: "dulce y tropical", f: "mango" },
+      { t: "Paleta Cremosa de Maracuyá", s: "agridulce y refrescante", f: "maracuya" },
+      { t: "Paleta Cremosa de Piña", s: "jugosa y tropical", f: "pina" },
+      { t: "Paleta Cremosa de Coco", s: "suave y aromática", f: "coco" },
+      { t: "Paleta Cremosa de Banana", s: "dulce y natural", f: "banana" },
+      { t: "Paleta Cremosa de Durazno", s: "suave y frutal", f: "durazno" },
+      { t: "Paleta Cremosa de Guayaba", s: "tropical y dulce", f: "guayaba" },
+      { t: "Paleta Cremosa de Mora", s: "intensa y frutal", f: "mora" },
+      { t: "Paleta Cremosa de Papaya", s: "suave y refrescante", f: "papaya" },
     ],
-    ingredientesExtra: {
-      titulo: "Extra para decorar (opcional):",
-      items: ["Pistachos picados", "Chocolate blanco derretido"],
-    },
-    dica: "Procesa los pistachos hasta formar una pasta fina para que el sabor se distribuya en toda la paleta.",
-    idealPara: "Postres gourmet, fiestas, emprender y vender.",
-    pasos: [
-      "Procesa los pistachos con un poco de leche hasta obtener una pasta fina.",
-      "En un bol, mezcla la pasta de pistacho con la leche entera, la crema, la leche condensada, la vainilla y la sal.",
-      "Bate bien hasta que la mezcla quede homogénea y de color verde suave.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
-      "Espolvorea pistachos picados por encima y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta elegante paleta de pistacho. ¡Un sabor gourmet de alto valor!",
-    consejos: [
-      "Usa pistachos naturales sin sal para controlar el sabor.",
-      "Baña la punta en chocolate blanco para una presentación premium.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.35 – 0.45",
-    precioVenta: "US$ 1.50 – 2.00",
   },
   {
-    id: 3,
-    slug: "mango-con-chamoy",
-    numero: "RECETA 03",
-    titulo: "Paleta de Mango",
-    subtitulo: "con chamoy",
-    descripcion:
-      "El dulzor tropical del mango con el toque picante del chamoy. Refrescante, vibrante y muy popular.",
-    rinde: 10,
-    image: "/images/receta-mango.png",
-    categoria: "Frutales",
-    posterImage: "/images/poster-mango-con-chamoy.png",
-    ingredientes: [
-      "2 tazas de pulpa de mango maduro",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1/2 taza de leche entera (120 ml)",
-      "1 cucharada de jugo de limón",
+    cat: "Rellenas",
+    tech: "rellena",
+    ideal: "Sorprender en fiestas, emprender y vender con valor agregado.",
+    costo: "US$ 0.28 – 0.38",
+    precio: "US$ 1.20 – 1.80",
+    dica: "Coloca el relleno bien en el centro y séllalo con mezcla para que sea una sorpresa en cada mordida.",
+    entries: [
+      { t: "Paleta de Fresa", s: "rellena de leche condensada", f: "fresa", add: "leche condensada" },
+      { t: "Paleta de Mango", s: "rellena de crema", f: "mango", add: "crema" },
+      { t: "Paleta de Coco", s: "rellena de chocolate", f: "coco", add: "chocolate" },
+      { t: "Paleta de Vainilla", s: "rellena de dulce de leche", f: "vainilla", add: "dulce de leche" },
+      { t: "Paleta de Chocolate", s: "rellena de crema blanca", f: "chocolate", add: "crema blanca" },
+      { t: "Paleta de Maracuyá", s: "rellena de leche condensada", f: "maracuya", add: "leche condensada" },
+      { t: "Paleta de Banana", s: "rellena de caramelo", f: "banana", add: "caramelo" },
+      { t: "Paleta de Guayaba", s: "rellena de queso crema", f: "guayaba", add: "queso crema" },
+      { t: "Paleta de Piña", s: "rellena de coco", f: "pina", add: "coco" },
+      { t: "Paleta de Café", s: "rellena de chocolate", f: "cafe", add: "chocolate" },
     ],
-    ingredientesExtra: {
-      titulo: "Para decorar:",
-      items: ["Chamoy al gusto", "Chile en polvo (opcional)"],
-    },
-    dica: "Pinta el interior del molde con chamoy antes de verter la mezcla para un efecto marmoleado y más sabor.",
-    idealPara: "Postres refrescantes, fiestas, emprender y vender.",
-    pasos: [
-      "Licúa la pulpa de mango con la leche entera, la crema de leche, la leche condensada y el jugo de limón.",
-      "Prueba y ajusta el dulzor según la madurez del mango.",
-      "Pinta el interior de los moldes con un poco de chamoy.",
-      "Vierte la mezcla de mango en los moldes, llenando 3/4 de su capacidad.",
-      "Agrega un hilo de chamoy por encima y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta paleta de mango con chamoy. ¡Dulce, cremosa y con el toque picante perfecto!",
-    consejos: [
-      "Usa mango bien maduro para más dulzor natural.",
-      "Añade chile en polvo al servir para un toque extra.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.22 – 0.30",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 4,
-    slug: "dulce-de-leche-con-nuez",
-    numero: "RECETA 04",
-    titulo: "Paleta de Dulce de Leche",
-    subtitulo: "con nueces",
-    descripcion:
-      "Suave, dulce y con el crujiente de la nuez. Una paleta cremosa de sabor tradicional que conquista a todos.",
-    rinde: 10,
-    image: "/images/product-2.png",
-    categoria: "Cremosas",
-    posterImage: "/images/poster-dulce-de-leche-con-nuez.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "3/4 taza de dulce de leche (200 g)",
-      "1/2 taza de leche condensada (150 g)",
-      "1 cucharadita de esencia de vainilla",
-      "1/2 taza de nueces picadas",
+    cat: "Con Galletas",
+    tech: "galleta",
+    ideal: "Meriendas, antojos, emprender y vender.",
+    costo: "US$ 0.25 – 0.35",
+    precio: "US$ 1.00 – 1.50",
+    dica: "Agrega las galletas al final y deja trozos grandes para que queden crujientes.",
+    entries: [
+      { t: "Paleta de Vainilla", s: "con galletas de chocolate", f: "vainilla", add: "galleta" },
+      { t: "Paleta de Fresa", s: "con galletas de vainilla", f: "fresa", add: "galleta" },
+      { t: "Paleta de Chocolate", s: "con galleta rellena", f: "chocolate", add: "galleta rellena" },
+      { t: "Paleta de Limón", s: "con galleta triturada", f: "limon", add: "galleta triturada" },
+      { t: "Paleta de Coco", s: "con galletas dulces", f: "coco", add: "galleta" },
+      { t: "Paleta de Café", s: "con galleta de chocolate", f: "cafe", add: "galleta" },
+      { t: "Paleta de Banana", s: "con galleta y caramelo", f: "banana", add: "caramelo" },
+      { t: "Paleta de Maní", s: "con galleta crujiente", f: "mani", add: "galleta" },
+      { t: "Paleta de Dulce de Leche", s: "con galletas", f: "dulce-de-leche", add: "galleta" },
+      { t: "Paleta de Chocolate Blanco", s: "con galletas", f: "chocolate-blanco", add: "galleta" },
     ],
-    dica: "Reserva un poco de dulce de leche para hacer un remolino visible dentro de la paleta antes de congelar.",
-    idealPara: "Postres en familia, fiestas, emprender y vender.",
-    pasos: [
-      "En un bol, mezcla la leche entera, la crema de leche, el dulce de leche, la leche condensada y la vainilla.",
-      "Bate bien hasta que el dulce de leche se integre por completo y la mezcla quede homogénea.",
-      "Agrega la mitad de las nueces picadas y mezcla suavemente.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
-      "Espolvorea el resto de las nueces por encima y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta cremosa paleta de dulce de leche con nueces. ¡Puro sabor casero!",
-    consejos: [
-      "Tuesta ligeramente las nueces para más sabor.",
-      "Haz un remolino de dulce de leche para una presentación premium.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.26 – 0.32",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 5,
-    slug: "cookies-and-cream",
-    numero: "RECETA 05",
-    titulo: "Paleta de Cookies & Cream",
-    subtitulo: "con trozos de galleta Oreo",
-    descripcion:
-      "Cremosa, crujiente y llena de sabor. Con trozos de galleta Oreo en cada mordida. ¡Irresistible y perfecta para vender!",
-    rinde: 10,
-    image: "/images/receta-cookies.png",
-    categoria: "Cremosas",
-    posterImage: "/images/poster-cookies-and-cream.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1 cucharadita de esencia de vainilla",
-      "100 g de chocolate blanco picado",
-      "6 galletas Oreo (trituradas en trozos)",
+    cat: "Postres",
+    tech: "postre",
+    ideal: "Postres especiales, cafeterías, emprender y vender.",
+    costo: "US$ 0.35 – 0.45",
+    precio: "US$ 1.50 – 2.00",
+    dica: "Arma las capas con calma para lograr el efecto de un postre clásico en formato paleta.",
+    entries: [
+      { t: "Paleta de Cheesecake", s: "de fresa", f: "cheesecake", add: "fresa" },
+      { t: "Paleta de Tiramisú", s: "clásico italiano", f: "tiramisu", add: "café" },
+      { t: "Paleta de Arroz con Leche", s: "con canela", f: "arroz-con-leche" },
+      { t: "Paleta de Flan", s: "con caramelo", f: "flan", add: "caramelo" },
+      { t: "Paleta de Tres Leches", s: "suave y esponjosa", f: "tres-leches" },
+      { t: "Paleta de Pastel de Chocolate", s: "húmedo y cremoso", f: "brownie", add: "chocolate blanco" },
+      { t: "Paleta de Coco", s: "tipo cocada", f: "cocada", add: "leche condensada" },
+      { t: "Paleta de Limón", s: "tipo pay", f: "limon", add: "galleta" },
+      { t: "Paleta de Banana Split", s: "con chocolate y fresa", f: "banana", add: "fresa" },
+      { t: "Paleta de Brownie", s: "con crema", f: "brownie", add: "crema" },
     ],
-    ingredientesExtra: {
-      titulo: "Extra para decorar (opcional):",
-      items: ["2 galletas Oreo (trituradas finas)", "1 cucharada de chispas de chocolate"],
-    },
-    dica: "Usa galletas Oreo originales para mejor sabor y textura. Puedes picarlas a mano para que queden trozos más grandes y crujientes.",
-    idealPara: "Postres en familia, fiestas, emprender y vender.",
-    pasos: [
-      "En una olla, mezcla la leche entera, la crema de leche, la leche condensada, el chocolate blanco picado y la esencia de vainilla. Revuelve bien.",
-      "Lleva a fuego medio bajo sin dejar de mover hasta que el chocolate se derrita por completo y la mezcla esté caliente (pero sin hervir).",
-      "Retira del fuego y deja enfriar unos minutos. Agrega las galletas Oreo trituradas y mezcla suavemente.",
-      "Vierte la mezcla en los moldes para paletas, llenando aproximadamente 3/4 de su capacidad.",
-      "Espolvorea trozos de Oreo por encima y presiona ligeramente para que se integren. Coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta deliciosa paleta cremosa con trozos de Oreo. ¡Un clásico que a todos les encanta!",
-    consejos: [
-      "Decora con más trozos de Oreo antes de congelar.",
-      "Para vender, envuelve en bolsitas y sella bien.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.25 – 0.30",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 6,
-    slug: "chocolate-caramelo-salado",
-    numero: "RECETA 06",
-    titulo: "Paleta de Chocolate",
-    subtitulo: "con caramelo salado",
-    descripcion:
-      "Intenso chocolate combinado con un centro de caramelo salado. ¡Irresistible, gourmet y perfecta para vender!",
-    rinde: 10,
-    image: "/images/product-1.png",
-    categoria: "Premium",
-    posterImage: "/images/poster-chocolate-caramelo-salado.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "100 g de chocolate semiamargo picado",
-      "1 cucharadita de esencia de vainilla",
-      "1 pizca de sal",
-      "1 cucharada de cacao en polvo",
+    cat: "Gourmet",
+    tech: "gourmet",
+    ideal: "Postres premium, eventos, emprender y vender con alto margen.",
+    costo: "US$ 0.40 – 0.55",
+    precio: "US$ 1.80 – 2.50",
+    dica: "Usa ingredientes de primera y baña la punta en chocolate para un acabado profesional.",
+    entries: [
+      { t: "Paleta de Chocolate Amargo", s: "con naranja", f: "chocolate", add: "naranja" },
+      { t: "Paleta de Vainilla", s: "con frutos rojos", f: "vainilla", add: "frutos rojos" },
+      { t: "Paleta de Pistacho", s: "con chocolate blanco", f: "pistacho", add: "chocolate blanco" },
+      { t: "Paleta de Café", s: "con caramelo salado", f: "cafe", add: "caramelo salado" },
+      { t: "Paleta de Coco", s: "con almendras", f: "coco", add: "almendras" },
+      { t: "Paleta de Fresa", s: "con crema de queso", f: "fresa", add: "queso crema" },
+      { t: "Paleta de Mango", s: "con maracuyá", f: "mango", add: "maracuyá" },
+      { t: "Paleta de Chocolate", s: "con avellanas", f: "chocolate", add: "avellanas" },
+      { t: "Paleta de Vainilla", s: "con nueces", f: "vainilla", add: "nueces" },
+      { t: "Paleta de Caramelo", s: "con maní tostado", f: "caramelo", add: "maní tostado" },
     ],
-    ingredientesExtra: {
-      titulo: "Para el caramelo salado:",
-      items: [
-        "1 taza de azúcar",
-        "1/2 taza de crema de leche (120 ml)",
-        "1 cucharada de mantequilla",
-        "1/2 cucharadita de sal marina",
-      ],
-    },
-    dica: "El toque de sal resalta el sabor del chocolate y el caramelo. Usa sal marina en escamas para un acabado profesional.",
-    idealPara: "Postres en familia, fiestas, emprender y vender.",
-    pasos: [
-      "En una olla, mezcla la leche entera, la crema de leche, la leche condensada, el cacao en polvo y la esencia de vainilla. Revuelve bien.",
-      "Lleva a fuego medio sin dejar de mover hasta que el chocolate se derrita por completo y la mezcla esté caliente (pero sin hervir). Retira del fuego.",
-      "Para el caramelo: en una olla seca, derrite el azúcar a fuego medio hasta obtener un caramelo dorado. Agrega la mantequilla, mezcla y luego la crema de leche (¡con cuidado!).",
-      "Cocina por 2-3 minutos hasta que espese. Agrega la sal marina y mezcla. Deja enfriar.",
-      "Vierte un poco de mezcla de chocolate en los moldes. Agrega una cucharadita de caramelo salado en el centro y cubre con más mezcla. Coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta paleta de chocolate con caramelo salado. ¡Un sabor gourmet que enamora!",
-    consejos: [
-      "Usa chocolate de buena calidad para un sabor más intenso.",
-      "Puedes decorar con sal marina en escamas antes de congelar.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.28 – 0.35",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 7,
-    slug: "coco-cremosa",
-    numero: "RECETA 07",
-    titulo: "Paleta de Coco",
-    subtitulo: "cremosa con ralladura",
-    descripcion:
-      "Suave, tropical y cubierta de coco rallado. Una paleta cremosa que transporta a la playa en cada mordida.",
-    rinde: 10,
-    image: "/images/receta-coco.png",
-    categoria: "Cremosas",
-    posterImage: "/images/poster-coco-cremosa.png",
-    ingredientes: [
-      "2 tazas de leche de coco (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1/2 taza de coco rallado",
-      "1 cucharadita de esencia de vainilla",
+    cat: "Tropicales",
+    tech: "tropical",
+    ideal: "Días calurosos, playa, emprender y vender.",
+    costo: "US$ 0.22 – 0.32",
+    precio: "US$ 1.00 – 1.50",
+    dica: "La leche de coco potencia el sabor tropical; ajústala según la fruta que uses.",
+    entries: [
+      { t: "Paleta de Piña Colada", s: "sin alcohol", f: "pina", add: "coco" },
+      { t: "Paleta de Mango", s: "con coco", f: "mango", add: "coco" },
+      { t: "Paleta de Maracuyá", s: "con naranja", f: "maracuya", add: "naranja" },
+      { t: "Paleta de Guayaba", s: "con leche", f: "guayaba" },
+      { t: "Paleta de Papaya", s: "con vainilla", f: "papaya", add: "vainilla" },
+      { t: "Paleta de Piña", s: "con hierbabuena", f: "pina", add: "hierbabuena" },
+      { t: "Paleta de Sandía", s: "cremosa", f: "sandia" },
+      { t: "Paleta de Melón", s: "con leche condensada", f: "melon", add: "leche condensada" },
+      { t: "Paleta de Banana", s: "con coco", f: "banana", add: "coco" },
+      { t: "Paleta de Frutos Tropicales", s: "mix refrescante", f: "arcoiris" },
     ],
-    ingredientesExtra: {
-      titulo: "Extra para decorar (opcional):",
-      items: ["Coco rallado tostado", "Chocolate blanco derretido"],
-    },
-    dica: "Tuesta ligeramente parte del coco rallado para intensificar el aroma y dar un contraste crujiente.",
-    idealPara: "Postres tropicales, fiestas, emprender y vender.",
-    pasos: [
-      "En un bol, mezcla la leche de coco, la crema de leche, la leche condensada y la vainilla.",
-      "Agrega el coco rallado y revuelve hasta integrar bien.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
-      "Espolvorea coco rallado por encima y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-      "Al desmoldar, puedes bañar la punta en chocolate blanco y rebozar en coco.",
-    ],
-    listo: "Desmolda y disfruta esta cremosa paleta de coco. ¡Tropical, suave y deliciosa!",
-    consejos: [
-      "Usa leche de coco de buena calidad para más cremosidad.",
-      "Combina coco natural y tostado para más textura.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.25 – 0.32",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 8,
-    slug: "cheesecake-frutos-rojos",
-    numero: "RECETA 08",
-    titulo: "Paleta de Cheesecake",
-    subtitulo: "con frutos rojos",
-    descripcion:
-      "La cremosidad del cheesecake con el toque ácido de los frutos rojos y base de galleta. Una paleta premium irresistible.",
-    rinde: 10,
-    image: "/images/social-4.png",
-    categoria: "Premium",
-    posterImage: "/images/poster-cheesecake-frutos-rojos.png",
-    ingredientes: [
-      "200 g de queso crema",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1/2 taza de leche entera (120 ml)",
-      "1 cucharadita de esencia de vainilla",
-      "1/2 taza de mermelada de frutos rojos",
+    cat: "Económicas",
+    tech: "economica",
+    ideal: "Producir en cantidad con bajo costo, emprender y vender.",
+    costo: "US$ 0.15 – 0.22",
+    precio: "US$ 0.70 – 1.10",
+    dica: "Con pocos ingredientes básicos logras muchas paletas; ideal para maximizar ganancias.",
+    entries: [
+      { t: "Paleta Cremosa de Vainilla", s: "clásica y económica", f: "vainilla" },
+      { t: "Paleta de Chocolate", s: "fácil y rápida", f: "chocolate" },
+      { t: "Paleta de Fresa", s: "económica", f: "fresa" },
+      { t: "Paleta de Banana", s: "con leche", f: "banana" },
+      { t: "Paleta de Coco", s: "con tres ingredientes", f: "coco" },
+      { t: "Paleta de Café", s: "cremosa", f: "cafe" },
+      { t: "Paleta de Caramelo", s: "sencilla", f: "caramelo" },
+      { t: "Paleta de Galleta", s: "económica", f: "galleta" },
+      { t: "Paleta de Leche Condensada", s: "suave y dulce", f: "leche-polvo", add: "leche condensada" },
+      { t: "Paleta de Chocolate", s: "con maní", f: "chocolate", add: "maní" },
     ],
-    ingredientesExtra: {
-      titulo: "Para la base:",
-      items: ["6 galletas tipo María trituradas", "2 cucharadas de mantequilla derretida"],
-    },
-    dica: "Agrega la mermelada al final con movimientos suaves para lograr un efecto marmoleado bonito.",
-    idealPara: "Postres premium, fiestas, emprender y vender.",
-    pasos: [
-      "Bate el queso crema con la crema de leche, la leche condensada, la leche entera y la vainilla hasta que quede suave.",
-      "Mezcla las galletas trituradas con la mantequilla derretida para la base.",
-      "Vierte la mezcla de cheesecake en los moldes, llenando 3/4 de su capacidad.",
-      "Agrega cucharaditas de mermelada de frutos rojos y haz un remolino suave.",
-      "Presiona la mezcla de galleta en la parte superior (que será la base) y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta paleta de cheesecake con frutos rojos. ¡Cremosa, elegante y deliciosa!",
-    consejos: [
-      "Usa queso crema a temperatura ambiente para batir mejor.",
-      "Puedes usar frutos rojos frescos además de la mermelada.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.35 – 0.45",
-    precioVenta: "US$ 1.50 – 2.00",
   },
   {
-    id: 9,
-    slug: "cafe-capuchino",
-    numero: "RECETA 09",
-    titulo: "Paleta de Café",
-    subtitulo: "estilo capuchino",
-    descripcion:
-      "Cremosa, con el aroma intenso del café y un toque de cacao. Perfecta para los amantes del café.",
-    rinde: 10,
-    image: "/images/receta-cafe.png",
-    categoria: "Cremosas",
-    posterImage: "/images/poster-cafe-capuchino.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "2 cucharadas de café soluble",
-      "1 cucharadita de esencia de vainilla",
-      "1 cucharada de cacao en polvo",
+    cat: "Para Vender",
+    tech: "vender",
+    ideal: "Negocio de paletas, ferias, pedidos y venta directa.",
+    costo: "US$ 0.30 – 0.42",
+    precio: "US$ 1.50 – 2.00",
+    dica: "Presenta cada paleta envuelta y etiquetada; la buena presentación aumenta tus ventas.",
+    entries: [
+      { t: "Paleta de Chocolate", s: "premium", f: "chocolate", add: "cobertura de chocolate" },
+      { t: "Paleta de Fresa", s: "con relleno cremoso", f: "fresa", add: "relleno cremoso" },
+      { t: "Paleta de Dulce de Leche", s: "con cobertura", f: "dulce-de-leche", add: "dulce de leche con cobertura" },
+      { t: "Paleta de Mango", s: "gourmet", f: "mango", add: "crema" },
+      { t: "Paleta de Coco", s: "con chocolate crujiente", f: "coco", add: "chocolate crujiente" },
+      { t: "Paleta de Maracuyá", s: "rellena", f: "maracuya", add: "leche condensada" },
+      { t: "Paleta de Vainilla", s: "con caramelo", f: "vainilla", add: "caramelo" },
+      { t: "Paleta de Chocolate Blanco", s: "con frutos rojos", f: "chocolate-blanco", add: "frutos rojos" },
+      { t: "Paleta de Café", s: "con crema", f: "cafe", add: "crema" },
+      { t: "Paleta de Galleta", s: "con chocolate", f: "galleta", add: "cobertura de chocolate" },
     ],
-    dica: "Disuelve el café en un poco de leche caliente antes de mezclar para que no queden grumos.",
-    idealPara: "Postres para adultos, cafeterías, emprender y vender.",
-    pasos: [
-      "Disuelve el café soluble en 1/4 de taza de leche caliente.",
-      "En un bol, mezcla el café disuelto con el resto de la leche, la crema, la leche condensada y la vainilla.",
-      "Bate bien hasta que la mezcla quede homogénea.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
-      "Espolvorea cacao en polvo por encima y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta paleta de café estilo capuchino. ¡Cremosa y con aroma irresistible!",
-    consejos: [
-      "Ajusta la cantidad de café según tu gusto.",
-      "Decora con cacao o chocolate rallado.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.22 – 0.28",
-    precioVenta: "US$ 1.00 – 1.50",
   },
   {
-    id: 10,
-    slug: "limon-cremosa",
-    numero: "RECETA 10",
-    titulo: "Paleta de Limón",
-    subtitulo: "cremosa y refrescante",
-    descripcion:
-      "El equilibrio perfecto entre lo ácido y lo cremoso. Refrescante, ligera y económica de preparar.",
-    rinde: 10,
-    image: "/images/receta-limon.png",
-    categoria: "Económicas",
-    posterImage: "/images/poster-limon-cremosa.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "1/3 taza de jugo de limón",
-      "Ralladura de 1 limón",
+    cat: "Especiales",
+    tech: "especial",
+    ideal: "Sabores diferentes para destacar, emprender y vender.",
+    costo: "US$ 0.28 – 0.40",
+    precio: "US$ 1.20 – 1.80",
+    dica: "Combina bien los ingredientes antes de congelar para que el sabor quede parejo.",
+    entries: [
+      { t: "Paleta de Yogur", s: "con fresa", f: "yogur", add: "fresa" },
+      { t: "Paleta de Yogur", s: "con mango", f: "yogur", add: "mango" },
+      { t: "Paleta de Leche en Polvo", s: "con chocolate", f: "leche-polvo", add: "chocolate" },
+      { t: "Paleta de Crema de Avellanas", s: "con banana", f: "avellana", add: "banana" },
+      { t: "Paleta de Queso Crema", s: "con guayaba", f: "queso-guayaba" },
+      { t: "Paleta de Coco", s: "con dulce de leche", f: "coco", add: "dulce de leche" },
+      { t: "Paleta de Chocolate", s: "con crema de maní", f: "chocolate", add: "crema de maní" },
+      { t: "Paleta de Vainilla", s: "con mermelada de fresa", f: "vainilla", add: "mermelada de fresa" },
+      { t: "Paleta de Maracuyá", s: "con chocolate blanco", f: "maracuya", add: "chocolate blanco" },
+      { t: "Paleta Arcoíris", s: "de frutas cremosas", f: "arcoiris" },
     ],
-    dica: "Agrega el jugo de limón poco a poco y al final para evitar que la mezcla se corte.",
-    idealPara: "Postres refrescantes, fiestas, emprender y vender.",
-    pasos: [
-      "En un bol, mezcla la leche entera, la crema de leche y la leche condensada.",
-      "Agrega la ralladura de limón y mezcla bien.",
-      "Incorpora el jugo de limón poco a poco, batiendo constantemente.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
-      "Coloca los palitos en el centro.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta paleta de limón cremosa. ¡Refrescante y con el punto ácido perfecto!",
-    consejos: [
-      "Usa limones frescos para mejor sabor y aroma.",
-      "No excedas el jugo de limón para que no se corte.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.18 – 0.24",
-    precioVenta: "US$ 0.80 – 1.20",
-  },
-  {
-    id: 11,
-    slug: "maracuya-cremosa",
-    numero: "RECETA 11",
-    titulo: "Paleta de Maracuyá",
-    subtitulo: "cremosa tropical",
-    descripcion:
-      "El sabor tropical y ácido del maracuyá en una paleta suave y cremosa. Exótica y muy solicitada.",
-    rinde: 10,
-    image: "/images/receta-maracuya.png",
-    categoria: "Frutales",
-    posterImage: "/images/poster-maracuya-cremosa.png",
-    ingredientes: [
-      "1 taza de pulpa de maracuyá",
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "2 cucharadas de azúcar",
-    ],
-    ingredientesExtra: {
-      titulo: "Extra (opcional):",
-      items: ["Semillas de maracuyá para decorar"],
-    },
-    dica: "Reserva algunas semillas de maracuyá para dar un toque visual y textura a la paleta.",
-    idealPara: "Postres tropicales, fiestas, emprender y vender.",
-    pasos: [
-      "Licúa la pulpa de maracuyá y cuélala si prefieres sin semillas.",
-      "En un bol, mezcla la pulpa con la leche entera, la crema, la leche condensada y el azúcar.",
-      "Prueba y ajusta el dulzor según la acidez del maracuyá.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad.",
-      "Agrega algunas semillas de maracuyá y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta paleta de maracuyá cremosa. ¡Tropical, ácida y deliciosa!",
-    consejos: [
-      "Ajusta el azúcar según la acidez de la fruta.",
-      "Combina con un poco de mango para suavizar la acidez.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.24 – 0.30",
-    precioVenta: "US$ 1.00 – 1.50",
-  },
-  {
-    id: 12,
-    slug: "vainilla-con-chispas",
-    numero: "RECETA 12",
-    titulo: "Paleta de Vainilla",
-    subtitulo: "con chispas de chocolate",
-    descripcion:
-      "Suave, dulce y con chispas de chocolate crujientes. Una base cremosa clásica, económica y fácil de vender.",
-    rinde: 10,
-    image: "/images/social-1.png",
-    categoria: "Económicas",
-    posterImage: "/images/poster-vainilla-con-chispas.png",
-    ingredientes: [
-      "2 tazas de leche entera (500 ml)",
-      "1 taza de crema de leche (200 ml)",
-      "1/2 taza de leche condensada (150 g)",
-      "2 cucharaditas de esencia de vainilla",
-      "1/2 taza de chispas de chocolate",
-    ],
-    dica: "Enfría bien la mezcla antes de agregar las chispas para que no se hundan todas al fondo.",
-    idealPara: "Postres en familia, fiestas, emprender y vender.",
-    pasos: [
-      "En un bol, mezcla la leche entera, la crema de leche, la leche condensada y la esencia de vainilla.",
-      "Bate bien hasta que la mezcla quede homogénea.",
-      "Enfría la mezcla en el refrigerador por 10 minutos.",
-      "Agrega las chispas de chocolate y revuelve suavemente.",
-      "Vierte la mezcla en los moldes, llenando 3/4 de su capacidad, y coloca los palitos.",
-      "Lleva al congelador por mínimo 6 horas o hasta que estén completamente firmes.",
-    ],
-    listo: "Desmolda y disfruta esta cremosa paleta de vainilla con chispas. ¡Un clásico que nunca falla!",
-    consejos: [
-      "Usa esencia de vainilla de buena calidad para más sabor.",
-      "Puedes mezclar chispas de chocolate blanco y negro.",
-      "Conserva siempre en congelación.",
-    ],
-    conservacion:
-      "Mantén las paletas en el congelador en recipientes cerrados o bolsas herméticas para que no absorban olores y se conserven perfectas.",
-    costoPaleta: "US$ 0.18 – 0.24",
-    precioVenta: "US$ 0.80 – 1.20",
   },
 ]
 
-export const categorias = ["Todas", "Cremosas", "Frutales", "Premium", "Económicas"] as const
+function buildRecipes(): Recipe[] {
+  const list: Recipe[] = []
+  let n = 0
+  const usedSlugs = new Set<string>()
+
+  for (const group of GROUPS) {
+    for (const e of group.entries) {
+      n += 1
+      const f = FLAVORS[e.f]
+      let slug = slugify(`${e.t} ${e.s}`)
+      while (usedSlugs.has(slug)) {
+        slug = `${slug}-${n}`
+      }
+      usedSlugs.add(slug)
+
+      const ingredientes = [
+        "2 tazas de leche entera (500 ml)",
+        "1 taza de crema de leche (200 ml)",
+        "1/2 taza de leche condensada (150 g)",
+        "1 cucharadita de esencia de vainilla",
+      ]
+      if (f.ing) ingredientes.push(f.ing)
+      if (e.add) ingredientes.push(addonIngrediente(e.add))
+
+      list.push({
+        id: n,
+        slug,
+        numero: `RECETA ${pad(n)}`,
+        titulo: e.t,
+        subtitulo: e.s,
+        descripcion: `${e.t} ${e.s}. Cremosa, deliciosa y muy fácil de preparar. Perfecta para disfrutar en familia, emprender y vender.`,
+        rinde: 10,
+        image: `/images/flavors/${f.photo}.png`,
+        categoria: group.cat,
+        theme: f.theme,
+        ingredientes,
+        dica: group.dica,
+        idealPara: group.ideal,
+        pasos: pasosFor(group.tech, f, e.add),
+        listo: `Desmolda y disfruta esta rica ${e.t.toLowerCase()} ${e.s}. ¡Un sabor que enamora y que se vende solo!`,
+        consejos: CONSEJOS[group.tech],
+        conservacion: CONSERVACION,
+        costoPaleta: group.costo,
+        precioVenta: group.precio,
+      })
+    }
+  }
+
+  return list
+}
+
+export const recipes: Recipe[] = buildRecipes()
+
+export const categorias = [
+  "Todas",
+  "Chocolate",
+  "Frutas Cremosas",
+  "Rellenas",
+  "Con Galletas",
+  "Postres",
+  "Gourmet",
+  "Tropicales",
+  "Económicas",
+  "Para Vender",
+  "Especiales",
+] as const
