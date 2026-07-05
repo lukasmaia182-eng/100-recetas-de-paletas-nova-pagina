@@ -157,9 +157,14 @@ export function MembersArea() {
                     }}
                     className="group flex flex-col rounded-3xl border border-border bg-card p-5 text-left shadow-sm transition-shadow hover:shadow-lg hover:shadow-chocolate/10"
                   >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-                      <Gift className="h-5 w-5" aria-hidden="true" />
-                    </span>
+                    <div className="flex items-center justify-between">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                        <Gift className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <span className="rounded-lg bg-chocolate/90 px-2.5 py-1 font-display text-[10px] font-extrabold uppercase tracking-widest text-creme">
+                        {bonus.numero}
+                      </span>
+                    </div>
                     <h3 className="mt-3 font-display text-lg font-extrabold leading-tight text-chocolate text-balance">
                       {bonus.titulo}
                     </h3>
