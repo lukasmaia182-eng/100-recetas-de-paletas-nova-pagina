@@ -78,6 +78,21 @@ const ACCENT_BY_SLUG: Record<string, keyof typeof THEMES | undefined> = {
 export function RecipeDetail({ recipe }: { recipe: Recipe }) {
   const theme = THEMES[ACCENT_BY_SLUG[recipe.slug] ?? "morango"]
 
+  if (recipe.posterImage) {
+    return (
+      <article className="overflow-hidden rounded-[28px] border border-border bg-secondary shadow-xl shadow-chocolate/10">
+        <Image
+          src={recipe.posterImage || "/placeholder.svg"}
+          alt={`Receta ilustrada: ${recipe.titulo} ${recipe.subtitulo}`}
+          width={1024}
+          height={1536}
+          className="h-auto w-full"
+          priority
+        />
+      </article>
+    )
+  }
+
   return (
     <article className="overflow-hidden rounded-[28px] border border-border bg-secondary shadow-xl shadow-chocolate/10">
       {/* Header */}

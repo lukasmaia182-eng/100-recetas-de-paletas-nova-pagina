@@ -8,6 +8,7 @@ export type Recipe = {
   rinde: number
   image: string
   categoria: "Cremosas" | "Frutales" | "Premium" | "Económicas"
+  posterImage?: string
   ingredientes: string[]
   ingredientesExtra?: { titulo: string; items: string[] }
   dica: string
@@ -76,6 +77,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/product-1.png",
     categoria: "Premium",
+    posterImage: "/images/poster-chocolate-caramelo-salado.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
@@ -126,6 +128,7 @@ export const recipes: Recipe[] = [
     rinde: 10,
     image: "/images/receta-cookies.png",
     categoria: "Cremosas",
+    posterImage: "/images/poster-cookies-and-cream.png",
     ingredientes: [
       "2 tazas de leche entera (500 ml)",
       "1 taza de crema de leche (200 ml)",
