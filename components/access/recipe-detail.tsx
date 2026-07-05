@@ -63,21 +63,6 @@ const THEMES: Record<string, Theme> = {
 export function RecipeDetail({ recipe }: { recipe: Recipe }) {
   const theme = THEMES[recipe.theme] ?? THEMES.morango
 
-  if (recipe.posterImage) {
-    return (
-      <article className="overflow-hidden rounded-[28px] border border-border bg-secondary shadow-xl shadow-chocolate/10">
-        <Image
-          src={recipe.posterImage || "/placeholder.svg"}
-          alt={`Receta ilustrada: ${recipe.titulo} ${recipe.subtitulo}`}
-          width={1024}
-          height={1536}
-          className="h-auto w-full"
-          priority
-        />
-      </article>
-    )
-  }
-
   return (
     <article className="overflow-hidden rounded-[28px] border border-border bg-secondary shadow-xl shadow-chocolate/10">
       {/* Header */}
