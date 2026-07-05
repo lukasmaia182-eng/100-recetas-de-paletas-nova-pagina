@@ -27,8 +27,8 @@ export function HeroSection() {
         <div className="relative mt-6 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
             <Image
-              src="/images/hero-mujer-paletas.png"
-              alt="Mujer sonriente sosteniendo una paleta de fresa cremosa junto a una tabla con paletas de varios sabores"
+              src="/images/hero-mujer-app.png"
+              alt="Mujer sonriente sosteniendo una paleta de chocolate y su celular con el recetario digital, junto a una bandeja de paletas de varios sabores"
               width={800}
               height={800}
               className="h-auto w-full object-cover"
