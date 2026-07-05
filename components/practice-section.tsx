@@ -16,8 +16,8 @@ export function PracticeSection() {
 
         <div className="mt-6 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">
           <Image
-            src="/images/tutorial.png"
-            alt="Manos preparando paletas cremosas en la cocina"
+            src="/images/tutorial-mujer.png"
+            alt="Mujer vertiendo mezcla cremosa de fresa en moldes de paletas junto a paletas ya terminadas"
             width={800}
             height={600}
             className="h-auto w-full object-cover"
