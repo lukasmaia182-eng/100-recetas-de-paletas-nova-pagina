@@ -5,28 +5,40 @@ import { BuyButton } from "./buy-button"
 
 const faqs = [
   {
-    q: "¿Sirve si nunca hice paletas?",
-    a: "Sí. Cada receta está ilustrada y explicada paso a paso, con ingredientes y cantidades exactas, para que aciertes la textura desde la primera vez.",
+    q: "¿El producto es físico o digital?",
+    a: "Es un producto completamente digital. No recibirás ningún material físico en tu domicilio.",
   },
   {
-    q: "¿Cómo recibo el recetario?",
-    a: "Es 100% digital. Apenas confirmes tu compra recibes el acceso inmediato para ver las recetas en el celular, la tablet o la computadora.",
+    q: "¿Cómo recibiré el acceso?",
+    a: "Después de la confirmación del pago, recibirás las instrucciones para acceder al recetario digital.",
   },
   {
-    q: "¿Necesito ingredientes caros o difíciles?",
-    a: "No. Hay recetas económicas con ingredientes simples para empezar y también opciones premium para quien quiere ampliar su menú.",
+    q: "¿Necesito experiencia?",
+    a: "No. El contenido fue organizado para principiantes, con ingredientes, cantidades y preparación paso a paso.",
   },
   {
-    q: "¿Puedo vender las paletas que preparo?",
-    a: "Claro. El recetario incluye recetas pensadas para vender, además de bonos con precios, menús, combos y mensajes listos para atender a tus clientes.",
+    q: "¿Puedo verlo desde mi celular?",
+    a: "Sí. Puedes consultar el material desde tu celular, computadora o tablet.",
   },
   {
-    q: "¿Por qué el precio es tan bajo?",
-    a: "Es una promoción de lanzamiento por tiempo limitado. Por eso hoy pagas solo $3,90 en lugar de $97,00, con acceso completo.",
+    q: "¿Los ingredientes se consiguen en México?",
+    a: "Las recetas priorizan ingredientes comunes y fáciles de encontrar en México. Algunas opciones premium pueden utilizar ingredientes específicos.",
   },
   {
-    q: "¿Y si no me gusta?",
-    a: "Tienes 7 días de garantía total. Si no te convence, te devolvemos todo tu dinero sin complicaciones.",
+    q: "¿Necesito una máquina profesional?",
+    a: "No. Puedes comenzar con utensilios básicos de cocina y moldes para paletas. Los materiales necesarios pueden variar según la receta.",
+  },
+  {
+    q: "¿Tengo que pagar cada mes?",
+    a: "No. El precio de $3,90 corresponde a un pago único.",
+  },
+  {
+    q: "¿Puedo imprimir el material?",
+    a: "Sí. Puedes imprimir las páginas que prefieras utilizar durante la preparación.",
+  },
+  {
+    q: "¿Las recetas sirven para vender?",
+    a: "Sí. El recetario contiene opciones económicas, premium, rellenas y mini paletas que pueden utilizarse para crear un menú. Los resultados dependen de factores como ejecución, calidad, costos, precios, divulgación y demanda local. El producto no garantiza ingresos.",
   },
 ]
 

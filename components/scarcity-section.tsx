@@ -32,12 +32,12 @@ export function ScarcitySection() {
         </div>
 
         <p className="mt-6 text-base leading-relaxed text-creme/90 text-pretty">
-          El precio de $3,90 es solo por hoy. Cuando el cronómetro llegue a cero, el valor vuelve a subir. Asegura tu
-          acceso ahora mismo.
+          El precio de $3,90 es solo por hoy. Cuando el cronómetro llegue a cero, el valor vuelve a subir. Pago único,
+          sin mensualidades y con acceso digital. Asegura tu acceso ahora mismo.
         </p>
 
         <div className="mt-7">
-          <BuyButton subLabel="Solo hoy por $3,90 en lugar de $97,00" />
+          <BuyButton subLabel="Solo hoy por $3,90 en lugar de $19,90" />
         </div>
       </div>
     </section>

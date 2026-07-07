@@ -2,16 +2,18 @@ import Image from "next/image"
 import { BuyButton } from "./buy-button"
 
 const includes = [
-  "Recetario digital ilustrado con 100 recetas",
-  "Lista completa de ingredientes y cantidades",
-  "Base y relleno explicados paso a paso",
-  "Consejos para lograr más cremosidad",
-  "Guía de congelado, montaje y desmoldado",
-  "Sustituciones y variaciones de sabores",
-  "Ideas de presentación más atractivas",
-  "Recetas económicas para empezar",
-  "Recetas premium de mayor valor",
-  "Mini paletas para fiestas y encargos",
+  "100 recetas organizadas",
+  "Ingredientes y cantidades",
+  "Preparación paso a paso",
+  "Bases cremosas y frutales",
+  "Rellenos y combinaciones",
+  "Sabores económicos",
+  "Sabores premium",
+  "Paletas inspiradas en postres",
+  "Mini paletas para reuniones y eventos",
+  "Consejos de textura",
+  "Ideas de presentación",
+  "Acceso digital inmediato",
 ]
 
 const bonuses = [
@@ -33,8 +35,11 @@ export function OfferCard() {
 
         <div className="p-6">
           <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance">
-            Todo lo que vas a recibir hoy
+            Todo lo que recibirás
           </h2>
+          <p className="mt-2 text-center font-display text-base font-bold text-primary">
+            100 Recetas de Paletas Rellenas
+          </p>
 
           <div className="mx-auto mt-5 max-w-xs overflow-hidden rounded-2xl">
             <Image
@@ -71,14 +76,15 @@ export function OfferCard() {
 
           <div className="mt-6 text-center">
             <p className="text-base text-muted-foreground">
-              De <span className="font-semibold text-muted-foreground line-through">$97,00</span> por solo
+              Valor de referencia:{" "}
+              <span className="font-semibold text-muted-foreground line-through">$19,90</span>
             </p>
             <p className="mt-1 font-display text-5xl font-extrabold text-primary">$3,90</p>
-            <p className="mt-1 text-sm font-semibold text-pistache">Pago único con acceso inmediato</p>
+            <p className="mt-1 text-sm font-semibold text-pistache">Pago único · Sin mensualidades · Producto digital</p>
           </div>
 
           <div className="mt-6">
-            <BuyButton subLabel="Compra 100% segura" />
+            <BuyButton subLabel="Compra 100% segura">SÍ, QUIERO LAS 100 RECETAS</BuyButton>
           </div>
         </div>
       </div>
@@ -111,3 +117,5 @@ function GiftIcon() {
     </span>
   )
 }
+
+
