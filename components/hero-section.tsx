@@ -37,6 +37,10 @@ export function HeroSection() {
           </div>
         </div>
 
+        <div className="mt-6 w-full">
+          <BuyButton subLabel="Acceso inmediato por solo $3,90" />
+        </div>
+
         <p className="mt-6 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
           Recetas ilustradas con ingredientes, cantidades, rellenos y preparación paso a paso, incluso para quien nunca
           hizo paletas y tiene miedo de equivocarse con la textura.
@@ -50,10 +54,6 @@ export function HeroSection() {
             </li>
           ))}
         </ul>
-
-        <div className="mt-8 w-full">
-          <BuyButton subLabel="Acceso inmediato por solo $3,90" />
-        </div>
       </div>
     </section>
   )
