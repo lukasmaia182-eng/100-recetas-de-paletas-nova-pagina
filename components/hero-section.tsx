@@ -14,14 +14,18 @@ export function HeroSection() {
     <section className="relative overflow-hidden px-5 pt-10 pb-12">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-sm font-bold text-secondary-foreground">
-          <span className="h-2 w-2 rounded-full bg-primary" />
-          Recetario digital ilustrado
+          <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+          Recetario digital · Acceso inmediato
         </span>
 
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
-          100 Recetas de Paletas Rellenas para crear un menú irresistible y{" "}
-          <span className="text-primary">empezar a vender desde casa</span>
+          Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero desde
+          tu cocina
         </h1>
+
+        <p className="mt-3 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+          100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una.
+        </p>
 
         <div className="relative mt-6 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
@@ -36,18 +40,25 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-6 w-full">
-          <BuyButton subLabel="Producto 100% digital · Pago único · Sin mensualidades">QUIERO LAS 100 RECETAS</BuyButton>
+        <div className="mt-6 flex w-full flex-col items-center gap-1">
+          <p className="text-sm font-semibold text-muted-foreground">
+            De <span className="line-through">$19,90</span> por solo hoy
+          </p>
+          <p className="font-display text-5xl font-extrabold text-primary">$3,90</p>
         </div>
 
-        <p className="mt-6 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-          Prepara paletas cremosas, rellenas y visualmente atractivas siguiendo cantidades e instrucciones paso a paso,
-          aunque nunca antes hayas preparado una. Descubre sabores de chocolate, frutas, cajeta, leche condensada y
-          postres famosos sin desperdiciar ingredientes inventando recetas desde cero.
+        <div className="mt-4 w-full">
+          <BuyButton subLabel="Pago único · Sin mensualidades · Acceso inmediato">QUIERO LAS 100 RECETAS</BuyButton>
+        </div>
+
+        <p className="mt-3 text-sm font-medium text-muted-foreground">
+          Compra 100% segura · 7 días de garantía · Descarga al instante
         </p>
 
-        <p className="mt-4 font-display text-lg font-extrabold text-chocolate">
-          Accede hoy por solo <span className="text-primary">$3,90</span>
+        <p className="mt-6 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+          Deja de desperdiciar ingredientes inventando recetas desde cero. Con el paso a paso ya listo preparas sabores
+          de chocolate, frutas, cajeta, leche condensada y postres famosos, y armas un menú que puedes vender desde el
+          primer día.
         </p>
 
         <ul className="mt-6 grid w-full grid-cols-2 gap-3 text-left">
