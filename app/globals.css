@@ -12,6 +12,8 @@
   --color-creme: var(--creme);
   --color-chocolate: var(--chocolate);
   --color-pistache: var(--pistache);
+  --color-verde-cta: var(--verde-cta);
+  --color-verde-cta-dark: var(--verde-cta-dark);
   --color-azul: var(--azul);
   --color-naranja: var(--naranja);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -61,6 +63,8 @@
   --creme: #fff1d6;
   --chocolate: #5c3024;
   --pistache: #7ea85b;
+  --verde-cta: #1fae4d;
+  --verde-cta-dark: #178a3d;
   --azul: #1e3a72;
   --naranja: #e07a2b;
   --background: #fff8ec;
@@ -110,11 +114,11 @@
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 10px 25px -5px rgba(233, 75, 100, 0.35);
+    box-shadow: 0 10px 25px -5px rgba(31, 174, 77, 0.35);
   }
   50% {
     transform: scale(1.03);
-    box-shadow: 0 14px 30px -4px rgba(233, 75, 100, 0.55);
+    box-shadow: 0 14px 30px -4px rgba(31, 174, 77, 0.55);
   }
 }
 
