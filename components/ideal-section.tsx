@@ -1,19 +1,19 @@
 const items = [
   {
-    title: "Empezar sin miedo a equivocarte",
-    text: "Recetas organizadas y explicadas para que aciertes la textura desde la primera vez.",
+    title: "Crear un menú variado",
+    text: "Ten opciones cremosas, frutales, económicas y premium para diferentes clientes.",
   },
   {
-    title: "Preparar paletas más cremosas",
-    text: "Consejos prácticos para reducir cristales de hielo y lograr un relleno suave y cremoso.",
+    title: "Mejorar la textura",
+    text: "Sigue cantidades y recomendaciones que ayudan a reducir errores comunes.",
   },
   {
-    title: "Crear un menú variado y atractivo",
-    text: "Sabores cremosos, de chocolate, dulce de leche, frutales y premium para no aburrirte.",
+    title: "Evitar pruebas innecesarias",
+    text: "No desperdicies tiempo ni ingredientes inventando cada combinación desde cero.",
   },
   {
-    title: "Ganar dinero vendiendo paletas",
-    text: "Recetas económicas para empezar y opciones premium para cobrar más por cada paleta.",
+    title: "Comenzar como principiante",
+    text: "Consulta instrucciones claras y organizadas, aunque nunca hayas preparado paletas rellenas.",
   },
 ]
 
@@ -22,7 +22,7 @@ export function IdealSection() {
     <section className="px-5 py-12">
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
-          Ideal para ti que deseas
+          Este recetario fue creado para ti que…
         </h2>
 
         <ul className="mt-7 flex flex-col gap-4">

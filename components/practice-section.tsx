@@ -39,8 +39,8 @@ export function PracticeSection() {
         </div>
 
         <p className="mt-5 text-center text-base leading-relaxed text-foreground text-pretty">
-          Cada receta muestra el relleno cremoso, la combinación de sabores y el resultado final que vas a lograr en
-          casa.
+          Cada receta reúne los ingredientes y cantidades, la preparación paso a paso, los consejos de textura y las
+          ideas de presentación para que sepas exactamente cómo va a quedar tu paleta en casa.
         </p>
       </div>
     </section>

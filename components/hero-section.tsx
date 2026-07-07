@@ -2,12 +2,11 @@ import Image from "next/image"
 import { BuyButton } from "./buy-button"
 
 const bullets = [
-  "Recetas fáciles paso a paso",
-  "Textura cremosa garantizada",
+  "100 recetas explicadas",
   "Ingredientes fáciles de conseguir",
-  "Ideales para vender",
-  "Sin errores ni desperdicio",
-  "Aptas para principiantes",
+  "Opciones económicas y premium",
+  "Ideal para principiantes",
+  "Acceso digital inmediato",
 ]
 
 export function HeroSection() {
@@ -20,8 +19,8 @@ export function HeroSection() {
         </span>
 
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
-          100 recetas de paletas rellenas y cremosas listas para{" "}
-          <span className="text-primary">preparar, servir o vender</span>
+          100 Recetas de Paletas Rellenas para crear un menú irresistible y{" "}
+          <span className="text-primary">empezar a vender desde casa</span>
         </h1>
 
         <div className="relative mt-6 w-full">
@@ -38,12 +37,17 @@ export function HeroSection() {
         </div>
 
         <div className="mt-6 w-full">
-          <BuyButton subLabel="Acceso inmediato por solo $3,90" />
+          <BuyButton subLabel="Producto 100% digital · Pago único · Sin mensualidades">QUIERO LAS 100 RECETAS</BuyButton>
         </div>
 
         <p className="mt-6 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-          Recetas ilustradas con ingredientes, cantidades, rellenos y preparación paso a paso, incluso para quien nunca
-          hizo paletas y tiene miedo de equivocarse con la textura.
+          Prepara paletas cremosas, rellenas y visualmente atractivas siguiendo cantidades e instrucciones paso a paso,
+          aunque nunca antes hayas preparado una. Descubre sabores de chocolate, frutas, cajeta, leche condensada y
+          postres famosos sin desperdiciar ingredientes inventando recetas desde cero.
+        </p>
+
+        <p className="mt-4 font-display text-lg font-extrabold text-chocolate">
+          Accede hoy por solo <span className="text-primary">$3,90</span>
         </p>
 
         <ul className="mt-6 grid w-full grid-cols-2 gap-3 text-left">

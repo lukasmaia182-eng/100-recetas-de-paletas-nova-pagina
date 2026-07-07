@@ -12,11 +12,13 @@ export function GuaranteeSection() {
           className="h-32 w-32 object-contain"
         />
         <h2 className="font-display text-2xl font-extrabold text-chocolate text-balance">
-          Garantía total de 7 días
+          Prueba el recetario durante 7 días
         </h2>
         <p className="text-base leading-relaxed text-foreground text-pretty">
-          Prueba todas las recetas sin riesgo. Si no te encanta, escríbenos dentro de 7 días y te devolvemos el 100% de
-          tu dinero. Toda la seguridad está de tu lado.
+          Después de realizar la compra, tendrás siete días naturales para revisar el contenido. Si durante ese plazo
+          consideras que el material no corresponde a lo presentado en esta página, podrás solicitar el reembolso de
+          acuerdo con las condiciones de la plataforma de pago utilizada. Así puedes acceder al recetario y comprobar el
+          contenido con tranquilidad.
         </p>
       </div>
     </section>
