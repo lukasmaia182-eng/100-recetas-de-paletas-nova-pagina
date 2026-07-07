@@ -16,6 +16,13 @@ const includes = [
   "Acceso digital inmediato",
 ]
 
+const bonuses = [
+  "Bono: Precio Justo para Cada Paleta",
+  "Bono: 12 Menús Listos para Paletas",
+  "Bono: 50 Mensajes Listos para Vender",
+  "Bono: 30 Combos Rentables de Paletas",
+]
+
 export function OfferCard() {
   return (
     <section id="oferta" className="scroll-mt-4 px-5 py-12">
@@ -53,6 +60,20 @@ export function OfferCard() {
             ))}
           </ul>
 
+          <div className="mt-5 rounded-2xl bg-secondary p-4">
+            <p className="mb-3 text-center font-display text-sm font-extrabold uppercase tracking-wide text-primary">
+              Bonos incluidos gratis
+            </p>
+            <ul className="flex flex-col gap-2.5">
+              {bonuses.map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <GiftIcon />
+                  <span className="text-sm font-semibold leading-snug text-chocolate">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className="mt-6 text-center">
             <p className="text-base text-muted-foreground">
               Valor de referencia:{" "}
@@ -76,6 +97,22 @@ function CheckIcon() {
     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-pistache text-white">
       <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3" aria-hidden="true">
         <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  )
+}
+
+function GiftIcon() {
+  return (
+    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+      <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3" aria-hidden="true">
+        <path
+          d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7S9 2 6.5 4.5 12 7 12 7zm0 0s3-5 5.5-2.5S12 7 12 7z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </span>
   )
