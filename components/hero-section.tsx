@@ -9,15 +9,32 @@ const bullets = [
   "Acceso digital inmediato",
 ]
 
+const marqueeItems = [
+  "Acceso inmediato",
+  "100 recetas paso a paso",
+  "Gana desde tu cocina",
+  "Pago único",
+  "7 días de garantía",
+  "Ideal para principiantes",
+]
+
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-5 pt-10 pb-12">
-      <div className="mx-auto flex max-w-md flex-col items-center text-center">
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-sm font-bold text-secondary-foreground">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
-          Recetario digital · Acceso inmediato
-        </span>
+    <section className="relative overflow-hidden pt-6 pb-12">
+      <div className="relative mb-8 flex w-full overflow-hidden bg-primary py-2.5 text-primary-foreground">
+        <div className="flex shrink-0 animate-marquee items-center gap-3 pr-3">
+          {[...marqueeItems, ...marqueeItems].map((item, index) => (
+            <span key={index} className="flex shrink-0 items-center gap-3 text-sm font-extrabold uppercase tracking-wide">
+              {item}
+              <span className="text-base leading-none" aria-hidden="true">
+                ✦
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
 
+      <div className="mx-auto flex max-w-md flex-col items-center px-5 text-center">
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
           Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero desde
           tu cocina
@@ -38,6 +55,15 @@ export function HeroSection() {
               priority
             />
           </div>
+        </div>
+
+        <div className="mt-6 w-full text-center">
+          <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+            Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando.
+          </p>
+          <p className="mt-2 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
+            Y el dinero empieza a entrar cada semana.
+          </p>
         </div>
 
         <div className="mt-6 flex w-full flex-col items-center gap-1">
