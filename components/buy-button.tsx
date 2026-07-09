@@ -1,4 +1,7 @@
+"use client"
+
 import { cn } from "@/lib/utils"
+import { useTrackCheckout } from "@/components/checkout-tracking"
 
 const CHECKOUT_URL = "https://pay.hotmart.com/L102630763K?off=ywlkzsnc&checkoutMode=10"
 
@@ -10,9 +13,18 @@ type BuyButtonProps = {
 }
 
 export function BuyButton({ children, className, subLabel, href = CHECKOUT_URL }: BuyButtonProps) {
+  const trackCheckout = useTrackCheckout()
+
+  const handleClick = () => {
+    if (trackCheckout && typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      ;(window as any).fbq("track", "InitiateCheckout")
+    }
+  }
+
   return (
     <a
       href={href}
+      onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
