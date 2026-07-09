@@ -1,7 +1,6 @@
 import {
   UrgencyBar,
   Pv2Hero,
-  Pv2Reinforcement,
   Pv2Benefits,
   Pv2Pain,
   Pv2Quote,
@@ -18,7 +17,6 @@ export default function Pv2Page() {
       <main className="min-h-screen bg-background">
         <UrgencyBar />
         <Pv2Hero />
-        <Pv2Reinforcement />
         <Pv2Benefits />
         <Pv2Pain />
         <Pv2Quote />

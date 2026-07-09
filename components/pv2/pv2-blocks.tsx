@@ -92,33 +92,43 @@ export function Pv2Reinforcement() {
 }
 
 /* ---------------------------------------------------------------- */
-/* Checklist de beneficios                                           */
+/* Galería de recetas                                                */
 /* ---------------------------------------------------------------- */
-const benefits = [
-  "Preparar paletas con la textura cremosa correcta, sin cristales de hielo.",
-  "Crear un menú variado con sabores económicos y premium.",
-  "Empezar a vender desde casa aunque nunca antes hayas hecho una paleta.",
-  "Dejar de desperdiciar ingredientes inventando recetas desde cero.",
-  "Cobrar el precio justo por cada paleta con los bonos incluidos.",
-  "Consultar las recetas desde tu celular, tablet o computadora.",
-  "Tener sabores nuevos para ofrecer durante todo el año.",
+const gallery = [
+  { src: "/images/pv2/paleta-1.png", alt: "Paleta cremosa de chocolate con cobertura crujiente" },
+  { src: "/images/pv2/paleta-2.png", alt: "Paleta de fresa con trozos de fruta real" },
+  { src: "/images/pv2/paleta-3.png", alt: "Paleta de cajeta con caramelo" },
+  { src: "/images/pv2/paleta-4.png", alt: "Paleta tropical de mango y maracuyá" },
+  { src: "/images/pv2/paleta-5.png", alt: "Paleta de galletas y crema" },
+  { src: "/images/pv2/paleta-6.png", alt: "Paleta de coco con ralladura" },
+  { src: "/images/pv2/paleta-7.png", alt: "Paleta de pistacho con nueces" },
+  { src: "/images/pv2/paleta-8.png", alt: "Paleta estilo cheesecake con frutos rojos" },
 ]
 
 export function Pv2Benefits() {
   return (
-    <section className="px-5 py-12">
-      <div className="mx-auto max-w-md">
-        <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
-          Al descargar ahora las 100 recetas, vas a poder:
+    <section className="py-12">
+      <div className="mx-auto mb-6 max-w-md px-5 text-center">
+        <h2 className="font-display text-2xl font-extrabold uppercase text-chocolate text-balance sm:text-3xl">
+          ¡Sí! Son más de <span className="text-verde-cta">100 recetas…</span>
         </h2>
-        <ul className="mt-7 flex flex-col gap-3">
-          {benefits.map((item) => (
-            <li key={item} className="flex items-start gap-3 rounded-2xl bg-card p-4 shadow-sm">
-              <CheckIcon />
-              <span className="text-sm font-medium leading-snug text-foreground">{item}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="mt-2 text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
+          Cremosas, rellenas y con el sabor que a todos les encanta, listas para preparar y vender.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
+        {gallery.map((item) => (
+          <div key={item.src} className="relative aspect-square overflow-hidden">
+            <Image
+              src={item.src || "/placeholder.svg"}
+              alt={item.alt}
+              width={400}
+              height={400}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        ))}
       </div>
     </section>
   )
@@ -182,16 +192,6 @@ function ClockIcon() {
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
       <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  )
-}
-
-function CheckIcon() {
-  return (
-    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-verde-cta text-white">
-      <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3" aria-hidden="true">
-        <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </span>
   )
 }
 
