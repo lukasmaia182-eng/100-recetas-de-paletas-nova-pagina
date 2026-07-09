@@ -54,13 +54,13 @@ export function Pv2Hero() {
           Para quien quiere ganar dinero desde casa sin necesitar ingredientes caros ni pasar horas inventando recetas.
         </p>
 
-        <div className="mx-auto mt-6 max-w-xs overflow-hidden rounded-2xl">
+        <div className="mx-auto mt-6 w-full overflow-hidden rounded-2xl shadow-md">
           <Image
-            src="/images/ebook-mockup.png"
-            alt="Recetario digital de 100 paletas rellenas mostrado en celular y tablet"
-            width={600}
-            height={600}
-            className="h-auto w-full object-contain"
+            src="/images/pv1-antes-despues.png"
+            alt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
+            width={800}
+            height={800}
+            className="h-auto w-full object-cover"
             priority
           />
         </div>
