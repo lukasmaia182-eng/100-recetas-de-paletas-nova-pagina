@@ -6,12 +6,13 @@ type BuyButtonProps = {
   children?: React.ReactNode
   className?: string
   subLabel?: string
+  href?: string
 }
 
-export function BuyButton({ children, className, subLabel }: BuyButtonProps) {
+export function BuyButton({ children, className, subLabel, href = CHECKOUT_URL }: BuyButtonProps) {
   return (
     <a
-      href={CHECKOUT_URL}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
