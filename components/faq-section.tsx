@@ -46,13 +46,13 @@ export function FaqSection() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section className="px-5 py-12">
+    <section className="px-5 py-8">
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Preguntas frecuentes
         </h2>
 
-        <ul className="mt-7 flex flex-col gap-3">
+        <ul className="mt-5 flex flex-col gap-2.5">
           {faqs.map((faq, index) => {
             const isOpen = open === index
             return (
@@ -83,7 +83,7 @@ export function FaqSection() {
           })}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-5">
           <BuyButton subLabel="Acceso inmediato por solo $3,90" />
         </div>
       </div>

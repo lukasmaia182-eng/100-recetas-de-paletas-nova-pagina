@@ -8,13 +8,13 @@ const products = [
 
 export function PracticeSection() {
   return (
-    <section className="bg-secondary px-5 py-12">
+    <section className="bg-secondary px-5 py-8">
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Mira cómo quedan en la práctica
         </h2>
 
-        <div className="mt-6 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">
+        <div className="mt-5 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">
           <Image
             src="/images/tutorial-mujer.png"
             alt="Mujer vertiendo mezcla cremosa de fresa en moldes de paletas junto a paletas ya terminadas"
@@ -38,7 +38,7 @@ export function PracticeSection() {
           ))}
         </div>
 
-        <p className="mt-5 text-center text-base leading-relaxed text-foreground text-pretty">
+        <p className="mt-4 text-center text-base leading-relaxed text-foreground text-pretty">
           Cada receta reúne los ingredientes y cantidades, la preparación paso a paso, los consejos de textura y las
           ideas de presentación para que sepas exactamente cómo va a quedar tu paleta en casa.
         </p>

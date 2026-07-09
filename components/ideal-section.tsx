@@ -19,13 +19,13 @@ const items = [
 
 export function IdealSection() {
   return (
-    <section className="px-5 py-12">
+    <section className="px-5 py-8">
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Este recetario fue creado para ti que…
         </h2>
 
-        <ul className="mt-7 flex flex-col gap-4">
+        <ul className="mt-5 flex flex-col gap-3">
           {items.map((item, index) => (
             <li key={item.title} className="flex gap-4 rounded-2xl bg-card p-4 shadow-sm">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary font-display text-base font-extrabold text-primary-foreground">

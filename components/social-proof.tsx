@@ -27,8 +27,8 @@ export function SocialProof() {
   const loop = [...slides, ...slides]
 
   return (
-    <section className="overflow-hidden py-12">
-      <div className="mx-auto mb-7 max-w-md px-5">
+    <section className="overflow-hidden py-8">
+      <div className="mx-auto mb-4 max-w-md px-5">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Mira cómo es el recetario por dentro
         </h2>

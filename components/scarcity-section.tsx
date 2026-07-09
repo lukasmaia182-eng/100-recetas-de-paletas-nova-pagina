@@ -19,24 +19,24 @@ export function ScarcitySection() {
   const seconds = secondsLeft % 60
 
   return (
-    <section className="bg-chocolate px-5 py-12 text-center">
+    <section className="bg-chocolate px-5 py-8 text-center">
       <div className="mx-auto max-w-md">
         <h2 className="font-display text-2xl font-extrabold text-creme text-balance sm:text-3xl">
           Oferta por tiempo limitado
         </h2>
 
-        <div className="mt-6 flex items-center justify-center gap-3">
+        <div className="mt-5 flex items-center justify-center gap-3">
           <TimeBox value={minutes} label="MIN" />
           <span className="font-display text-3xl font-extrabold text-primary">:</span>
           <TimeBox value={seconds} label="SEG" />
         </div>
 
-        <p className="mt-6 text-base leading-relaxed text-creme/90 text-pretty">
+        <p className="mt-4 text-base leading-relaxed text-creme/90 text-pretty">
           El precio de $3,90 es solo por hoy. Cuando el cronómetro llegue a cero, el valor vuelve a subir. Pago único,
           sin mensualidades y con acceso digital. Asegura tu acceso ahora mismo.
         </p>
 
-        <div className="mt-7">
+        <div className="mt-5">
           <BuyButton subLabel="Solo hoy por $3,90 en lugar de $19,90" />
         </div>
       </div>
