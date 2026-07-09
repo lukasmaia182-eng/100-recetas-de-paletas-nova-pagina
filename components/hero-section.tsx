@@ -11,7 +11,7 @@ const bullets = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-5 pt-10 pb-12">
+    <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
           Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero desde
