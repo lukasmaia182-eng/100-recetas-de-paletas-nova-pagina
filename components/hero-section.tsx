@@ -11,23 +11,18 @@ const bullets = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-5 pt-10 pb-12">
+    <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-sm font-bold text-secondary-foreground">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
-          Recetario digital · Acceso inmediato
-        </span>
-
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
           Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero desde
           tu cocina
         </h1>
 
-        <p className="mt-3 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+        <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
           100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una.
         </p>
 
-        <div className="relative mt-6 w-full">
+        <div className="relative mt-4 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
             <Image
               src="/images/hero-mujer-app.png"
@@ -40,7 +35,16 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-6 flex w-full flex-col items-center gap-1">
+        <div className="mt-4 w-full text-center">
+          <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+            Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando.
+          </p>
+          <p className="mt-2 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
+            Y el dinero empieza a entrar cada semana.
+          </p>
+        </div>
+
+        <div className="mt-4 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
             De <span className="line-through">$19,90</span> por solo hoy
           </p>

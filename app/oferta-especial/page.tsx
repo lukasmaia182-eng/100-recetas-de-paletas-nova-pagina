@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { UpsellOffer } from "@/components/upsell/upsell-offer"
+import { UpsellOffer } from "@/components/upsell-offer"
 
 export const metadata: Metadata = {
   title: "Oferta Especial · 150 Recetas de Dulces Brasileños Virales",
   description:
-    "Suma 150 recetas de dulces brasileños virales por un valor especial y único. Amplía tu menú y gana todavía más desde tu cocina.",
+    "Solo por hoy: suma a tu compra las 150 recetas de dulces brasileños virales y multiplica tus ganancias desde tu cocina.",
 }
 
 export default function OfertaEspecialPage() {
