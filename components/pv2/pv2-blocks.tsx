@@ -243,6 +243,79 @@ export function Pv2Pain() {
 }
 
 /* ---------------------------------------------------------------- */
+/* Bônus gratis                                                      */
+/* ---------------------------------------------------------------- */
+const pv2Bonuses = [
+  {
+    numero: "Bono #01",
+    categoria: "Precio Justo para Cada Paleta",
+    descripcion: "Calcula el costo y define un precio rentable sin regalar tu trabajo.",
+    src: "/images/pv2/bono-1.png",
+    precio: "US$ 9",
+  },
+  {
+    numero: "Bono #02",
+    categoria: "12 Menús Listos para Paletas",
+    descripcion: "Combinaciones ya armadas para vender por temporada y ocasión.",
+    src: "/images/pv2/bono-2.png",
+    precio: "US$ 7",
+  },
+  {
+    numero: "Bono #03",
+    categoria: "50 Mensajes Listos para Vender",
+    descripcion: "Textos listos para copiar y pegar en WhatsApp e Instagram.",
+    src: "/images/pv2/bono-3.png",
+    precio: "US$ 9",
+  },
+  {
+    numero: "Bono #04",
+    categoria: "30 Combos Rentables de Paletas",
+    descripcion: "Paquetes armados para aumentar el ticket de venta en cada pedido.",
+    src: "/images/pv2/bono-4.png",
+    precio: "US$ 7",
+  },
+]
+
+export function Pv2Bonuses() {
+  return (
+    <section className="bg-secondary px-5 py-12">
+      <div className="mx-auto max-w-4xl">
+        <div className="text-center">
+          <span className="inline-flex items-center rounded-full bg-verde-cta/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-verde-cta">
+            Bonos exclusivos para ti
+          </span>
+          <h2 className="mt-4 font-display text-2xl font-extrabold uppercase text-chocolate text-balance sm:text-3xl">
+            Bonos gratis en el plan completo
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
+            Comprando ahora, aseguras acceso inmediato a estos materiales que van a acelerar tus resultados.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {pv2Bonuses.map((bono) => (
+            <div key={bono.numero} className="flex flex-col overflow-hidden rounded-2xl bg-card shadow-md">
+              <div className="relative aspect-[4/3]">
+                <Image src={bono.src || "/placeholder.svg"} alt={bono.categoria} fill className="object-cover" sizes="(min-width: 1024px) 220px, (min-width: 640px) 45vw, 90vw" />
+              </div>
+              <div className="flex flex-1 flex-col p-5 text-center">
+                <h3 className="font-display text-lg font-extrabold text-chocolate">{bono.numero}</h3>
+                <p className="mt-1 text-sm font-bold uppercase tracking-wide text-verde-cta">{bono.categoria}</p>
+                <p className="mt-2 text-sm leading-snug text-muted-foreground text-pretty">{bono.descripcion}</p>
+                <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                  <span className="font-display text-lg font-bold text-primary line-through">{bono.precio}</span>
+                  <span className="font-display text-lg font-extrabold uppercase text-verde-cta">Gratis</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ---------------------------------------------------------------- */
 /* Íconos                                                            */
 /* ---------------------------------------------------------------- */
 function ClockIcon() {

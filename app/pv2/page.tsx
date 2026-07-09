@@ -3,6 +3,7 @@ import {
   Pv2Hero,
   Pv2Benefits,
   Pv2Pain,
+  Pv2Bonuses,
 } from "@/components/pv2/pv2-blocks"
 import { Pv2Chats } from "@/components/pv2/pv2-chats"
 import { OfferCard } from "@/components/offer-card"
@@ -19,6 +20,7 @@ export default function Pv2Page() {
         <Pv2Benefits />
         <Pv2Pain />
         <Pv2Chats />
+        <Pv2Bonuses />
         <OfferCard />
         <GuaranteeSection />
         <FaqSection />
