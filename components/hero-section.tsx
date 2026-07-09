@@ -9,7 +9,7 @@ const bullets = [
   "Acceso digital inmediato",
 ]
 
-export function HeroSection({ headline }: { headline?: React.ReactNode }) {
+export function HeroSection({ headline, subheadline }: { headline?: React.ReactNode; subheadline?: React.ReactNode }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
@@ -23,7 +23,7 @@ export function HeroSection({ headline }: { headline?: React.ReactNode }) {
         </h1>
 
         <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-          100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una.
+          {subheadline ?? "100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una."}
         </p>
 
         <div className="relative mt-4 w-full">

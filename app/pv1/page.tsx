@@ -17,6 +17,7 @@ export default function Pv1Page() {
             <span className="text-primary">¿Serás el primero… o solo mirarás?</span>
           </>
         }
+        subheadline="Creas tus primeras recetas… y de repente… tendrás filas de clientes que querrán comprar más todos los días."
       />
       <PracticeSection />
       <IdealSection />
