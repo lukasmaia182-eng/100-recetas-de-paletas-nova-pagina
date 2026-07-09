@@ -40,14 +40,11 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-6 w-full rounded-2xl bg-secondary px-5 py-4 text-center">
-          <p className="font-display text-lg font-extrabold leading-snug text-chocolate text-balance">
-            Sin anunciar. Sin hacer promoción.
+        <div className="mt-6 w-full text-center">
+          <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+            Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando.
           </p>
-          <p className="mt-1 text-base leading-relaxed text-foreground text-pretty">
-            Empiezas… y de repente… hay gente esperando.
-          </p>
-          <p className="mt-1 text-base font-bold leading-relaxed text-primary text-pretty">
+          <p className="mt-2 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
             Y el dinero empieza a entrar cada semana.
           </p>
         </div>
