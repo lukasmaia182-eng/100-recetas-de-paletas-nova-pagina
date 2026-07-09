@@ -9,24 +9,43 @@ const bullets = [
   "Acceso digital inmediato",
 ]
 
-export function HeroSection() {
+export function HeroSection({
+  headline,
+  subheadline,
+  belowImageText,
+  imageSrc,
+  imageAlt,
+}: {
+  headline?: React.ReactNode
+  subheadline?: React.ReactNode
+  belowImageText?: React.ReactNode
+  imageSrc?: string
+  imageAlt?: string
+}) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
-          Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero desde
-          tu cocina
+          {headline ?? (
+            <>
+              Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero
+              desde tu cocina
+            </>
+          )}
         </h1>
 
         <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-          100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una.
+          {subheadline ?? "100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una."}
         </p>
 
         <div className="relative mt-4 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
             <Image
-              src="/images/hero-mujer-app.png"
-              alt="Mujer sonriente sosteniendo una paleta de chocolate y su celular con el recetario digital, junto a una bandeja de paletas de varios sabores"
+              src={imageSrc ?? "/images/hero-mujer-app.png"}
+              alt={
+                imageAlt ??
+                "Mujer sonriente sosteniendo una paleta de chocolate y su celular con el recetario digital, junto a una bandeja de paletas de varios sabores"
+              }
               width={800}
               height={800}
               className="h-auto w-full object-cover"
@@ -37,7 +56,7 @@ export function HeroSection() {
 
         <div className="mt-4 w-full text-center">
           <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-            Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando.
+            {belowImageText ?? "Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando."}
           </p>
           <p className="mt-2 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
             Y el dinero empieza a entrar cada semana.
