@@ -94,29 +94,56 @@ export function Pv2Reinforcement() {
 /* ---------------------------------------------------------------- */
 /* Galería de recetas                                                */
 /* ---------------------------------------------------------------- */
-const gallery = [
-  { src: "/images/pv2/paleta-1.png", alt: "Paleta cremosa de chocolate con cobertura crujiente" },
-  { src: "/images/pv2/paleta-2.png", alt: "Paleta de fresa con trozos de fruta real" },
-  { src: "/images/pv2/paleta-3.png", alt: "Paleta de cajeta con caramelo" },
-  { src: "/images/pv2/paleta-4.png", alt: "Paleta tropical de mango y maracuyá" },
-  { src: "/images/pv2/paleta-5.png", alt: "Paleta de galletas y crema" },
-  { src: "/images/pv2/paleta-6.png", alt: "Paleta de coco con ralladura" },
-  { src: "/images/pv2/paleta-7.png", alt: "Paleta de pistacho con nueces" },
-  { src: "/images/pv2/paleta-8.png", alt: "Paleta estilo cheesecake con frutos rojos" },
+type Recipe = {
+  src: string
+  numero: string
+  nombre: string
+  descripcion: string
+  categoria: string
+}
+
+const gallery: Recipe[] = [
+  { src: "/images/pv2/paleta-1.png", numero: "RECETA 33", nombre: "Paleta de Chocolate", descripcion: "con galleta rellena", categoria: "Con Galletas" },
+  { src: "/images/pv2/paleta-2.png", numero: "RECETA 32", nombre: "Paleta de Fresa", descripcion: "con galletas de vainilla", categoria: "Con Galletas" },
+  { src: "/images/pv2/paleta-3.png", numero: "RECETA 39", nombre: "Paleta de Dulce de Leche", descripcion: "rellena de cajeta", categoria: "Rellenas" },
+  { src: "/images/pv2/paleta-4.png", numero: "RECETA 28", nombre: "Paleta de Mango", descripcion: "rellena de maracuyá", categoria: "Rellenas" },
+  { src: "/images/pv2/paleta-5.png", numero: "RECETA 31", nombre: "Paleta de Vainilla", descripcion: "con galletas de chocolate", categoria: "Con Galletas" },
+  { src: "/images/pv2/paleta-6.png", numero: "RECETA 35", nombre: "Paleta de Coco", descripcion: "con galletas dulces", categoria: "Con Galletas" },
+  { src: "/images/pv2/paleta-7.png", numero: "RECETA 29", nombre: "Paleta de Pistacho", descripcion: "rellena de crema", categoria: "Rellenas" },
+  { src: "/images/pv2/paleta-8.png", numero: "RECETA 30", nombre: "Paleta de Cheesecake", descripcion: "rellena de frutos rojos", categoria: "Rellenas" },
+  { src: "/images/pv2/paleta-9.png", numero: "RECETA 36", nombre: "Paleta de Café", descripcion: "con galleta de chocolate", categoria: "Con Galletas" },
 ]
 
-function GalleryRow({ items, reverse }: { items: typeof gallery; reverse?: boolean }) {
+function RecipeCard({ recipe }: { recipe: Recipe }) {
+  return (
+    <div className="w-56 shrink-0 overflow-hidden rounded-2xl bg-card shadow-md">
+      <div className="relative aspect-[4/3]">
+        <Image src={recipe.src || "/placeholder.svg"} alt={recipe.nombre} fill className="object-cover" sizes="224px" />
+        <span className="absolute left-2 top-2 rounded-full bg-chocolate/85 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+          {recipe.numero}
+        </span>
+        <span className="absolute right-2 top-2 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold text-primary-foreground">
+          {recipe.categoria}
+        </span>
+      </div>
+      <div className="p-4 text-left">
+        <h3 className="font-display text-base font-extrabold text-chocolate">{recipe.nombre}</h3>
+        <p className="mt-0.5 text-sm italic text-primary">{recipe.descripcion}</p>
+        <p className="mt-3 flex items-center gap-1 text-xs font-semibold text-muted-foreground">
+          Ver receta <span aria-hidden="true">&rsaquo;</span>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function GalleryRow({ items, reverse }: { items: Recipe[]; reverse?: boolean }) {
   const loop = [...items, ...items]
   return (
     <div className="relative w-full overflow-hidden">
-      <div className={`flex w-max gap-2 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
+      <div className={`flex w-max gap-3 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
         {loop.map((item, index) => (
-          <div
-            key={`${item.src}-${index}`}
-            className="relative h-36 w-36 shrink-0 overflow-hidden rounded-xl sm:h-44 sm:w-44"
-          >
-            <Image src={item.src || "/placeholder.svg"} alt={item.alt} fill className="object-cover" sizes="176px" />
-          </div>
+          <RecipeCard key={`${item.src}-${index}`} recipe={item} />
         ))}
       </div>
     </div>
@@ -124,8 +151,8 @@ function GalleryRow({ items, reverse }: { items: typeof gallery; reverse?: boole
 }
 
 export function Pv2Benefits() {
-  const firstRow = gallery.slice(0, 4)
-  const secondRow = gallery.slice(4, 8)
+  const firstRow = gallery.slice(0, 5)
+  const secondRow = gallery.slice(4, 9)
 
   return (
     <section className="py-12">
@@ -138,7 +165,7 @@ export function Pv2Benefits() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <GalleryRow items={firstRow} />
         <GalleryRow items={secondRow} reverse />
       </div>
