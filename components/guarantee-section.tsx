@@ -2,8 +2,8 @@ import Image from "next/image"
 
 export function GuaranteeSection() {
   return (
-    <section className="px-5 py-12">
-      <div className="mx-auto flex max-w-md flex-col items-center gap-5 rounded-3xl bg-secondary p-7 text-center">
+    <section className="px-5 py-8">
+      <div className="mx-auto flex max-w-md flex-col items-center gap-4 rounded-3xl bg-secondary p-7 text-center">
         <Image
           src="/images/guarantee.png"
           alt="Sello de garantía de 7 días"

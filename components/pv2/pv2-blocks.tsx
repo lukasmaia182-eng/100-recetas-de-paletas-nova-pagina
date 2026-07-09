@@ -38,23 +38,23 @@ export function UrgencyBar() {
 /* ---------------------------------------------------------------- */
 export function Pv2Hero() {
   return (
-    <section className="px-5 pt-6 pb-10">
+    <section className="px-5 pt-5 pb-8">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <p className="font-display text-sm font-bold uppercase tracking-wide text-primary">¡Últimas oportunidades!</p>
 
-        <h1 className="mt-3 font-display text-3xl font-extrabold uppercase leading-tight text-verde-cta text-balance sm:text-4xl">
+        <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-tight text-verde-cta text-balance sm:text-4xl">
           Ahora puedes preparar paletas cremosas para vender todos los días
         </h1>
 
-        <p className="mt-3 font-display text-xl font-extrabold text-chocolate text-balance sm:text-2xl">
+        <p className="mt-1.5 font-display text-xl font-extrabold text-chocolate text-balance sm:text-2xl">
           + de 100 Recetas de Paletas Rellenas, Cremosas y Fáciles de Vender.
         </p>
 
-        <p className="mt-4 text-base leading-relaxed text-muted-foreground text-pretty">
+        <p className="mt-2 text-base leading-relaxed text-muted-foreground text-pretty">
           Para quien quiere ganar dinero desde casa sin necesitar ingredientes caros ni pasar horas inventando recetas.
         </p>
 
-        <div className="mx-auto mt-6 w-full overflow-hidden rounded-2xl shadow-md">
+        <div className="mx-auto mt-5 w-full overflow-hidden rounded-2xl shadow-md">
           <Image
             src="/images/pv1-antes-despues.png"
             alt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
@@ -78,12 +78,12 @@ export function Pv2Hero() {
 /* ---------------------------------------------------------------- */
 export function Pv2Reinforcement() {
   return (
-    <section className="bg-verde-cta px-5 py-10 text-center">
+    <section className="bg-verde-cta px-5 py-8 text-center">
       <div className="mx-auto max-w-md">
         <h2 className="font-display text-2xl font-extrabold uppercase text-white text-balance sm:text-3xl">
           ¡Sí! Son más de 100 recetas…
         </h2>
-        <p className="mt-3 text-base font-semibold leading-relaxed text-white/90 text-pretty">
+        <p className="mt-2 text-base font-semibold leading-relaxed text-white/90 text-pretty">
           Rellenas, cremosas y con el sabor que a todos les encanta, listas para preparar y vender desde el primer día.
         </p>
       </div>
@@ -129,7 +129,7 @@ function RecipeCard({ recipe }: { recipe: Recipe }) {
       <div className="p-4 text-left">
         <h3 className="font-display text-base font-extrabold text-chocolate">{recipe.nombre}</h3>
         <p className="mt-0.5 text-sm italic text-primary">{recipe.descripcion}</p>
-        <p className="mt-3 flex items-center gap-1 text-xs font-semibold text-muted-foreground">
+        <p className="mt-2 flex items-center gap-1 text-xs font-semibold text-muted-foreground">
           Ver receta <span aria-hidden="true">&rsaquo;</span>
         </p>
       </div>
@@ -155,12 +155,12 @@ export function Pv2Benefits() {
   const secondRow = gallery.slice(4, 9)
 
   return (
-    <section className="py-12">
-      <div className="mx-auto mb-6 max-w-md px-5 text-center">
+    <section className="py-8">
+      <div className="mx-auto mb-4 max-w-md px-5 text-center">
         <h2 className="font-display text-2xl font-extrabold uppercase text-chocolate text-balance sm:text-3xl">
           ¡Sí! Son más de <span className="text-verde-cta">100 recetas…</span>
         </h2>
-        <p className="mt-2 text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
+        <p className="mt-1.5 text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
           Cremosas, rellenas y con el sabor que a todos les encanta, listas para preparar y vender.
         </p>
       </div>
@@ -189,20 +189,20 @@ const gains = [
 
 export function Pv2Pain() {
   return (
-    <section className="px-5 py-12">
-      <div className="mx-auto mb-8 max-w-3xl text-center">
+    <section className="px-5 py-8">
+      <div className="mx-auto mb-6 max-w-3xl text-center">
         <h2 className="font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Al descargar ahora las 100 recetas, <span className="text-verde-cta">vas a poder:</span>
         </h2>
-        <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-verde-cta" />
+        <div className="mx-auto mt-2 h-1 w-16 rounded-full bg-verde-cta" />
       </div>
 
-      <div className="mx-auto grid max-w-3xl items-center gap-8 md:grid-cols-2">
+      <div className="mx-auto grid max-w-3xl items-center gap-6 md:grid-cols-2">
         <div>
           <h3 className="font-display text-xl font-extrabold uppercase text-verde-cta text-balance">
             ¡Deja de inventar recetas desde cero!
           </h3>
-          <ul className="mt-5 flex flex-col gap-3.5">
+          <ul className="mt-4 flex flex-col gap-2.5">
             {gains.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <CircleCheckIcon />
@@ -210,7 +210,7 @@ export function Pv2Pain() {
               </li>
             ))}
           </ul>
-          <blockquote className="mt-6 border-l-4 border-verde-cta pl-4 text-sm italic leading-relaxed text-muted-foreground text-pretty">
+          <blockquote className="mt-4 border-l-4 border-verde-cta pl-4 text-sm italic leading-relaxed text-muted-foreground text-pretty">
             {'"'}Organicé este recetario para resolver un problema real: preparar paletas ricas y venderlas sin
             complicación, incluso empezando de cero.{'"'}
           </blockquote>
@@ -278,21 +278,21 @@ const pv2Bonuses = [
 
 export function Pv2Bonuses() {
   return (
-    <section className="bg-secondary px-5 py-12">
+    <section className="bg-secondary px-5 py-8">
       <div className="mx-auto max-w-4xl">
         <div className="text-center">
           <span className="inline-flex items-center rounded-full bg-verde-cta/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-verde-cta">
             Bonos exclusivos para ti
           </span>
-          <h2 className="mt-4 font-display text-2xl font-extrabold uppercase text-chocolate text-balance sm:text-3xl">
+          <h2 className="mt-3 font-display text-2xl font-extrabold uppercase text-chocolate text-balance sm:text-3xl">
             Bonos gratis en el plan completo
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
+          <p className="mx-auto mt-1.5 max-w-xl text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
             Comprando ahora, aseguras acceso inmediato a estos materiales que van a acelerar tus resultados.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pv2Bonuses.map((bono) => (
             <div key={bono.numero} className="flex flex-col overflow-hidden rounded-2xl bg-card shadow-md">
               <div className="relative aspect-[4/3]">
@@ -301,8 +301,8 @@ export function Pv2Bonuses() {
               <div className="flex flex-1 flex-col p-5 text-center">
                 <h3 className="font-display text-lg font-extrabold text-chocolate">{bono.numero}</h3>
                 <p className="mt-1 text-sm font-bold uppercase tracking-wide text-verde-cta">{bono.categoria}</p>
-                <p className="mt-2 text-sm leading-snug text-muted-foreground text-pretty">{bono.descripcion}</p>
-                <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                <p className="mt-1.5 text-sm leading-snug text-muted-foreground text-pretty">{bono.descripcion}</p>
+                <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
                   <span className="font-display text-lg font-bold text-primary line-through">{bono.precio}</span>
                   <span className="font-display text-lg font-extrabold uppercase text-verde-cta">Gratis</span>
                 </div>

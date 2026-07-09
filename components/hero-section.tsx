@@ -25,7 +25,7 @@ export function HeroSection({
   afterCta?: React.ReactNode
 }) {
   return (
-    <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
+    <section className="relative overflow-hidden px-5 pt-3 pb-8 sm:pt-5">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
           {headline ?? (
@@ -56,16 +56,16 @@ export function HeroSection({
           </div>
         </div>
 
-        <div className="mt-4 w-full text-center">
+        <div className="mt-3 w-full text-center">
           <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
             {belowImageText ?? "Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando."}
           </p>
-          <p className="mt-2 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
+          <p className="mt-1.5 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
             Y el dinero empieza a entrar cada semana.
           </p>
         </div>
 
-        <div className="mt-4 flex w-full flex-col items-center gap-1">
+        <div className="mt-3 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
             De <span className="line-through">$19,90</span> por solo hoy
           </p>
@@ -76,19 +76,19 @@ export function HeroSection({
           <BuyButton subLabel="Pago único · Sin mensualidades · Acceso inmediato">QUIERO LAS 100 RECETAS</BuyButton>
         </div>
 
-        <p className="mt-3 text-sm font-medium text-muted-foreground">
+        <p className="mt-2 text-sm font-medium text-muted-foreground">
           Compra 100% segura · 7 días de garantía · Descarga al instante
         </p>
 
-        {afterCta ? <div className="mt-8 w-full">{afterCta}</div> : null}
+        {afterCta ? <div className="mt-6 w-full">{afterCta}</div> : null}
 
-        <p className="mt-6 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+        <p className="mt-5 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
           Deja de desperdiciar ingredientes inventando recetas desde cero. Con el paso a paso ya listo preparas sabores
           de chocolate, frutas, cajeta, leche condensada y postres famosos, y armas un menú que puedes vender desde el
           primer día.
         </p>
 
-        <ul className="mt-6 grid w-full grid-cols-2 gap-3 text-left">
+        <ul className="mt-5 grid w-full grid-cols-2 gap-3 text-left">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-2 rounded-2xl bg-card p-3 shadow-sm">
               <CheckIcon />

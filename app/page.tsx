@@ -10,7 +10,10 @@ import { FaqSection } from "@/components/faq-section"
 export default function Page() {
   return (
     <main className="min-h-screen bg-background">
-      <HeroSection />
+      <HeroSection
+        imageSrc="/images/pv1-antes-despues.png"
+        imageAlt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
+      />
       <PracticeSection />
       <IdealSection />
       <ScarcitySection />
