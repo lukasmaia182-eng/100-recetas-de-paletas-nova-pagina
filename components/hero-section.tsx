@@ -40,6 +40,18 @@ export function HeroSection() {
           </div>
         </div>
 
+        <div className="mt-6 w-full rounded-2xl bg-secondary px-5 py-4 text-center">
+          <p className="font-display text-lg font-extrabold leading-snug text-chocolate text-balance">
+            Sin anunciar. Sin hacer promoción.
+          </p>
+          <p className="mt-1 text-base leading-relaxed text-foreground text-pretty">
+            Empiezas… y de repente… hay gente esperando.
+          </p>
+          <p className="mt-1 text-base font-bold leading-relaxed text-primary text-pretty">
+            Y el dinero empieza a entrar cada semana.
+          </p>
+        </div>
+
         <div className="mt-6 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
             De <span className="line-through">$19,90</span> por solo hoy
