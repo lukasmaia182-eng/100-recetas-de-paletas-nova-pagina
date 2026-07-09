@@ -18,6 +18,7 @@ export default function Pv1Page() {
           </>
         }
         subheadline="Creas tus primeras recetas… y de repente… tendrás filas de clientes que querrán comprar más todos los días."
+        belowImageText="100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una."
       />
       <PracticeSection />
       <IdealSection />

@@ -9,7 +9,15 @@ const bullets = [
   "Acceso digital inmediato",
 ]
 
-export function HeroSection({ headline, subheadline }: { headline?: React.ReactNode; subheadline?: React.ReactNode }) {
+export function HeroSection({
+  headline,
+  subheadline,
+  belowImageText,
+}: {
+  headline?: React.ReactNode
+  subheadline?: React.ReactNode
+  belowImageText?: React.ReactNode
+}) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
@@ -41,7 +49,7 @@ export function HeroSection({ headline, subheadline }: { headline?: React.ReactN
 
         <div className="mt-4 w-full text-center">
           <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-            Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando.
+            {belowImageText ?? "Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando."}
           </p>
           <p className="mt-2 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
             Y el dinero empieza a entrar cada semana.
