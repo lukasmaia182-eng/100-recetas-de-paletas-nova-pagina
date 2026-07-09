@@ -18,11 +18,11 @@ export function HeroSection() {
           tu cocina
         </h1>
 
-        <p className="mt-3 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+        <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
           100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una.
         </p>
 
-        <div className="relative mt-6 w-full">
+        <div className="relative mt-4 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
             <Image
               src="/images/hero-mujer-app.png"
@@ -35,7 +35,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-6 w-full text-center">
+        <div className="mt-4 w-full text-center">
           <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
             Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando.
           </p>
@@ -44,7 +44,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        <div className="mt-6 flex w-full flex-col items-center gap-1">
+        <div className="mt-4 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
             De <span className="line-through">$19,90</span> por solo hoy
           </p>
