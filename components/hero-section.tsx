@@ -13,10 +13,14 @@ export function HeroSection({
   headline,
   subheadline,
   belowImageText,
+  imageSrc,
+  imageAlt,
 }: {
   headline?: React.ReactNode
   subheadline?: React.ReactNode
   belowImageText?: React.ReactNode
+  imageSrc?: string
+  imageAlt?: string
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
@@ -37,8 +41,11 @@ export function HeroSection({
         <div className="relative mt-4 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
             <Image
-              src="/images/hero-mujer-app.png"
-              alt="Mujer sonriente sosteniendo una paleta de chocolate y su celular con el recetario digital, junto a una bandeja de paletas de varios sabores"
+              src={imageSrc ?? "/images/hero-mujer-app.png"}
+              alt={
+                imageAlt ??
+                "Mujer sonriente sosteniendo una paleta de chocolate y su celular con el recetario digital, junto a una bandeja de paletas de varios sabores"
+              }
               width={800}
               height={800}
               className="h-auto w-full object-cover"
