@@ -9,32 +9,10 @@ const bullets = [
   "Acceso digital inmediato",
 ]
 
-const marqueeItems = [
-  "Acceso inmediato",
-  "100 recetas paso a paso",
-  "Gana desde tu cocina",
-  "Pago único",
-  "7 días de garantía",
-  "Ideal para principiantes",
-]
-
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-6 pb-12">
-      <div className="relative mb-8 flex w-full overflow-hidden bg-primary py-2.5 text-primary-foreground">
-        <div className="flex shrink-0 animate-marquee items-center gap-3 pr-3">
-          {[...marqueeItems, ...marqueeItems].map((item, index) => (
-            <span key={index} className="flex shrink-0 items-center gap-3 text-sm font-extrabold uppercase tracking-wide">
-              {item}
-              <span className="text-base leading-none" aria-hidden="true">
-                ✦
-              </span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="mx-auto flex max-w-md flex-col items-center px-5 text-center">
+    <section className="relative overflow-hidden px-5 pt-10 pb-12">
+      <div className="mx-auto flex max-w-md flex-col items-center text-center">
         <h1 className="font-display text-3xl font-extrabold leading-tight text-chocolate text-balance sm:text-4xl">
           Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero desde
           tu cocina
