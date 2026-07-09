@@ -105,7 +105,28 @@ const gallery = [
   { src: "/images/pv2/paleta-8.png", alt: "Paleta estilo cheesecake con frutos rojos" },
 ]
 
+function GalleryRow({ items, reverse }: { items: typeof gallery; reverse?: boolean }) {
+  const loop = [...items, ...items]
+  return (
+    <div className="relative w-full overflow-hidden">
+      <div className={`flex w-max gap-2 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
+        {loop.map((item, index) => (
+          <div
+            key={`${item.src}-${index}`}
+            className="relative h-36 w-36 shrink-0 overflow-hidden rounded-xl sm:h-44 sm:w-44"
+          >
+            <Image src={item.src || "/placeholder.svg"} alt={item.alt} fill className="object-cover" sizes="176px" />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export function Pv2Benefits() {
+  const firstRow = gallery.slice(0, 4)
+  const secondRow = gallery.slice(4, 8)
+
   return (
     <section className="py-12">
       <div className="mx-auto mb-6 max-w-md px-5 text-center">
@@ -117,18 +138,9 @@ export function Pv2Benefits() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
-        {gallery.map((item) => (
-          <div key={item.src} className="relative aspect-square overflow-hidden">
-            <Image
-              src={item.src || "/placeholder.svg"}
-              alt={item.alt}
-              width={400}
-              height={400}
-              className="h-full w-full object-cover"
-            />
-          </div>
-        ))}
+      <div className="flex flex-col gap-2">
+        <GalleryRow items={firstRow} />
+        <GalleryRow items={secondRow} reverse />
       </div>
     </section>
   )
