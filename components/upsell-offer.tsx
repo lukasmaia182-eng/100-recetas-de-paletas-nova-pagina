@@ -1,7 +1,7 @@
 import Image from "next/image"
 
-// Sustituye por el link real del checkout de Hotmart de este producto
-const UPSELL_CHECKOUT_URL = "https://pay.hotmart.com/XXXXXXXXX?checkoutMode=10"
+// Link real del checkout de Hotmart de este producto (upsell)
+const UPSELL_CHECKOUT_URL = "https://pay.hotmart.com/A102621817B"
 // Página de acceso a la que va el cliente si rechaza la oferta
 const DECLINE_URL = "/seuacesso"
 
@@ -66,7 +66,7 @@ export function UpsellOffer() {
               <p className="text-base text-muted-foreground">
                 Valor normal: <span className="font-semibold text-muted-foreground line-through">$17,90</span>
               </p>
-              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$7,90</p>
+              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$4,90</p>
               <p className="mt-1 text-sm font-semibold text-pistache">
                 Pago único · Solo en esta página · Producto digital
               </p>
