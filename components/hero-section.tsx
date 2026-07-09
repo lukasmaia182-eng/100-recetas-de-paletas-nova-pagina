@@ -15,12 +15,14 @@ export function HeroSection({
   belowImageText,
   imageSrc,
   imageAlt,
+  afterCta,
 }: {
   headline?: React.ReactNode
   subheadline?: React.ReactNode
   belowImageText?: React.ReactNode
   imageSrc?: string
   imageAlt?: string
+  afterCta?: React.ReactNode
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-12 sm:pt-6">
@@ -77,6 +79,8 @@ export function HeroSection({
         <p className="mt-3 text-sm font-medium text-muted-foreground">
           Compra 100% segura · 7 días de garantía · Descarga al instante
         </p>
+
+        {afterCta ? <div className="mt-8 w-full">{afterCta}</div> : null}
 
         <p className="mt-6 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
           Deja de desperdiciar ingredientes inventando recetas desde cero. Con el paso a paso ya listo preparas sabores
