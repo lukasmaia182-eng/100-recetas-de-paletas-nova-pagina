@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/hero-section"
-import { StoryHookSection } from "@/components/story-hook-section"
 import { PracticeSection } from "@/components/practice-section"
 import { IdealSection } from "@/components/ideal-section"
 import { ScarcitySection } from "@/components/scarcity-section"
@@ -12,7 +11,6 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-background">
       <HeroSection />
-      <StoryHookSection />
       <PracticeSection />
       <IdealSection />
       <ScarcitySection />
