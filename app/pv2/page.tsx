@@ -4,7 +4,7 @@ import {
   Pv2Benefits,
   Pv2Pain,
 } from "@/components/pv2/pv2-blocks"
-import { SocialProof } from "@/components/social-proof"
+import { Pv2Chats } from "@/components/pv2/pv2-chats"
 import { OfferCard } from "@/components/offer-card"
 import { GuaranteeSection } from "@/components/guarantee-section"
 import { FaqSection } from "@/components/faq-section"
@@ -18,7 +18,7 @@ export default function Pv2Page() {
         <Pv2Hero />
         <Pv2Benefits />
         <Pv2Pain />
-        <SocialProof />
+        <Pv2Chats />
         <OfferCard />
         <GuaranteeSection />
         <FaqSection />
