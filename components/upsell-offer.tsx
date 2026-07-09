@@ -43,12 +43,12 @@ export function UpsellOffer() {
               todavía más desde tu cocina.
             </p>
 
-            <div className="mx-auto mt-5 max-w-xs overflow-hidden rounded-2xl">
+            <div className="mx-auto mt-5 overflow-hidden rounded-2xl">
               <Image
-                src="/images/dulces-brasilenos-mockup.png"
-                alt="Recetario digital de 150 dulces brasileños mostrado en celular y tablet"
-                width={600}
-                height={600}
+                src="/images/dulces-brasilenos-arte.png"
+                alt="Recetario digital de 150 recetas de dulces brasileños virales, con brigadeiros, trufas y postres para vender"
+                width={1024}
+                height={1024}
                 className="h-auto w-full object-contain"
               />
             </div>
