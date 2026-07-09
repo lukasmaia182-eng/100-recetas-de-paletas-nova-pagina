@@ -7,6 +7,7 @@ import { OfferCard } from "@/components/offer-card"
 import { GuaranteeSection } from "@/components/guarantee-section"
 import { FaqSection } from "@/components/faq-section"
 import { TrackCheckoutProvider } from "@/components/checkout-tracking"
+import { Pv2Benefits } from "@/components/pv2/pv2-blocks"
 
 export default function Pv1Page() {
   return (
@@ -23,6 +24,7 @@ export default function Pv1Page() {
         belowImageText="Con 100 recetas listas para vender, empiezas hoy mismo a recibir pedidos y a generar ingresos desde tu cocina, aunque nunca antes hayas hecho una paleta."
         imageSrc="/images/pv1-antes-despues.png"
         imageAlt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
+        afterCta={<Pv2Benefits />}
       />
       <PracticeSection />
       <IdealSection />
