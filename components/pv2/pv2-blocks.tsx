@@ -174,49 +174,69 @@ export function Pv2Benefits() {
 }
 
 /* ---------------------------------------------------------------- */
-/* Bloque emocional (dolor)                                          */
+/* Bloque de beneficios (dos columnas)                               */
 /* ---------------------------------------------------------------- */
-const pains = [
-  "Comprar ingredientes y ver la paleta salir dura o sin sabor.",
-  "Perder tardes enteras probando recetas que no funcionan.",
-  "Vender mucho y, al final del mes, casi no ver ganancia.",
-  "Tener siempre los mismos sabores y que el cliente no vuelva.",
+const gains = [
+  "Lograr una textura cremosa y acertar desde la primera vez.",
+  "Crear un menú variado con sabores económicos y premium.",
+  "Empezar a vender desde casa aunque nunca hayas hecho una paleta.",
+  "Dejar de desperdiciar ingredientes inventando recetas desde cero.",
+  "Cobrar el precio justo por cada paleta con los bonos incluidos.",
+  "Consultar las recetas desde tu celular, tablet o computadora.",
+  "Tener sabores nuevos para ofrecer durante todo el año.",
+  "Preparar recetas fáciles con ingredientes que todos tienen en casa.",
 ]
 
 export function Pv2Pain() {
   return (
-    <section className="bg-secondary px-5 py-12">
-      <div className="mx-auto max-w-md text-center">
-        <h2 className="font-display text-2xl font-extrabold uppercase text-primary text-balance sm:text-3xl">
-          ¡Deja de inventar recetas desde cero!
-        </h2>
-        <ul className="mt-6 flex flex-col gap-3 text-left">
-          {pains.map((item) => (
-            <li key={item} className="flex items-start gap-3 rounded-2xl bg-card p-4 shadow-sm">
-              <XIcon />
-              <span className="text-sm font-medium leading-snug text-foreground">{item}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-6 text-base font-semibold leading-relaxed text-chocolate text-pretty">
-          Con el paso a paso ya listo, sigues las cantidades exactas y aciertas la textura desde la primera vez.
-        </p>
-      </div>
-    </section>
-  )
-}
-
-/* ---------------------------------------------------------------- */
-/* Cita del autor                                                    */
-/* ---------------------------------------------------------------- */
-export function Pv2Quote() {
-  return (
     <section className="px-5 py-12">
-      <div className="mx-auto max-w-md rounded-3xl bg-chocolate p-7 text-center">
-        <p className="font-display text-lg font-bold leading-relaxed text-creme text-pretty">
-          {'"'}Organicé este recetario para resolver un problema real: preparar paletas ricas y venderlas sin complicación,
-          incluso empezando de cero.{'"'}
-        </p>
+      <div className="mx-auto mb-8 max-w-3xl text-center">
+        <h2 className="font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
+          Al descargar ahora las 100 recetas, <span className="text-verde-cta">vas a poder:</span>
+        </h2>
+        <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-verde-cta" />
+      </div>
+
+      <div className="mx-auto grid max-w-3xl items-center gap-8 md:grid-cols-2">
+        <div>
+          <h3 className="font-display text-xl font-extrabold uppercase text-verde-cta text-balance">
+            ¡Deja de inventar recetas desde cero!
+          </h3>
+          <ul className="mt-5 flex flex-col gap-3.5">
+            {gains.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <CircleCheckIcon />
+                <span className="text-sm font-medium leading-snug text-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <blockquote className="mt-6 border-l-4 border-verde-cta pl-4 text-sm italic leading-relaxed text-muted-foreground text-pretty">
+            {'"'}Organicé este recetario para resolver un problema real: preparar paletas ricas y venderlas sin
+            complicación, incluso empezando de cero.{'"'}
+          </blockquote>
+        </div>
+
+        <div className="overflow-hidden rounded-3xl shadow-lg">
+          <div className="relative aspect-[3/4] w-full">
+            <Image
+              src="/images/pv2/resultados-card.png"
+              alt="Variedad de paletas cremosas y rellenas listas para vender"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 400px, 90vw"
+            />
+            <div className="absolute inset-x-0 top-0 p-5">
+              <p className="font-display text-3xl font-extrabold uppercase leading-none text-white drop-shadow-md">
+                Resultados
+                <br />
+                rápidos
+              </p>
+              <p className="mt-2 max-w-[70%] text-xs font-semibold text-white drop-shadow-md">
+                Prepara, sirve y empieza a vender sin complicarte.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -234,11 +254,11 @@ function ClockIcon() {
   )
 }
 
-function XIcon() {
+function CircleCheckIcon() {
   return (
-    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-verde-cta text-verde-cta">
       <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3" aria-hidden="true">
-        <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+        <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     </span>
   )

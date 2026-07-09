@@ -3,7 +3,6 @@ import {
   Pv2Hero,
   Pv2Benefits,
   Pv2Pain,
-  Pv2Quote,
 } from "@/components/pv2/pv2-blocks"
 import { SocialProof } from "@/components/social-proof"
 import { OfferCard } from "@/components/offer-card"
@@ -19,7 +18,6 @@ export default function Pv2Page() {
         <Pv2Hero />
         <Pv2Benefits />
         <Pv2Pain />
-        <Pv2Quote />
         <SocialProof />
         <OfferCard />
         <GuaranteeSection />
