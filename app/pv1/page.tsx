@@ -6,9 +6,11 @@ import { SocialProof } from "@/components/social-proof"
 import { OfferCard } from "@/components/offer-card"
 import { GuaranteeSection } from "@/components/guarantee-section"
 import { FaqSection } from "@/components/faq-section"
+import { TrackCheckoutProvider } from "@/components/checkout-tracking"
 
 export default function Pv1Page() {
   return (
+    <TrackCheckoutProvider>
     <main className="min-h-screen bg-background">
       <HeroSection
         headline={
@@ -37,5 +39,6 @@ export default function Pv1Page() {
         </p>
       </footer>
     </main>
+    </TrackCheckoutProvider>
   )
 }
