@@ -10,7 +10,14 @@ import { FaqSection } from "@/components/faq-section"
 export default function Pv1Page() {
   return (
     <main className="min-h-screen bg-background">
-      <HeroSection />
+      <HeroSection
+        headline={
+          <>
+            Alguien en tu vecindario… va a empezar a vender paletas heladas.{" "}
+            <span className="text-primary">¿Serás el primero… o solo mirarás?</span>
+          </>
+        }
+      />
       <PracticeSection />
       <IdealSection />
       <ScarcitySection />
