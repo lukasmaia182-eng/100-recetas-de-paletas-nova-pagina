@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 
 type Bubble =
   | { from: "in" | "out"; type: "text"; text: string; time: string }
@@ -68,6 +68,75 @@ const chats: Chat[] = [
       },
       { from: "out", type: "text", text: "¡Qué emoción leer esto! Felicidades 💚", time: "18:10" },
       { from: "in", type: "text", text: "De verdad, gracias. Esto significa mucho para mí.", time: "18:11" },
+    ],
+  },
+  {
+    name: "Lucía R.",
+    initials: "LR",
+    color: "bg-purple-400",
+    bubbles: [
+      { from: "in", type: "text", text: "¡Hola! Ayer hice las de fresa con crema 🍓", time: "14:20" },
+      {
+        from: "in",
+        type: "image",
+        src: "/images/pv2/chat-4.png",
+        alt: "Paletas de fresa con crema en un plato",
+        time: "14:20",
+      },
+      { from: "out", type: "text", text: "¡Se ven espectaculares! ¿Qué tal el sabor?", time: "14:22" },
+      { from: "in", type: "text", text: "Mis hijos dijeron que son mejores que las de la tienda 😍", time: "14:23" },
+    ],
+  },
+  {
+    name: "Marisol",
+    initials: "M",
+    color: "bg-sky-400",
+    bubbles: [
+      { from: "in", type: "text", text: "Ya monté mi carrito de paletas 🙌", time: "11:05" },
+      {
+        from: "in",
+        type: "image",
+        src: "/images/pv2/chat-5.png",
+        alt: "Caja llena de paletas listas para vender",
+        duration: "0:41",
+        time: "11:05",
+      },
+      { from: "in", type: "text", text: "Vendí todo el primer día, no lo podía creer.", time: "11:06" },
+      { from: "out", type: "text", text: "¡Increíble Marisol! Me encanta ver eso 💚", time: "11:08" },
+    ],
+  },
+  {
+    name: "Diana P.",
+    initials: "DP",
+    color: "bg-orange-400",
+    bubbles: [
+      { from: "in", type: "text", text: "La receta de coco quedó perfecta 🥥", time: "17:32" },
+      {
+        from: "in",
+        type: "image",
+        src: "/images/pv2/chat-6.png",
+        alt: "Paleta de coco cremosa en la mano",
+        time: "17:32",
+      },
+      { from: "out", type: "text", text: "¡Qué rico! ¿Ya la pusiste a la venta?", time: "17:34" },
+      { from: "in", type: "text", text: "Sí, y me piden más todos los días 😂", time: "17:35" },
+    ],
+  },
+  {
+    name: "Carmen",
+    initials: "C",
+    color: "bg-emerald-400",
+    bubbles: [
+      { from: "in", type: "text", text: "Junté para el súper solo vendiendo paletas 🥹", time: "20:10" },
+      {
+        from: "in",
+        type: "image",
+        src: "/images/pv2/chat-7.png",
+        alt: "Ganancias de la venta de paletas sobre la mesa",
+        time: "20:10",
+      },
+      { from: "out", type: "text", text: "¡Eso es lo que más me gusta escuchar! 👏", time: "20:12" },
+      { from: "in", type: "text", text: "Gracias de corazón, cambió mi rutina por completo.", time: "20:13" },
     ],
   },
 ]
@@ -139,10 +208,47 @@ function ChatCard({ chat }: { chat: Chat }) {
 
 export function Pv2Chats() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const pausedRef = useRef(false)
 
   const scrollBy = (dir: 1 | -1) => {
     scrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" })
   }
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+
+    const interval = setInterval(() => {
+      if (pausedRef.current) return
+      const maxScroll = el.scrollWidth - el.clientWidth
+      // Si ya está cerca del final, vuelve al inicio; si no, avanza una tarjeta.
+      if (el.scrollLeft >= maxScroll - 8) {
+        el.scrollTo({ left: 0, behavior: "smooth" })
+      } else {
+        el.scrollBy({ left: 320, behavior: "smooth" })
+      }
+    }, 3000)
+
+    const pause = () => {
+      pausedRef.current = true
+    }
+    const resume = () => {
+      pausedRef.current = false
+    }
+
+    el.addEventListener("pointerdown", pause)
+    el.addEventListener("pointerup", resume)
+    el.addEventListener("mouseenter", pause)
+    el.addEventListener("mouseleave", resume)
+
+    return () => {
+      clearInterval(interval)
+      el.removeEventListener("pointerdown", pause)
+      el.removeEventListener("pointerup", resume)
+      el.removeEventListener("mouseenter", pause)
+      el.removeEventListener("mouseleave", resume)
+    }
+  }, [])
 
   return (
     <section className="overflow-hidden py-12">
