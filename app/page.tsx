@@ -13,10 +13,10 @@ export default function Page() {
       <HeroSection
         headline={
           <>
-            Alguien de tu barrio va a empezar a vender paletas gourmet y a ganar mucho dinero.{" "}
-            <span className="text-primary">
-              ¿Serás tú el primero en empezar?... ¿o simplemente te quedarás mirando cómo se forra?
-            </span>
+            Alguien de tu barrio va a empezar a{" "}
+            <span className="text-amarillo">vender paletas gourmet y a ganar mucho dinero.</span>{" "}
+            <span className="text-verde-cta">¿Serás tú el primero en empezar?...</span>{" "}
+            <span className="text-primary">¿o simplemente te quedarás mirando cómo se forra?</span>
           </>
         }
         subheadline=""
