@@ -56,8 +56,8 @@ export function Pv2Hero() {
 
         <div className="mx-auto mt-5 w-full overflow-hidden rounded-2xl shadow-md">
           <Image
-            src="/images/pv1-antes-despues.png"
-            alt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
+            src="/images/pv2/hero-mujer.png"
+            alt="Mujer sonriente con camisa de mezclilla organizando una bandeja de paletas rellenas y cremosas junto a una ventana luminosa"
             width={800}
             height={800}
             className="h-auto w-full object-cover"

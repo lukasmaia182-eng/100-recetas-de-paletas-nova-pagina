@@ -36,9 +36,13 @@ export function HeroSection({
           )}
         </h1>
 
-        <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-          {subheadline ?? "100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una."}
-        </p>
+        {subheadline === undefined ? (
+          <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+            100 recetas rellenas con medidas exactas y paso a paso, aunque nunca hayas hecho una.
+          </p>
+        ) : subheadline ? (
+          <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">{subheadline}</p>
+        ) : null}
 
         <div className="relative mt-4 w-full">
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
