@@ -67,6 +67,14 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '${META_PIXEL_ID}');
 fbq('track', 'PageView');`}
         </Script>
+        <Script id="lowtrack-pixel" strategy="afterInteractive">
+          {`window.pixelId = "lt_px_e4d1c6519ccf";
+var a = document.createElement("script");
+a.setAttribute("async", "");
+a.setAttribute("defer", "");
+a.setAttribute("src", "https://lowtrack.com.br/pixel.js");
+document.head.appendChild(a);`}
+        </Script>
       </head>
       <body className="font-sans antialiased">
         <noscript>
