@@ -56,16 +56,7 @@ export function HeroSection({
           </div>
         </div>
 
-        <div className="mt-3 w-full text-center">
-          <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-            {belowImageText ?? "Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando."}
-          </p>
-          <p className="mt-1.5 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
-            Y el dinero empieza a entrar cada semana.
-          </p>
-        </div>
-
-        <div className="mt-3 flex w-full flex-col items-center gap-1">
+        <div className="mt-4 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
             De <span className="line-through">$19,90</span> por solo hoy
           </p>
@@ -79,6 +70,15 @@ export function HeroSection({
         <p className="mt-2 text-sm font-medium text-muted-foreground">
           Compra 100% segura · 7 días de garantía · Descarga al instante
         </p>
+
+        <div className="mt-4 w-full text-center">
+          <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
+            {belowImageText ?? "Sin anunciar y sin hacer promoción, empiezas… y de repente hay gente esperando."}
+          </p>
+          <p className="mt-1.5 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
+            Y el dinero empieza a entrar cada semana.
+          </p>
+        </div>
 
         {afterCta ? <div className="mt-6 w-full">{afterCta}</div> : null}
 
