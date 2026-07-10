@@ -12,13 +12,14 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-background">
       <HeroSection
+        flushHeadline
         headline={
           <Image
             src="/images/home-headline-banner.png"
             alt="Alguien de tu barrio va a empezar a vender paletas gourmet y a ganar mucho dinero. ¿Serás tú el primero en empezar?... ¿o simplemente te quedarás mirando cómo se forra?"
             width={1536}
             height={1024}
-            className="h-auto w-full rounded-2xl"
+            className="block h-auto w-full rounded-t-3xl"
             priority
           />
         }
