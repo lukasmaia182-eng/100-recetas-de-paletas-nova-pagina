@@ -19,7 +19,7 @@ export default function Page() {
             </span>
           </>
         }
-        subheadline="Creas tus primeras recetas... y de repente... tendrás filas de clientes que querrán comprar más cada día."
+        subheadline=""
         imageSrc="/images/pv1-antes-despues.png"
         imageAlt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
       />
