@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { HeroSection } from "@/components/hero-section"
 import { PracticeSection } from "@/components/practice-section"
 import { IdealSection } from "@/components/ideal-section"
@@ -12,12 +13,14 @@ export default function Page() {
     <main className="min-h-screen bg-background">
       <HeroSection
         headline={
-          <>
-            Alguien de tu barrio va a empezar a{" "}
-            <span className="text-amarillo">vender paletas gourmet y a ganar mucho dinero.</span>{" "}
-            <span className="text-verde-cta">¿Serás tú el primero en empezar?...</span>{" "}
-            <span className="text-primary">¿o simplemente te quedarás mirando cómo se forra?</span>
-          </>
+          <Image
+            src="/images/home-headline-banner.png"
+            alt="Alguien de tu barrio va a empezar a vender paletas gourmet y a ganar mucho dinero. ¿Serás tú el primero en empezar?... ¿o simplemente te quedarás mirando cómo se forra?"
+            width={1536}
+            height={1024}
+            className="h-auto w-full rounded-2xl"
+            priority
+          />
         }
         subheadline=""
         imageSrc="/images/pv1-antes-despues.png"
