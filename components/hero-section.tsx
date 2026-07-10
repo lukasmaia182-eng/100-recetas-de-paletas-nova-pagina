@@ -16,6 +16,7 @@ export function HeroSection({
   imageSrc,
   imageAlt,
   afterCta,
+  flushHeadline = false,
 }: {
   headline?: React.ReactNode
   subheadline?: React.ReactNode
@@ -23,11 +24,12 @@ export function HeroSection({
   imageSrc?: string
   imageAlt?: string
   afterCta?: React.ReactNode
+  flushHeadline?: boolean
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-8 sm:pt-5">
       <div className="mx-auto flex max-w-md flex-col items-center text-center">
-        <h1 className="font-display text-2xl font-extrabold leading-tight text-chocolate text-balance sm:text-3xl">
+        <h1 className="w-full font-display text-2xl font-extrabold leading-tight text-chocolate text-balance sm:text-3xl">
           {headline ?? (
             <>
               Prepara paletas cremosas que <span className="text-primary">todos quieren comprar</span> y gana dinero
@@ -44,8 +46,10 @@ export function HeroSection({
           <p className="mt-2 text-base leading-relaxed text-foreground text-pretty sm:text-lg">{subheadline}</p>
         ) : null}
 
-        <div className="relative mt-4 w-full">
-          <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
+        <div className={`relative w-full ${flushHeadline ? "mt-0" : "mt-4"}`}>
+          <div
+            className={`overflow-hidden shadow-xl shadow-primary/10 ${flushHeadline ? "rounded-b-3xl" : "rounded-3xl"}`}
+          >
             <Image
               src={imageSrc ?? "/images/hero-mujer-app.png"}
               alt={
