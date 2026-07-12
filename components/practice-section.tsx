@@ -3,7 +3,7 @@ import Image from "next/image"
 const products = [
   {
     src: "/images/practice-1.png",
-    alt: "Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas' y paletas ya preparadas",
+    alt: "Recetario '100 Paletas Rellenas y Cremosas' sobre una mesa de madera junto a fichas de recetas de fresa, coco, chocolate y maracuyá",
   },
   {
     src: "/images/practice-2.png",
@@ -26,7 +26,7 @@ export function PracticeSection() {
         <div className="mt-5 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">
           <Image
             src="/images/tutorial-mujer.png"
-            alt="Mujer vertiendo mezcla cremosa de fresa en moldes de paletas junto a paletas ya terminadas"
+            alt="Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas', paletas empacadas con etiquetas 'Hecho en casa' y variedad de paletas ya preparadas"
             width={800}
             height={600}
             className="h-auto w-full object-cover"
