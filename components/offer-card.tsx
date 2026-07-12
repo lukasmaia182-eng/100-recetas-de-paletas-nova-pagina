@@ -44,7 +44,7 @@ export function OfferCard() {
           <div className="mx-auto mt-4 max-w-xs overflow-hidden rounded-2xl">
             <Image
               src="/images/ebook-mockup.png"
-              alt="Recetario digital de paletas mostrado en celular y tablet"
+              alt="Recetario '100 Paletas Rellenas y Cremosas' con 100 recetas, rodeado de fichas de recetas de fresa, coco, maracuyá, cookies & cream y un tablet con la receta de guayaba"
               width={600}
               height={600}
               className="h-auto w-full object-contain"
