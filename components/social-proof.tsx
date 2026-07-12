@@ -3,23 +3,33 @@ import Image from "next/image"
 const slides = [
   {
     src: "/images/social-1.png",
-    alt: "Variedad de paletas cremosas de colores",
-    text: "Recetas organizadas y fáciles de consultar.",
+    alt: "Mujer empacando paletas cremosas en una caja lista para vender desde casa",
+    text: "Lista para vender desde casa.",
   },
   {
     src: "/images/social-2.png",
-    alt: "Mano sosteniendo una paleta de fresa cremosa",
-    text: "Ingredientes y cantidades en un solo lugar.",
+    alt: "Mujer consultando las recetas de paletas desde su celular en la cocina",
+    text: "Ya tengo mis recetas.",
   },
   {
     src: "/images/social-3.png",
-    alt: "Mini paletas servidas en una fiesta",
-    text: "Preparación explicada paso a paso.",
+    alt: "Mujer sonriente mostrando una tabla con sus primeras paletas cremosas",
+    text: "Mis primeras paletas.",
   },
   {
     src: "/images/social-4.png",
-    alt: "Paleta estilo cheesecake abierta",
-    text: "Opciones económicas y premium para crear un menú más variado.",
+    alt: "Manos sosteniendo la ficha de la receta paleta cremosa de mango",
+    text: "Seguí el paso a paso.",
+  },
+  {
+    src: "/images/social-5.png",
+    alt: "Mujer empacando paletas con etiquetas 'Hecho con amor' y recibiendo pedidos por WhatsApp",
+    text: "Mi producción en casa.",
+  },
+  {
+    src: "/images/social-6.png",
+    alt: "Mujer sosteniendo una ficha de receta de paleta cremosa de fresa en su negocio de postres",
+    text: "Nuevo producto para mi menú.",
   },
 ]
 
@@ -30,7 +40,7 @@ export function SocialProof() {
     <section className="overflow-hidden py-8">
       <div className="mx-auto mb-4 max-w-md px-5">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
-          Mira cómo es el recetario por dentro
+          Ellas ya están creando sus propias paletas
         </h2>
       </div>
 
