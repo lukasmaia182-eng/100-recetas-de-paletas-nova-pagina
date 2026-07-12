@@ -11,7 +11,9 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-background">
       <HeroSection
-        headline="Ahora puedes preparar paletas cremosas para vender todos los días"
+        headline={
+          <span className="text-verde-cta">Ahora puedes preparar paletas cremosas para vender todos los días</span>
+        }
         subheadline={
           <>
             <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
