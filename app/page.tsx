@@ -23,8 +23,8 @@ export default function Page() {
             </span>
           </>
         }
-        imageSrc="/images/pv1-antes-despues.png"
-        imageAlt="Comparación antes y después: una mujer preocupada con cuentas por pagar frente a la misma mujer sonriente mostrando ventas de $12,680 MXN y una bandeja de paletas rellenas. Texto: ¿En cuál de estas situaciones te encontrarás la semana que viene?"
+        imageSrc="/images/hero-recetario-paletas.png"
+        imageAlt="Recetario premium '100 Paletas Rellenas y Cremosas' rodeado de fichas de recetas de paletas cremosas de fresa, coco, maracuyá y cookies & cream, con paletas de varios sabores en la portada."
       />
       <PracticeSection />
       <IdealSection />
