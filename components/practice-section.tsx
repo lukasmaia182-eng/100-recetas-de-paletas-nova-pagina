@@ -3,7 +3,7 @@ import Image from "next/image"
 const products = [
   {
     src: "/images/practice-1.png",
-    alt: "Recetario '100 Paletas Rellenas y Cremosas' sobre una mesa de madera junto a fichas de recetas de fresa, coco, chocolate y maracuyá",
+    alt: "Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas' y paletas ya preparadas",
   },
   {
     src: "/images/practice-2.png",
