@@ -1,9 +1,18 @@
 import Image from "next/image"
 
 const products = [
-  { src: "/images/product-1.png", alt: "Paleta de chocolate rellena con maní" },
-  { src: "/images/product-2.png", alt: "Paleta de dulce de leche con nueces" },
-  { src: "/images/product-3.png", alt: "Paleta premium de pistacho" },
+  {
+    src: "/images/practice-1.png",
+    alt: "Recetario '100 Paletas Rellenas y Cremosas' sobre una mesa de madera junto a fichas de recetas de fresa, coco, chocolate y maracuyá",
+  },
+  {
+    src: "/images/practice-2.png",
+    alt: "Recetario junto a fichas de cookies & cream y piña, con paletas empacadas con etiquetas 'Hecho en casa'",
+  },
+  {
+    src: "/images/practice-3.png",
+    alt: "Ficha de la receta 'Paleta Cremosa de Piña' con paletas de piña, trozos de piña fresca y moldes",
+  },
 ]
 
 export function PracticeSection() {
