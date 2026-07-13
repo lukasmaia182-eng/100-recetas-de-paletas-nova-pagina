@@ -6,7 +6,7 @@ import { recipes, categorias, type Recipe } from "@/lib/recipes"
 import { bonuses, type Bonus } from "@/lib/bonuses"
 import { RecipeDetail } from "./recipe-detail"
 import { BonusDetail } from "./bonus-detail"
-import { ArrowLeft, BookOpen, Gift, ChevronRight, IceCream } from "lucide-react"
+import { ArrowLeft, BookOpen, Gift, ChevronRight, IceCream, Download, Loader2, FolderOpen } from "lucide-react"
 
 type Tab = "recetas" | "bonos"
 
@@ -15,6 +15,32 @@ export function MembersArea() {
   const [categoria, setCategoria] = useState<string>("Todas")
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null)
   const [selectedBonus, setSelectedBonus] = useState<Bonus | null>(null)
+  const [downloading, setDownloading] = useState(false)
+  const [downloadDone, setDownloadDone] = useState(false)
+
+  async function handleDownloadZip() {
+    setDownloading(true)
+    setDownloadDone(false)
+    try {
+      const res = await fetch("/api/gerar-pdfs")
+      if (!res.ok) throw new Error("Falha ao gerar os PDFs")
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      a.href = url
+      a.download = "100-Recetas-de-Paletas.zip"
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+      setDownloadDone(true)
+    } catch (err) {
+      console.error(err)
+      alert("Ocurrió un error al generar los PDFs. Intenta nuevamente.")
+    } finally {
+      setDownloading(false)
+    }
+  }
 
   const filteredRecipes =
     categoria === "Todas" ? recipes : recipes.filter((r) => r.categoria === categoria)
@@ -67,6 +93,48 @@ export function MembersArea() {
                 Aquí tienes todas tus recetas ilustradas paso a paso y tus bonos exclusivos. Elige una receta y empieza
                 a preparar y vender hoy mismo.
               </p>
+            </section>
+
+            {/* Banner de download para Google Drive */}
+            <section className="mt-5 rounded-3xl border border-chocolate/20 bg-card px-6 py-5 shadow-sm">
+              <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-start gap-4 text-left">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-chocolate text-creme">
+                    <FolderOpen className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="font-display text-base font-extrabold text-chocolate">
+                      Baixar todas as 100 receitas em PDF
+                    </p>
+                    <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground text-pretty">
+                      Faça o download do arquivo ZIP com as 100 receitas em PDF individual para subir no seu Google Drive.
+                    </p>
+                    {downloadDone && (
+                      <p className="mt-1 text-sm font-semibold text-green-600">
+                        Download concluido! Agora e so subir a pasta no Google Drive.
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleDownloadZip}
+                  disabled={downloading}
+                  className="inline-flex shrink-0 items-center gap-2 rounded-full bg-chocolate px-5 py-2.5 text-sm font-bold text-creme shadow-sm transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {downloading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      Gerando PDFs...
+                    </>
+                  ) : (
+                    <>
+                      <Download className="h-4 w-4" aria-hidden="true" />
+                      Baixar ZIP (100 PDFs)
+                    </>
+                  )}
+                </button>
+              </div>
             </section>
 
             {/* Tabs */}
