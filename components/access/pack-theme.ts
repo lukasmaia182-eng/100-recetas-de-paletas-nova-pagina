@@ -8,6 +8,10 @@ export type PackTheme = {
   ring: string
   /** Caminho da imagem realista da paleta usada nos mockups */
   image: string
+  /** Arte completa pronta (1:1) para publicar no feed */
+  feedArt: string
+  /** Arte completa pronta (vertical) para publicar nos stories */
+  storyArt: string
   /** Cor de fundo suave (hex) para o degradê dos mockups */
   bgFrom: string
   bgTo: string
@@ -15,7 +19,7 @@ export type PackTheme = {
 
 type ColorFamily = "morango" | "naranja" | "chocolate" | "pistache" | "azul"
 
-const COLOR_FAMILIES: Record<ColorFamily, Omit<PackTheme, "image">> = {
+const COLOR_FAMILIES: Record<ColorFamily, Omit<PackTheme, "image" | "feedArt" | "storyArt">> = {
   morango: {
     solid: "bg-morango",
     onSolid: "text-creme",
@@ -73,32 +77,38 @@ const COLOR_FAMILIES: Record<ColorFamily, Omit<PackTheme, "image">> = {
   },
 }
 
-function makeTheme(family: ColorFamily, image: string): PackTheme {
-  return { ...COLOR_FAMILIES[family], image }
-}
-
 const IMG = "/images/packs"
+const ARTE = "/images/arte"
+
+function makeTheme(family: ColorFamily, image: string, artKey: string): PackTheme {
+  return {
+    ...COLOR_FAMILIES[family],
+    image,
+    feedArt: `${ARTE}/${artKey}-feed.png`,
+    storyArt: `${ARTE}/${artKey}-story.png`,
+  }
+}
 
 export const PACK_THEMES: Record<string, PackTheme> = {
   // Sabores específicos
-  morango: makeTheme("morango", `${IMG}/paleta-morango.png`),
-  frutos_rojos: makeTheme("morango", `${IMG}/paleta-frutos-rojos.png`),
-  guayaba: makeTheme("morango", `${IMG}/paleta-guayaba.png`),
-  mango: makeTheme("naranja", `${IMG}/paleta-mango.png`),
-  maracuya: makeTheme("naranja", `${IMG}/paleta-maracuya.png`),
-  pina: makeTheme("naranja", `${IMG}/paleta-pina.png`),
-  banana: makeTheme("naranja", `${IMG}/paleta-banana.png`),
-  vainilla: makeTheme("naranja", `${IMG}/paleta-vainilla.png`),
-  dulce_leche: makeTheme("naranja", `${IMG}/paleta-dulce-leche.png`),
-  chocolate: makeTheme("chocolate", `${IMG}/paleta-chocolate.png`),
-  cafe: makeTheme("chocolate", `${IMG}/paleta-cafe.png`),
-  cookies_cream: makeTheme("chocolate", `${IMG}/paleta-cookies-cream.png`),
-  chocolate_blanco: makeTheme("chocolate", `${IMG}/paleta-chocolate-blanco.png`),
-  pistacho: makeTheme("pistache", `${IMG}/paleta-pistacho.png`),
-  coco: makeTheme("azul", `${IMG}/paleta-coco.png`),
+  morango: makeTheme("morango", `${IMG}/paleta-morango.png`, "morango"),
+  frutos_rojos: makeTheme("morango", `${IMG}/paleta-frutos-rojos.png`, "frutos_rojos"),
+  guayaba: makeTheme("morango", `${IMG}/paleta-guayaba.png`, "guayaba"),
+  mango: makeTheme("naranja", `${IMG}/paleta-mango.png`, "mango"),
+  maracuya: makeTheme("naranja", `${IMG}/paleta-maracuya.png`, "maracuya"),
+  pina: makeTheme("naranja", `${IMG}/paleta-pina.png`, "pina"),
+  banana: makeTheme("naranja", `${IMG}/paleta-banana.png`, "banana"),
+  vainilla: makeTheme("naranja", `${IMG}/paleta-vainilla.png`, "vainilla"),
+  dulce_leche: makeTheme("naranja", `${IMG}/paleta-dulce-leche.png`, "dulce_leche"),
+  chocolate: makeTheme("chocolate", `${IMG}/paleta-chocolate.png`, "chocolate"),
+  cafe: makeTheme("chocolate", `${IMG}/paleta-cafe.png`, "cafe"),
+  cookies_cream: makeTheme("chocolate", `${IMG}/paleta-cookies-cream.png`, "cookies_cream"),
+  chocolate_blanco: makeTheme("chocolate", `${IMG}/paleta-chocolate-blanco.png`, "chocolate_blanco"),
+  pistacho: makeTheme("pistache", `${IMG}/paleta-pistacho.png`, "pistacho"),
+  coco: makeTheme("azul", `${IMG}/paleta-coco.png`, "coco"),
   // Genéricos (varios sabores)
-  surtido: makeTheme("morango", `${IMG}/paletas-surtido.png`),
-  caja: makeTheme("naranja", `${IMG}/paletas-caja.png`),
+  surtido: makeTheme("morango", `${IMG}/paletas-surtido.png`, "surtido"),
+  caja: makeTheme("naranja", `${IMG}/paletas-caja.png`, "caja"),
 }
 
 export function getPackTheme(theme: string): PackTheme {

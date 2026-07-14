@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { packs, packCategorias, packsPorCategoria, type Pack } from "@/lib/packs"
 import { PackDetail } from "./pack-detail"
-import { PackMock } from "./pack-mock"
+import { getPackTheme } from "./pack-theme"
 import { ArrowLeft, LayoutGrid, ListOrdered, ChevronRight, Camera, BookOpen, Compass } from "lucide-react"
 
 type Tab = "packs" | "sumario" | "guia"
@@ -94,6 +95,7 @@ export function PacksArea() {
                 {/* Packs grid */}
                 <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {filtered.map((pack) => {
+                    const theme = getPackTheme(pack.theme)
                     return (
                       <button
                         key={pack.id}
@@ -101,7 +103,20 @@ export function PacksArea() {
                         onClick={() => openPack(pack)}
                         className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card text-left shadow-sm transition-shadow hover:shadow-lg hover:shadow-chocolate/10"
                       >
-                        <PackMock pack={pack} />
+                        <div className="relative aspect-square w-full overflow-hidden">
+                          <Image
+                            src={theme.feedArt || "/placeholder.svg"}
+                            alt={`Arte de ${pack.titulo}`}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                          <span
+                            className={`absolute left-3 top-3 rounded-lg ${theme.solid} px-2.5 py-1 font-display text-[10px] font-extrabold uppercase tracking-widest ${theme.onSolid} shadow-sm`}
+                          >
+                            {pack.numero}
+                          </span>
+                        </div>
                         <div className="flex flex-1 flex-col p-4">
                           <span className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                             {pack.categoria}

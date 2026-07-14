@@ -1,6 +1,5 @@
 import type { Pack } from "@/lib/packs"
 import { getPackTheme } from "./pack-theme"
-import { FeedMock, StoryMock, FeedArt, StoryArt } from "./pack-mock"
 import { ArtDownload } from "./art-download"
 import {
   Target,
@@ -127,45 +126,47 @@ export function PackDetail({ pack }: { pack: Pack }) {
             Vista previa del contenido que crearás con este pack (listo para personalizar).
           </p>
 
-          <div className="mt-5 grid items-start gap-6 lg:grid-cols-[1fr_1.15fr_0.9fr]">
-            {/* Anotaciones */}
-            <ul className="flex flex-col gap-3 lg:order-1">
-              {CALLOUTS.map((c) => (
-                <li key={c} className={`flex items-start gap-2 rounded-2xl ${theme.soft} p-3`}>
-                  <Heart className={`mt-0.5 h-4 w-4 shrink-0 ${theme.text}`} aria-hidden="true" />
-                  <span className="text-xs font-medium leading-snug text-chocolate">{c}</span>
-                </li>
-              ))}
-            </ul>
-
+          <div className="mt-5 grid items-start gap-6 md:grid-cols-2">
             {/* Feed */}
-            <div className="lg:order-2">
+            <div>
               <Badge theme={theme}>Post para Feed</Badge>
-              <div className="mt-2">
+              <div className="mt-3">
                 <ArtDownload
+                  src={theme.feedArt}
                   fileName={`${slug}-feed.png`}
                   label="Baixar para Feed"
+                  alt={`Arte para feed de ${pack.titulo}`}
+                  aspect="square"
                   buttonClassName={`${theme.solid} ${theme.onSolid}`}
-                  preview={<FeedMock pack={pack} />}
-                  capture={<FeedArt pack={pack} width={1080} />}
                 />
               </div>
             </div>
 
             {/* Story */}
-            <div className="lg:order-3">
+            <div>
               <Badge theme={theme}>Story para Instagram</Badge>
-              <div className="mt-2">
+              <div className="mt-3 mx-auto max-w-[300px]">
                 <ArtDownload
+                  src={theme.storyArt}
                   fileName={`${slug}-story.png`}
                   label="Baixar para Stories"
+                  alt={`Arte para stories de ${pack.titulo}`}
+                  aspect="story"
                   buttonClassName={`${theme.solid} ${theme.onSolid}`}
-                  preview={<StoryMock pack={pack} />}
-                  capture={<StoryArt pack={pack} width={1080} />}
                 />
               </div>
             </div>
           </div>
+
+          {/* Anotaciones */}
+          <ul className="mt-5 grid gap-3 sm:grid-cols-3">
+            {CALLOUTS.map((c) => (
+              <li key={c} className={`flex items-start gap-2 rounded-2xl ${theme.soft} p-3`}>
+                <Heart className={`mt-0.5 h-4 w-4 shrink-0 ${theme.text}`} aria-hidden="true" />
+                <span className="text-xs font-medium leading-snug text-chocolate">{c}</span>
+              </li>
+            ))}
+          </ul>
 
           <p className="mt-5 text-center text-xs font-medium text-muted-foreground">
             Baixe a arte, personalize com seu nome, preço e contato, e publique no seu Instagram.
