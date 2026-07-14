@@ -1,6 +1,7 @@
 import type { Pack } from "@/lib/packs"
 import { getPackTheme } from "./pack-theme"
 import { FeedMock, StoryMock } from "./pack-mock"
+import { ArtDownload } from "./art-download"
 import {
   Target,
   ClipboardList,
@@ -36,8 +37,18 @@ const HABILIDADES = [
   { label: "Contenido para redes", icon: Megaphone },
 ]
 
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+}
+
 export function PackDetail({ pack }: { pack: Pack }) {
   const theme = getPackTheme(pack.theme)
+  const slug = `${slugify(pack.numero)}-${slugify(pack.titulo)}`
 
   return (
     <article className="overflow-hidden rounded-[28px] border border-border bg-secondary shadow-xl shadow-chocolate/10">
@@ -131,7 +142,13 @@ export function PackDetail({ pack }: { pack: Pack }) {
             <div className="lg:order-2">
               <Badge theme={theme}>Post para Feed</Badge>
               <div className="mt-2">
-                <FeedMock pack={pack} />
+                <ArtDownload
+                  fileName={`${slug}-feed.png`}
+                  label="Baixar para Feed"
+                  buttonClassName={`${theme.solid} ${theme.onSolid}`}
+                >
+                  <FeedMock pack={pack} />
+                </ArtDownload>
               </div>
             </div>
 
@@ -139,10 +156,20 @@ export function PackDetail({ pack }: { pack: Pack }) {
             <div className="lg:order-3">
               <Badge theme={theme}>Story para Instagram</Badge>
               <div className="mt-2">
-                <StoryMock pack={pack} />
+                <ArtDownload
+                  fileName={`${slug}-story.png`}
+                  label="Baixar para Stories"
+                  buttonClassName={`${theme.solid} ${theme.onSolid}`}
+                >
+                  <StoryMock pack={pack} />
+                </ArtDownload>
               </div>
             </div>
           </div>
+
+          <p className="mt-5 text-center text-xs font-medium text-muted-foreground">
+            Baixe a arte, personalize com seu nome, preço e contato, e publique no seu Instagram.
+          </p>
         </section>
 
         {/* ===== 5 y 6 ===== */}
