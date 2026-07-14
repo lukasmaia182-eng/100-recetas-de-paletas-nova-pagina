@@ -4,7 +4,7 @@ import { Baloo_2, Nunito } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
-const META_PIXEL_ID = '1335395924840738'
+const META_PIXEL_ID = '1816178736411720'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
