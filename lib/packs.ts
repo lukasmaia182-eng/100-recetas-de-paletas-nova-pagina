@@ -1,3 +1,5 @@
+import { detectThemeFromTitle } from "@/components/access/pack-theme"
+
 export type Pack = {
   id: number
   numero: string
@@ -488,7 +490,19 @@ const groups: GroupConfig[] = [
   },
 ]
 
-const PALETTE = ["morango", "naranja", "chocolate", "pistache", "azul"]
+// Variedade de temas para packs genéricos (sem sabor específico no título),
+// para que as artes não fiquem todas iguais.
+const GENERIC_POOL = ["surtido", "morango", "mango", "chocolate", "pistacho", "coco"]
+
+function resolveTheme(titulo: string, categoria: string, id: number): string {
+  // 1) Se o título menciona um sabor, usa a arte daquele sabor.
+  const detected = detectThemeFromTitle(titulo, "")
+  if (detected) return detected
+  // 2) Combos e paquetes mostram uma caixa com várias paletas.
+  if (categoria === "Combos y paquetes") return "caja"
+  // 3) Demais packs genéricos: variedade rotativa.
+  return GENERIC_POOL[(id - 1) % GENERIC_POOL.length]
+}
 
 export const packs: Pack[] = (() => {
   const result: Pack[] = []
@@ -501,7 +515,7 @@ export const packs: Pack[] = (() => {
         numero: `PACK ${String(id).padStart(2, "0")}`,
         titulo,
         categoria: group.categoria,
-        theme: PALETTE[(id - 1) % PALETTE.length],
+        theme: resolveTheme(titulo, group.categoria, id),
         formato: group.formato,
         explicacion: group.explicacion(titulo),
         objetivo: group.objetivo,
