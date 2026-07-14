@@ -4,9 +4,9 @@ import { UpsellOffer } from "@/components/upsell-offer"
 import { MetaEvent } from "@/components/meta-event"
 
 export const metadata: Metadata = {
-  title: "Oferta Especial · 150 Recetas de Dulces Brasileños Virales",
+  title: "Oferta Especial · 150 Packs para Vender Paletas en Instagram",
   description:
-    "Solo por hoy: suma a tu compra las 150 recetas de dulces brasileños virales y multiplica tus ganancias desde tu cocina.",
+    "Solo por hoy: suma a tu compra los 150 packs de artes para vender paletas en Instagram y atrae más clientes cada día.",
 }
 
 export default function OfertaEspecialPV1Page() {

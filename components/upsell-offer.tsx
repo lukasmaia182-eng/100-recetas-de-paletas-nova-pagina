@@ -1,16 +1,16 @@
 import Image from "next/image"
 
 // Link real del checkout de Hotmart de este producto (upsell)
-const UPSELL_CHECKOUT_URL = "https://pay.hotmart.com/A102621817B"
+const UPSELL_CHECKOUT_URL = "https://pay.hotmart.com/J102656950K?off=2z6jarki&checkoutMode=10&bid=1784058527948"
 // Página de acceso a la que va el cliente si rechaza la oferta
 const DECLINE_URL = "/seuacesso"
 
 const benefits = [
-  "150 recetas de dulces brasileños que se volvieron virales",
-  "Brigadeiros gourmet, besitos y trufas cremosas",
-  "Ingredientes y cantidades exactas paso a paso",
-  "Versiones económicas y versiones premium para vender",
-  "Ideas de presentación y empaque para cobrar más",
+  "150 packs de artes listas para publicar y vender en Instagram",
+  "Plantillas para feed, stories y reels editables",
+  "Diseños llamativos para mostrar tus paletas rellenas",
+  "Frases y llamados a la acción que atraen clientes",
+  "Fáciles de personalizar con tu marca y precios",
   "Acceso digital inmediato, incluso para principiantes",
 ]
 
@@ -36,17 +36,17 @@ export function UpsellOffer() {
 
           <div className="p-6">
             <h1 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance">
-              Suma 150 Recetas de Dulces Brasileños Virales
+              Suma 150 Packs para Vender Paletas en Instagram
             </h1>
             <p className="mt-2 text-center text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
-              Los mismos dulces que arrasan en las redes y se venden solos. Perfectos para ampliar tu menú y ganar
-              todavía más desde tu cocina.
+              Artes profesionales listas para publicar y atraer clientes. Perfectas para mostrar tus paletas y vender
+              más todos los días desde tu Instagram.
             </p>
 
             <div className="mx-auto mt-5 overflow-hidden rounded-2xl">
               <Image
-                src="/images/dulces-brasilenos-arte.png"
-                alt="Recetario digital de 150 recetas de dulces brasileños virales, con brigadeiros, trufas y postres para vender"
+                src="/images/150-packs-instagram-paletas.png"
+                alt="150 packs de artes para redes sociales listas para vender paletas rellenas en Instagram"
                 width={1024}
                 height={1024}
                 className="h-auto w-full object-contain"
@@ -79,7 +79,7 @@ export function UpsellOffer() {
                 rel="noopener noreferrer"
                 className="group relative flex w-full flex-col items-center justify-center rounded-full bg-verde-cta px-6 py-4 text-center font-display text-lg font-extrabold text-white shadow-lg shadow-verde-cta/30 transition-transform hover:bg-verde-cta-dark active:scale-95 animate-cta-pulse sm:text-xl"
               >
-                <span className="leading-tight">SÍ, QUIERO AGREGAR ESTAS RECETAS</span>
+                <span className="leading-tight">SÍ, QUIERO AGREGAR ESTOS PACKS</span>
                 <span className="text-xs font-semibold text-white/85 sm:text-sm">Compra 100% segura</span>
               </a>
             </div>
