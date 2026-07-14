@@ -103,6 +103,123 @@ export function FeedMock({ pack }: { pack: Pack }) {
   )
 }
 
+/* ART LIMPA — Post para Feed (1:1) — sem interface do Instagram, pronta para publicar */
+export function FeedArt({ pack, width = 400 }: { pack: Pack; width?: number }) {
+  const theme = getPackTheme(pack.theme)
+  return (
+    <div
+      className="relative flex flex-col overflow-hidden"
+      style={{
+        width,
+        aspectRatio: "1 / 1",
+        background: `linear-gradient(160deg, ${theme.bgFrom}, ${theme.bgTo})`,
+      }}
+    >
+      <div className="flex flex-1 flex-col px-6 pt-6 text-center">
+        <p className="font-serif text-[13px] font-semibold uppercase tracking-[0.25em] text-chocolate/70">
+          Paleta artesanal
+        </p>
+        <h4 className={`font-serif text-4xl font-extrabold leading-none ${theme.text} text-balance`}>
+          {pack.titulo}
+        </h4>
+        <p className={`mt-2 text-[12px] font-bold uppercase tracking-wide ${theme.text}`}>
+          Cremosa por fuera, irresistible por dentro
+        </p>
+
+        <div className="relative mx-auto mt-2 aspect-square w-full max-w-[260px] flex-1">
+          <Image
+            src={theme.image || "/placeholder.svg"}
+            alt={`Arte de ${pack.titulo}`}
+            fill
+            sizes="260px"
+            className="object-contain drop-shadow-lg"
+          />
+          <span className="absolute left-0 top-2 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-card/95 text-center font-display text-[10px] font-extrabold leading-none text-chocolate shadow ring-1 ring-amarillo/50">
+            100%
+            <span className="text-[8px]">ARTESANAL</span>
+          </span>
+          <span className="absolute bottom-2 right-0 flex h-16 w-16 items-center justify-center rounded-full bg-card font-serif text-xl font-extrabold text-chocolate shadow-md ring-2 ring-amarillo/60">
+            $8
+          </span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-4 gap-1 px-4 py-2">
+        {TAGS.map((t) => (
+          <div key={t} className="flex flex-col items-center gap-0.5">
+            <Heart className={`h-4 w-4 ${theme.text}`} aria-hidden="true" />
+            <span className="text-[8px] font-bold uppercase tracking-wide text-chocolate">{t}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="px-5 pb-6 pt-1">
+        <div className={`flex items-center justify-center rounded-full ${theme.solid} py-3 ${theme.onSolid}`}>
+          <span className="text-[13px] font-extrabold uppercase tracking-wide">Haz tu pedido por WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ART LIMPA — Story (9:16) — sem interface do Instagram, pronta para publicar */
+export function StoryArt({ pack, width = 340 }: { pack: Pack; width?: number }) {
+  const theme = getPackTheme(pack.theme)
+  return (
+    <div
+      className="relative flex flex-col overflow-hidden"
+      style={{
+        width,
+        aspectRatio: "9 / 16",
+        background: `linear-gradient(165deg, ${theme.bgFrom}, ${theme.bgTo})`,
+      }}
+    >
+      <div className="flex flex-1 flex-col items-center px-8 py-16 text-center">
+        {/* Topo: marca + título */}
+        <div className="flex flex-col items-center">
+          <span className={`flex h-16 w-16 items-center justify-center rounded-full ${theme.soft}`}>
+            <Crown className={`h-8 w-8 ${theme.text}`} aria-hidden="true" />
+          </span>
+          <h4 className={`mt-6 font-serif text-5xl font-extrabold leading-[0.95] ${theme.text} text-balance`}>
+            {pack.titulo}
+          </h4>
+          <p className="mt-4 text-base font-bold uppercase tracking-[0.2em] text-chocolate/70">Pídela hoy mismo</p>
+        </div>
+
+        <div className="flex-1" aria-hidden="true" />
+
+        {/* Centro: imagem */}
+        <div className="relative mx-auto aspect-square w-full max-w-[360px]">
+          <Image
+            src={theme.image || "/placeholder.svg"}
+            alt={`Story de ${pack.titulo}`}
+            fill
+            sizes="360px"
+            className="object-contain drop-shadow-lg"
+          />
+          <span className="absolute right-0 top-2 flex h-20 w-20 items-center justify-center rounded-full bg-card font-serif text-2xl font-extrabold text-chocolate shadow-md ring-2 ring-amarillo/60">
+            $8
+          </span>
+        </div>
+
+        <div className="flex-1" aria-hidden="true" />
+
+        {/* Rodapé: slogan + CTA */}
+        <div className="flex w-full flex-col items-center gap-6">
+          <p className={`text-lg font-bold uppercase tracking-wide ${theme.text} text-balance`}>
+            Cremosa por fuera, irresistible por dentro
+          </p>
+          <div
+            className={`flex w-full items-center justify-center rounded-full ${theme.solid} py-4 ${theme.onSolid}`}
+          >
+            <span className="text-base font-extrabold uppercase tracking-wide">Pide el tuyo por WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* Story para Instagram */
 export function StoryMock({ pack }: { pack: Pack }) {
   const theme = getPackTheme(pack.theme)

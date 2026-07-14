@@ -1,6 +1,6 @@
 import type { Pack } from "@/lib/packs"
 import { getPackTheme } from "./pack-theme"
-import { FeedMock, StoryMock } from "./pack-mock"
+import { FeedMock, StoryMock, FeedArt, StoryArt } from "./pack-mock"
 import { ArtDownload } from "./art-download"
 import {
   Target,
@@ -146,9 +146,9 @@ export function PackDetail({ pack }: { pack: Pack }) {
                   fileName={`${slug}-feed.png`}
                   label="Baixar para Feed"
                   buttonClassName={`${theme.solid} ${theme.onSolid}`}
-                >
-                  <FeedMock pack={pack} />
-                </ArtDownload>
+                  preview={<FeedMock pack={pack} />}
+                  capture={<FeedArt pack={pack} width={1080} />}
+                />
               </div>
             </div>
 
@@ -160,9 +160,9 @@ export function PackDetail({ pack }: { pack: Pack }) {
                   fileName={`${slug}-story.png`}
                   label="Baixar para Stories"
                   buttonClassName={`${theme.solid} ${theme.onSolid}`}
-                >
-                  <StoryMock pack={pack} />
-                </ArtDownload>
+                  preview={<StoryMock pack={pack} />}
+                  capture={<StoryArt pack={pack} width={1080} />}
+                />
               </div>
             </div>
           </div>

@@ -8,12 +8,16 @@ export function ArtDownload({
   fileName,
   label = "Baixar arte",
   buttonClassName = "",
-  children,
+  preview,
+  capture,
 }: {
   fileName: string
   label?: string
   buttonClassName?: string
-  children: React.ReactNode
+  /* O que aparece na tela (mockup com moldura do Instagram) */
+  preview: React.ReactNode
+  /* O que é baixado (arte limpa, sem interface do Instagram) */
+  capture: React.ReactNode
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false)
@@ -39,9 +43,14 @@ export function ArtDownload({
 
   return (
     <div className="flex flex-col items-center">
-      <div ref={ref} className="w-full">
-        {children}
+      {/* Pré-visualização (não é o que se baixa) */}
+      <div className="w-full">{preview}</div>
+
+      {/* Nó capturado — renderizado fora da tela, é a arte limpa que será baixada */}
+      <div aria-hidden="true" className="pointer-events-none fixed left-[-9999px] top-0">
+        <div ref={ref}>{capture}</div>
       </div>
+
       <button
         type="button"
         onClick={handleDownload}
