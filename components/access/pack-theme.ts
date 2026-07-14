@@ -6,6 +6,11 @@ export type PackTheme = {
   border: string
   bullet: string
   ring: string
+  /** Caminho da imagem realista da paleta usada nos mockups */
+  image: string
+  /** Cor de fundo suave (hex) para o degradê dos mockups */
+  bgFrom: string
+  bgTo: string
 }
 
 export const PACK_THEMES: Record<string, PackTheme> = {
@@ -17,6 +22,9 @@ export const PACK_THEMES: Record<string, PackTheme> = {
     border: "border-azul/40",
     bullet: "bg-azul",
     ring: "ring-azul/30",
+    image: "/images/packs/paleta-coco.png",
+    bgFrom: "#fdf6ec",
+    bgTo: "#eef1f8",
   },
   chocolate: {
     solid: "bg-chocolate",
@@ -26,6 +34,9 @@ export const PACK_THEMES: Record<string, PackTheme> = {
     border: "border-chocolate/40",
     bullet: "bg-chocolate",
     ring: "ring-chocolate/30",
+    image: "/images/packs/paleta-chocolate.png",
+    bgFrom: "#fdf3ea",
+    bgTo: "#f3e4d6",
   },
   morango: {
     solid: "bg-morango",
@@ -35,6 +46,9 @@ export const PACK_THEMES: Record<string, PackTheme> = {
     border: "border-morango/40",
     bullet: "bg-morango",
     ring: "ring-morango/30",
+    image: "/images/packs/paleta-morango.png",
+    bgFrom: "#fef3f0",
+    bgTo: "#fbe4e6",
   },
   naranja: {
     solid: "bg-naranja",
@@ -44,6 +58,9 @@ export const PACK_THEMES: Record<string, PackTheme> = {
     border: "border-naranja/40",
     bullet: "bg-naranja",
     ring: "ring-naranja/30",
+    image: "/images/packs/paleta-mango.png",
+    bgFrom: "#fef6ec",
+    bgTo: "#fdeed7",
   },
   pistache: {
     solid: "bg-pistache",
@@ -53,6 +70,9 @@ export const PACK_THEMES: Record<string, PackTheme> = {
     border: "border-pistache/40",
     bullet: "bg-pistache",
     ring: "ring-pistache/30",
+    image: "/images/packs/paleta-pistacho.png",
+    bgFrom: "#fbf6ea",
+    bgTo: "#eef3e4",
   },
 }
 

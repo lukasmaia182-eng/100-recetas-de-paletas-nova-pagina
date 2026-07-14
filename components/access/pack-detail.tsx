@@ -1,153 +1,236 @@
 import type { Pack } from "@/lib/packs"
 import { getPackTheme } from "./pack-theme"
-import { PackMock } from "./pack-mock"
-import { Target, ClipboardList, ListChecks, Lightbulb, Repeat, Sparkles, Camera } from "lucide-react"
+import { FeedMock, StoryMock } from "./pack-mock"
+import {
+  Target,
+  ClipboardList,
+  CheckCircle2,
+  ListChecks,
+  ImageIcon,
+  Pencil,
+  Sparkles,
+  Send,
+  Eye,
+  Lightbulb,
+  RefreshCw,
+  Heart,
+  Crown,
+  PenLine,
+  IceCream,
+  Megaphone,
+} from "lucide-react"
+
+const STEP_ICONS = [ImageIcon, Pencil, Sparkles, Send, ImageIcon, Pencil]
+
+const CALLOUTS = [
+  "Título atractivo que resalta el sabor y la textura.",
+  "Muestra el relleno cremoso para abrir el apetito.",
+  "Llamado a la acción claro y directo.",
+]
+
+const HABILIDADES = [
+  { label: "Branding visual", icon: Crown },
+  { label: "Copy breve", icon: PenLine },
+  { label: "Venta por sabor", icon: IceCream },
+  { label: "Llamado a la acción", icon: Send },
+  { label: "Contenido para redes", icon: Megaphone },
+]
 
 export function PackDetail({ pack }: { pack: Pack }) {
   const theme = getPackTheme(pack.theme)
 
   return (
     <article className="overflow-hidden rounded-[28px] border border-border bg-secondary shadow-xl shadow-chocolate/10">
-      {/* Header */}
-      <div className="px-5 pb-6 pt-6 sm:px-8">
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            className={`inline-block -rotate-1 rounded-lg ${theme.solid} px-3 py-1.5 font-display text-xs font-extrabold uppercase tracking-[0.15em] ${theme.onSolid} shadow-sm`}
-          >
-            {pack.numero}
-          </span>
-          <span className={`rounded-full ${theme.soft} px-3 py-1.5 text-xs font-bold ${theme.text}`}>
-            {pack.categoria}
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-xs font-semibold text-muted-foreground">
-            <Camera className="h-3.5 w-3.5" aria-hidden="true" />
-            {pack.formato}
-          </span>
-        </div>
-
-        <h2
-          className={`mt-3 font-display text-3xl font-extrabold leading-[0.98] ${theme.text} text-balance sm:text-4xl`}
+      {/* ===== Header ===== */}
+      <header className="px-5 pb-8 pt-8 text-center sm:px-10">
+        <span
+          className={`inline-block rounded-full border-2 ${theme.border} bg-card px-5 py-1.5 font-display text-xs font-extrabold uppercase tracking-[0.25em] ${theme.text}`}
         >
+          {pack.numero}
+        </span>
+        <h2 className="mt-4 font-serif text-4xl font-extrabold leading-[0.95] text-chocolate text-balance sm:text-5xl">
           {pack.titulo}
         </h2>
-        <p className="mt-2 text-sm font-medium leading-relaxed text-foreground text-pretty">{pack.explicacion}</p>
+        <Divider theme={theme} />
+        <p className="mx-auto max-w-md text-sm font-medium leading-relaxed text-foreground text-pretty">
+          {pack.explicacion}
+        </p>
+      </header>
 
-        {/* Vista previa del arte */}
-        <div className="mt-4">
-          <SectionPill theme={theme} icon={<Sparkles className="h-4 w-4" aria-hidden="true" />}>
-            Vista previa del arte
-          </SectionPill>
-          <div className="mt-3 overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="mx-auto max-w-sm">
-              <PackMock pack={pack} size="full" />
+      <div className="space-y-6 px-5 pb-8 sm:px-10">
+        {/* ===== 3 tarjetas ===== */}
+        <div className="grid gap-4 lg:grid-cols-3">
+          {/* Objetivo */}
+          <Card>
+            <CardTitle theme={theme} icon={<Target className="h-4 w-4" aria-hidden="true" />} number="1">
+              Objetivo
+            </CardTitle>
+            <p className="mt-3 text-sm leading-relaxed text-foreground text-pretty">{pack.objetivo}</p>
+          </Card>
+
+          {/* Materiales */}
+          <Card>
+            <CardTitle theme={theme} icon={<ClipboardList className="h-4 w-4" aria-hidden="true" />} number="2">
+              Materiales necesarios
+            </CardTitle>
+            <ul className="mt-3 flex flex-col gap-2">
+              {pack.materiales.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm font-medium leading-snug text-foreground">
+                  <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${theme.text}`} aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          {/* Instrucciones */}
+          <Card>
+            <CardTitle theme={theme} icon={<ListChecks className="h-4 w-4" aria-hidden="true" />} number="3">
+              Instrucciones en etapas
+            </CardTitle>
+            <ol className="mt-3 flex flex-col gap-3">
+              {pack.instrucciones.map((paso, index) => {
+                const Icon = STEP_ICONS[index % STEP_ICONS.length]
+                return (
+                  <li key={index} className="flex items-start gap-2.5">
+                    <span
+                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${theme.solid} font-display text-[10px] font-extrabold ${theme.onSolid}`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <Icon className={`mt-0.5 h-4 w-4 shrink-0 ${theme.text}`} aria-hidden="true" />
+                    <p className="text-xs leading-snug text-foreground">{paso}</p>
+                  </li>
+                )
+              })}
+            </ol>
+          </Card>
+        </div>
+
+        {/* ===== 4. Actividad visual práctica ===== */}
+        <section className={`rounded-3xl border ${theme.border} bg-card p-5 sm:p-7`}>
+          <CardTitle theme={theme} icon={<Eye className="h-4 w-4" aria-hidden="true" />} number="4">
+            Actividad visual práctica
+          </CardTitle>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Vista previa del contenido que crearás con este pack (listo para personalizar).
+          </p>
+
+          <div className="mt-5 grid items-start gap-6 lg:grid-cols-[1fr_1.15fr_0.9fr]">
+            {/* Anotaciones */}
+            <ul className="flex flex-col gap-3 lg:order-1">
+              {CALLOUTS.map((c) => (
+                <li key={c} className={`flex items-start gap-2 rounded-2xl ${theme.soft} p-3`}>
+                  <Heart className={`mt-0.5 h-4 w-4 shrink-0 ${theme.text}`} aria-hidden="true" />
+                  <span className="text-xs font-medium leading-snug text-chocolate">{c}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Feed */}
+            <div className="lg:order-2">
+              <Badge theme={theme}>Post para Feed</Badge>
+              <div className="mt-2">
+                <FeedMock pack={pack} />
+              </div>
+            </div>
+
+            {/* Story */}
+            <div className="lg:order-3">
+              <Badge theme={theme}>Story para Instagram</Badge>
+              <div className="mt-2">
+                <StoryMock pack={pack} />
+              </div>
             </div>
           </div>
+        </section>
+
+        {/* ===== 5 y 6 ===== */}
+        <div className="grid gap-4 md:grid-cols-2">
+          <Card>
+            <CardTitle theme={theme} icon={<Lightbulb className="h-4 w-4" aria-hidden="true" />} number="5">
+              Dica profesional
+            </CardTitle>
+            <p className="mt-3 text-sm leading-relaxed text-foreground text-pretty">{pack.consejo}</p>
+          </Card>
+          <Card>
+            <CardTitle theme={theme} icon={<RefreshCw className="h-4 w-4" aria-hidden="true" />} number="6">
+              Variación o adaptación
+            </CardTitle>
+            <p className="mt-3 text-sm leading-relaxed text-foreground text-pretty">{pack.variacion}</p>
+          </Card>
         </div>
 
-        {/* Objetivo */}
-        <div className={`mt-4 flex items-start gap-3 rounded-2xl ${theme.solid} p-4 ${theme.onSolid}`}>
-          <Target className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
-          <p className="text-sm font-semibold leading-snug">
-            <span className="font-extrabold uppercase">Objetivo: </span>
-            {pack.objetivo}
-          </p>
-        </div>
-      </div>
-
-      <div className="px-5 pb-8 sm:px-8">
-        {/* Materiales necesarios */}
-        <SectionPill theme={theme} icon={<ClipboardList className="h-4 w-4" aria-hidden="true" />}>
-          Materiales necesarios
-        </SectionPill>
-        <div className={`mt-3 rounded-2xl border ${theme.border} bg-card p-5`}>
-          <ul className="flex flex-col gap-2">
-            {pack.materiales.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-sm font-medium leading-snug text-foreground">
-                <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${theme.bullet}`} />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Instrucciones paso a paso */}
-        <div className="mt-6">
-          <SectionPill theme={theme} icon={<ListChecks className="h-4 w-4" aria-hidden="true" />}>
-            Instrucciones paso a paso
-          </SectionPill>
-          <ol className="mt-4 grid gap-3 sm:grid-cols-2">
-            {pack.instrucciones.map((paso, index) => (
-              <li key={index} className={`flex gap-3 rounded-2xl border ${theme.border} bg-card p-4`}>
-                <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${theme.solid} font-display text-sm font-extrabold ${theme.onSolid}`}
-                >
-                  {index + 1}
-                </span>
-                <p className="text-sm leading-snug text-foreground">{paso}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        {/* Consejo profesional */}
-        <div className={`mt-6 flex items-start gap-3 rounded-2xl ${theme.soft} p-4`}>
-          <Lightbulb className={`mt-0.5 h-5 w-5 shrink-0 ${theme.text}`} aria-hidden="true" />
-          <p className="text-sm leading-relaxed text-chocolate">
-            <span className={`font-extrabold uppercase ${theme.text}`}>Consejo profesional: </span>
-            {pack.consejo}
-          </p>
-        </div>
-
-        {/* Variación / adaptación */}
-        <div className={`mt-4 flex items-start gap-3 rounded-2xl border-2 border-dashed ${theme.border} bg-card p-4`}>
-          <Repeat className={`mt-0.5 h-5 w-5 shrink-0 ${theme.text}`} aria-hidden="true" />
-          <p className="text-sm leading-relaxed text-foreground">
-            <span className={`font-extrabold uppercase ${theme.text}`}>Variación: </span>
-            {pack.variacion}
-          </p>
-        </div>
-
-        {/* Etiquetas / objetivos de marketing */}
-        <div className="mt-6">
-          <p className="text-xs font-extrabold uppercase tracking-wide text-muted-foreground">
-            Objetivos de marketing
-          </p>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {pack.etiquetas.map((tag) => (
-              <span
-                key={tag}
-                className={`rounded-full ${theme.soft} px-3 py-1 text-xs font-semibold ${theme.text}`}
-              >
-                {tag}
-              </span>
-            ))}
+        {/* ===== 7. Habilidades trabajadas ===== */}
+        <section className={`rounded-3xl border-2 border-dashed ${theme.border} bg-card p-5 sm:p-6`}>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <h3 className="font-display text-lg font-extrabold uppercase tracking-wide text-chocolate">
+              <span className={theme.text}>7.</span> Habilidades trabajadas
+            </h3>
+            <div className="flex flex-1 flex-wrap justify-center gap-4 sm:justify-end">
+              {HABILIDADES.map(({ label, icon: Icon }) => (
+                <div key={label} className="flex w-20 flex-col items-center gap-1.5 text-center">
+                  <span className={`flex h-10 w-10 items-center justify-center rounded-full ${theme.soft}`}>
+                    <Icon className={`h-5 w-5 ${theme.text}`} aria-hidden="true" />
+                  </span>
+                  <span className="text-[10px] font-bold uppercase leading-tight tracking-wide text-chocolate">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Bottom banner */}
-      <div className={`${theme.solid} px-5 py-3 text-center`}>
-        <p className={`font-display text-sm font-bold italic ${theme.onSolid}`}>
-          Listo para publicar, atraer clientes y vender más paletas en Instagram.
-        </p>
+        </section>
       </div>
     </article>
   )
 }
 
-function SectionPill({
+/* ---------- Subcomponentes ---------- */
+
+function Card({ children }: { children: React.ReactNode }) {
+  return <div className="rounded-3xl border border-border bg-card p-5 shadow-sm">{children}</div>
+}
+
+function CardTitle({
   theme,
   icon,
+  number,
   children,
 }: {
   theme: ReturnType<typeof getPackTheme>
   icon: React.ReactNode
+  number: string
   children: React.ReactNode
 }) {
   return (
-    <div className={`inline-flex items-center gap-2 rounded-lg ${theme.solid} px-3 py-2 ${theme.onSolid}`}>
-      {icon}
-      <span className="font-display text-sm font-extrabold uppercase tracking-wide">{children}</span>
+    <div className="flex items-center gap-2.5">
+      <span className={`flex h-8 w-8 items-center justify-center rounded-xl ${theme.soft} ${theme.text}`}>{icon}</span>
+      <h3 className="font-display text-sm font-extrabold uppercase tracking-wide text-chocolate">
+        <span className={theme.text}>{number}.</span> {children}
+      </h3>
+    </div>
+  )
+}
+
+function Badge({ theme, children }: { theme: ReturnType<typeof getPackTheme>; children: React.ReactNode }) {
+  return (
+    <div className="flex justify-center">
+      <span
+        className={`inline-block rounded-full ${theme.solid} px-4 py-1 font-display text-[11px] font-extrabold uppercase tracking-wide ${theme.onSolid}`}
+      >
+        {children}
+      </span>
+    </div>
+  )
+}
+
+function Divider({ theme }: { theme: ReturnType<typeof getPackTheme> }) {
+  return (
+    <div className="my-3 flex items-center justify-center gap-2" aria-hidden="true">
+      <span className={`h-px w-10 ${theme.bullet} opacity-40`} />
+      <Heart className={`h-3.5 w-3.5 ${theme.text}`} />
+      <span className={`h-px w-10 ${theme.bullet} opacity-40`} />
     </div>
   )
 }

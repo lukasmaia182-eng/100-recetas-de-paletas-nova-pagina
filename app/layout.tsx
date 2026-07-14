@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Baloo_2, Nunito } from 'next/font/google'
+import { Baloo_2, Nunito, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
@@ -10,6 +10,13 @@ const baloo = Baloo_2({
   subsets: ['latin'],
   weight: ['500', '600', '700', '800'],
   variable: '--font-baloo',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
 })
 
 const nunito = Nunito({
@@ -53,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`bg-background ${baloo.variable} ${nunito.variable}`}>
+    <html lang="es" className={`bg-background ${baloo.variable} ${nunito.variable} ${playfair.variable}`}>
       <head>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
