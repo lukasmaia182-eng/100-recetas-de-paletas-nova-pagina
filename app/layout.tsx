@@ -84,6 +84,14 @@ a.setAttribute("defer", "");
 a.setAttribute("src", "https://lowtrack.com.br/pixel.js");
 document.head.appendChild(a);`}
         </Script>
+        <Script id="lowtrack-pixel-backup" strategy="afterInteractive">
+          {`window.pixelId = "lt_px_a03f6067ad30";
+var b = document.createElement("script");
+b.setAttribute("async", "");
+b.setAttribute("defer", "");
+b.setAttribute("src", "https://lowtrack.com.br/pixel.js");
+document.head.appendChild(b);`}
+        </Script>
       </head>
       <body className="font-sans antialiased">
         <noscript>
