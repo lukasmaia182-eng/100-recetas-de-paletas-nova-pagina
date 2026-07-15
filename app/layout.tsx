@@ -5,6 +5,7 @@ import Script from 'next/script'
 import './globals.css'
 
 const META_PIXEL_ID = '1816178736411720'
+const META_PIXEL_ID_BACKUP = '27589484377368937'
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -72,6 +73,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '${META_PIXEL_ID}');
+fbq('init', '${META_PIXEL_ID_BACKUP}');
 fbq('track', 'PageView');`}
         </Script>
         <Script id="lowtrack-pixel" strategy="afterInteractive">
@@ -90,6 +92,15 @@ document.head.appendChild(a);`}
             width="1"
             style={{ display: 'none' }}
             src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID_BACKUP}&ev=PageView&noscript=1`}
             alt=""
           />
         </noscript>
