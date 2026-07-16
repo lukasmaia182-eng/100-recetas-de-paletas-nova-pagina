@@ -155,3 +155,34 @@
   animation: marquee-reverse 24s linear infinite;
 }
 
+/* ==========================================================================
+   META MASTER — tema escuro escopado (só dentro de .mm-scope)
+   ========================================================================== */
+.mm-scope {
+  --mm-bg: #0b1120;
+  --mm-panel: #111b30;
+  --mm-card: #151f37;
+  --mm-card-2: #1b2745;
+  --mm-border: #26314f;
+  --mm-text: #eaf0fb;
+  --mm-muted: #93a1c0;
+  --mm-blue: #3b82f6;
+  --mm-green: #22c55e;
+  --mm-red: #ef4444;
+  --mm-yellow: #eab308;
+  background-color: var(--mm-bg);
+  color: var(--mm-text);
+  font-family: var(--font-nunito), system-ui, sans-serif;
+}
+.mm-scope ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.mm-scope ::-webkit-scrollbar-track {
+  background: var(--mm-bg);
+}
+.mm-scope ::-webkit-scrollbar-thumb {
+  background: var(--mm-border);
+  border-radius: 9999px;
+}
+
