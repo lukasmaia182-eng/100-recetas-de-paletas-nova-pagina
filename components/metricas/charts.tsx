@@ -77,7 +77,7 @@ export function LinhaSimples({
   cor = "blue",
   altura = 220,
 }: {
-  data: Record<string, unknown>[]
+  data: any[]
   dataKey: string
   cor?: keyof typeof COR
   altura?: number
@@ -102,7 +102,7 @@ export function BarrasSimples({
   cor = "blue",
   altura = 220,
 }: {
-  data: Record<string, unknown>[]
+  data: any[]
   dataKey: string
   xKey: string
   cor?: keyof typeof COR
