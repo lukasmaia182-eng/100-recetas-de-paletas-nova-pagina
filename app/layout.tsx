@@ -92,6 +92,14 @@ b.setAttribute("defer", "");
 b.setAttribute("src", "https://lowtrack.com.br/pixel.js");
 document.head.appendChild(b);`}
         </Script>
+        <Script
+          id="utmify-utms"
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-subids
+          strategy="afterInteractive"
+          async
+          defer
+        />
       </head>
       <body className="font-sans antialiased">
         <noscript>
