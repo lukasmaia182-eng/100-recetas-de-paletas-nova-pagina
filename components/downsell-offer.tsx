@@ -1,52 +1,52 @@
 import Image from "next/image"
 
-// Link real del checkout de Hotmart de este producto (upsell)
-const UPSELL_CHECKOUT_URL = "https://pay.hotmart.com/J102656950K?off=2z6jarki&checkoutMode=10&bid=1784058527948"
-// Página de downsell (combo) a la que va el cliente si rechaza la oferta
-const DECLINE_URL = "/ofertaespeficalpv2"
+// Link real del checkout de Hotmart de este combo (downsell)
+const DOWNSELL_CHECKOUT_URL = "https://pay.hotmart.com/A102621817B?off=iucwm8qc&checkoutMode=10&bid=1784394808278"
+// Página de acceso a la que va el cliente si rechaza el combo
+const DECLINE_URL = "/seuacesso"
 
 const benefits = [
-  "150 packs de artes listas para publicar y vender en Instagram",
+  "150 recetas de dulces brasileños virales para vender",
+  "150 packs de artes listas para publicar en Instagram",
   "Plantillas para feed, stories y reels editables",
-  "Diseños llamativos para mostrar tus paletas rellenas",
-  "Frases y llamados a la acción que atraen clientes",
-  "Fáciles de personalizar con tu marca y precios",
-  "Acceso digital inmediato, incluso para principiantes",
+  "Recetas fáciles, rentables y con alta demanda",
+  "Diseños llamativos para mostrar y vender más",
+  "Acceso digital inmediato a los 2 productos",
 ]
 
-export function UpsellOffer() {
+export function DownsellOffer() {
   return (
     <main className="min-h-dvh bg-background px-5 py-8">
       <div className="mx-auto max-w-md">
         <div className="rounded-3xl bg-secondary p-4 text-center">
           <p className="font-display text-sm font-extrabold uppercase tracking-wide text-primary">
-            ¡Espera! Tu compra aún no termina
+            ¡Espera! Tenemos una última oferta para ti
           </p>
           <p className="mt-1 text-sm font-semibold text-chocolate text-pretty">
-            Antes de acceder a tus paletas, aprovecha esta oferta única que no volverás a ver.
+            No te quedes solo con una idea: llévate el combo completo con un descuento que no volverás a ver.
           </p>
         </div>
 
         <div className="mt-6 overflow-hidden rounded-3xl bg-card shadow-xl shadow-chocolate/10">
           <div className="flex items-center justify-center bg-primary px-4 py-3">
             <span className="font-display text-sm font-extrabold uppercase tracking-wide text-primary-foreground">
-              Oferta exclusiva solo por hoy
+              Combo especial · Solo por hoy
             </span>
           </div>
 
           <div className="p-6">
             <h1 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance">
-              Suma 150 Packs para Vender Paletas en Instagram
+              Llévate los 2 productos en un solo combo
             </h1>
             <p className="mt-2 text-center text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
-              Artes profesionales listas para publicar y atraer clientes. Perfectas para mostrar tus paletas y vender
-              más todos los días desde tu Instagram.
+              150 Recetas de Dulces Brasileños Virales + 150 Packs para Vender Paletas en Instagram. Todo lo que
+              necesitas para producir y vender más, en una sola compra.
             </p>
 
             <div className="mx-auto mt-5 overflow-hidden rounded-2xl">
               <Image
-                src="/images/150-packs-instagram-paletas.png"
-                alt="150 packs de artes para redes sociales listas para vender paletas rellenas en Instagram"
+                src="/images/pv2/combo-dulces-packs.png"
+                alt="Combo de 150 recetas de dulces brasileños virales y 150 packs para vender paletas en Instagram"
                 width={1024}
                 height={1024}
                 className="h-auto w-full object-contain"
@@ -64,22 +64,22 @@ export function UpsellOffer() {
 
             <div className="mt-6 text-center">
               <p className="text-base text-muted-foreground">
-                Valor normal: <span className="font-semibold text-muted-foreground line-through">$17,90</span>
+                Valor normal: <span className="font-semibold text-muted-foreground line-through">$22,80</span>
               </p>
-              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$4,90</p>
+              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$3,49</p>
               <p className="mt-1 text-sm font-semibold text-pistache">
-                Pago único · Solo en esta página · Producto digital
+                Pago único · Solo en esta página · 2 productos digitales
               </p>
             </div>
 
             <div className="mt-6">
               <a
-                href={UPSELL_CHECKOUT_URL}
+                href={DOWNSELL_CHECKOUT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex w-full flex-col items-center justify-center rounded-full bg-verde-cta px-6 py-4 text-center font-display text-lg font-extrabold text-white shadow-lg shadow-verde-cta/30 transition-transform hover:bg-verde-cta-dark active:scale-95 animate-cta-pulse sm:text-xl"
               >
-                <span className="leading-tight">SÍ, QUIERO AGREGAR ESTOS PACKS</span>
+                <span className="leading-tight">SÍ, QUIERO EL COMBO COMPLETO</span>
                 <span className="text-xs font-semibold text-white/85 sm:text-sm">Compra 100% segura</span>
               </a>
             </div>
