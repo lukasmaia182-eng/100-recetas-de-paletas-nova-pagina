@@ -1,7 +1,7 @@
 import Image from "next/image"
 
-// Link real del checkout de Hotmart de este combo (downsell) — actualízalo con el link correcto
-const DOWNSELL_CHECKOUT_URL = "https://pay.hotmart.com/J102656950K?off=2z6jarki&checkoutMode=10&bid=1784058527948"
+// Link real del checkout de Hotmart de este combo (downsell)
+const DOWNSELL_CHECKOUT_URL = "https://pay.hotmart.com/A102621817B?off=iucwm8qc&checkoutMode=10&bid=1784394808278"
 // Página de acceso a la que va el cliente si rechaza el combo
 const DECLINE_URL = "/seuacesso"
 
