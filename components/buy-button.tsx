@@ -10,9 +10,20 @@ type BuyButtonProps = {
   className?: string
   subLabel?: string
   href?: string
+  /** ID usado para criar o gatilho de evento avançado no GTM. Padrão: "botao-compra". */
+  id?: string
+  /** Rótulo de contexto (ex.: "hero", "oferta-final") enviado ao GTM via data-gtm-location. */
+  location?: string
 }
 
-export function BuyButton({ children, className, subLabel, href = CHECKOUT_URL }: BuyButtonProps) {
+export function BuyButton({
+  children,
+  className,
+  subLabel,
+  href = CHECKOUT_URL,
+  id = "botao-compra",
+  location,
+}: BuyButtonProps) {
   const trackCheckout = useTrackCheckout()
 
   const handleClick = () => {
@@ -23,6 +34,9 @@ export function BuyButton({ children, className, subLabel, href = CHECKOUT_URL }
 
   return (
     <a
+      id={id}
+      data-gtm="buy-button"
+      data-gtm-location={location}
       href={href}
       onClick={handleClick}
       target="_blank"
