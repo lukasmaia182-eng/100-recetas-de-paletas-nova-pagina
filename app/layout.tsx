@@ -6,6 +6,7 @@ import './globals.css'
 
 const META_PIXEL_ID = '1816178736411720'
 const META_PIXEL_ID_BACKUP = '27589484377368937'
+const UTMIFY_PIXEL_ID = process.env.NEXT_PUBLIC_UTMIFY_PIXEL_ID ?? ''
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -107,6 +108,14 @@ document.head.appendChild(b);`}
           async
           defer
         />
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`window.pixelId = "${UTMIFY_PIXEL_ID}";
+var a = document.createElement("script");
+a.setAttribute("async", "");
+a.setAttribute("defer", "");
+a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+document.head.appendChild(a);`}
+        </Script>
         {/* Pixel X App - START */}
         <Script id="pixel-x-app" strategy="afterInteractive">
           {`!function(){var e=window.location.href,t=document.title,n=Date.now(),o=document.createElement('script');o.src='https://pxa.maquinadeingresos.site/remote?url='+encodeURIComponent(e)+'&title='+encodeURIComponent(t)+'&time='+n,o.async=!0,document.head.appendChild(o)}()`}
