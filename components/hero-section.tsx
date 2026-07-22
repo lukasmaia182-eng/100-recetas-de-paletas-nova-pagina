@@ -17,6 +17,9 @@ export function HeroSection({
   imageAlt,
   afterCta,
   flushHeadline = false,
+  price = "$3,90",
+  refPrice = "$19,90",
+  checkoutUrl,
 }: {
   headline?: React.ReactNode
   subheadline?: React.ReactNode
@@ -25,6 +28,9 @@ export function HeroSection({
   imageAlt?: string
   afterCta?: React.ReactNode
   flushHeadline?: boolean
+  price?: string
+  refPrice?: string
+  checkoutUrl?: string
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-8 sm:pt-5">
@@ -66,13 +72,15 @@ export function HeroSection({
 
         <div className="mt-4 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
-            De <span className="line-through">$19,90</span> por solo hoy
+            De <span className="line-through">{refPrice}</span> por solo hoy
           </p>
-          <p className="font-display text-5xl font-extrabold text-primary">$3,90</p>
+          <p className="font-display text-5xl font-extrabold text-primary">{price}</p>
         </div>
 
         <div className="mt-4 w-full">
-          <BuyButton subLabel="Pago único · Sin mensualidades · Acceso inmediato">QUIERO LAS 100 RECETAS</BuyButton>
+          <BuyButton href={checkoutUrl} subLabel="Pago único · Sin mensualidades · Acceso inmediato">
+            QUIERO LAS 100 RECETAS
+          </BuyButton>
         </div>
 
         <p className="mt-2 text-sm font-medium text-muted-foreground">

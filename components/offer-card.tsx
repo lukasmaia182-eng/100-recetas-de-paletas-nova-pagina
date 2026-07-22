@@ -23,7 +23,15 @@ const bonuses = [
   "Bono: 30 Combos Rentables de Paletas",
 ]
 
-export function OfferCard() {
+export function OfferCard({
+  price = "$3,90",
+  refPrice = "$19,90",
+  checkoutUrl,
+}: {
+  price?: string
+  refPrice?: string
+  checkoutUrl?: string
+} = {}) {
   return (
     <section id="oferta" className="scroll-mt-4 px-5 py-8">
       <div className="mx-auto max-w-md overflow-hidden rounded-3xl bg-card shadow-xl shadow-chocolate/10">
@@ -77,14 +85,16 @@ export function OfferCard() {
           <div className="mt-4 text-center">
             <p className="text-base text-muted-foreground">
               Valor de referencia:{" "}
-              <span className="font-semibold text-muted-foreground line-through">$19,90</span>
+              <span className="font-semibold text-muted-foreground line-through">{refPrice}</span>
             </p>
-            <p className="mt-1 font-display text-5xl font-extrabold text-primary">$3,90</p>
+            <p className="mt-1 font-display text-5xl font-extrabold text-primary">{price}</p>
             <p className="mt-1 text-sm font-semibold text-pistache">Pago único · Sin mensualidades · Producto digital</p>
           </div>
 
           <div className="mt-5">
-            <BuyButton subLabel="Compra 100% segura">SÍ, QUIERO LAS 100 RECETAS</BuyButton>
+            <BuyButton href={checkoutUrl} subLabel="Compra 100% segura">
+              SÍ, QUIERO LAS 100 RECETAS
+            </BuyButton>
           </div>
         </div>
       </div>

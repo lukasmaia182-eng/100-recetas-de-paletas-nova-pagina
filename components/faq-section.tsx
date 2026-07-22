@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { BuyButton } from "./buy-button"
 
-const faqs = [
+const buildFaqs = (price: string) => [
   {
     q: "¿El producto es físico o digital?",
     a: "Es un producto completamente digital. No recibirás ningún material físico en tu domicilio.",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "¿Tengo que pagar cada mes?",
-    a: "No. El precio de $3,90 corresponde a un pago único.",
+    a: `No. El precio de ${price} corresponde a un pago único.`,
   },
   {
     q: "¿Puedo imprimir el material?",
@@ -42,8 +42,15 @@ const faqs = [
   },
 ]
 
-export function FaqSection() {
+export function FaqSection({
+  price = "$3,90",
+  checkoutUrl,
+}: {
+  price?: string
+  checkoutUrl?: string
+} = {}) {
   const [open, setOpen] = useState<number | null>(0)
+  const faqs = buildFaqs(price)
 
   return (
     <section className="px-5 py-8">
@@ -84,7 +91,7 @@ export function FaqSection() {
         </ul>
 
         <div className="mt-5">
-          <BuyButton subLabel="Acceso inmediato por solo $3,90" />
+          <BuyButton href={checkoutUrl} subLabel={`Acceso inmediato por solo ${price}`} />
         </div>
       </div>
     </section>
