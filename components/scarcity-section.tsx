@@ -5,7 +5,15 @@ import { BuyButton } from "./buy-button"
 
 const START_SECONDS = 15 * 60
 
-export function ScarcitySection() {
+export function ScarcitySection({
+  price = "$3,90",
+  refPrice = "$19,90",
+  checkoutUrl,
+}: {
+  price?: string
+  refPrice?: string
+  checkoutUrl?: string
+} = {}) {
   const [secondsLeft, setSecondsLeft] = useState(START_SECONDS)
 
   useEffect(() => {
@@ -32,12 +40,12 @@ export function ScarcitySection() {
         </div>
 
         <p className="mt-4 text-base leading-relaxed text-creme/90 text-pretty">
-          El precio de $3,90 es solo por hoy. Cuando el cronómetro llegue a cero, el valor vuelve a subir. Pago único,
+          El precio de {price} es solo por hoy. Cuando el cronómetro llegue a cero, el valor vuelve a subir. Pago único,
           sin mensualidades y con acceso digital. Asegura tu acceso ahora mismo.
         </p>
 
         <div className="mt-5">
-          <BuyButton subLabel="Solo hoy por $3,90 en lugar de $19,90" />
+          <BuyButton href={checkoutUrl} subLabel={`Solo hoy por ${price} en lugar de ${refPrice}`} />
         </div>
       </div>
     </section>
