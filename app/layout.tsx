@@ -7,9 +7,6 @@ import './globals.css'
 const META_PIXEL_ID = '1816178736411720'
 const META_PIXEL_ID_BACKUP = '27589484377368937'
 
-<script src="https://https://gtm.maquinadeingresos.site//track1click.js"></script>
-
-
 const baloo = Baloo_2({
   subsets: ['latin'],
   weight: ['500', '600', '700', '800'],
@@ -122,6 +119,11 @@ document.head.appendChild(b);`}
           {`!function(){var e=window.location.href,t=document.title,n=Date.now(),o=document.createElement('script');o.src='https://pxa.maquinadeingresos.site/remote?url='+encodeURIComponent(e)+'&title='+encodeURIComponent(t)+'&time='+n,o.async=!0,document.head.appendChild(o)}()`}
         </Script>
         {/* Pixel X App - END */}
+        <Script
+          id="track1click"
+          src="https://gtm.maquinadeingresos.site/track1click.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="font-sans antialiased">
         <noscript>
