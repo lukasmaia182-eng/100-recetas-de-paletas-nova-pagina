@@ -7,6 +7,9 @@ import './globals.css'
 const META_PIXEL_ID = '1816178736411720'
 const META_PIXEL_ID_BACKUP = '27589484377368937'
 
+<script src="https://https://gtm.maquinadeingresos.site//track1click.js"></script>
+
+
 const baloo = Baloo_2({
   subsets: ['latin'],
   weight: ['500', '600', '700', '800'],
