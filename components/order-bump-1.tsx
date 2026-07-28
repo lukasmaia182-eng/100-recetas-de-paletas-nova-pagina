@@ -3,7 +3,7 @@ import Image from "next/image"
 // Link real del checkout de Hotmart de este producto (order bump)
 const CHECKOUT_URL = "https://pay.hotmart.com/R106920129R?off=myme2ayf&checkoutMode=10"
 // Página a la que va el cliente si rechaza la oferta
-const DECLINE_URL = "/"
+const DECLINE_URL = "/seuacesso"
 
 const benefits = [
   "50 coberturas y toppings premium para tus paletas",
