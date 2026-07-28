@@ -70,8 +70,7 @@ export function OrderBumpCombo() {
             </ul>
 
             <div className="mt-6 text-center">
-              {/* TODO: reemplazar por el precio definitivo del combo */}
-              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$--,--</p>
+              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$2,50</p>
               <p className="mt-1 text-sm font-semibold text-pistache">
                 Pago único · Solo en esta página · Producto digital
               </p>
