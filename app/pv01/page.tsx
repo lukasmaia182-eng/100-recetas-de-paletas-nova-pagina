@@ -7,7 +7,6 @@ import { OfferCard } from "@/components/offer-card"
 import { GuaranteeSection } from "@/components/guarantee-section"
 import { FaqSection } from "@/components/faq-section"
 import { TrackCheckoutProvider } from "@/components/checkout-tracking"
-import { Pv01Pixel } from "@/components/pv01-pixel"
 
 const PRICE = "$7,90"
 const REF_PRICE = "$19,90"
@@ -16,7 +15,6 @@ const CHECKOUT_URL = "https://pay.hotmart.com/T106842867W?off=zkp7gvsk&checkoutM
 export default function Page() {
   return (
     <TrackCheckoutProvider>
-      <Pv01Pixel />
       <main className="min-h-screen bg-background">
         <HeroSection
           price={PRICE}
