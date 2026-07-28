@@ -35,7 +35,10 @@ export function OrderBumpCombo() {
           </div>
 
           <div className="p-6">
-            <h1 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance">
+            <p className="text-center font-display text-sm font-extrabold uppercase tracking-wide text-primary">
+              Combo Imperio Dulce Rentable
+            </p>
+            <h1 className="mt-1 text-center font-display text-2xl font-extrabold text-chocolate text-balance">
               Combo Completo para Multiplicar tus Ventas de Paletas y Postres
             </h1>
             <p className="mt-2 text-center text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
