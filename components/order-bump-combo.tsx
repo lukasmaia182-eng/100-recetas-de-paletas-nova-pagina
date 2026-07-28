@@ -1,8 +1,7 @@
 import Image from "next/image"
 
 // Link real del checkout de Hotmart de este combo (order bump)
-// TODO: reemplazar por el link definitivo del combo
-const CHECKOUT_URL = "#"
+const CHECKOUT_URL = "https://pay.hotmart.com/O106923945R?off=v3xr6g1b&checkoutMode=10"
 // Página a la que va el cliente si rechaza la oferta
 const DECLINE_URL = "/seuacesso"
 
@@ -35,7 +34,10 @@ export function OrderBumpCombo() {
           </div>
 
           <div className="p-6">
-            <h1 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance">
+            <p className="text-center font-display text-sm font-extrabold uppercase tracking-wide text-primary">
+              Combo Imperio Dulce Rentable
+            </p>
+            <h1 className="mt-1 text-center font-display text-2xl font-extrabold text-chocolate text-balance">
               Combo Completo para Multiplicar tus Ventas de Paletas y Postres
             </h1>
             <p className="mt-2 text-center text-sm font-medium leading-relaxed text-muted-foreground text-pretty">
@@ -67,8 +69,7 @@ export function OrderBumpCombo() {
             </ul>
 
             <div className="mt-6 text-center">
-              {/* TODO: reemplazar por el precio definitivo del combo */}
-              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$--,--</p>
+              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$4,90</p>
               <p className="mt-1 text-sm font-semibold text-pistache">
                 Pago único · Solo en esta página · Producto digital
               </p>
