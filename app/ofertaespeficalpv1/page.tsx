@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import { Suspense } from "react"
 import { UpsellOffer } from "@/components/upsell-offer"
-import { MetaEvent } from "@/components/meta-event"
 
 export const metadata: Metadata = {
   title: "Oferta Especial · 150 Packs para Vender Paletas en Instagram",
@@ -10,15 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function OfertaEspecialPV1Page() {
-  return (
-    <>
-      <Suspense fallback={null}>
-        <MetaEvent
-          eventName="CompraAprovada"
-          params={{ content_name: "100 Recetas de Paletas", currency: "BRL", status: "aprovada" }}
-        />
-      </Suspense>
-      <UpsellOffer />
-    </>
-  )
+  return <UpsellOffer />
 }

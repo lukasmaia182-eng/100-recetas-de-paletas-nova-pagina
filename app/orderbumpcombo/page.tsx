@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import { Suspense } from "react"
 import { OrderBumpCombo } from "@/components/order-bump-combo"
-import { MetaEvent } from "@/components/meta-event"
 
 export const metadata: Metadata = {
   title: "Oferta Especial · Combo Completo para Multiplicar tus Ventas de Paletas",
@@ -10,15 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function OrderBumpComboPage() {
-  return (
-    <>
-      <Suspense fallback={null}>
-        <MetaEvent
-          eventName="CompraAprovada"
-          params={{ content_name: "100 Recetas de Paletas", currency: "BRL", status: "aprovada" }}
-        />
-      </Suspense>
-      <OrderBumpCombo />
-    </>
-  )
+  return <OrderBumpCombo />
 }
