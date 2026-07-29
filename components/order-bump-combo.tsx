@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 // Link real del checkout de Hotmart de este combo (order bump)
-const CHECKOUT_URL = "https://pay.hotmart.com/O106923945R?off=v3xr6g1b&checkoutMode=10"
+const CHECKOUT_URL = "https://pay.hotmart.com/O106923945R?off=g5m6eokg&checkoutMode=10"
 // Página a la que va el cliente si rechaza la oferta
 const DECLINE_URL = "/seuacesso"
 
@@ -69,7 +69,7 @@ export function OrderBumpCombo() {
             </ul>
 
             <div className="mt-6 text-center">
-              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$4,90</p>
+              <p className="mt-1 font-display text-5xl font-extrabold text-primary">$1,90</p>
               <p className="mt-1 text-sm font-semibold text-pistache">
                 Pago único · Solo en esta página · Producto digital
               </p>
