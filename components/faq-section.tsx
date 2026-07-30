@@ -21,8 +21,8 @@ const buildFaqs = (price: string) => [
     a: "Sí. Puedes consultar el material desde tu celular, computadora o tablet.",
   },
   {
-    q: "¿Los ingredientes se consiguen en México?",
-    a: "Las recetas priorizan ingredientes comunes y fáciles de encontrar en México. Algunas opciones premium pueden utilizar ingredientes específicos.",
+    q: "¿Los ingredientes son fáciles de encontrar?",
+    a: "Sí. Las recetas priorizan ingredientes accesibles y fáciles de encontrar en supermercados y tiendas de repostería de Latinoamérica. Algunas opciones premium pueden utilizar ingredientes específicos, pero también encontrarás alternativas más económicas.",
   },
   {
     q: "¿Necesito una máquina profesional?",
