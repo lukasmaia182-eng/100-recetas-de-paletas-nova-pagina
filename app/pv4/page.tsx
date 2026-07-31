@@ -8,6 +8,7 @@ import { GuaranteeSection } from "@/components/guarantee-section"
 import { FaqSection } from "@/components/faq-section"
 
 const PRICE = "US$ 5,90"
+const REF_PRICE = "US$ 19,90"
 const CHECKOUT_URL = "https://pay.hotmart.com/T106842867W?off=j4gm9vwz&checkoutMode=10"
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
     <main className="min-h-screen bg-background">
       <HeroSection
         price={PRICE}
+        refPrice={REF_PRICE}
         checkoutUrl={CHECKOUT_URL}
         headline={
           <span className="text-verde-cta">Ahora puedes preparar paletas cremosas para vender todos los días</span>
@@ -35,9 +37,9 @@ export default function Page() {
       />
       <PracticeSection />
       <IdealSection />
-      <ScarcitySection price={PRICE} checkoutUrl={CHECKOUT_URL} />
+      <ScarcitySection price={PRICE} refPrice={REF_PRICE} checkoutUrl={CHECKOUT_URL} />
       <SocialProof />
-      <OfferCard price={PRICE} checkoutUrl={CHECKOUT_URL} />
+      <OfferCard price={PRICE} refPrice={REF_PRICE} checkoutUrl={CHECKOUT_URL} />
       <GuaranteeSection />
       <FaqSection price={PRICE} checkoutUrl={CHECKOUT_URL} />
 
