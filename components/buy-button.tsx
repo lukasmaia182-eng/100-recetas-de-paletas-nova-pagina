@@ -27,6 +27,8 @@ export function BuyButton({
       data-gtm="buy-button"
       data-gtm-location={location}
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "group relative flex w-full flex-col items-center justify-center rounded-full bg-verde-cta px-6 py-4 text-center font-display text-lg font-extrabold text-white shadow-lg shadow-verde-cta/30 transition-transform hover:bg-verde-cta-dark active:scale-95 sm:text-xl",
         "animate-cta-pulse",
