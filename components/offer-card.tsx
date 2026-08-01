@@ -27,10 +27,14 @@ export function OfferCard({
   price = "$3,90",
   refPrice = "$19,90",
   checkoutUrl,
+  imageSrc = "/images/ebook-mockup.png",
+  imageAlt = "Recetario '100 Paletas Rellenas y Cremosas' con 100 recetas, rodeado de fichas de recetas de fresa, coco, maracuyá, cookies & cream y un tablet con la receta de guayaba",
 }: {
   price?: string
   refPrice?: string
   checkoutUrl?: string
+  imageSrc?: string
+  imageAlt?: string
 } = {}) {
   return (
     <section id="oferta" className="scroll-mt-4 px-5 py-8">
@@ -51,8 +55,8 @@ export function OfferCard({
 
           <div className="mx-auto mt-4 max-w-xs overflow-hidden rounded-2xl">
             <Image
-              src="/images/ebook-mockup.png"
-              alt="Recetario '100 Paletas Rellenas y Cremosas' con 100 recetas, rodeado de fichas de recetas de fresa, coco, maracuyá, cookies & cream y un tablet con la receta de guayaba"
+              src={imageSrc || "/placeholder.svg"}
+              alt={imageAlt}
               width={600}
               height={600}
               className="h-auto w-full object-contain"
