@@ -48,7 +48,40 @@ export default function Page() {
       />
       <IdealSection />
       <ScarcitySection />
-      <SocialProof />
+      <SocialProof
+        slides={[
+          {
+            src: "/images/pv10-social-1.png",
+            alt: "Mujer con delantal empacando paletas rellenas gourmet en una caja de regalo kraft, lista para vender desde casa",
+            text: "Lista para vender desde casa.",
+          },
+          {
+            src: "/images/pv10-social-2.png",
+            alt: "Mujer consultando las recetas de paletas en su celular, con paletas gourmet sobre una tabla de mármol",
+            text: "Ya tengo mis recetas.",
+          },
+          {
+            src: "/images/pv10-social-3.png",
+            alt: "Mujer sonriente mostrando una tabla con sus primeras paletas rellenas gourmet de varios sabores",
+            text: "Mis primeras paletas.",
+          },
+          {
+            src: "/images/pv10-social-4.png",
+            alt: "Manos decorando una paleta de chocolate con avellanas, siguiendo el paso a paso con bowls de toppings",
+            text: "Seguí el paso a paso.",
+          },
+          {
+            src: "/images/pv10-social-5.png",
+            alt: "Producción en casa con varias cajas de regalo kraft llenas de paletas gourmet con lazos y etiquetas 'Hecho con amor'",
+            text: "Mi producción en casa.",
+          },
+          {
+            src: "/images/pv10-social-6.png",
+            alt: "Mujer añadiendo un nuevo producto de paletas gourmet a su menú, sosteniendo una paleta de pistacho",
+            text: "Nuevo producto para mi menú.",
+          },
+        ]}
+      />
       <OfferCard />
       <GuaranteeSection />
       <FaqSection />
