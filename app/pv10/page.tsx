@@ -25,8 +25,8 @@ export default function Page() {
             </span>
           </>
         }
-        imageSrc="/images/hero-recetario-paletas.png"
-        imageAlt="Recetario premium '100 Paletas Rellenas y Cremosas' rodeado de fichas de recetas de paletas cremosas de fresa, coco, maracuyá y cookies & cream, con paletas de varios sabores en la portada."
+        imageSrc="/images/pv10-hero.png"
+        imageAlt="Cajas de regalo con paletas rellenas gourmet de varios sabores junto al libro 'Paletas Rellenas Rentables', con unas manos sosteniendo una paleta de chocolate con una etiqueta que dice 'Hecho con amor para ti'."
       />
       <PracticeSection />
       <IdealSection />
