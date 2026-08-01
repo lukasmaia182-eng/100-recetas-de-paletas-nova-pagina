@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const products = [
+const defaultProducts = [
   {
     src: "/images/practice-1.png",
     alt: "Recetario '100 Paletas Rellenas y Cremosas' sobre una mesa de madera junto a fichas de recetas de fresa, coco, chocolate y maracuyá",
@@ -15,7 +15,21 @@ const products = [
   },
 ]
 
-export function PracticeSection() {
+const DEFAULT_MAIN_IMAGE = "/images/tutorial-mujer.png"
+const DEFAULT_MAIN_ALT =
+  "Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas', paletas empacadas con etiquetas 'Hecho en casa' y variedad de paletas ya preparadas"
+
+interface PracticeSectionProps {
+  mainImageSrc?: string
+  mainImageAlt?: string
+  products?: { src: string; alt: string }[]
+}
+
+export function PracticeSection({
+  mainImageSrc = DEFAULT_MAIN_IMAGE,
+  mainImageAlt = DEFAULT_MAIN_ALT,
+  products = defaultProducts,
+}: PracticeSectionProps) {
   return (
     <section className="bg-secondary px-5 py-8">
       <div className="mx-auto max-w-md">
@@ -25,8 +39,8 @@ export function PracticeSection() {
 
         <div className="mt-5 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">
           <Image
-            src="/images/tutorial-mujer.png"
-            alt="Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas', paletas empacadas con etiquetas 'Hecho en casa' y variedad de paletas ya preparadas"
+            src={mainImageSrc || "/placeholder.svg"}
+            alt={mainImageAlt}
             width={800}
             height={600}
             className="h-auto w-full object-cover"

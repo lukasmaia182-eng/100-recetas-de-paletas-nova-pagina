@@ -28,7 +28,10 @@ export default function Page() {
         imageSrc="/images/pv10-hero.png"
         imageAlt="Cajas de regalo con paletas rellenas gourmet de varios sabores junto al libro 'Paletas Rellenas Rentables', con unas manos sosteniendo una paleta de chocolate con una etiqueta que dice 'Hecho con amor para ti'."
       />
-      <PracticeSection />
+      <PracticeSection
+        mainImageSrc="/images/pv10-practica-1.png"
+        mainImageAlt="Mujer con delantal decorando una paleta de pistacho con topping, sobre una mesa de mármol con el libro 'Paletas Rellenas Rentables', variedad de paletas rellenas gourmet, bowls de pistachos, fresas y frutos rojos, y cajas de regalo con paletas empacadas."
+      />
       <IdealSection />
       <ScarcitySection />
       <SocialProof />
