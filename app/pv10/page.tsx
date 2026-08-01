@@ -82,7 +82,10 @@ export default function Page() {
           },
         ]}
       />
-      <OfferCard />
+      <OfferCard
+        imageSrc="/images/pv10-oferta.png"
+        imageAlt="Libro 'Paletas Rellenas Rentables - 100 recetas para preparar y vender' junto a un tablet con una receta y variedad de paletas rellenas gourmet: pistacho con pistachos triturados, chocolate con drizzle y frutos rojos."
+      />
       <GuaranteeSection />
       <FaqSection />
 
