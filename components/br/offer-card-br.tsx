@@ -9,18 +9,18 @@ const includes = [
   "Recheios e combinações",
   "Sabores econômicos",
   "Sabores premium",
-  "Paletas inspiradas em sobremesas",
-  "Mini paletas para festas e eventos",
+  "Picolés inspirados em sobremesas",
+  "Mini picolés para festas e eventos",
   "Dicas de textura",
   "Ideias de apresentação",
   "Acesso digital imediato",
 ]
 
 const bonuses = [
-  "Bônus: Preço Certo para Cada Paleta",
-  "Bônus: 12 Cardápios Prontos de Paletas",
+  "Bônus: Preço Certo para Cada Picolé",
+  "Bônus: 12 Cardápios Prontos de Picolés",
   "Bônus: 50 Mensagens Prontas para Vender",
-  "Bônus: 30 Combos Lucrativos de Paletas",
+  "Bônus: 30 Combos Lucrativos de Picolés",
 ]
 
 export function OfferCardBr({
@@ -28,7 +28,7 @@ export function OfferCardBr({
   refPrice = "R$ 47,00",
   checkoutUrl,
   imageSrc = "/images/br-oferta.png",
-  imageAlt = "Mulher segurando o livro 'Paletas Recheadas Lucrativas - 100 receitas para fazer e vender' com uma variedade de paletas recheadas gourmet à frente.",
+  imageAlt = "Mulher segurando o livro 'Picolés Gourmet Recheados Lucrativos - 100 receitas para fazer e vender' com uma variedade de picolés gourmet recheados à frente.",
 }: {
   price?: string
   refPrice?: string
@@ -50,7 +50,7 @@ export function OfferCardBr({
             Tudo o que você vai receber
           </h2>
           <p className="mt-1.5 text-center font-display text-base font-bold text-primary">
-            100 Receitas de Paletas Recheadas
+            100 Receitas de Picolés Gourmet Recheados
           </p>
 
           <div className="mx-auto mt-4 max-w-xs overflow-hidden rounded-2xl">

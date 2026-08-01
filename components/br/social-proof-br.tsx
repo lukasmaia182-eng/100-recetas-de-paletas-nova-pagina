@@ -3,32 +3,32 @@ import Image from "next/image"
 const defaultSlides = [
   {
     src: "/images/br-social-1.png",
-    alt: "Mulher com avental embalando paletas recheadas gourmet em uma caixa de presente kraft, pronta para vender de casa",
+    alt: "Mulher com avental embalando picolés gourmet recheados em uma caixa de presente kraft, pronta para vender de casa",
     text: "Pronta para vender de casa.",
   },
   {
     src: "/images/br-social-2.png",
-    alt: "Mulher segurando duas paletas gourmet, uma de pistache e outra de chocolate",
+    alt: "Mulher segurando dois picolés gourmet, um de pistache e outro de chocolate",
     text: "Já tenho minhas receitas.",
   },
   {
     src: "/images/br-social-3.png",
-    alt: "Mulher sorrindo mostrando um prato com suas primeiras paletas recheadas gourmet de vários sabores",
-    text: "Minhas primeiras paletas.",
+    alt: "Mulher sorrindo mostrando um prato com seus primeiros picolés gourmet recheados de vários sabores",
+    text: "Meus primeiros picolés.",
   },
   {
     src: "/images/br-social-4.png",
-    alt: "Mãos decorando uma paleta de chocolate com avelãs, seguindo o passo a passo com bowls de toppings",
+    alt: "Mãos decorando um picolé de chocolate com avelãs, seguindo o passo a passo com bowls de toppings",
     text: "Segui o passo a passo.",
   },
   {
     src: "/images/br-social-5.png",
-    alt: "Produção em casa com várias caixas de presente kraft cheias de paletas gourmet prontas para entrega",
+    alt: "Produção em casa com várias caixas de presente kraft cheias de picolés gourmet prontos para entrega",
     text: "Minha produção em casa.",
   },
   {
     src: "/images/br-social-6.png",
-    alt: "Mulher segurando uma paleta de pistache, um novo produto para o cardápio do seu negócio",
+    alt: "Mulher segurando um picolé de pistache, um novo produto para o cardápio do seu negócio",
     text: "Novo produto pro meu cardápio.",
   },
 ]
@@ -44,7 +44,7 @@ export function SocialProofBr({ slides = defaultSlides }: SocialProofBrProps) {
     <section className="overflow-hidden py-8">
       <div className="mx-auto mb-4 max-w-md px-5">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
-          Elas já estão fazendo as próprias paletas
+          Elas já estão fazendo os próprios picolés
         </h2>
       </div>
 

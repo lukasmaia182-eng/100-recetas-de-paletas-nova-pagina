@@ -12,12 +12,14 @@ export default function Page() {
     <main className="min-h-screen bg-background">
       <HeroSectionBr
         headline={
-          <span className="text-verde-cta">Agora você pode fazer paletas cremosas para vender todos os dias</span>
+          <span className="text-verde-cta">
+            Agora você pode fazer picolés gourmet recheados para vender todos os dias
+          </span>
         }
         subheadline={
           <>
             <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-              + de 100 Receitas de Paletas Recheadas, Cremosas e Fáceis de Vender.
+              + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
             </span>
             <span className="mt-2 block">
               Para quem quer ganhar dinheiro em casa sem precisar de ingredientes caros nem passar horas inventando
@@ -26,7 +28,7 @@ export default function Page() {
           </>
         }
         imageSrc="/images/br-hero.png"
-        imageAlt="Caixas de presente com paletas recheadas gourmet de vários sabores ao lado do livro 'Paletas Recheadas Lucrativas', com mãos segurando uma paleta de chocolate com uma etiqueta escrita 'Feito com amor para você'."
+        imageAlt="Caixas de presente com picolés gourmet recheados de vários sabores ao lado do livro 'Picolés Gourmet Recheados Lucrativos', com mãos segurando um picolé de chocolate com uma etiqueta escrita 'Feito com amor para você'."
       />
       <PracticeSectionBr />
       <IdealSectionBr />
@@ -38,8 +40,8 @@ export default function Page() {
 
       <footer className="bg-chocolate px-5 py-8 text-center">
         <p className="mx-auto max-w-md text-xs leading-relaxed text-creme/70">
-          Este é um produto digital. O resultado depende da aplicação das receitas. 100 Paletas Recheadas e Cremosas.
-          Todos os direitos reservados.
+          Este é um produto digital. O resultado depende da aplicação das receitas. 100 Picolés Gourmet Recheados e
+          Cremosos. Todos os direitos reservados.
         </p>
       </footer>
     </main>

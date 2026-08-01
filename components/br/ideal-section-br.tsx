@@ -13,7 +13,7 @@ const items = [
   },
   {
     title: "Começar do zero como iniciante",
-    text: "Consulte instruções claras e organizadas, mesmo que você nunca tenha feito paletas recheadas.",
+    text: "Consulte instruções claras e organizadas, mesmo que você nunca tenha feito picolés recheados.",
   },
 ]
 
