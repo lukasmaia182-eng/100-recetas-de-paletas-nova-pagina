@@ -3,15 +3,15 @@ import Image from "next/image"
 const defaultProducts = [
   {
     src: "/images/br-practica-2.png",
-    alt: "Caixa de presente kraft com laço dourado e etiqueta 'Feito com amor para você', com uma paleta de chocolate e avelãs embrulhada em papel decorado, ao lado do livro 'Paletas Recheadas Lucrativas'.",
+    alt: "Caixa de presente kraft com laço dourado e etiqueta 'Feito com amor para você', com um picolé de chocolate e avelãs embrulhado em papel decorado, ao lado do livro 'Picolés Gourmet Recheados Lucrativos'.",
   },
   {
     src: "/images/br-practica-3.png",
-    alt: "Caixa de presente kraft aberta com uma paleta de chocolate e avelãs, ao lado de um caixote de madeira com paletas gourmet de vários sabores.",
+    alt: "Caixa de presente kraft aberta com um picolé de chocolate e avelãs, ao lado de um caixote de madeira com picolés gourmet de vários sabores.",
   },
   {
     src: "/images/br-practica-4.png",
-    alt: "Duas caixas de presente kraft com laços dourados e uma paleta de pistache, cercadas de bowls com toppings e uma tábua de mármore com paletas gourmet prontas.",
+    alt: "Duas caixas de presente kraft com laços dourados e um picolé de pistache, cercadas de bowls com toppings e uma tábua de mármore com picolés gourmet prontos.",
   },
 ]
 
@@ -23,7 +23,7 @@ interface PracticeSectionBrProps {
 
 export function PracticeSectionBr({
   mainImageSrc = "/images/br-practica-1.png",
-  mainImageAlt = "Mulher com avental decorando uma paleta de pistache, sobre uma mesa com o livro 'Paletas Recheadas Lucrativas' e variedade de paletas recheadas gourmet.",
+  mainImageAlt = "Mulher com avental decorando um picolé de pistache, sobre uma mesa com o livro 'Picolés Gourmet Recheados Lucrativos' e variedade de picolés gourmet recheados.",
   products = defaultProducts,
 }: PracticeSectionBrProps) {
   return (
@@ -59,7 +59,7 @@ export function PracticeSectionBr({
 
         <p className="mt-4 text-center text-base leading-relaxed text-foreground text-pretty">
           Cada receita reúne os ingredientes e as quantidades, o preparo passo a passo, as dicas de textura e as ideias
-          de apresentação para você saber exatamente como sua paleta vai ficar em casa.
+          de apresentação para você saber exatamente como seu picolé vai ficar em casa.
         </p>
       </div>
     </section>

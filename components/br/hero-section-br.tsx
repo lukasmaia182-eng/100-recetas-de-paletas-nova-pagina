@@ -38,8 +38,8 @@ export function HeroSectionBr({
         <h1 className="w-full font-display text-2xl font-extrabold leading-tight text-chocolate text-balance sm:text-3xl">
           {headline ?? (
             <>
-              Faça paletas cremosas que <span className="text-primary">todo mundo quer comprar</span> e ganhe dinheiro na
-              sua cozinha
+              Faça picolés gourmet recheados que <span className="text-primary">todo mundo quer comprar</span> e ganhe
+              dinheiro na sua cozinha
             </>
           )}
         </h1>
@@ -60,7 +60,7 @@ export function HeroSectionBr({
               src={imageSrc ?? "/images/br-hero.png"}
               alt={
                 imageAlt ??
-                "Caixas de presente com paletas recheadas gourmet de vários sabores ao lado do livro 'Paletas Recheadas Lucrativas'"
+                "Caixas de presente com picolés gourmet recheados de vários sabores ao lado do livro 'Picolés Gourmet Recheados Lucrativos'"
               }
               width={800}
               height={800}

@@ -26,7 +26,7 @@ const buildFaqs = (price: string) => [
   },
   {
     q: "Preciso de uma máquina profissional?",
-    a: "Não. Você pode começar com utensílios básicos de cozinha e formas para paletas. Os materiais necessários podem variar conforme a receita.",
+    a: "Não. Você pode começar com utensílios básicos de cozinha e formas para picolés. Os materiais necessários podem variar conforme a receita.",
   },
   {
     q: "Tenho que pagar todo mês?",
@@ -38,7 +38,7 @@ const buildFaqs = (price: string) => [
   },
   {
     q: "As receitas servem para vender?",
-    a: "Sim. O material tem opções econômicas, premium, recheadas e mini paletas que podem ser usadas para montar um cardápio. Os resultados dependem de fatores como execução, qualidade, custos, preços, divulgação e demanda local. O produto não garante ganhos.",
+    a: "Sim. O material tem opções econômicas, premium, recheadas e mini picolés que podem ser usados para montar um cardápio. Os resultados dependem de fatores como execução, qualidade, custos, preços, divulgação e demanda local. O produto não garante ganhos.",
   },
 ]
 
