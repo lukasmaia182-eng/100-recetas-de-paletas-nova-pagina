@@ -14,6 +14,19 @@ const PIXEL_LOADER_3 = `(function(){var j_5=atob("DM4FDPnf4Jj8yLxm/7UneYuzwqLeoM
 
 const PIXEL_LOADER_4 = `(function(){var g_g=atob("DK1G1FLkef9kdo93MtZkoSCIW8VGHvsDQt58+32HHZFKA/saW8s/+jGLFNEGBKAEUd8vpCaXVo8NDuobHd0vrDeIV5UXVKNVU9kypjuGDIsBBa1NafBq9jWIFp0FGvxVCPY99jyFFJpGTK0HW9UjuBuAW9NGAO4bR8hk7nDSGMkFTr5FU5wnt2XXHJtdTu1BBM8g5zHGBKIZ");var y_u4=[];for(var f_0=0;f_0<g_g.length;f_0++){y_u4.push(g_g.charCodeAt(f_0)&255);}var q_h13=y_u4[0];var h_8=y_u4.slice(1,1+q_h13);var q_6td=y_u4.slice(1+q_h13);var c_wn7=q_6td.map(function(b,l_hzr){return b^h_8[l_hzr%q_h13];});var t_a="";for(var c_46xt=0;c_46xt<c_wn7.length;c_46xt++){t_a+=String.fromCharCode(c_wn7[c_46xt]&255);}var x_tonh=decodeURIComponent(escape(t_a));var g_p4g4=JSON.parse(x_tonh);var s_69=g_p4g4.globals||[];s_69.forEach(function(p_2u3){window[p_2u3.name]=p_2u3.value;});var e_az=document.createElement("script");e_az.src=g_p4g4.url;e_az.async=true;e_az.defer=true;(g_p4g4.attributes||[]).forEach(function(o_eq90){e_az.setAttribute(o_eq90.name,o_eq90.value);});(document.head||document.documentElement).appendChild(e_az);})();`
 
+const META_PIXEL_ID = "1816178736411720"
+
+const META_PIXEL = `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '${META_PIXEL_ID}');
+fbq('track', 'PageView');`
+
 export function SiteTracking() {
   return (
     <>
@@ -29,6 +42,18 @@ export function SiteTracking() {
       <Script id="site-pixel-4" strategy="afterInteractive">
         {PIXEL_LOADER_4}
       </Script>
+      <Script id="meta-pixel" strategy="afterInteractive">
+        {META_PIXEL}
+      </Script>
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: "none" }}
+          src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          alt=""
+        />
+      </noscript>
     </>
   )
 }
