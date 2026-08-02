@@ -7,6 +7,8 @@ import { OfferCardBr } from "@/components/br/offer-card-br"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
 import { FaqSectionBr } from "@/components/br/faq-section-br"
 
+const CHECKOUT_URL_BR = "https://pay.hotmart.com/T106842867W?off=x70hms93&checkoutMode=10"
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-background">
@@ -29,14 +31,15 @@ export default function Page() {
         }
         imageSrc="/images/br-hero.png"
         imageAlt="Caixas de presente com picolés gourmet recheados de vários sabores ao lado do livro 'Picolés Gourmet Recheados Lucrativos', com mãos segurando um picolé de chocolate com uma etiqueta escrita 'Feito com amor para você'."
+        checkoutUrl={CHECKOUT_URL_BR}
       />
       <PracticeSectionBr />
       <IdealSectionBr />
-      <ScarcitySectionBr />
+      <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} />
       <SocialProofBr />
-      <OfferCardBr />
+      <OfferCardBr checkoutUrl={CHECKOUT_URL_BR} />
       <GuaranteeSectionBr />
-      <FaqSectionBr />
+      <FaqSectionBr checkoutUrl={CHECKOUT_URL_BR} />
 
       <footer className="bg-chocolate px-5 py-8 text-center">
         <p className="mx-auto max-w-md text-xs leading-relaxed text-creme/70">
