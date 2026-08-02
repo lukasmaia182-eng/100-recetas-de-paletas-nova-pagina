@@ -30,7 +30,7 @@ export function PracticeSectionBr({
     <section className="bg-secondary px-5 py-8">
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
-          Veja como elas ficam na prática
+          Veja como os picolés ficam na prática
         </h2>
 
         <div className="mt-5 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">

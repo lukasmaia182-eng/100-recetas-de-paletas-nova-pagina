@@ -45,7 +45,9 @@ export function ScarcitySectionBr({
         </p>
 
         <div className="mt-5">
-          <BuyButton href={checkoutUrl} subLabel={`Só hoje por ${price} em vez de ${refPrice}`} />
+          <BuyButton href={checkoutUrl} subLabel={`Só hoje por ${price} em vez de ${refPrice}`}>
+            QUERO AS 100 RECEITAS
+          </BuyButton>
         </div>
       </div>
     </section>
