@@ -91,7 +91,9 @@ export function FaqSectionBr({
         </ul>
 
         <div className="mt-5">
-          <BuyButton href={checkoutUrl} subLabel={`Acesso imediato por só ${price}`} />
+          <BuyButton href={checkoutUrl} subLabel={`Acesso imediato por só ${price}`}>
+            QUERO AS 100 RECEITAS
+          </BuyButton>
         </div>
       </div>
     </section>
