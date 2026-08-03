@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, boolean } from "drizzle-orm/pg-core"
+import { pgTable, text, timestamp, boolean, jsonb } from "drizzle-orm/pg-core"
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -10,6 +10,10 @@ export const user = pgTable("user", {
   banned: boolean("banned").default(false),
   banReason: text("banReason"),
   banExpires: timestamp("banExpires"),
+  // Controle de acesso ao conteúdo (liberado por compra na Hotmart ou manualmente)
+  accessActive: boolean("accessActive").notNull().default(false),
+  accessSource: text("accessSource"),
+  accessUpdatedAt: timestamp("accessUpdatedAt"),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
   updatedAt: timestamp("updatedAt").notNull().defaultNow(),
 })
@@ -51,6 +55,24 @@ export const verification = pgTable("verification", {
   identifier: text("identifier").notNull(),
   value: text("value").notNull(),
   expiresAt: timestamp("expiresAt").notNull(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow(),
+})
+
+// Registro de compras da Hotmart. `transaction` é único para idempotência do webhook.
+export const purchase = pgTable("purchase", {
+  id: text("id").primaryKey(),
+  transaction: text("transaction").notNull().unique(),
+  email: text("email").notNull(),
+  buyerName: text("buyerName"),
+  userId: text("userId"),
+  productId: text("productId"),
+  productName: text("productName"),
+  status: text("status").notNull(),
+  event: text("event"),
+  grantsAccess: boolean("grantsAccess").notNull().default(false),
+  price: text("price"),
+  raw: jsonb("raw"),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
   updatedAt: timestamp("updatedAt").notNull().defaultNow(),
 })

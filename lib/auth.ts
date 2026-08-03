@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth"
 import { admin } from "better-auth/plugins"
 import { Pool } from "pg"
+import { sendEmail, accessGrantedEmail } from "@/lib/email"
 
 function getBaseURL() {
   if (process.env.BETTER_AUTH_URL) return process.env.BETTER_AUTH_URL
