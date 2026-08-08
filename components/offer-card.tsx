@@ -24,8 +24,8 @@ const bonuses = [
 ]
 
 export function OfferCard({
-  price = "$3,90",
-  refPrice = "$19,90",
+  price = "$9,90",
+  refPrice = "$27,90",
   checkoutUrl,
   imageSrc = "/images/ebook-mockup.png",
   imageAlt = "Recetario '100 Paletas Rellenas y Cremosas' con 100 recetas, rodeado de fichas de recetas de fresa, coco, maracuyá, cookies & cream y un tablet con la receta de guayaba",
