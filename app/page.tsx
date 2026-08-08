@@ -25,8 +25,8 @@ export default function Page() {
             </span>
           </>
         }
-        imageSrc="/images/pv10-hero.png"
-        imageAlt="Cajas de regalo con paletas rellenas gourmet de varios sabores junto al libro 'Paletas Rellenas Rentables', con unas manos sosteniendo una paleta de chocolate con una etiqueta que dice 'Hecho con amor para ti'."
+        imageSrc="/images/hero-paletas-kit.png"
+        imageAlt="Kit Paletas Rellenas Rentables: recetario impreso y digital con 100 recetas, tarjetas de recetas y paletas rellenas de varios sabores"
       />
       <PracticeSection
         mainImageSrc="/images/pv10-practica-1.png"
