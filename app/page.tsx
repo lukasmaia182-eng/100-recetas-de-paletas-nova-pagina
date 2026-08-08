@@ -20,8 +20,8 @@ export default function Page() {
               + de 100 Recetas de Paletas Rellenas, Cremosas y Fáciles de Vender.
             </span>
             <span className="mt-2 block">
-              Para quien quiere ganar dinero desde casa sin necesitar ingredientes caros ni pasar horas inventando
-              recetas.
+              Las recetas que me ayudaron a vender más de 300 paletas heladas este mes y a convertir mi cocina en una
+              fuente de ingresos.
             </span>
           </>
         }
