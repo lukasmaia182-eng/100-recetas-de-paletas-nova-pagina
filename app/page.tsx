@@ -20,13 +20,13 @@ export default function Page() {
               + de 100 Recetas de Paletas Rellenas, Cremosas y Fáciles de Vender.
             </span>
             <span className="mt-2 block">
-              Para quien quiere ganar dinero desde casa sin necesitar ingredientes caros ni pasar horas inventando
-              recetas.
+              Las recetas que me ayudaron a vender más de 300 paletas heladas este mes y a convertir mi cocina en una
+              fuente de ingresos.
             </span>
           </>
         }
-        imageSrc="/images/pv10-hero.png"
-        imageAlt="Cajas de regalo con paletas rellenas gourmet de varios sabores junto al libro 'Paletas Rellenas Rentables', con unas manos sosteniendo una paleta de chocolate con una etiqueta que dice 'Hecho con amor para ti'."
+        imageSrc="/images/hero-paletas-kit.png"
+        imageAlt="Kit Paletas Rellenas Rentables: recetario impreso y digital con 100 recetas, tarjetas de recetas y paletas rellenas de varios sabores"
       />
       <PracticeSection
         mainImageSrc="/images/pv10-practica-1.png"
