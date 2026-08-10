@@ -13,19 +13,36 @@ const bullets = [
 export function HeroBrpv1({ checkoutUrl }: { checkoutUrl: string }) {
   return (
     <section className="px-5 pb-12 pt-8 sm:pt-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
-        {/* Texto */}
-        <div className="order-2 lg:order-1">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-14">
+        {/* Headline (mobile: 1º / desktop: coluna esquerda, linha 1) */}
+        <div className="lg:col-start-1 lg:row-start-1">
           <span className="inline-flex items-center rounded-full bg-dourado/15 px-4 py-1.5 font-display text-xs font-extrabold uppercase tracking-[0.15em] text-dourado-dark">
             100 receitas passo a passo
           </span>
 
-          <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.05] text-chocolate text-balance sm:text-5xl lg:text-6xl">
-            Aprenda a preparar <span className="text-dourado">Picolés Recheados</span> irresistíveis para vender e
-            encantar
+          <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.08] text-chocolate text-balance sm:text-4xl lg:text-[2.75rem]">
+            As receitas que me fizeram vender <span className="text-dourado">+ 250 Picolés Recheados</span> este mês e
+            transformar minha cozinha em uma fonte de renda
           </h1>
+        </div>
 
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
+        {/* Imagem (mobile: 2º, logo após a headline / desktop: coluna direita) */}
+        <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+          <div className="overflow-hidden rounded-[2rem] shadow-2xl shadow-chocolate/15">
+            <Image
+              src="/images/brpv1/hero-ebook.png"
+              alt="Capa do e-book Picolés Recheados Lucrativos com 100 receitas, cercada por picolés gourmet recheados de pistache, morango, caramelo, cookies e chocolate belga"
+              width={1000}
+              height={1000}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Restante do texto (mobile: 3º / desktop: coluna esquerda, linha 2) */}
+        <div className="lg:col-start-1 lg:row-start-2">
+          <p className="max-w-lg text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
             Receitas cremosas, recheios deliciosos e acabamentos premium para você preparar na sua cozinha e transformar
             em um cardápio muito mais atrativo.
           </p>
@@ -59,20 +76,6 @@ export function HeroBrpv1({ checkoutUrl }: { checkoutUrl: string }) {
               <li aria-hidden="true">·</li>
               <li>Acesso após confirmação</li>
             </ul>
-          </div>
-        </div>
-
-        {/* Imagem */}
-        <div className="order-1 lg:order-2">
-          <div className="overflow-hidden rounded-[2rem] shadow-2xl shadow-chocolate/15">
-            <Image
-              src="/images/brpv1/hero-picoles.png"
-              alt="Composição de picolés gourmet recheados de pistache, chocolate belga, frutas vermelhas e chocolate branco sobre bancada de mármore"
-              width={900}
-              height={900}
-              className="h-auto w-full object-cover"
-              priority
-            />
           </div>
         </div>
       </div>
