@@ -21,7 +21,7 @@ export function HeroBrpv1({ checkoutUrl }: { checkoutUrl: string }) {
           </span>
 
           <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.08] text-chocolate text-balance sm:text-4xl lg:text-[2.75rem]">
-            As receitas que me fizeram vender <span className="text-dourado">+ 250 Picolés Recheados</span> este mês e
+            As receitas que me fizeram vender <span className="text-dourado">+ 300 Picolés Recheados</span> este mês e
             transformar minha cozinha em uma fonte de renda
           </h1>
         </div>
