@@ -15,12 +15,12 @@ export default function Page() {
       <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            As receitas que me fizeram vender +300 Picolés inspirados no Magnum este mês e transformar minha cozinha em uma fonte de renda fácil e rápido
+            Aprenda a fazer picolés estilo Magnum na sua cozinha — para saborear em casa ou transformar em uma fonte de renda
           </span>
         }
         subheadline={
           <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-            + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
+            + de 100 Receitas cremosas, cobertura crocante e acabamento premium, com passo a passo simples pra qualquer pessoa fazer — seja pra você, sua família ou pra vender.
           </span>
         }
         imageSrc="/images/br-hero-mockup.png"
