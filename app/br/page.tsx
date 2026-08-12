@@ -15,7 +15,7 @@ export default function Page() {
       <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            As receitas que vão fazer você vender +300 picolés este mês e transformar sua cozinha em uma fonte de renda extra
+            As receitas que me fizeram vender +300 Picolés inspirados no Magnum este mês e transformar minha cozinha em uma fonte de renda fácil e rápido
           </span>
         }
         subheadline={
