@@ -108,8 +108,8 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
   page.drawCircle({ x: CX, y: CY, size: CIRCLE_R, color: rgb(0, 0, 0), opacity: 0.15 })
   page.drawCircle({ x: CX, y: CY, size: CIRCLE_R - 2, color: white, opacity: 0.15 })
 
-  page.drawText("Rinde", {
-    x: CX - bold.widthOfTextAtSize("Rinde", 6) / 2,
+  page.drawText("Rende", {
+    x: CX - bold.widthOfTextAtSize("Rende", 6) / 2,
     y: CY + 12, size: 6, font: bold, color: white, opacity: 0.9,
   })
   const rindeStr = String(recipe.rinde)
@@ -287,10 +287,10 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
     y = 842 - 30
   }
 
-  // Pill "Preparación paso a paso"
-  const PREP_PILL_W = bold.widthOfTextAtSize("PREPARACION PASO A PASO", 10) + 32
+  // Pill "Preparo passo a passo"
+  const PREP_PILL_W = bold.widthOfTextAtSize("PREPARO PASSO A PASSO", 10) + 32
   page.drawRectangle({ x: MARGIN, y: y - 22, width: PREP_PILL_W, height: 22, color: accent })
-  page.drawText("PREPARACION PASO A PASO", { x: MARGIN + 16, y: y - 15, size: 10, font: bold, color: white })
+  page.drawText("PREPARO PASSO A PASSO", { x: MARGIN + 16, y: y - 15, size: 10, font: bold, color: white })
   y -= 30
 
   // Grade 2 colunas
@@ -339,7 +339,7 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
 
   // ─────────────────────────────────────────────────────────────────────────
   // LISTO!
-  // ─────────────────────────────────────────────────────────────────────────
+  // ──────────────────��──────────────────────────────────────────────────────
   const listoLines = wrapText(recipe.listo, regular, 9, CONTENT_W - 110)
   const LISTO_H = Math.max(80, 24 + listoLines.length * 13 + 16)
 
@@ -371,7 +371,7 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
   }
 
   const listoTextX = MARGIN + THUMB_SIZE + 18
-  page.drawText("¡Listo!", { x: listoTextX, y: y - 20, size: 13, font: bold, color: accent })
+  page.drawText("Pronto!", { x: listoTextX, y: y - 20, size: 13, font: bold, color: accent })
   let listoY = y - 34
   for (const line of listoLines) {
     page.drawText(line, { x: listoTextX, y: listoY, size: 9, font: regular, color: dark })
@@ -388,7 +388,7 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
   const conservLines  = wrapText(recipe.conservacion, regular, 8, COL3_W - 18)
   const costoLines    = [
     `Por paleta: ${recipe.costoPaleta}`,
-    `Precio sugerido:`,
+    `Preço sugerido:`,
     recipe.precioVenta,
   ]
 
@@ -409,7 +409,7 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
   // Consejos
   page.drawRectangle({ x: col3Xs[0], y: y - FOOTER_CARD_H, width: COL3_W, height: FOOTER_CARD_H, color: cardBg, borderColor: borderGray, borderWidth: 1 })
   page.drawText("★", { x: col3Xs[0] + 8, y: y - 15, size: 9, font: bold, color: accent })
-  page.drawText("CONSEJOS", { x: col3Xs[0] + 20, y: y - 15, size: 9, font: bold, color: dark })
+  page.drawText("DICAS", { x: col3Xs[0] + 20, y: y - 15, size: 9, font: bold, color: dark })
   let cy0 = y - 28
   for (const lines of consejosLines) {
     page.drawText("•", { x: col3Xs[0] + 8, y: cy0, size: 8, font: bold, color: accent })
@@ -423,7 +423,7 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
   // Conservación
   page.drawRectangle({ x: col3Xs[1], y: y - FOOTER_CARD_H, width: COL3_W, height: FOOTER_CARD_H, color: cardBg, borderColor: borderGray, borderWidth: 1 })
   page.drawText("*", { x: col3Xs[1] + 8, y: y - 14, size: 11, font: bold, color: accent })
-  page.drawText("CONSERVACION", { x: col3Xs[1] + 20, y: y - 15, size: 9, font: bold, color: dark })
+  page.drawText("CONSERVACAO", { x: col3Xs[1] + 20, y: y - 15, size: 9, font: bold, color: dark })
   let cy1 = y - 28
   for (const line of conservLines) {
     page.drawText(line, { x: col3Xs[1] + 8, y: cy1, size: 8, font: regular, color: gray })
@@ -433,9 +433,9 @@ async function buildPdf(recipe: (typeof recipes)[number]): Promise<Uint8Array> {
   // Costo
   page.drawRectangle({ x: col3Xs[2], y: y - FOOTER_CARD_H, width: COL3_W, height: FOOTER_CARD_H, color: cardBg, borderColor: borderGray, borderWidth: 1 })
   page.drawText("$", { x: col3Xs[2] + 8, y: y - 14, size: 11, font: bold, color: accent })
-  page.drawText("COSTO APROXIMADO", { x: col3Xs[2] + 20, y: y - 15, size: 9, font: bold, color: dark })
-  page.drawText(`Costo por paleta: ${recipe.costoPaleta}`, { x: col3Xs[2] + 8, y: y - 30, size: 8, font: regular, color: gray })
-  page.drawText("Precio sugerido de venta:", { x: col3Xs[2] + 8, y: y - 43, size: 8, font: bold, color: dark })
+  page.drawText("CUSTO APROXIMADO", { x: col3Xs[2] + 20, y: y - 15, size: 9, font: bold, color: dark })
+  page.drawText(`Custo por paleta: ${recipe.costoPaleta}`, { x: col3Xs[2] + 8, y: y - 30, size: 8, font: regular, color: gray })
+  page.drawText("Preço sugerido de venda:", { x: col3Xs[2] + 8, y: y - 43, size: 8, font: bold, color: dark })
   // Pill de precio de venta
   const precioW = bold.widthOfTextAtSize(recipe.precioVenta, 10) + 20
   page.drawRectangle({ x: col3Xs[2] + 8, y: y - 62, width: precioW, height: 18, color: accent })
@@ -462,10 +462,10 @@ function drawFooter(
   MARGIN: number,
 ) {
   page.drawRectangle({ x: 0, y: 0, width: W, height: 26, color: accent })
-  page.drawText("100 Recetas de Paletas Cremosas y Rellenas", {
+  page.drawText("100 Receitas de Paletas Cremosas e Recheadas", {
     x: MARGIN, y: 8, size: 8, font: regular, color: white, opacity: 0.85,
   })
-  const right = `Receta ${recipe.id} de 100`
+  const right = `Receita ${recipe.id} de 100`
   page.drawText(right, {
     x: W - MARGIN - bold.widthOfTextAtSize(right, 8),
     y: 8, size: 8, font: bold, color: white, opacity: 0.85,
@@ -476,7 +476,7 @@ function drawFooter(
 export async function GET() {
   try {
     const zip = new JSZip()
-    const folder = zip.folder("100-Recetas-de-Paletas")!
+    const folder = zip.folder("100-Receitas-de-Paletas")!
 
     for (const recipe of recipes) {
       const pdfBytes = await buildPdf(recipe)
@@ -500,7 +500,7 @@ export async function GET() {
       status: 200,
       headers: {
         "Content-Type": "application/zip",
-        "Content-Disposition": 'attachment; filename="100-Recetas-de-Paletas.zip"',
+        "Content-Disposition": 'attachment; filename="100-Receitas-de-Paletas.zip"',
         "Content-Length": String(zipBytes.byteLength),
       },
     })
