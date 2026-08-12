@@ -19,11 +19,10 @@ export default function Page() {
           </span>
         }
         subheadline={
-          <>
-            <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-              + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
-            </span>
-    
+          <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
+            + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
+          </span>
+        }
         imageSrc="/images/br-hero-mockup.png"
         imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
         checkoutUrl={CHECKOUT_URL_BR}
