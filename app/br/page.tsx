@@ -15,12 +15,12 @@ export default function Page() {
       <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            Aprenda a fazer picolés estilo Magnum na sua cozinha — para saborear em casa ou transformar em uma fonte de renda
+            TRANSFORME SUA GELADEIRA NO PONTO DE PARTIDA PARA SUAS PRIMEIRAS VENDAS
           </span>
         }
         subheadline={
           <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-            + de 100 Receitas cremosas, cobertura crocante e acabamento premium, com passo a passo simples pra qualquer pessoa fazer — seja pra você, sua família ou pra vender.
+            Conheça o MÉTODO DA GELADEIRA AO PIX™ e aprenda a preparar picolés recheados irresistíveis para começar a oferecer — mesmo sem experiência..
           </span>
         }
         imageSrc="/images/br-hero-mockup.png"
