@@ -7,7 +7,7 @@ import { OfferCard } from "@/components/offer-card"
 import { GuaranteeSection } from "@/components/guarantee-section"
 import { FaqSection } from "@/components/faq-section"
 
-const PRICE = "US$ 5,90"
+const PRICE = "US$ 3,90"
 const REF_PRICE = "US$ 19,90"
 const CHECKOUT_URL = "https://pay.hotmart.com/T106842867W?off=j4gm9vwz&checkoutMode=10"
 
