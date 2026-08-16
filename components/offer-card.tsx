@@ -24,7 +24,7 @@ const bonuses = [
 ]
 
 export function OfferCard({
-  price = "$9,90",
+  price = "$3,90",
   refPrice = "$27,90",
   checkoutUrl,
   imageSrc = "/images/ebook-mockup.png",
