@@ -15,7 +15,7 @@ export default function Page() {
       <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            Agora você pode fazer picolés gourmet recheados para vender todos os dias
+            As receitas que vão fazer você vender +300 picolés este mês e transformar sua cozinha em uma fonte de renda extra
           </span>
         }
         subheadline={
@@ -29,8 +29,8 @@ export default function Page() {
             </span>
           </>
         }
-        imageSrc="/images/br-hero.png"
-        imageAlt="Caixas de presente com picolés gourmet recheados de vários sabores ao lado do livro 'Picolés Gourmet Recheados Lucrativos', com mãos segurando um picolé de chocolate com uma etiqueta escrita 'Feito com amor para você'."
+        imageSrc="/images/br-hero-mockup.png"
+        imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
         checkoutUrl={CHECKOUT_URL_BR}
       />
       <PracticeSectionBr />
