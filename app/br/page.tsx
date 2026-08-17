@@ -15,7 +15,7 @@ export default function Page() {
       <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            As receitas que vão fazer você vender +300 picolés este mês e transformar sua cozinha em uma fonte de renda extra
+            Agora você pode fazer picolés gourmet recheados para vender todos os dias
           </span>
         }
         subheadline={
