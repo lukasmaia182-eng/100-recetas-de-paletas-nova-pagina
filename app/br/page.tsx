@@ -7,7 +7,7 @@ import { OfferCardBr } from "@/components/br/offer-card-br"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
 import { FaqSectionBr } from "@/components/br/faq-section-br"
 
-const CHECKOUT_URL_BR = "https://pay.hotmart.com/Q106988016O?off=lhp0ja0w&checkoutMode=10"
+const CHECKOUT_URL_BR = "https://go.perfectpay.com.br/PPU38CQFDR2"
 
 export default function Page() {
   return (
