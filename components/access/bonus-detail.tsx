@@ -9,7 +9,7 @@ export function BonusDetail({ bonus }: { bonus: Bonus }) {
         <div className="flex items-center justify-between gap-3">
           <span className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-1 font-display text-xs font-extrabold uppercase tracking-widest text-primary-foreground">
             <Gift className="h-3.5 w-3.5" aria-hidden="true" />
-            Bono incluido
+            Bônus incluído
           </span>
           <span className="rounded-lg bg-creme/15 px-2.5 py-1 font-display text-[11px] font-extrabold uppercase tracking-widest text-creme">
             {bonus.numero}
@@ -89,7 +89,7 @@ export function BonusDetail({ bonus }: { bonus: Bonus }) {
         <div className="flex items-center justify-center gap-2 rounded-2xl bg-secondary px-4 py-3 text-center">
           <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
           <p className="font-display text-sm font-bold text-chocolate">
-            Aplica este bono desde hoy y aumenta tus ventas.
+            Aplique este bônus hoje mesmo e aumente suas vendas.
           </p>
         </div>
       </div>

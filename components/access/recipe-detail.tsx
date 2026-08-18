@@ -76,7 +76,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           <div
             className={`flex h-[74px] w-[74px] shrink-0 flex-col items-center justify-center rounded-full ${theme.solid} text-center ${theme.onSolid} shadow-md`}
           >
-            <span className="text-[9px] font-bold uppercase leading-none tracking-wider">Rinde</span>
+            <span className="text-[9px] font-bold uppercase leading-none tracking-wider">Rende</span>
             <span className="font-display text-3xl font-extrabold leading-none">{recipe.rinde}</span>
             <span className="text-[8px] font-bold uppercase leading-none tracking-wider">Paletas</span>
           </div>
@@ -154,7 +154,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
         {/* Preparación */}
         <div className="mt-6">
           <SectionPill theme={theme} icon={<ChefHat className="h-4 w-4" aria-hidden="true" />}>
-            Preparación paso a paso
+            Preparo passo a passo
           </SectionPill>
           <ol className="mt-4 grid gap-3 sm:grid-cols-2">
             {recipe.pasos.map((paso, index) => (
@@ -184,7 +184,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           <div>
             <p className={`inline-flex items-center gap-1.5 font-display text-lg font-extrabold uppercase tracking-wide ${theme.text}`}>
               <IceCream className="h-5 w-5" aria-hidden="true" />
-              ¡Listo!
+              Pronto!
             </p>
             <p className="mt-1 text-sm leading-relaxed text-chocolate text-pretty">{recipe.listo}</p>
           </div>
@@ -195,7 +195,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           <div className="rounded-2xl border border-border bg-card p-4">
             <div className={`flex items-center gap-2 ${theme.text}`}>
               <Star className="h-4 w-4 fill-current" aria-hidden="true" />
-              <p className="font-display text-sm font-extrabold uppercase text-chocolate">Consejos</p>
+              <p className="font-display text-sm font-extrabold uppercase text-chocolate">Dicas</p>
             </div>
             <ul className="mt-2 flex flex-col gap-1.5">
               {recipe.consejos.map((c) => (
@@ -209,7 +209,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           <div className="rounded-2xl border border-border bg-card p-4">
             <div className={`flex items-center gap-2 ${theme.text}`}>
               <Snowflake className="h-4 w-4" aria-hidden="true" />
-              <p className="font-display text-sm font-extrabold uppercase text-chocolate">Conservación</p>
+              <p className="font-display text-sm font-extrabold uppercase text-chocolate">Conservação</p>
             </div>
             <p className="mt-2 text-xs leading-snug text-foreground">{recipe.conservacion}</p>
           </div>
@@ -217,12 +217,12 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
           <div className="rounded-2xl border border-border bg-card p-4">
             <div className={`flex items-center gap-2 ${theme.text}`}>
               <DollarSign className="h-4 w-4" aria-hidden="true" />
-              <p className="font-display text-sm font-extrabold uppercase text-chocolate">Costo aproximado</p>
+              <p className="font-display text-sm font-extrabold uppercase text-chocolate">Custo aproximado</p>
             </div>
             <p className="mt-2 text-xs leading-snug text-foreground">
-              Costo por paleta: <span className="font-semibold">{recipe.costoPaleta}</span>
+              Custo por paleta: <span className="font-semibold">{recipe.costoPaleta}</span>
             </p>
-            <p className="mt-1 text-xs font-semibold text-chocolate">Precio sugerido de venta:</p>
+            <p className="mt-1 text-xs font-semibold text-chocolate">Preço sugerido de venda:</p>
             <p className={`mt-1 inline-block rounded-lg ${theme.solid} px-2.5 py-1 font-display text-sm font-extrabold ${theme.onSolid}`}>
               {recipe.precioVenta}
             </p>
@@ -233,7 +233,7 @@ export function RecipeDetail({ recipe }: { recipe: Recipe }) {
       {/* Bottom banner */}
       <div className={`${theme.solid} px-5 py-3 text-center`}>
         <p className={`font-display text-sm font-bold italic ${theme.onSolid}`}>
-          Fácil de preparar, deliciosa y perfecta para emprender con éxito.
+          Fácil de preparar, deliciosa e perfeita para empreender com sucesso.
         </p>
       </div>
     </article>

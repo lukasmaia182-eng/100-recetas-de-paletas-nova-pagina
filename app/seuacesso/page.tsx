@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { MembersArea } from "@/components/access/members-area"
 
 export const metadata: Metadata = {
-  title: "Tu Acceso · 100 Paletas Rellenas y Cremosas",
+  title: "Seu Acesso · 100 Paletas Recheadas e Cremosas",
   description:
-    "Área de miembros con las 100 recetas ilustradas paso a paso y todos los bonos exclusivos para preparar y vender paletas cremosas.",
+    "Área de membros com as 100 receitas ilustradas passo a passo e todos os bônus exclusivos para preparar e vender paletas cremosas.",
 }
 
 export default function SeuAcessoPage() {

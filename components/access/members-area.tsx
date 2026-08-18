@@ -28,7 +28,7 @@ export function MembersArea() {
       const url = URL.createObjectURL(blob)
       const a = document.createElement("a")
       a.href = url
-      a.download = "100-Recetas-de-Paletas.zip"
+      a.download = "100-Receitas-de-Paletas.zip"
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
@@ -36,7 +36,7 @@ export function MembersArea() {
       setDownloadDone(true)
     } catch (err) {
       console.error(err)
-      alert("Ocurrió un error al generar los PDFs. Intenta nuevamente.")
+      alert("Ocorreu um erro ao gerar os PDFs. Tente novamente.")
     } finally {
       setDownloading(false)
     }
@@ -60,8 +60,8 @@ export function MembersArea() {
               <IceCream className="h-5 w-5" aria-hidden="true" />
             </span>
             <div className="leading-tight">
-              <p className="font-display text-sm font-extrabold text-chocolate">Área de Miembros</p>
-              <p className="text-xs text-muted-foreground">100 Paletas Rellenas y Cremosas</p>
+              <p className="font-display text-sm font-extrabold text-chocolate">Área de Membros</p>
+              <p className="text-xs text-muted-foreground">100 Paletas Recheadas e Cremosas</p>
             </div>
           </div>
         </div>
@@ -70,14 +70,14 @@ export function MembersArea() {
       <main className="mx-auto max-w-5xl px-5 py-6">
         {selectedRecipe ? (
           <div>
-            <BackButton onClick={resetSelection} label="Volver a las recetas" />
+            <BackButton onClick={resetSelection} label="Voltar às receitas" />
             <div className="mt-4">
               <RecipeDetail recipe={selectedRecipe} />
             </div>
           </div>
         ) : selectedBonus ? (
           <div>
-            <BackButton onClick={resetSelection} label="Volver a los bonos" />
+            <BackButton onClick={resetSelection} label="Voltar aos bônus" />
             <div className="mt-4">
               <BonusDetail bonus={selectedBonus} />
             </div>
@@ -87,11 +87,11 @@ export function MembersArea() {
             {/* Welcome */}
             <section className="rounded-3xl bg-secondary p-6 text-center sm:p-8">
               <h1 className="font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
-                ¡Bienvenida a tu acceso!
+                Bem-vinda ao seu acesso!
               </h1>
               <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-foreground text-pretty">
-                Aquí tienes todas tus recetas ilustradas paso a paso y tus bonos exclusivos. Elige una receta y empieza
-                a preparar y vender hoy mismo.
+                Aqui você tem todas as suas receitas ilustradas passo a passo e os seus bônus exclusivos. Escolha uma
+                receita e comece a preparar e vender hoje mesmo.
               </p>
             </section>
 
@@ -111,7 +111,7 @@ export function MembersArea() {
                     </p>
                     {downloadDone && (
                       <p className="mt-1 text-sm font-semibold text-green-600">
-                        Download concluido! Agora e so subir a pasta no Google Drive.
+                        Download concluído! Agora é só subir a pasta no Google Drive.
                       </p>
                     )}
                   </div>
@@ -140,10 +140,10 @@ export function MembersArea() {
             {/* Tabs */}
             <div className="mt-6 flex justify-center gap-2">
               <TabButton active={tab === "recetas"} onClick={() => setTab("recetas")} icon={<BookOpen className="h-4 w-4" aria-hidden="true" />}>
-                Recetas
+                Receitas
               </TabButton>
               <TabButton active={tab === "bonos"} onClick={() => setTab("bonos")} icon={<Gift className="h-4 w-4" aria-hidden="true" />}>
-                Bonos
+                Bônus
               </TabButton>
             </div>
 
@@ -200,7 +200,7 @@ export function MembersArea() {
                         </h3>
                         <p className="text-sm font-medium italic text-primary">{recipe.subtitulo}</p>
                         <span className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-primary">
-                          Ver receta
+                          Ver receita
                           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                         </span>
                       </div>
@@ -209,7 +209,7 @@ export function MembersArea() {
                 </div>
 
                 <p className="mt-6 text-center text-sm text-muted-foreground">
-                  Nuevas recetas se agregan constantemente a tu acceso.
+                  Novas receitas são adicionadas constantemente ao seu acesso.
                 </p>
               </>
             ) : (
@@ -238,7 +238,7 @@ export function MembersArea() {
                     </h3>
                     <p className="mt-1 flex-1 text-sm leading-relaxed text-foreground">{bonus.descripcion}</p>
                     <span className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-primary">
-                      Abrir bono
+                      Abrir bônus
                       <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     </span>
                   </button>
@@ -251,7 +251,7 @@ export function MembersArea() {
 
       <footer className="border-t border-border py-6 text-center">
         <p className="text-xs text-muted-foreground">
-          100 Paletas Rellenas y Cremosas · Contenido exclusivo para miembros
+          100 Paletas Recheadas e Cremosas · Conteúdo exclusivo para membros
         </p>
       </footer>
     </div>
