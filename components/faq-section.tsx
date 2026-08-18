@@ -43,7 +43,7 @@ const buildFaqs = (price: string) => [
 ]
 
 export function FaqSection({
-  price = "$9,90",
+  price = "$3,90",
   checkoutUrl,
 }: {
   price?: string
