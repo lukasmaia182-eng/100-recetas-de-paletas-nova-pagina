@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-const CHECKOUT_URL = "https://pay.hotmart.com/T106842867W?off=zkp7gvsk&checkoutMode=10"
+const CHECKOUT_URL = "https://pay.hotmart.com/L102630763K?off=ywlkzsnc&checkoutMode=10"
 
 type BuyButtonProps = {
   children?: React.ReactNode
