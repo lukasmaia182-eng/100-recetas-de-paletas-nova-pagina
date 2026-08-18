@@ -6,7 +6,7 @@ import { BuyButton } from "./buy-button"
 const START_SECONDS = 15 * 60
 
 export function ScarcitySection({
-  price = "$9,90",
+  price = "$3,90",
   refPrice = "$27,90",
   checkoutUrl,
 }: {
