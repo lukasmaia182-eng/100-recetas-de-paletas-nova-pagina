@@ -24,8 +24,7 @@ export default function Page() {
               + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
             </span>
             <span className="mt-2 block">
-              Para quem quer ganhar dinheiro em casa sem precisar de ingredientes caros nem passar horas inventando
-              receitas.
+              A atividade paralela mais subestimada que rende 800 reais por semana e que qualquer pessoa pode começar.
             </span>
           </>
         }
