@@ -15,16 +15,15 @@ export default function Page() {
       <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            Agora você pode fazer picolés gourmet recheados para vender todos os dias
+            A atividade paralela mais subestimada que rende R$800 por semana — e agora você pode fazer com picolés gourmet recheados
           </span>
         }
         subheadline={
           <>
             <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-              + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
+              +100 receitas de picolés gourmet recheados, cremosos e fáceis de vender — pra você começar do zero, mesmo sem experiência.
             </span>
             <span className="mt-2 block">
-              A atividade paralela mais subestimada que rende 800 reais por semana e que qualquer pessoa pode começar.
             </span>
           </>
         }
