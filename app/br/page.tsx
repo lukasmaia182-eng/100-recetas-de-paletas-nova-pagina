@@ -29,7 +29,7 @@ export default function Page() {
             </span>
           </>
         }
-        imageSrc="/images/br-hero-mockup.png"
+        imageSrc="/images/ChatGPT Image 25 de ago. de 2026, 23_20_47.png"
         imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
         checkoutUrl={CHECKOUT_URL_BR}
       />
