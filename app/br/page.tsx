@@ -1,11 +1,13 @@
+import dynamic from "next/dynamic"
 import { HeroSectionBr } from "@/components/br/hero-section-br"
 import { PracticeSectionBr } from "@/components/br/practice-section-br"
 import { IdealSectionBr } from "@/components/br/ideal-section-br"
-import { ScarcitySectionBr } from "@/components/br/scarcity-section-br"
 import { SocialProofBr } from "@/components/br/social-proof-br"
 import { OfferCardBr } from "@/components/br/offer-card-br"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
-import { FaqSectionBr } from "@/components/br/faq-section-br"
+
+const ScarcitySectionBr = dynamic(() => import("@/components/br/scarcity-section-br").then((mod) => mod.ScarcitySectionBr))
+const FaqSectionBr = dynamic(() => import("@/components/br/faq-section-br").then((mod) => mod.FaqSectionBr))
 
 const CHECKOUT_URL_BR = "https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checkoutMode=10"
 
