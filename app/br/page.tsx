@@ -22,7 +22,7 @@ export default function Page() {
           </>
         }
         subheadline="Ingredientes, quantidades e passo a passo para você preparar sabores variados em casa e organizar seu próprio cardápio."
-        imageSrc="/images/ChatGPT Image 27 de ago. de 2026, 10_53_41.png"
+        imageSrc="/images/arte/material-portugues.png"
         imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
         checkoutUrl={CHECKOUT_URL_BR}
       />

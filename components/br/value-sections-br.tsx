@@ -9,12 +9,12 @@ const steps = [
 
 const details = ["Ingredientes e quantidades", "Utensílios necessários", "Modo de preparo", "Dica de textura", "Variações de sabor"]
 const flavors = [
-  ["/images/arte/morango-feed.png", "Morango"],
-  ["/images/arte/chocolate-feed.png", "Chocolate"],
-  ["/images/arte/pistacho-feed.png", "Pistache"],
-  ["/images/arte/frutos_rojos-feed.png", "Frutas vermelhas"],
-  ["/images/arte/cookies_cream-feed.png", "Cookies & cream"],
-  ["/images/arte/maracuya-feed.png", "Maracujá"],
+  ["/images/arte/paletas-portugues.png", "Morango"],
+  ["/images/arte/paletas-portugues.png", "Chocolate"],
+  ["/images/arte/paletas-portugues.png", "Pistache"],
+  ["/images/arte/paletas-portugues.png", "Frutas vermelhas"],
+  ["/images/arte/paletas-portugues.png", "Cookies com creme"],
+  ["/images/arte/paletas-portugues.png", "Maracujá"],
 ]
 
 export function ValueSectionsBr() {
@@ -43,14 +43,14 @@ export function ValueSectionsBr() {
 
       <section className="mx-auto w-full max-w-md overflow-hidden rounded-3xl bg-chocolate p-5 sm:p-7">
         <div className="flex items-center gap-4">
-          <div className="w-1/3 shrink-0 overflow-hidden rounded-2xl"><Image src="/images/pv1-antes-despues.png" alt="Comparação visual de uma receita organizada para consulta" width={500} height={500} className="h-auto w-full object-cover" /></div>
+          <div className="w-1/3 shrink-0 overflow-hidden rounded-2xl"><Image src="/images/arte/praticidade-portugues.png" alt="Comparação visual de uma receita organizada para consulta" width={500} height={500} className="h-auto w-full object-cover" /></div>
           <div><p className="font-display text-sm font-extrabold uppercase tracking-widest text-creme/70">Mais praticidade</p><h2 className="mt-2 font-display text-2xl font-extrabold text-creme text-balance">Abra, consulte e prepare</h2><p className="mt-2 text-sm leading-relaxed text-creme/80">Em vez de juntar anotações soltas, você encontra o preparo organizado em um só lugar.</p></div>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-md">
         <div className="overflow-hidden rounded-3xl bg-card shadow-md">
-          <Image src="/images/arte/caja-feed.png" alt="Composição visual com diferentes picolés gourmet" width={1080} height={1350} className="h-auto max-h-72 w-full object-cover object-center sm:max-h-80" />
+          <Image src="/images/arte/paletas-portugues.png" alt="Composição visual com diferentes picolés gourmet" width={1080} height={1350} className="h-auto max-h-72 w-full object-cover object-center sm:max-h-80" />
         </div>
         <h2 className="mt-6 text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">Alguns dos sabores para explorar</h2>
         <p className="mt-2 text-center text-sm leading-relaxed text-muted-foreground">Uma seleção visual para ajudar você a imaginar seu próximo cardápio.</p>
@@ -58,7 +58,7 @@ export function ValueSectionsBr() {
           {flavors.map(([src, name]) => <figure key={name} className="min-w-0 overflow-hidden rounded-2xl bg-card shadow-sm"><Image src={src} alt={`Arte do sabor ${name}`} width={360} height={450} loading="eager" className="aspect-[4/5] h-auto w-full object-cover" /><figcaption className="truncate p-2 text-center text-sm font-bold text-chocolate">{name}</figcaption></figure>)}
         </div>
         <div className="mt-4 overflow-hidden rounded-3xl bg-card shadow-md">
-          <Image src="/images/arte/surtido-feed.png" alt="Seleção de picolés gourmet de vários sabores" width={1080} height={1350} className="h-auto max-h-72 w-full object-cover object-center sm:max-h-80" />
+          <Image src="/images/arte/paletas-portugues.png" alt="Seleção de picolés gourmet de vários sabores" width={1080} height={1350} className="h-auto max-h-72 w-full object-cover object-center sm:max-h-80" />
         </div>
       </section>
     </div>
