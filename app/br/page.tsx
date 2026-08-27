@@ -7,7 +7,7 @@ import { OfferCardBr } from "@/components/br/offer-card-br"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
 import { FaqSectionBr } from "@/components/br/faq-section-br"
 
-const CHECKOUT_URL_BR = "https://pay.cakto.com.br/waoe895"
+const CHECKOUT_URL_BR = "https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checkoutMode=10"
 
 export default function Page() {
   return (
