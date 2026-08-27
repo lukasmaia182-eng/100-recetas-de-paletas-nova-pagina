@@ -49,10 +49,16 @@ export function ValueSectionsBr() {
       </section>
 
       <section className="mx-auto w-full max-w-md">
-        <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">Alguns dos sabores para explorar</h2>
+        <div className="overflow-hidden rounded-3xl bg-card shadow-md">
+          <Image src="/images/arte/caja-feed.png" alt="Composição visual com diferentes picolés gourmet" width={1080} height={1350} className="h-auto max-h-72 w-full object-cover object-center sm:max-h-80" />
+        </div>
+        <h2 className="mt-6 text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">Alguns dos sabores para explorar</h2>
         <p className="mt-2 text-center text-sm leading-relaxed text-muted-foreground">Uma seleção visual para ajudar você a imaginar seu próximo cardápio.</p>
-        <div className="mt-5 flex gap-3 overflow-x-auto pb-2 snap-x">
-          {flavors.map(([src, name]) => <figure key={name} className="w-36 shrink-0 snap-start overflow-hidden rounded-2xl bg-card shadow-sm"><Image src={src} alt={`Arte do sabor ${name}`} width={360} height={450} className="aspect-[4/5] h-auto w-full object-cover" /><figcaption className="p-2 text-center text-sm font-bold text-chocolate">{name}</figcaption></figure>)}
+        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {flavors.map(([src, name]) => <figure key={name} className="min-w-0 overflow-hidden rounded-2xl bg-card shadow-sm"><Image src={src} alt={`Arte do sabor ${name}`} width={360} height={450} loading="eager" className="aspect-[4/5] h-auto w-full object-cover" /><figcaption className="truncate p-2 text-center text-sm font-bold text-chocolate">{name}</figcaption></figure>)}
+        </div>
+        <div className="mt-4 overflow-hidden rounded-3xl bg-card shadow-md">
+          <Image src="/images/arte/surtido-feed.png" alt="Seleção de picolés gourmet de vários sabores" width={1080} height={1350} className="h-auto max-h-72 w-full object-cover object-center sm:max-h-80" />
         </div>
       </section>
     </div>
