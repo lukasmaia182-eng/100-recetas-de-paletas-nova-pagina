@@ -5,7 +5,7 @@ import { IdealSectionBr } from "@/components/br/ideal-section-br"
 import { SocialProofBr } from "@/components/br/social-proof-br"
 import { OfferCardBr } from "@/components/br/offer-card-br"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
-import { ValueSectionsBr, ContentsBr, BrFooter } from "@/components/br/value-sections-br"
+import { ValueSectionsBr, ContentsBr, BrFooter, UrgencyBarBr } from "@/components/br/value-sections-br"
 
 const ScarcitySectionBr = dynamic(() => import("@/components/br/scarcity-section-br").then((mod) => mod.ScarcitySectionBr))
 const FaqSectionBr = dynamic(() => import("@/components/br/faq-section-br").then((mod) => mod.FaqSectionBr))
@@ -15,6 +15,7 @@ const CHECKOUT_URL_BR = "https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checko
 export default function Page() {
   return (
     <main className="min-h-screen bg-background">
+      <UrgencyBarBr />
       <HeroSectionBr
         headline={
           <>
@@ -22,11 +23,11 @@ export default function Page() {
           </>
         }
         subheadline="Ingredientes, quantidades e passo a passo para você preparar sabores variados em casa e organizar seu próprio cardápio."
-        imageSrc="/images/arte/material-portugues.png"
-        imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
+        imageSrc="/images/br-hero-mockup.png"
+        imageAlt="Mockup do material digital com livro de receitas, cards visuais e picolés gourmet recheados de vários sabores."
         checkoutUrl={CHECKOUT_URL_BR}
       />
-      <ValueSectionsBr />
+      <ValueSectionsBr checkoutUrl={CHECKOUT_URL_BR} />
       <PracticeSectionBr />
       <IdealSectionBr />
       <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} />
