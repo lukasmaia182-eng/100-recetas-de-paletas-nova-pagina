@@ -9,12 +9,12 @@ const steps = [
 
 const details = ["Ingredientes e quantidades", "Utensílios necessários", "Modo de preparo", "Dica de textura", "Variações de sabor"]
 const flavors = [
-  ["/images/arte/paletas-portugues.png", "Morango"],
-  ["/images/arte/paletas-portugues.png", "Chocolate"],
-  ["/images/arte/paletas-portugues.png", "Pistache"],
-  ["/images/arte/paletas-portugues.png", "Frutas vermelhas"],
-  ["/images/arte/paletas-portugues.png", "Cookies com creme"],
-  ["/images/arte/paletas-portugues.png", "Maracujá"],
+  ["/images/arte/sabor-morango.png", "Morango"],
+  ["/images/arte/sabor-chocolate.png", "Chocolate"],
+  ["/images/arte/sabor-pistache.png", "Pistache"],
+  ["/images/arte/sabor-frutas-vermelhas.png", "Frutas vermelhas"],
+  ["/images/arte/sabor-cookies.png", "Cookies com creme"],
+  ["/images/arte/sabor-maracuja.png", "Maracujá"],
 ]
 
 export function ValueSectionsBr() {
@@ -43,7 +43,7 @@ export function ValueSectionsBr() {
 
       <section className="mx-auto w-full max-w-md overflow-hidden rounded-3xl bg-chocolate p-5 sm:p-7">
         <div className="flex items-center gap-4">
-          <div className="w-1/3 shrink-0 overflow-hidden rounded-2xl"><Image src="/images/arte/praticidade-portugues.png" alt="Comparação visual de uma receita organizada para consulta" width={500} height={500} className="h-auto w-full object-cover" /></div>
+          <div className="w-1/4 max-w-24 shrink-0 overflow-hidden rounded-2xl sm:max-w-28"><Image src="/images/arte/praticidade-portugues.png" alt="Comparação visual de uma receita organizada para consulta" width={500} height={500} className="aspect-square h-auto w-full object-cover" /></div>
           <div><p className="font-display text-sm font-extrabold uppercase tracking-widest text-creme/70">Mais praticidade</p><h2 className="mt-2 font-display text-2xl font-extrabold text-creme text-balance">Abra, consulte e prepare</h2><p className="mt-2 text-sm leading-relaxed text-creme/80">Em vez de juntar anotações soltas, você encontra o preparo organizado em um só lugar.</p></div>
         </div>
       </section>
