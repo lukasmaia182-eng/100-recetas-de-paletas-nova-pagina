@@ -38,8 +38,7 @@ export function HeroSectionBr({
         <h1 className="w-full font-display text-2xl font-extrabold leading-tight text-chocolate text-balance sm:text-3xl">
           {headline ?? (
             <>
-              Faça picolés gourmet recheados que <span className="text-primary">todo mundo quer comprar</span> e ganhe
-              dinheiro na sua cozinha
+              Aprenda a preparar <span className="text-primary">picolés gourmet recheados</span> com receitas organizadas e fáceis de consultar
             </>
           )}
         </h1>
@@ -92,10 +91,10 @@ export function HeroSectionBr({
         <div className="mt-4 w-full text-center">
           <p className="text-base leading-relaxed text-foreground text-pretty sm:text-lg">
             {belowImageText ??
-              "Sem anunciar e sem fazer propaganda, você começa… e de repente tem gente esperando."}
+              "Tenha um ponto de partida mais organizado para preparar seus sabores em casa ou montar um cardápio."}
           </p>
           <p className="mt-1.5 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
-            E o dinheiro começa a entrar toda semana.
+            Prepare com mais clareza e adapte as receitas à sua rotina.
           </p>
         </div>
 
