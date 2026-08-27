@@ -39,22 +39,22 @@ fbq('track', 'PageView');`
 export function SiteTracking() {
   return (
     <>
-      <Script id="site-pixel" strategy="afterInteractive">
+      <Script id="site-pixel" strategy="lazyOnload">
         {PIXEL_LOADER}
       </Script>
-      <Script id="site-pixel-2" strategy="afterInteractive">
+      <Script id="site-pixel-2" strategy="lazyOnload">
         {PIXEL_LOADER_2}
       </Script>
-      <Script id="site-pixel-3" strategy="afterInteractive">
+      <Script id="site-pixel-3" strategy="lazyOnload">
         {PIXEL_LOADER_3}
       </Script>
-      <Script id="site-pixel-4" strategy="afterInteractive">
+      <Script id="site-pixel-4" strategy="lazyOnload">
         {PIXEL_LOADER_4}
       </Script>
-      <Script id="site-pixel-utmify" strategy="afterInteractive">
+      <Script id="site-pixel-utmify" strategy="lazyOnload">
         {UTMIFY_PIXEL_LOADER}
       </Script>
-      <Script id="meta-pixel" strategy="afterInteractive">
+      <Script id="meta-pixel" strategy="lazyOnload">
         {META_PIXEL}
       </Script>
       <noscript>
