@@ -60,6 +60,8 @@ export function OfferCardBr({
               width={600}
               height={600}
               className="h-auto w-full object-contain"
+              loading="lazy"
+              sizes="(max-width: 640px) 320px, 384px"
             />
           </div>
 

@@ -10,6 +10,8 @@ export function GuaranteeSectionBr() {
           width={200}
           height={200}
           className="h-32 w-32 object-contain"
+          loading="lazy"
+          sizes="128px"
         />
         <h2 className="font-display text-2xl font-extrabold text-chocolate text-balance">
           Teste o livro de receitas por 7 dias
