@@ -160,6 +160,58 @@
 }
 
 /* ==========================================================================
+   PICOLÉ LUCRATIVO /br — tema escuro escopado (só dentro de .br-lv)
+   ========================================================================== */
+.br-lv {
+  --lv-bg: #180d08;
+  --lv-bg-2: #2a1710;
+  --lv-card: #2c1911;
+  --lv-card-2: #351d13;
+  --lv-border: #4d2d1c;
+  --lv-orange: #f2872a;
+  --lv-orange-2: #ed6a12;
+  --lv-cream: #f7ecdc;
+  --lv-muted: #c9b3a1;
+  --lv-green: #45b45f;
+  color: var(--lv-cream);
+  background:
+    radial-gradient(120% 60% at 50% 0%, #3a2013 0%, rgba(58, 32, 19, 0) 55%),
+    linear-gradient(180deg, #180d08 0%, #22120b 45%, #180d08 100%);
+  font-family: var(--font-nunito), system-ui, sans-serif;
+}
+.br-lv .lv-title {
+  font-family: var(--font-anton), var(--font-baloo), sans-serif;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.02;
+}
+.br-lv .lv-cta {
+  background: linear-gradient(90deg, #f59331 0%, #ed6a12 100%);
+  box-shadow:
+    0 12px 30px -8px rgba(237, 106, 18, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+@keyframes lv-cta-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+}
+.br-lv .lv-cta-pulse {
+  animation: lv-cta-pulse 1.8s ease-in-out infinite;
+}
+.br-lv .lv-scroll::-webkit-scrollbar {
+  display: none;
+}
+.br-lv .lv-scroll {
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
    META MASTER — tema escuro escopado (só dentro de .mm-scope)
    ========================================================================== */
 .mm-scope {

@@ -1,8 +1,14 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Baloo_2, Nunito, Playfair_Display } from 'next/font/google'
+import { Anton, Baloo_2, Nunito, Playfair_Display } from 'next/font/google'
 import { SiteTracking } from '@/components/site-tracking'
 import './globals.css'
+
+const anton = Anton({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-anton',
+})
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -58,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`bg-background ${baloo.variable} ${nunito.variable} ${playfair.variable}`}>
+    <html lang="es" className={`bg-background ${anton.variable} ${baloo.variable} ${nunito.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
         <SiteTracking />
         {children}
