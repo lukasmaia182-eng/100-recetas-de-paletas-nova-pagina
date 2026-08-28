@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 }
 
 const CHECKOUT_URL = "https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checkoutMode=10"
+const CHECKOUT_BASICO = "https://pay.cakto.com.br/m4f7cwc_1034537"
+const CHECKOUT_COMPLETO = "https://pay.cakto.com.br/waoe895"
 
 const fichas = [
   { src: "/images/br-lovable/ficha-maracuja.png", alt: "Ficha de receita do picolé de maracujá cremoso" },
@@ -152,7 +154,7 @@ export default function Page() {
           </ul>
 
           <div className="mt-7">
-            <Cta href={CHECKOUT_URL} location="hero">
+            <Cta href="#oferta" location="hero">
               Quero acessar as receitas
             </Cta>
           </div>
@@ -310,7 +312,7 @@ export default function Page() {
         </section>
 
         {/* PLANOS */}
-        <section id="oferta" className="mt-14">
+        <section id="oferta" className="mt-14 scroll-mt-6">
           <span className="mx-auto mb-5 flex w-fit items-center gap-1.5 rounded-full bg-[var(--lv-orange)]/15 px-3 py-1 text-[0.72rem] font-bold uppercase tracking-wide text-[var(--lv-orange)]">
             <ClockIcon />
             Última chance — oferta termina hoje
@@ -342,7 +344,7 @@ export default function Page() {
                 <p className="text-xs text-[var(--lv-muted)]">ou 4x de R$4,80 no cartão</p>
               </div>
               <div className="mt-5">
-                <Cta href={CHECKOUT_URL} variant="outline" location="plano-basico">
+                <Cta href={CHECKOUT_BASICO} variant="outline" location="plano-basico">
                   Quero somente o básico
                 </Cta>
               </div>
@@ -379,7 +381,7 @@ export default function Page() {
                 <p className="text-xs text-[var(--lv-muted)]">ou 4x de R$7,48 no cartão</p>
               </div>
               <div className="mt-5">
-                <Cta href={CHECKOUT_URL} location="plano-completo">
+                <Cta href={CHECKOUT_COMPLETO} location="plano-completo">
                   Quero o plano completo
                 </Cta>
               </div>
@@ -417,14 +419,15 @@ function Cta({
   location?: string
   variant?: "solid" | "outline"
 }) {
+  const isAnchor = href.startsWith("#")
+  const linkProps = isAnchor
+    ? { href }
+    : { href, target: "_blank", rel: "noopener noreferrer", "data-gtm": "buy-button", "data-gtm-location": location }
+
   if (variant === "outline") {
     return (
       <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-gtm="buy-button"
-        data-gtm-location={location}
+        {...linkProps}
         className="flex w-full flex-col items-center justify-center rounded-full border-2 border-[var(--lv-orange)] px-6 py-3.5 text-center font-extrabold text-[var(--lv-orange)] transition-colors hover:bg-[var(--lv-orange)]/10 active:scale-95"
       >
         <span className="lv-title text-base tracking-wide sm:text-lg">{children}</span>
@@ -433,11 +436,7 @@ function Cta({
   }
   return (
     <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      data-gtm="buy-button"
-      data-gtm-location={location}
+      {...linkProps}
       className="lv-cta lv-cta-pulse flex w-full flex-col items-center justify-center rounded-full px-6 py-4 text-center font-extrabold text-white transition-transform active:scale-95"
     >
       <span className="lv-title text-base tracking-wide sm:text-lg">{children}</span>
