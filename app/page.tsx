@@ -340,8 +340,8 @@ export default function Page() {
                 <p className="text-sm text-[var(--lv-muted)]">
                   de <span className="line-through">R$27,90</span> por:
                 </p>
-                <p className="lv-title text-4xl text-[var(--lv-orange)]">R$17,90</p>
-                <p className="text-xs text-[var(--lv-muted)]">o 4 cuotas de R$4,80 con tarjeta</p>
+                <p className="lv-title text-4xl text-[var(--lv-orange)]">US$3.90</p>
+                <p className="text-xs text-[var(--lv-muted)]">Pago único con tarjeta</p>
               </div>
               <div className="mt-5">
                 <Cta href={CHECKOUT_BASICO} variant="outline" location="plano-basico">
@@ -377,8 +377,8 @@ export default function Page() {
                 <p className="text-sm text-[var(--lv-muted)]">
                   de <span className="line-through">R$97,00</span> por:
                 </p>
-                <p className="lv-title text-5xl text-[var(--lv-orange)]">R$27,90</p>
-                <p className="text-xs text-[var(--lv-muted)]">o 4 cuotas de R$7,48 con tarjeta</p>
+                <p className="lv-title text-5xl text-[var(--lv-orange)]">US$9.90</p>
+                <p className="text-xs text-[var(--lv-muted)]">Pago único con tarjeta</p>
               </div>
               <div className="mt-5">
                 <Cta href={CHECKOUT_COMPLETO} location="plano-completo">
