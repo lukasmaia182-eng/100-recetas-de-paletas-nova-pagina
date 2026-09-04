@@ -16,9 +16,9 @@ const fichas = [
   { src: "/images/br-lovable/ficha-maracuja.png", alt: "Ficha de receta de la paleta de maracuyá cremosa" },
   { src: "/images/br-lovable/ficha-cookies.png", alt: "Ficha de receta de la paleta cookies & cream rellena" },
   { src: "/images/br-lovable/ficha-frutas-vermelhas.png", alt: "Ficha de receta de la paleta de frutos rojos rellena" },
-  { src: "/images/br-lovable/ficha-pistache.jpg", alt: "Ficha de receta de la paleta de pistache rellena" },
-  { src: "/images/br-lovable/ficha-brigadeiro.jpg", alt: "Ficha de receta de la paleta de brigadeiro gourmet" },
-  { src: "/images/br-lovable/ficha-coco.jpg", alt: "Ficha de receta de la paleta de coco con dulce de leche" },
+  { src: "/images/br-lovable/ficha-pistache.png", alt: "Ficha de receta de la paleta de pistache rellena" },
+  { src: "/images/br-lovable/ficha-brigadeiro.png", alt: "Ficha de receta de la paleta de brigadeiro gourmet" },
+  { src: "/images/br-lovable/ficha-coco.png", alt: "Ficha de receta de la paleta de coco con dulce de leche" },
 ]
 
 const steps = [
@@ -215,7 +215,7 @@ export default function Page() {
         {/* MATERIAL */}
         <section className="mt-14 text-center">
           <h2 className="lv-title text-2xl text-balance sm:text-3xl">
-            El material <span className="text-[var(--lv-orange)]">Picolé Lucrativo</span> incluye:
+            El material <span className="text-[var(--lv-orange)]">Paletas Rentables</span> incluye:
           </h2>
           <div className="mt-6 flex flex-col gap-4">
             {material.map((m) => (
