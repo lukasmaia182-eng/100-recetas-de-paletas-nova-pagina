@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 }
 
 const CHECKOUT_URL = "https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checkoutMode=10"
-const CHECKOUT_BASICO = "https://pay.cakto.com.br/m4f7cwc_1034537"
-const CHECKOUT_COMPLETO = "https://pay.cakto.com.br/waoe895"
+const CHECKOUT_BASICO = "https://pay.hotmart.com/J102656950K?off=ihzzfsq0&checkoutMode=10"
+const CHECKOUT_COMPLETO = "https://pay.hotmart.com/J102656950K?off=exzgh213&checkoutMode=10"
 
 const fichas = [
   { src: "/images/br-lovable/ficha-maracuja.png", alt: "Ficha de receta de la paleta de maracuyá cremosa" },
   { src: "/images/br-lovable/ficha-cookies.png", alt: "Ficha de receta de la paleta cookies & cream rellena" },
   { src: "/images/br-lovable/ficha-frutas-vermelhas.png", alt: "Ficha de receta de la paleta de frutos rojos rellena" },
-  { src: "/images/br-lovable/ficha-pistache.jpg", alt: "Ficha de receta de la paleta de pistache rellena" },
-  { src: "/images/br-lovable/ficha-brigadeiro.jpg", alt: "Ficha de receta de la paleta de brigadeiro gourmet" },
-  { src: "/images/br-lovable/ficha-coco.jpg", alt: "Ficha de receta de la paleta de coco con dulce de leche" },
+  { src: "/images/br-lovable/ficha-pistache.png", alt: "Ficha de receta de la paleta de pistache rellena" },
+  { src: "/images/br-lovable/ficha-brigadeiro.png", alt: "Ficha de receta de la paleta de brigadeiro gourmet" },
+  { src: "/images/br-lovable/ficha-coco.png", alt: "Ficha de receta de la paleta de coco con dulce de leche" },
 ]
 
 const steps = [
@@ -215,7 +215,7 @@ export default function Page() {
         {/* MATERIAL */}
         <section className="mt-14 text-center">
           <h2 className="lv-title text-2xl text-balance sm:text-3xl">
-            El material <span className="text-[var(--lv-orange)]">Picolé Lucrativo</span> incluye:
+            El material <span className="text-[var(--lv-orange)]">Paletas Rentables</span> incluye:
           </h2>
           <div className="mt-6 flex flex-col gap-4">
             {material.map((m) => (
@@ -428,7 +428,7 @@ function Cta({
     return (
       <a
         {...linkProps}
-        className="flex w-full flex-col items-center justify-center rounded-full border-2 border-[var(--lv-orange)] px-6 py-3.5 text-center font-extrabold text-[var(--lv-orange)] transition-colors hover:bg-[var(--lv-orange)]/10 active:scale-95"
+        className="flex w-full flex-col items-center justify-center rounded-full border-2 border-[var(--lv-orange)] bg-[var(--lv-orange)] px-6 py-3.5 text-center font-extrabold text-[#180d08] shadow-lg shadow-[var(--lv-orange)]/25 transition-colors hover:bg-[var(--lv-orange-2)] hover:text-[#fff7ed] active:scale-95"
       >
         <span className="lv-title text-base tracking-wide sm:text-lg">{children}</span>
       </a>
@@ -437,10 +437,10 @@ function Cta({
   return (
     <a
       {...linkProps}
-      className="lv-cta lv-cta-pulse flex w-full flex-col items-center justify-center rounded-full px-6 py-4 text-center font-extrabold text-white transition-transform active:scale-95"
+      className="lv-cta lv-cta-pulse flex w-full flex-col items-center justify-center rounded-full px-6 py-4 text-center font-extrabold text-[#180d08] transition-transform active:scale-95"
     >
       <span className="lv-title text-base tracking-wide sm:text-lg">{children}</span>
-      {sub ? <span className="mt-0.5 text-xs font-semibold text-white/90">{sub}</span> : null}
+      {sub ? <span className="mt-0.5 text-xs font-semibold text-[#180d08]/75">{sub}</span> : null}
     </a>
   )
 }
