@@ -31,6 +31,8 @@ export function OfferCardBr({
   checkoutUrl,
   imageSrc = "/images/br-oferta.png",
   imageAlt = "Mulher segurando o livro 'Picolés Gourmet Recheados Lucrativos - 100 receitas para fazer e vender' com uma variedade de picolés gourmet recheados à frente.",
+  includedItems = includes,
+  showBonuses = true,
 }: {
   planName?: string
   sectionId?: string
@@ -39,6 +41,8 @@ export function OfferCardBr({
   checkoutUrl?: string
   imageSrc?: string
   imageAlt?: string
+  includedItems?: string[]
+  showBonuses?: boolean
 } = {}) {
   return (
     <section id={sectionId} className="scroll-mt-4 px-5 py-8">
@@ -68,7 +72,7 @@ export function OfferCardBr({
           </div>
 
           <ul className="mt-4 flex flex-col gap-2">
-            {includes.map((item) => (
+            {includedItems.map((item) => (
               <li key={item} className="flex items-start gap-2.5">
                 <CheckIcon />
                 <span className="text-sm font-medium leading-snug text-foreground">{item}</span>
@@ -76,19 +80,21 @@ export function OfferCardBr({
             ))}
           </ul>
 
-          <div className="mt-4 rounded-2xl bg-secondary p-4">
-            <p className="mb-2 text-center font-display text-sm font-extrabold uppercase tracking-wide text-primary">
-              Bônus inclusos grátis
-            </p>
-            <ul className="flex flex-col gap-2">
-              {bonuses.map((item) => (
-                <li key={item} className="flex items-start gap-2.5">
-                  <GiftIcon />
-                  <span className="text-sm font-semibold leading-snug text-chocolate">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {showBonuses && (
+            <div className="mt-4 rounded-2xl bg-secondary p-4">
+              <p className="mb-2 text-center font-display text-sm font-extrabold uppercase tracking-wide text-primary">
+                Bônus inclusos grátis
+              </p>
+              <ul className="flex flex-col gap-2">
+                {bonuses.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <GiftIcon />
+                    <span className="text-sm font-semibold leading-snug text-chocolate">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="mt-4 text-center">
             <p className="text-base text-muted-foreground">
