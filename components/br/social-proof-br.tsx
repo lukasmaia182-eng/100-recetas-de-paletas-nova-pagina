@@ -61,8 +61,6 @@ export function SocialProofBr({ slides = defaultSlides }: SocialProofBrProps) {
                 width={400}
                 height={400}
                 className="h-48 w-full object-cover"
-                loading="lazy"
-                sizes="256px"
               />
               <figcaption className="p-4">
                 <p className="font-display text-sm font-bold leading-relaxed text-chocolate">{slide.text}</p>
