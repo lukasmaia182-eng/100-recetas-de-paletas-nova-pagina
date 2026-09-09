@@ -66,8 +66,6 @@ export function HeroSectionBr({
               height={800}
               className="h-auto w-full object-cover"
               priority
-              fetchPriority="high"
-              sizes="(max-width: 640px) 100vw, 448px"
             />
           </div>
         </div>
@@ -80,7 +78,7 @@ export function HeroSectionBr({
         </div>
 
         <div className="mt-4 w-full">
-          <BuyButton href={checkoutUrl} subLabel="Pagamento único · Sem mensalidades · Acesso imediato">
+          <BuyButton href="#oferta" subLabel="Veja os planos e escolha sua oferta">
             QUERO AS 100 RECEITAS
           </BuyButton>
         </div>

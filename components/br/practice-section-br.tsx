@@ -40,8 +40,6 @@ export function PracticeSectionBr({
             width={800}
             height={600}
             className="h-auto w-full object-cover"
-            loading="lazy"
-            sizes="(max-width: 640px) 100vw, 448px"
           />
         </div>
 
@@ -54,8 +52,6 @@ export function PracticeSectionBr({
                 width={400}
                 height={400}
                 className="h-full w-full object-cover"
-                loading="lazy"
-                sizes="(max-width: 640px) 33vw, 144px"
               />
             </div>
           ))}
