@@ -9,7 +9,7 @@ import Script from "next/script"
 import { FaqSectionBr } from "@/components/br/faq-section-br"
 
 const CHECKOUT_URL_ESSENCIAL = "https://pay.cakto.com.br/m4f7cwc_1034537"
-const CHECKOUT_URL_COMPLETO = "https://pay.cakto.com.br/waoe895"
+const CHECKOUT_URL_COMPLETO = "https://pay.cakto.com.br/8uc2vxk"
 
 export default function Page() {
   return (
@@ -57,7 +57,8 @@ export default function Page() {
       />
       <OfferCardBr
         planName="Plano Completo"
-        price="R$ 27,90"
+        price="R$ 59,90"
+        refPrice="R$ 149,90"
         checkoutUrl={CHECKOUT_URL_COMPLETO}
         sectionId="oferta-completo"
       />
