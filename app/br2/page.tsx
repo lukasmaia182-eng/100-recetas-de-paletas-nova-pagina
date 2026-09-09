@@ -48,6 +48,7 @@ export default function Page() {
           "Material organizado por sabor",
           "Fácil de aplicar en casa",
         ]}
+        showBonuses={false}
       />
       <OfferCardBr
         planName="Plano Completo"
