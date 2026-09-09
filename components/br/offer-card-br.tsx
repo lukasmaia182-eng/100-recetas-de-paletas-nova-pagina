@@ -24,12 +24,16 @@ const bonuses = [
 ]
 
 export function OfferCardBr({
+  planName = "Plano Essencial",
+  sectionId = "oferta",
   price = "R$ 19,90",
   refPrice = "R$ 47,00",
   checkoutUrl,
   imageSrc = "/images/br-oferta.png",
   imageAlt = "Mulher segurando o livro 'Picolés Gourmet Recheados Lucrativos - 100 receitas para fazer e vender' com uma variedade de picolés gourmet recheados à frente.",
 }: {
+  planName?: string
+  sectionId?: string
   price?: string
   refPrice?: string
   checkoutUrl?: string
@@ -37,7 +41,7 @@ export function OfferCardBr({
   imageAlt?: string
 } = {}) {
   return (
-    <section id="oferta" className="scroll-mt-4 px-5 py-8">
+    <section id={sectionId} className="scroll-mt-4 px-5 py-8">
       <div className="mx-auto max-w-md overflow-hidden rounded-3xl bg-card shadow-xl shadow-chocolate/10">
         <div className="flex items-center justify-center bg-primary px-4 py-3">
           <span className="font-display text-sm font-extrabold uppercase tracking-wide text-primary-foreground">
@@ -50,7 +54,7 @@ export function OfferCardBr({
             Tudo o que você vai receber
           </h2>
           <p className="mt-1.5 text-center font-display text-base font-bold text-primary">
-            100 Receitas de Picolés Gourmet Recheados
+            {planName} · 100 Receitas de Picolés Gourmet Recheados
           </p>
 
           <div className="mx-auto mt-4 max-w-xs overflow-hidden rounded-2xl">

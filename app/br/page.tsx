@@ -7,7 +7,8 @@ import { OfferCardBr } from "@/components/br/offer-card-br"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
 import { FaqSectionBr } from "@/components/br/faq-section-br"
 
-const CHECKOUT_URL_BR = "https://pay.hotmart.com/Q106988016O?off=lhp0ja0w&checkoutMode=10"
+const CHECKOUT_URL_ESSENCIAL = "https://pay.cakto.com.br/m4f7cwc_1034537"
+const CHECKOUT_URL_COMPLETO = "https://pay.cakto.com.br/waoe895"
 
 export default function Page() {
   return (
@@ -31,15 +32,25 @@ export default function Page() {
         }
         imageSrc="/images/br-hero-mockup.png"
         imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
-        checkoutUrl={CHECKOUT_URL_BR}
+        checkoutUrl="#oferta"
       />
       <PracticeSectionBr />
       <IdealSectionBr />
-      <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} />
+      <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} />
       <SocialProofBr />
-      <OfferCardBr checkoutUrl={CHECKOUT_URL_BR} />
+      <OfferCardBr
+        planName="Plano Essencial"
+        price="R$ 19,90"
+        checkoutUrl={CHECKOUT_URL_ESSENCIAL}
+      />
+      <OfferCardBr
+        planName="Plano Completo"
+        price="R$ 27,90"
+        checkoutUrl={CHECKOUT_URL_COMPLETO}
+        sectionId="oferta-completo"
+      />
       <GuaranteeSectionBr />
-      <FaqSectionBr checkoutUrl={CHECKOUT_URL_BR} />
+      <FaqSectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} />
 
       <footer className="bg-chocolate px-5 py-8 text-center">
         <p className="mx-auto max-w-md text-xs leading-relaxed text-creme/70">
