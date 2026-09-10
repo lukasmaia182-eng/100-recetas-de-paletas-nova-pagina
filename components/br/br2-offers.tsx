@@ -45,6 +45,7 @@ export function Br2Offers() {
         isOpen={isUpgradeOpen}
         onClose={() => setIsUpgradeOpen(false)}
         completeCheckoutUrl={CHECKOUT_URL_COMPLETO}
+        essentialCheckoutUrl={CHECKOUT_URL_ESSENCIAL}
       />
     </>
   )
