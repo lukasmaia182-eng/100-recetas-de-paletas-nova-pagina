@@ -1,0 +1,6 @@
+{
+  "name": "100 Recetas de Paletas",
+  "description": "Recetario interactivo con más de 100 recetas de paletas gourmet rellenas y cremosas, fichas técnicas, área de miembros y panel de analítica.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

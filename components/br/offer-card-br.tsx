@@ -34,6 +34,7 @@ export function OfferCardBr({
   includedItems = includes,
   showBonuses = true,
   onBuyClick,
+  badgeText = "Promoção de lançamento",
 }: {
   planName?: string
   sectionId?: string
@@ -45,13 +46,14 @@ export function OfferCardBr({
   includedItems?: string[]
   showBonuses?: boolean
   onBuyClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  badgeText?: React.ReactNode
 } = {}) {
   return (
     <section id={sectionId} className="scroll-mt-4 px-5 py-8">
       <div className="mx-auto max-w-md overflow-hidden rounded-3xl bg-card shadow-xl shadow-chocolate/10">
-        <div className="flex items-center justify-center bg-primary px-4 py-3">
+        <div className="flex items-center justify-center bg-primary px-4 py-3 text-center">
           <span className="font-display text-sm font-extrabold uppercase tracking-wide text-primary-foreground">
-            Promoção de lançamento
+            {badgeText}
           </span>
         </div>
 

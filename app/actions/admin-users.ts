@@ -51,15 +51,21 @@ export async function adminLogout() {
 
 export async function listMembers() {
   if (!(await isAdminAuthed())) throw new Error("Unauthorized")
-  return db
-    .select({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      createdAt: user.createdAt,
-    })
-    .from(user)
-    .orderBy(desc(user.createdAt))
+  try {
+    const res = await db
+      .select({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        createdAt: user.createdAt,
+      })
+      .from(user)
+      .orderBy(desc(user.createdAt))
+    return Array.isArray(res) ? res : []
+  } catch (err) {
+    console.warn("[AI Studio] Database listMembers failed (database may be offline):", err)
+    return []
+  }
 }
 
 export async function createMember(_prev: unknown, formData: FormData) {

@@ -22,16 +22,22 @@ export function Br2Offers() {
         }}
       >
         <OfferCardBr
-        planName="Plano Essencial"
-        price="R$ 19,90"
-        checkoutUrl="#"
-        includedItems={[
-          '100 Recetas de paletas gourmet',
-          'Archivos en PDF listos para imprimir',
-          'Material organizado por sabor',
-          'Fácil de aplicar en casa',
-        ]}
-        showBonuses={false}
+          planName="Plano Essencial"
+          price="R$ 19,90"
+          checkoutUrl="#"
+          badgeText={
+            <span className="flex flex-col items-center justify-center text-center">
+              <span>Promoção de lançamento</span>
+              <span className="text-xs font-black tracking-widest text-creme">2026</span>
+            </span>
+          }
+          includedItems={[
+            '100 Recetas de paletas gourmet',
+            'Archivos en PDF listos para imprimir',
+            'Material organizado por sabor',
+            'Fácil de aplicar en casa',
+          ]}
+          showBonuses={false}
         />
       </div>
       <OfferCardBr
@@ -40,12 +46,17 @@ export function Br2Offers() {
         refPrice="R$ 149,90"
         checkoutUrl={CHECKOUT_URL_COMPLETO}
         sectionId="oferta-completo"
+        badgeText={
+          <span className="flex flex-col items-center justify-center text-center">
+            <span>Promoção de lançamento</span>
+            <span className="text-xs font-black tracking-widest text-creme">2026</span>
+          </span>
+        }
       />
       <UpgradeOfferModalBr
         isOpen={isUpgradeOpen}
         onClose={() => setIsUpgradeOpen(false)}
         completeCheckoutUrl={CHECKOUT_URL_COMPLETO}
-        essentialCheckoutUrl={CHECKOUT_URL_ESSENCIAL}
       />
     </>
   )

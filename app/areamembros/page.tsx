@@ -12,7 +12,12 @@ export const metadata: Metadata = {
 }
 
 export default async function AreaMembrosPage() {
-  const session = await auth.api.getSession({ headers: await headers() })
+  let session = null
+  try {
+    session = await auth.api.getSession({ headers: await headers() })
+  } catch (err) {
+    console.warn("[AI Studio] Auth getSession failed (database may be offline):", err)
+  }
   if (!session?.user) redirect("/areamembros/login")
 
   return (
