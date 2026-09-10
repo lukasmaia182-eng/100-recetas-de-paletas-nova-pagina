@@ -33,6 +33,7 @@ export function OfferCardBr({
   imageAlt = "Mulher segurando o livro 'Picolés Gourmet Recheados Lucrativos - 100 receitas para fazer e vender' com uma variedade de picolés gourmet recheados à frente.",
   includedItems = includes,
   showBonuses = true,
+  onBuyClick,
 }: {
   planName?: string
   sectionId?: string
@@ -43,6 +44,7 @@ export function OfferCardBr({
   imageAlt?: string
   includedItems?: string[]
   showBonuses?: boolean
+  onBuyClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 } = {}) {
   return (
     <section id={sectionId} className="scroll-mt-4 px-5 py-8">
@@ -108,7 +110,7 @@ export function OfferCardBr({
           </div>
 
           <div className="mt-5">
-            <BuyButton href={checkoutUrl} subLabel="Compra 100% segura">
+            <BuyButton href={checkoutUrl} onClick={onBuyClick} subLabel="Compra 100% segura">
               SIM, QUERO AS 100 RECEITAS
             </BuyButton>
           </div>

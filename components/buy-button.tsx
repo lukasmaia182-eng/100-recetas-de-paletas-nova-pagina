@@ -11,6 +11,7 @@ type BuyButtonProps = {
   id?: string
   /** Rótulo de contexto (ex.: "hero", "oferta-final") enviado ao GTM via data-gtm-location. */
   location?: string
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 export function BuyButton({
@@ -20,6 +21,7 @@ export function BuyButton({
   href = CHECKOUT_URL,
   id = "botao-compra",
   location,
+  onClick,
 }: BuyButtonProps) {
   return (
     <a
@@ -29,6 +31,7 @@ export function BuyButton({
       href={href}
       target={href.startsWith("#") ? undefined : "_blank"}
       rel={href.startsWith("#") ? undefined : "noopener noreferrer"}
+      onClick={onClick}
       className={cn(
         "group relative flex w-full flex-col items-center justify-center rounded-full bg-verde-cta px-6 py-4 text-center font-display text-lg font-extrabold text-white shadow-lg shadow-verde-cta/30 transition-transform hover:bg-verde-cta-dark active:scale-95 sm:text-xl",
         "animate-cta-pulse",

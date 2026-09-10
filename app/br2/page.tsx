@@ -3,7 +3,7 @@ import { PracticeSectionBr } from "@/components/br/practice-section-br"
 import { IdealSectionBr } from "@/components/br/ideal-section-br"
 import { ScarcitySectionBr } from "@/components/br/scarcity-section-br"
 import { SocialProofBr } from "@/components/br/social-proof-br"
-import { OfferCardBr } from "@/components/br/offer-card-br"
+import { Br2Offers } from "@/components/br/br2-offers"
 import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
 import Script from "next/script"
 import { FaqSectionBr } from "@/components/br/faq-section-br"
@@ -43,25 +43,7 @@ export default function Page() {
       <IdealSectionBr />
       <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} />
       <SocialProofBr />
-      <OfferCardBr
-        planName="Plano Essencial"
-        price="R$ 19,90"
-        checkoutUrl={CHECKOUT_URL_ESSENCIAL}
-        includedItems={[
-          "100 Recetas de paletas gourmet",
-          "Archivos en PDF listos para imprimir",
-          "Material organizado por sabor",
-          "Fácil de aplicar en casa",
-        ]}
-        showBonuses={false}
-      />
-      <OfferCardBr
-        planName="Plano Completo"
-        price="R$ 59,90"
-        refPrice="R$ 149,90"
-        checkoutUrl={CHECKOUT_URL_COMPLETO}
-        sectionId="oferta-completo"
-      />
+      <Br2Offers />
       <GuaranteeSectionBr />
       <FaqSectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} />
 
