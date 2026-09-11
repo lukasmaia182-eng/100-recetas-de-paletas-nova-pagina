@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const defaultSlides = [
+const slides = [
   {
     src: "/images/social-1.png",
     alt: "Mujer empacando paletas cremosas en una caja lista para vender desde casa",
@@ -33,11 +33,7 @@ const defaultSlides = [
   },
 ]
 
-interface SocialProofProps {
-  slides?: { src: string; alt: string; text: string }[]
-}
-
-export function SocialProof({ slides = defaultSlides }: SocialProofProps) {
+export function SocialProof() {
   const loop = [...slides, ...slides]
 
   return (

@@ -18,7 +18,7 @@ export function HeroSection({
   afterCta,
   flushHeadline = false,
   price = "$3,90",
-  refPrice = "$27,90",
+  refPrice = "$19,90",
   checkoutUrl,
 }: {
   headline?: React.ReactNode
@@ -57,10 +57,10 @@ export function HeroSection({
             className={`overflow-hidden shadow-xl shadow-primary/10 ${flushHeadline ? "rounded-b-3xl" : "rounded-3xl"}`}
           >
             <Image
-              src={imageSrc ?? "/images/hero-paletas-kit.png"}
+              src={imageSrc ?? "/images/hero-mujer-app.png"}
               alt={
                 imageAlt ??
-                "Kit Paletas Rellenas Rentables: recetario impreso y digital con 100 recetas, tarjetas de recetas y paletas rellenas de varios sabores"
+                "Mujer sonriente sosteniendo una paleta de chocolate y su celular con el recetario digital, junto a una bandeja de paletas de varios sabores"
               }
               width={800}
               height={800}
