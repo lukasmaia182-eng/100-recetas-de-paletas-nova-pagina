@@ -47,6 +47,13 @@ export default function Page() {
         planName="Plano Essencial"
         price="R$ 19,90"
         checkoutUrl={CHECKOUT_URL_ESSENCIAL}
+        includedItems={[
+          "100 Recetas de paletas gourmet",
+          "Archivos en PDF listos para imprimir",
+          "Material organizado por sabor",
+          "Fácil de aplicar en casa",
+        ]}
+        showBonuses={false}
       />
       <OfferCardBr
         planName="Plano Completo"
