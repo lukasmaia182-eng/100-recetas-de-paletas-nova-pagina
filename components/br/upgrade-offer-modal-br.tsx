@@ -6,12 +6,14 @@ interface UpgradeOfferModalBrProps {
   isOpen: boolean
   onClose: () => void
   completeCheckoutUrl: string
+  essentialCheckoutUrl: string
 }
 
 export function UpgradeOfferModalBr({
   isOpen,
   onClose,
   completeCheckoutUrl,
+  essentialCheckoutUrl,
 }: UpgradeOfferModalBrProps) {
   if (!isOpen) return null
 
@@ -172,12 +174,15 @@ export function UpgradeOfferModalBr({
                 SIM, QUERO O PLANO COMPLETO
               </a>
 
-              <button
+              <a
+                href={essentialCheckoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={onClose}
-                className="rounded-full border-2 border-chocolate/30 bg-transparent px-4 py-2.5 text-center font-display text-sm font-bold text-chocolate transition-colors hover:bg-chocolate/5"
+                className="block rounded-full border-2 border-chocolate/30 bg-transparent px-4 py-2.5 text-center font-display text-sm font-bold text-chocolate transition-colors hover:bg-chocolate/5"
               >
                 Não, continuar com R$ 19,90
-              </button>
+              </a>
             </div>
 
             {/* Garantia */}
