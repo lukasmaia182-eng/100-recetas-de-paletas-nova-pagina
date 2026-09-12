@@ -78,8 +78,8 @@ export function HeroSection({
         </div>
 
         <div className="mt-4 w-full">
-          <BuyButton href={checkoutUrl} subLabel="Pago único · Sin mensualidades · Acceso inmediato">
-            QUIERO LAS 100 RECETAS
+          <BuyButton href="#oferta" subLabel="Elige tu plan y empieza hoy">
+            VER LOS PLANES
           </BuyButton>
         </div>
 
