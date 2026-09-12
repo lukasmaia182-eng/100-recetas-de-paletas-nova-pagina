@@ -25,7 +25,7 @@ export default function Page() {
             </span>
           </>
         }
-        imageSrc="/images/hero-recetario-paletas.png"
+        imageSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2011%20de%20set.%20de%202026%2C%2023_10_36-qdUs68g0CqvLgvQouuzr6k9etUNUOO.png"
         imageAlt="Recetario premium '100 Paletas Rellenas y Cremosas' rodeado de fichas de recetas de paletas cremosas de fresa, coco, maracuyá y cookies & cream, con paletas de varios sabores en la portada."
       />
       <PracticeSection />
