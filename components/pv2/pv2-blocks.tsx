@@ -66,7 +66,7 @@ export function Pv2Hero() {
         </div>
 
         <div className="mt-6 w-full">
-          <BuyButton subLabel="Acceso inmediato · Pago único de $12">QUIERO MIS RECETAS</BuyButton>
+          <BuyButton subLabel="Acceso inmediato · Pago único de $12,00">QUIERO MIS RECETAS</BuyButton>
         </div>
       </div>
     </section>

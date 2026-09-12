@@ -17,7 +17,7 @@ export function HeroSection({
   imageAlt,
   afterCta,
   flushHeadline = false,
-  price = "$12",
+  price = "$12,00",
   refPrice = "$19,90",
   checkoutUrl,
 }: {
