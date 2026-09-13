@@ -34,7 +34,11 @@ export function HeroSectionBr({
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-8 sm:pt-5">
-      <div className="mx-auto flex max-w-md flex-col items-center text-center">
+      <div className="mx-auto flex max-w-xl flex-col items-center text-center">
+        <div className="mb-3 rounded-full bg-[#fff0d5] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.12em] text-[#c95a1a] shadow-sm">
+          Oferta especial: 100 receitas + bônus exclusivos
+        </div>
+        <p className="mb-3 text-xs font-black uppercase tracking-[0.3em] text-[#e56a19]">Faça · Recheie · Venda</p>
         <h1 className="w-full font-display text-2xl font-extrabold leading-tight text-chocolate text-balance sm:text-3xl">
           {headline ?? (
             <>
@@ -79,8 +83,11 @@ export function HeroSectionBr({
 
         <div className="mt-4 w-full">
           <BuyButton href="#oferta" subLabel="Veja os planos e escolha sua oferta">
-            QUERO AS 100 RECEITAS
+            QUERO AS 100 RECEITAS AGORA
           </BuyButton>
+          <a href="#oferta" className="mt-3 text-sm font-extrabold text-[#c95a1a] underline underline-offset-4">
+            Ver o que vem no material
+          </a>
         </div>
 
         <p className="mt-2 text-sm font-medium text-muted-foreground">

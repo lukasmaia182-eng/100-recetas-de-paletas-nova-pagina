@@ -21,17 +21,16 @@ export default function Page() {
         <HeroSectionBr
         headline={
           <span className="text-verde-cta">
-            As receitas que vão fazer você vender +300 picolés este mês e transformar sua cozinha em uma fonte de renda extra
+            100 Receitas de Picolés Recheados Lucrativos para Fazer em Casa e Começar a Vender
           </span>
         }
         subheadline={
           <>
             <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-              + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
+              Tenha em mãos 100 receitas de picolés recheados, com ingredientes, medidas, recheios e preparo passo a passo.
             </span>
             <span className="mt-2 block">
-              Para quem quer ganhar dinheiro em casa sem precisar de ingredientes caros nem passar horas inventando
-              receitas.
+              Monte um cardápio variado sem precisar ficar procurando receitas espalhadas pela internet.
             </span>
           </>
         }
