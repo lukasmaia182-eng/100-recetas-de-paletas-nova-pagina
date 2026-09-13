@@ -68,6 +68,8 @@ export default function Page() {
         price="R$ 27,90"
         checkoutUrl={CHECKOUT_URL_COMPLETO}
         sectionId="oferta-completo"
+        imageSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2013%20de%20set.%20de%202026%2C%2013_56_51-DZr8mBdwlL1ayLO62C5ISJLtZEusP8.png"
+        imageAlt="Arte do bônus especial com uma empreendedora segurando o livro de picolés gourmet e o material com 100 receitas de Taco Cake Recheados Lucrativos."
         highlightText="100 Receitas de Taco Cake Recheados Lucrativos"
       />
       <GuaranteeSectionBr />
