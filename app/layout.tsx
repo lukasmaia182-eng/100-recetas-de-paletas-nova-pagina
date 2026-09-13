@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Anton, Baloo_2, Nunito, Playfair_Display } from 'next/font/google'
 import { SiteTracking } from '@/components/site-tracking'
@@ -68,7 +67,6 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <SiteTracking />
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
