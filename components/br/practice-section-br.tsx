@@ -19,15 +19,17 @@ interface PracticeSectionBrProps {
   mainImageSrc?: string
   mainImageAlt?: string
   products?: { src: string; alt: string }[]
+  className?: string
 }
 
 export function PracticeSectionBr({
   mainImageSrc = "/images/br-practica-1.png",
   mainImageAlt = "Mulher com avental decorando um picolé de pistache, sobre uma mesa com o livro 'Picolés Gourmet Recheados Lucrativos' e variedade de picolés gourmet recheados.",
   products = defaultProducts,
+  className,
 }: PracticeSectionBrProps) {
   return (
-    <section className="bg-secondary px-5 py-8">
+    <section className={className ?? "bg-secondary px-5 py-4 sm:py-5"}>
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Veja como os picolés ficam na prática

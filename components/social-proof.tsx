@@ -33,8 +33,12 @@ const slides = [
   },
 ]
 
-export function SocialProof() {
-  const loop = [...slides, ...slides]
+interface SocialProofProps {
+  slides?: { src: string; alt: string; text: string }[]
+}
+
+export function SocialProof({ slides: customSlides = slides }: SocialProofProps = {}) {
+  const loop = [...customSlides, ...customSlides]
 
   return (
     <section className="overflow-hidden py-8">

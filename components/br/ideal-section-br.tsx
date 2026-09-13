@@ -17,9 +17,9 @@ const items = [
   },
 ]
 
-export function IdealSectionBr() {
+export function IdealSectionBr({ className }: { className?: string } = {}) {
   return (
-    <section className="px-5 py-8">
+    <section className={className ?? "px-5 py-4 sm:py-5"}>
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Este livro de receitas foi feito para você que…

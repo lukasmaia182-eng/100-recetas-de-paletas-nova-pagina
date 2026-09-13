@@ -45,15 +45,17 @@ const buildFaqs = (price: string) => [
 export function FaqSectionBr({
   price = "R$ 19,90",
   checkoutUrl,
+  className,
 }: {
   price?: string
   checkoutUrl?: string
+  className?: string
 } = {}) {
   const [open, setOpen] = useState<number | null>(0)
   const faqs = buildFaqs(price)
 
   return (
-    <section className="px-5 py-8">
+    <section className={className ?? "px-5 py-4 sm:py-5"}>
       <div className="mx-auto max-w-md">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Perguntas frequentes

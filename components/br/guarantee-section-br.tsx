@@ -1,8 +1,8 @@
 import Image from "next/image"
 
-export function GuaranteeSectionBr() {
+export function GuaranteeSectionBr({ className }: { className?: string } = {}) {
   return (
-    <section className="px-5 py-8">
+    <section className={className ?? "px-5 py-4 sm:py-5"}>
       <div className="mx-auto flex max-w-md flex-col items-center gap-4 rounded-3xl bg-secondary p-7 text-center">
         <Image
           src="/images/guarantee.png"

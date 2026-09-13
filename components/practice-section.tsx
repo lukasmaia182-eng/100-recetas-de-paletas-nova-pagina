@@ -15,7 +15,17 @@ const products = [
   },
 ]
 
-export function PracticeSection() {
+interface PracticeSectionProps {
+  mainImageSrc?: string
+  mainImageAlt?: string
+  products?: { src: string; alt: string }[]
+}
+
+export function PracticeSection({
+  mainImageSrc = "/images/tutorial-mujer.png",
+  mainImageAlt = "Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas', paletas empacadas con etiquetas 'Hecho en casa' y variedad de paletas ya preparadas",
+  products: customProducts = products,
+}: PracticeSectionProps = {}) {
   return (
     <section className="bg-secondary px-5 py-8">
       <div className="mx-auto max-w-md">
@@ -25,8 +35,8 @@ export function PracticeSection() {
 
         <div className="mt-5 overflow-hidden rounded-3xl shadow-lg shadow-chocolate/10">
           <Image
-            src="/images/tutorial-mujer.png"
-            alt="Mujer con delantal y guantes vertiendo mezcla de fresa en moldes de paletas, junto al recetario '100 Paletas Rellenas y Cremosas', paletas empacadas con etiquetas 'Hecho en casa' y variedad de paletas ya preparadas"
+            src={mainImageSrc || "/placeholder.svg"}
+            alt={mainImageAlt}
             width={800}
             height={600}
             className="h-auto w-full object-cover"
@@ -34,7 +44,7 @@ export function PracticeSection() {
         </div>
 
         <div className="mt-4 grid grid-cols-3 gap-3">
-          {products.map((product) => (
+          {customProducts.map((product) => (
             <div key={product.src} className="overflow-hidden rounded-2xl bg-card shadow-md">
               <Image
                 src={product.src || "/placeholder.svg"}

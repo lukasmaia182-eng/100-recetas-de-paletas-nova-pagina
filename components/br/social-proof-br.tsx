@@ -35,13 +35,14 @@ const defaultSlides = [
 
 interface SocialProofBrProps {
   slides?: { src: string; alt: string; text: string }[]
+  className?: string
 }
 
-export function SocialProofBr({ slides = defaultSlides }: SocialProofBrProps) {
+export function SocialProofBr({ slides = defaultSlides, className }: SocialProofBrProps) {
   const loop = [...slides, ...slides]
 
   return (
-    <section className="overflow-hidden py-8">
+    <section className={className ?? "overflow-hidden py-4 sm:py-5"}>
       <div className="mx-auto mb-4 max-w-md px-5">
         <h2 className="text-center font-display text-2xl font-extrabold text-chocolate text-balance sm:text-3xl">
           Elas já estão fazendo os próprios picolés
