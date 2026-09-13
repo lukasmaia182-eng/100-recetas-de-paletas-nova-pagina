@@ -48,10 +48,18 @@ export default function Page() {
         price="R$ 19,90"
         checkoutUrl={CHECKOUT_URL_ESSENCIAL}
         includedItems={[
-          "100 Recetas de paletas gourmet",
-          "Archivos en PDF listos para imprimir",
-          "Material organizado por sabor",
-          "Fácil de aplicar en casa",
+          "100 receitas organizadas",
+          "Ingredientes e quantidades",
+          "Preparo passo a passo",
+          "Bases cremosas e com frutas",
+          "Recheios e combinações",
+          "Sabores econômicos",
+          "Sabores premium",
+          "Picolés inspirados em sobremesas",
+          "Mini picolés para festas e eventos",
+          "Dicas de textura",
+          "Ideias de apresentação",
+          "Acesso digital imediato",
         ]}
         showBonuses={false}
       />
@@ -60,6 +68,7 @@ export default function Page() {
         price="R$ 27,90"
         checkoutUrl={CHECKOUT_URL_COMPLETO}
         sectionId="oferta-completo"
+        highlightText="100 Receitas de Taco Cake Recheados Lucrativos"
       />
       <GuaranteeSectionBr />
       <FaqSectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} />

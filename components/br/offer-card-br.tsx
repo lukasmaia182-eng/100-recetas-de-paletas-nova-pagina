@@ -35,6 +35,7 @@ export function OfferCardBr({
   showBonuses = true,
   onBuyClick,
   badgeText = "Promoção de lançamento",
+  highlightText,
 }: {
   planName?: string
   sectionId?: string
@@ -47,6 +48,7 @@ export function OfferCardBr({
   showBonuses?: boolean
   onBuyClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
   badgeText?: React.ReactNode
+  highlightText?: string
 } = {}) {
   return (
     <section id={sectionId} className="scroll-mt-4 px-5 py-8">
@@ -74,6 +76,14 @@ export function OfferCardBr({
               className="h-auto w-full object-contain"
             />
           </div>
+
+          {highlightText && (
+            <div className="mt-4 rounded-2xl border-2 border-primary/20 bg-secondary px-4 py-3 text-center">
+              <p className="font-display text-sm font-extrabold leading-snug text-chocolate">
+                Destaque do plano: {highlightText}
+              </p>
+            </div>
+          )}
 
           <ul className="mt-4 flex flex-col gap-2">
             {includedItems.map((item) => (
