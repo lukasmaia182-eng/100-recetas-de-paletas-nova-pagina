@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -259,4 +260,77 @@
   background: var(--mm-border);
   border-radius: 9999px;
 }
+
+/* Landing page /br — cópia visual da referência */
+.nova-page { --ink:#321b13; --orange:#f4512a; --orange2:#ff8a00; --cream:#fffaf0; --peach:#fff1df; --brown:#45251b; background:var(--cream); color:var(--ink); font-family:var(--font-nunito),sans-serif; overflow:hidden; }
+.nova-container { width:min(100% - 40px, 1020px); margin-inline:auto; }
+.nova-topbar { background:linear-gradient(90deg,#f52b27,#ff8b00); color:#fff; text-align:center; font-size:14px; font-weight:800; padding:11px 20px; }
+.nova-hero { text-align:center; padding:92px 20px 70px; }
+.nova-kicker,.nova-label { display:inline-block; color:var(--orange); font-size:12px; font-weight:900; letter-spacing:.15em; text-transform:uppercase; }
+.nova-kicker { background:#fff0dd; border-radius:999px; padding:8px 16px; }
+.nova-page h1 { max-width:790px; margin:28px auto 24px; font-size:clamp(42px,6vw,70px); font-weight:900; line-height:1.03; letter-spacing:-.045em; }
+.nova-page h1 em { color:var(--orange); font-style:normal; }
+.nova-page h2 { margin:12px 0 18px; font-size:clamp(32px,4vw,52px); line-height:1.06; letter-spacing:-.035em; font-weight:900; }
+.nova-page h3 { font-size:20px; line-height:1.15; font-weight:900; }
+.nova-page p { color:#78675f; line-height:1.65; }
+.nova-lead { max-width:690px; margin:0 auto 42px; font-size:18px; }
+.nova-hero-image { position:relative; max-width:800px; margin:auto; border-radius:24px; overflow:hidden; box-shadow:0 24px 60px #9c5b2b25; }
+.nova-hero-image span { position:absolute; z-index:1; left:20px; top:18px; background:#3b2118; color:#fff; border-radius:999px; padding:10px 16px; font-size:12px; font-weight:800; }
+.nova-hero-image img { display:block; width:100%; height:auto; }
+.nova-button { display:flex; width:min(100%,390px); margin:28px auto 12px; justify-content:center; align-items:center; flex-direction:column; gap:2px; border-radius:10px; background:linear-gradient(90deg,var(--orange),var(--orange2)); color:#fff; padding:17px 22px; font-size:16px; font-weight:900; box-shadow:0 12px 24px #ef612d40; transition:transform .2s; }
+.nova-button:hover { transform:translateY(-2px); }
+.nova-button small { font-size:10px; letter-spacing:.12em; opacity:.85; }
+.nova-text-link { color:var(--orange); font-size:13px; font-weight:900; text-decoration:underline; }
+.nova-section { padding:90px 20px; text-align:center; }
+.nova-light { background:#fff; }.nova-cream { background:var(--peach); }.nova-dark { background:var(--brown); color:#fff; }.nova-dark p { color:#d8c3b4; }.nova-dark .nova-label { color:#ff9a38; }
+.nova-check-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; max-width:760px; margin:35px auto 0; text-align:left; }.nova-check-grid div { padding:20px; border:1px solid #f0dfcb; border-radius:14px; color:var(--orange); font-weight:900; background:#fffaf5; }.nova-check-grid span { color:var(--ink); margin-left:7px; font-weight:700; }
+.nova-flavors,.nova-steps,.nova-bonuses { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:40px; text-align:left; }.nova-flavors article,.nova-bonuses article { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 25px #7c411214; }.nova-flavors img { width:100%; aspect-ratio:1; object-fit:cover; }.nova-flavors h3,.nova-flavors p,.nova-bonuses h3,.nova-bonuses p,.nova-bonuses b { display:block; margin:16px 18px 0; }.nova-flavors p,.nova-bonuses p { margin-top:8px; padding-bottom:18px; font-size:14px; }.nova-steps article { border-left:2px solid #e87930; padding:10px 18px; }.nova-steps b,.nova-bonuses b { color:var(--orange); font-size:13px; letter-spacing:.13em; }.nova-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; max-width:800px; margin:30px auto 0; }.nova-tags span { border:1px solid #f2cba9; border-radius:999px; padding:10px 15px; font-weight:800; background:#fffaf5; }.nova-bonuses { grid-template-columns:repeat(3,1fr); }.nova-bonuses article { padding:24px 0; }
+.nova-calculator { max-width:850px; }.nova-calc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:28px auto; text-align:left; }.nova-calc-grid label { color:#d8c3b4; font-size:13px; font-weight:800; }.nova-calc-grid input { display:block; width:100%; margin-top:7px; border:1px solid #795043; border-radius:8px; background:#24130e; color:#fff; padding:13px; }.nova-result { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; border-radius:15px; background:#24130e; padding:25px; }.nova-result h3 { grid-column:1/-1; text-align:left; }.nova-result div { display:flex; flex-direction:column; gap:5px; }.nova-result strong { color:#ff923b; font-size:24px; }.nova-result span { color:#c9aa99; font-size:10px; font-weight:800; }
+.nova-offer { background:linear-gradient(135deg,#fff1dc,#ffd5ac); padding:92px 20px; text-align:center; }.nova-price { display:flex; flex-direction:column; gap:4px; }.nova-price del { color:#8e7064; }.nova-price strong { color:var(--orange); font-size:58px; line-height:1; }.nova-small { font-size:12px; }.nova-faq { max-width:760px; margin:35px auto; text-align:left; }.nova-faq div { border-bottom:1px solid #ecdccf; }.nova-faq button { display:flex; justify-content:space-between; width:100%; padding:20px 0; background:none; border:0; color:var(--ink); font:700 17px var(--font-nunito); text-align:left; cursor:pointer; }.nova-faq button span { color:var(--orange); font-size:24px; }.nova-faq p { margin:0 30px 20px 0; }.nova-footer { background:var(--brown); color:#cdb7a9; padding:38px 20px; text-align:center; font-size:12px; line-height:1.7; }
+@media (max-width:700px) { .nova-hero { padding-top:58px; }.nova-page h1 { font-size:40px; }.nova-section,.nova-offer { padding-block:65px; }.nova-check-grid,.nova-calc-grid { grid-template-columns:1fr; }.nova-flavors,.nova-bonuses { grid-template-columns:repeat(2,1fr); gap:12px; }.nova-steps { grid-template-columns:1fr 1fr; }.nova-result { grid-template-columns:repeat(2,1fr); }.nova-hero-image span { font-size:10px; left:10px; top:10px; } }
+@media (max-width:420px) { .nova-flavors,.nova-bonuses { grid-template-columns:1fr; }.nova-steps { grid-template-columns:1fr; } }
+
+/* Replica fiel da landing page de referência */
+.nova-page { font-family: var(--font-nunito), 'DM Sans', sans-serif; }
+.nova-page h1,.nova-page h2,.nova-page h3,.nova-page strong { font-family: var(--font-nunito), 'Plus Jakarta Sans', sans-serif; }
+.nova-hero { padding-top:96px; padding-bottom:74px; }
+.nova-page h1 { max-width:850px; font-family:'Plus Jakarta Sans', var(--font-nunito), sans-serif; font-size:clamp(42px,5.5vw,62px); letter-spacing:-.055em; }
+.nova-page h1 em { background:linear-gradient(100deg,#e92631,#f36b16); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.nova-lead { color:#766961; max-width:700px; font-size:17px; }
+.nova-section { padding:94px 20px; }
+.nova-flavors { grid-template-columns:repeat(4,1fr); text-align:left; }
+.nova-flavors article { border:1px solid #f1dfca; box-shadow:0 10px 30px rgba(115,67,28,.10); }
+.nova-flavors img { display:block; aspect-ratio:1.12; object-fit:cover; }
+.nova-card-copy { padding:0 18px 18px; }
+.nova-card-copy b { display:block; margin-top:17px; color:#ef5a22; font-size:11px; letter-spacing:.12em; }
+.nova-card-copy h3 { margin:8px 0 15px; font-size:18px; }
+.nova-card-copy p { margin:7px 0 0; font-size:13px; line-height:1.45; }
+.nova-card-copy p:last-child { color:#ed612d; font-weight:800; }
+.nova-note { max-width:680px; margin:28px auto 0; font-size:15px; }
+.nova-steps { grid-template-columns:repeat(3,1fr); text-align:left; gap:28px 34px; }
+.nova-steps article { border-left:2px solid #ef772f; padding:8px 20px 8px; }
+.nova-steps article h3 { margin:7px 0 10px; }
+.nova-steps article p { margin:0 0 9px; font-size:14px; }
+.nova-steps article small { display:block; color:#d8c3b4; font-size:13px; line-height:1.55; }
+.nova-audience,.nova-features { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:38px; text-align:left; }
+.nova-audience article,.nova-features article { padding:26px; border-radius:16px; border:1px solid #efdcc7; background:#fffaf4; }
+.nova-audience b { color:var(--orange); font-size:22px; }
+.nova-audience h3 { margin:14px 0; }
+.nova-audience ul,.nova-bonuses ul { list-style:none; padding:0; margin:0; }
+.nova-audience li,.nova-bonuses li { margin:10px 0; color:#75645b; font-size:14px; }
+.nova-audience li::before,.nova-bonuses li::before { content:'✓'; color:var(--orange); font-weight:900; margin-right:8px; }
+.nova-clarity h3 { margin-top:44px; font-size:26px; }
+.nova-quotes { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; max-width:700px; margin:25px auto; }
+.nova-quotes i { background:#382016; border:1px solid #69402b; border-radius:10px; padding:16px; color:#f8dcc3; }
+.nova-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:38px auto 0; max-width:760px; }
+.nova-stats b { color:#ff923b; font-size:32px; }.nova-stats small { display:block; color:#d8c3b4; font-size:11px; line-height:1.35; margin-top:5px; }
+.nova-features { grid-template-columns:repeat(3,1fr); }.nova-features article { background:#fff; }.nova-features h3 { margin:0 0 8px; }.nova-features p { margin:0; font-size:14px; }
+.nova-bonuses { grid-template-columns:repeat(3,1fr); text-align:left; gap:20px; }.nova-bonuses article { padding:26px; border:1px solid #efdcc7; }.nova-bonuses article > b { margin:0; }.nova-bonuses article > small { display:block; margin-top:10px; color:#9a7560; }.nova-bonuses h3 { margin:14px 0 8px; }.nova-bonuses p { margin:0 0 16px; font-size:14px; }.nova-bonuses li { font-size:13px; }
+.recipe-gallery { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; max-width:940px; margin:36px auto 30px; }.recipe-gallery img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:14px; box-shadow:0 8px 20px rgba(115,67,28,.10); }
+.process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin:38px auto 0; text-align:left; }.process-grid article { padding:22px; border:1px solid #efdcc7; border-radius:16px; background:#fffaf4; }.process-grid b { display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:var(--orange); color:#fff; }.process-grid h3 { margin:15px 0 8px; }.process-grid p { margin:0; font-size:14px; }
+.testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:38px; text-align:left; }.testimonials figure { margin:0; padding:26px; border:1px solid #efdcc7; border-radius:16px; background:#fffaf4; }.testimonials blockquote { margin:0; color:#654e44; line-height:1.65; font-style:italic; }.testimonials figcaption { display:flex; flex-direction:column; gap:4px; margin-top:22px; }.testimonials figcaption strong { color:var(--orange); }.testimonials figcaption span,.testimonials figcaption small { color:#806e64; font-size:13px; }.plans { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; max-width:900px; margin:38px auto 0; text-align:left; }.plans article { padding:30px; border:1px solid #efd1b1; border-radius:20px; background:#fffaf4; }.plans article.featured { border:2px solid var(--orange); box-shadow:0 15px 35px rgba(239,97,45,.16); }.plans article > span,.plans article > b { display:block; color:var(--orange); letter-spacing:.08em; font-size:12px; font-weight:900; }.plans h3 { margin:12px 0 10px; }.plans ul { list-style:none; padding:0; margin:22px 0; }.plans li { margin:10px 0; color:#634e45; font-size:14px; }.plans del,.plans strong,.plans small { display:block; }.plans strong { margin-top:4px; color:var(--orange); font-size:38px; }.plans small { color:#806e64; margin-top:5px; }.plans .nova-button { width:100%; text-align:center; margin-top:24px; }.guarantee { background:#fff1df; }.guarantee strong { color:var(--orange); }
+@media (max-width:900px) { .recipe-gallery { grid-template-columns:repeat(3,1fr); }.process-grid { grid-template-columns:repeat(2,1fr); }.testimonials,.plans { grid-template-columns:1fr; max-width:620px; margin-inline:auto; } }
+@media (max-width:600px) { .recipe-gallery { grid-template-columns:repeat(2,1fr); }.process-grid { grid-template-columns:1fr; } }
+@media (max-width:900px) { .nova-flavors,.nova-steps,.nova-bonuses { grid-template-columns:repeat(2,1fr); }.nova-audience,.nova-features { grid-template-columns:1fr; max-width:600px; margin-inline:auto; }.nova-container { width:min(100% - 32px,1020px); } }
+@media (max-width:600px) { .nova-hero { padding-top:62px; }.nova-section { padding-block:68px; }.nova-flavors,.nova-steps,.nova-bonuses,.nova-quotes { grid-template-columns:1fr; }.nova-stats { grid-template-columns:repeat(2,1fr); }.nova-page h1 { font-size:42px; }.nova-hero-image { border-radius:16px; } }
 
