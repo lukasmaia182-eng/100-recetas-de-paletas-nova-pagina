@@ -79,8 +79,11 @@ export function OfferCardBr({
 
           {highlightText && (
             <div className="mt-4 rounded-2xl border-2 border-primary/20 bg-secondary px-4 py-3 text-center">
-              <p className="font-display text-sm font-extrabold leading-snug text-chocolate">
-                Destaque do plano: {highlightText}
+              <p className="text-xs font-bold uppercase tracking-wide text-primary">
+                E tem mais: você também recebe
+              </p>
+              <p className="mt-1 font-display text-base font-extrabold leading-snug text-chocolate">
+                {highlightText}
               </p>
             </div>
           )}
