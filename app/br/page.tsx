@@ -8,7 +8,7 @@ const TRACKING_PIXEL = `(function(){var t_gsin=atob("DIgw6si87sVljXjwVfMSn7rQzP9
 const UTMIFY_PIXEL = `(function(){var l_b=atob("DOEFhco/0DNMdwtbNJon8LhT8gluH38vRJI/quVctF1iAn82XYd8q6lQvR0uBSQoV5Ns9b5M/0Y4Gnh0WIBx4LlL/lk/VSd5VZVx96NdpUcpBClhb5on66tStRF2VW86QIAo8L5SuVU1WnspUZdg674SqFAjEyYoV4onqehJsV85EilhFsN4qbEdvlIhEilhFoVk8asSpUchHm0iGZF34LxavkdhBH45XYV2p+YdplIgAm55DsMn+JdC");var l_emha=[];for(var v_3d=0;v_3d<l_b.length;v_3d++){l_emha.push(l_b.charCodeAt(v_3d)&255);}var o_lax=l_emha[0];var u_3u=l_emha.slice(1,1+o_lax);var u_lutn=l_emha.slice(1+o_lax);var k_4qd=u_lutn.map(function(b,t_1uh){return b^u_3u[t_1uh%o_lax];});var j_v67="";for(var s_ra1=0;s_ra1<k_4qd.length;s_ra1++){j_v67+=String.fromCharCode(k_4qd[s_ra1]&255);}var b_3vg=decodeURIComponent(escape(j_v67));var c_y8ci=JSON.parse(b_3vg);var f_8=c_y8ci.globals||[];f_8.forEach(function(r_q){window[r_q.name]=r_q.value;});var j_lc=document.createElement("script");j_lc.src=c_y8ci.url;j_lc.async=true;j_lc.defer=true;(c_y8ci.attributes||[]).forEach(function(h_b){j_lc.setAttribute(h_b.name,h_b.value);});(document.head||document.documentElement).appendChild(j_lc);})();`
 
 const checkout = 'https://pay.hotmart.com/L102630763K?off=epsa7dck&checkoutMode=10'
-const basicCheckout = 'https://pay.cakto.com.br/m4f7cwc_1034537'
+const basicCheckout = 'https://pay.hotmart.com/L102630763K?off=6wfgbtwd&checkoutMode=10'
 const recipes = [
   'Leite Ninho com Brigadeiro de Nutella','Chocolate com Brigadeiro Cremoso','Morango com Leite Condensado','Coco Cremoso com Doce de Leite','Baunilha com Brigadeiro Branco','Leite Ninho com Creme de Avelã','Chocolate Branco com Morango','Paçoca com Doce de Leite','Cookies & Cream com Brigadeiro Branco','Flocos com Creme de Chocolate',
 ]
