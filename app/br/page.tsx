@@ -61,16 +61,25 @@ export default function Page() {
         checkoutUrl={CHECKOUT_URL_COMPLETE_BR}
         badgeText="Plano completo · Melhor escolha"
         includedItems={[
-          "100 Receitas de Picolés Recheados Lucrativos",
-          "Bônus 1: Calculadora do Picolé Lucrativo",
-          "Bônus 2: Guia de Recheios Cremosos",
-          "Bônus 3: Cardápio Personalizável no Canva",
-          "Bônus 4: Checklist da Primeira Produção",
-          "Bônus 5: Guia de Embalagens e Apresentação",
-          "Bônus 6: 30 Frases para Divulgar no WhatsApp",
-          "Material digital com acesso pelo celular",
+          "+100 Receitas Premium de Picolés Recheados",
+          "100 Receitas de Picolés Recheados",
+          "Sabores Tradicionais, Gourmet e Premium",
+          "Recheios e Coberturas Exclusivas",
+          "Sugestões de Cardápio",
+          "Receitas fáceis de preparar",
+          "Ideias para aumentar seu ticket médio",
+          "Acesso Vitalício",
+          "Entrega Imediata por E-mail",
         ]}
-        showBonuses={false}
+        bonusItems={[
+          "Lista de Compras Inteligente",
+          "Cardápio Pronto com Sabores para Vender",
+          "Guia de Conservação e Armazenamento",
+          "50 Coberturas e Recheios Premium",
+          "Guia de Precificação para Vender com Lucro",
+          "Guia de Vendas pelo WhatsApp",
+        ]}
+        showBonuses={true}
         highlightText="O pacote completo para aprender, precificar e vender desde o primeiro dia."
       />
       <GuaranteeSectionBr />

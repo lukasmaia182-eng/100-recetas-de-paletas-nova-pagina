@@ -33,6 +33,7 @@ export function OfferCardBr({
   imageAlt = "Mulher segurando o livro 'Picolés Gourmet Recheados Lucrativos - 100 receitas para fazer e vender' com uma variedade de picolés gourmet recheados à frente.",
   includedItems = includes,
   showBonuses = true,
+  bonusItems = bonuses,
   onBuyClick,
   badgeText = "Promoção de lançamento",
   highlightText,
@@ -48,6 +49,7 @@ export function OfferCardBr({
   imageAlt?: string
   includedItems?: string[]
   showBonuses?: boolean
+  bonusItems?: string[]
   onBuyClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
   badgeText?: React.ReactNode
   highlightText?: string
@@ -105,10 +107,10 @@ export function OfferCardBr({
           {showBonuses && (
             <div className="mt-4 rounded-2xl bg-secondary p-4">
               <p className="mb-2 text-center font-display text-sm font-extrabold uppercase tracking-wide text-primary">
-                Bônus inclusos grátis
+                BÔNUS EXCLUSIVOS!
               </p>
               <ul className="flex flex-col gap-2">
-                {bonuses.map((item) => (
+                {bonusItems.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <GiftIcon />
                     <span className="text-sm font-semibold leading-snug text-chocolate">{item}</span>
