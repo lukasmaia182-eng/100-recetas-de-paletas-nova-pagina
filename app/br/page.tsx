@@ -38,6 +38,26 @@ export default function Page() {
       <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} />
       <SocialProofBr />
       <OfferCardBr checkoutUrl={CHECKOUT_URL_BR} />
+      <OfferCardBr
+        sectionId="oferta-completa"
+        planName="Plano Completo"
+        price="R$ 29,90"
+        refPrice="R$ 97,00"
+        checkoutUrl={CHECKOUT_URL_BR}
+        badgeText="Plano completo · Melhor escolha"
+        includedItems={[
+          "100 Receitas de Picolés Recheados Lucrativos",
+          "Bônus 1: Calculadora do Picolé Lucrativo",
+          "Bônus 2: Guia de Recheios Cremosos",
+          "Bônus 3: Cardápio Personalizável no Canva",
+          "Bônus 4: Checklist da Primeira Produção",
+          "Bônus 5: Guia de Embalagens e Apresentação",
+          "Bônus 6: 30 Frases para Divulgar no WhatsApp",
+          "Material digital com acesso pelo celular",
+        ]}
+        showBonuses={false}
+        highlightText="O pacote completo para aprender, precificar e vender desde o primeiro dia."
+      />
       <GuaranteeSectionBr />
       <FaqSectionBr checkoutUrl={CHECKOUT_URL_BR} />
 
