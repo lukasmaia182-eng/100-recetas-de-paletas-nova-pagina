@@ -36,6 +36,7 @@ export function OfferCardBr({
   onBuyClick,
   badgeText = "Promoção de lançamento",
   highlightText,
+  description,
   className,
 }: {
   planName?: string
@@ -50,6 +51,7 @@ export function OfferCardBr({
   onBuyClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
   badgeText?: React.ReactNode
   highlightText?: string
+  description?: string
   className?: string
 } = {}) {
   return (
@@ -68,6 +70,7 @@ export function OfferCardBr({
           <p className="mt-1.5 text-center font-display text-base font-bold text-primary">
             {planName} · 100 Receitas de Picolés Gourmet Recheados
           </p>
+          {description && <p className="mx-auto mt-2 max-w-sm text-center text-sm font-medium leading-relaxed text-muted-foreground">{description}</p>}
 
           <div className="mx-auto mt-4 max-w-xs overflow-hidden rounded-2xl">
             <Image

@@ -37,7 +37,19 @@ export default function Page() {
       <IdealSectionBr />
       <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} />
       <SocialProofBr />
-      <OfferCardBr checkoutUrl={CHECKOUT_URL_BR} />
+      <OfferCardBr
+        checkoutUrl={CHECKOUT_URL_BR}
+        planName="Plano Básico"
+        description="Comece com as receitas. Ideal para quem quer apenas a coletânea de receitas em mãos."
+        includedItems={[
+          "100 Receitas de Picolés Recheados",
+          "Ingredientes e medidas",
+          "Passo a passo detalhado",
+          "Material digital (PDF)",
+          "Acesso pelo celular",
+        ]}
+        showBonuses={false}
+      />
       <OfferCardBr
         sectionId="oferta-completa"
         planName="Plano Completo"
