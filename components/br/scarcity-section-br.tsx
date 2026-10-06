@@ -10,12 +10,12 @@ export function ScarcitySectionBr({
   price = "R$ 19,90",
   refPrice = "R$ 47,00",
   checkoutUrl,
-  className,
+  plansHref,
 }: {
   price?: string
   refPrice?: string
   checkoutUrl?: string
-  className?: string
+  plansHref?: string
 } = {}) {
   const [vagas, setVagas] = useState(VAGAS_INICIAIS)
 
@@ -34,7 +34,7 @@ export function ScarcitySectionBr({
   const porcentagem = Math.min(100, Math.round((preenchidas / TOTAL_VAGAS) * 100))
 
   return (
-    <section className={className ?? "bg-chocolate px-5 py-4 sm:py-5 text-center"}>
+    <section className="bg-chocolate px-5 py-8 text-center">
       <div className="mx-auto max-w-md">
         <h2 className="font-display text-2xl font-extrabold text-creme text-balance sm:text-3xl">
           Vagas limitadas com esse preço
@@ -74,7 +74,7 @@ export function ScarcitySectionBr({
         </p>
 
         <div className="mt-5">
-          <BuyButton href={checkoutUrl} subLabel={`Garanta uma das últimas vagas por ${price}`}>
+          <BuyButton href={plansHref ?? checkoutUrl} subLabel={`Garanta uma das últimas vagas por ${price}`}>
             QUERO AS 100 RECEITAS
           </BuyButton>
         </div>
