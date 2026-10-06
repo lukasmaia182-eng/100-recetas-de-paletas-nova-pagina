@@ -74,7 +74,7 @@ export function ScarcitySectionBr({
         </p>
 
         <div className="mt-5">
-          <BuyButton href={checkoutUrl} subLabel={`Garanta uma das últimas vagas por ${price}`}>
+          <BuyButton href={plansHref ?? checkoutUrl} subLabel={`Garanta uma das últimas vagas por ${price}`}>
             QUERO AS 100 RECEITAS
           </BuyButton>
         </div>
