@@ -20,6 +20,7 @@ export function HeroSectionBr({
   price = "R$ 19,90",
   refPrice = "R$ 47,00",
   checkoutUrl,
+  plansHref,
 }: {
   headline?: React.ReactNode
   subheadline?: React.ReactNode
@@ -31,6 +32,7 @@ export function HeroSectionBr({
   price?: string
   refPrice?: string
   checkoutUrl?: string
+  plansHref?: string
 }) {
   return (
     <section className="relative overflow-hidden px-5 pt-3 pb-8 sm:pt-5">
@@ -78,7 +80,7 @@ export function HeroSectionBr({
         </div>
 
         <div className="mt-4 w-full">
-          <BuyButton href={checkoutUrl} subLabel="Pagamento único · Sem mensalidades · Acesso imediato">
+          <BuyButton href={plansHref ?? checkoutUrl} subLabel="Pagamento único · Sem mensalidades · Acesso imediato">
             QUERO AS 100 RECEITAS
           </BuyButton>
         </div>

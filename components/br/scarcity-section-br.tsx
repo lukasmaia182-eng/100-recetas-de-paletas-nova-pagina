@@ -10,10 +10,12 @@ export function ScarcitySectionBr({
   price = "R$ 19,90",
   refPrice = "R$ 47,00",
   checkoutUrl,
+  plansHref,
 }: {
   price?: string
   refPrice?: string
   checkoutUrl?: string
+  plansHref?: string
 } = {}) {
   const [vagas, setVagas] = useState(VAGAS_INICIAIS)
 

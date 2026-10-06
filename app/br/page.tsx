@@ -32,12 +32,14 @@ export default function Page() {
         imageSrc="/images/br-hero-mockup.png"
         imageAlt="Mockup da oferta 'Picolés Recheados Lucrativos' com o livro de 100 receitas, caixa de presente com picolés gourmet de vários sabores e cards de bônus como mensagens prontas para vender, calcule seu preço certo e dicas para vender mais."
         checkoutUrl={CHECKOUT_URL_BR}
+        plansHref="#planos"
       />
       <PracticeSectionBr />
       <IdealSectionBr />
-      <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} />
+      <ScarcitySectionBr checkoutUrl={CHECKOUT_URL_BR} plansHref="#planos" />
       <SocialProofBr />
       <OfferCardBr
+        sectionId="planos"
         checkoutUrl={CHECKOUT_URL_BR}
         planName="Plano Básico"
         description="Comece com as receitas. Ideal para quem quer apenas a coletânea de receitas em mãos."
