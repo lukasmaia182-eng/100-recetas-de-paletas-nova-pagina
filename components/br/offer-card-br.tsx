@@ -25,6 +25,7 @@ const bonuses = [
 
 export function OfferCardBr({
   planName = "Plano Essencial",
+  productLabel = "100 Receitas de Picolés Gourmet Recheados",
   sectionId = "oferta",
   price = "R$ 19,90",
   refPrice = "R$ 47,00",
@@ -41,6 +42,7 @@ export function OfferCardBr({
   className,
 }: {
   planName?: string
+  productLabel?: string
   sectionId?: string
   price?: string
   refPrice?: string
@@ -70,7 +72,7 @@ export function OfferCardBr({
             Tudo o que você vai receber
           </h2>
           <p className="mt-1.5 text-center font-display text-base font-bold text-primary">
-            {planName} · 100 Receitas de Picolés Gourmet Recheados
+            {planName} · {productLabel}
           </p>
           {description && <p className="mx-auto mt-2 max-w-sm text-center text-sm font-medium leading-relaxed text-muted-foreground">{description}</p>}
 

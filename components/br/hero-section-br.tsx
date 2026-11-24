@@ -19,18 +19,26 @@ export function HeroSectionBr({
   flushHeadline = false,
   price = "R$ 19,90",
   refPrice = "R$ 47,00",
+  priceLabel = "por só hoje",
+  bulletItems,
+  bodyText,
+  secondaryBelowImageText = "E o dinheiro começa a entrar toda semana.",
   checkoutUrl,
   plansHref,
 }: {
   headline?: React.ReactNode
   subheadline?: React.ReactNode
   belowImageText?: React.ReactNode
+  secondaryBelowImageText?: React.ReactNode
+  bodyText?: React.ReactNode
+  bulletItems?: string[]
   imageSrc?: string
   imageAlt?: string
   afterCta?: React.ReactNode
   flushHeadline?: boolean
   price?: string
   refPrice?: string
+  priceLabel?: string
   checkoutUrl?: string
   plansHref?: string
 }) {
@@ -74,7 +82,7 @@ export function HeroSectionBr({
 
         <div className="mt-4 flex w-full flex-col items-center gap-1">
           <p className="text-sm font-semibold text-muted-foreground">
-            De <span className="line-through">{refPrice}</span> por só hoje
+            De <span className="line-through">{refPrice}</span>{" "}{priceLabel}
           </p>
           <p className="font-display text-5xl font-extrabold text-primary">{price}</p>
         </div>
@@ -94,21 +102,27 @@ export function HeroSectionBr({
             {belowImageText ??
               "Sem anunciar e sem fazer propaganda, você começa… e de repente tem gente esperando."}
           </p>
-          <p className="mt-1.5 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
-            E o dinheiro começa a entrar toda semana.
-          </p>
+          {secondaryBelowImageText ? (
+            <p className="mt-1.5 font-display text-xl font-extrabold leading-snug text-primary text-balance sm:text-2xl">
+              {secondaryBelowImageText}
+            </p>
+          ) : null}
         </div>
 
         {afterCta ? <div className="mt-6 w-full">{afterCta}</div> : null}
 
         <p className="mt-5 text-base leading-relaxed text-foreground text-pretty sm:text-lg">
-          Pare de desperdiçar ingredientes inventando receitas do zero. Com o passo a passo pronto você faz sabores de
-          chocolate, frutas, doce de leite, leite condensado e sobremesas famosas, e monta um cardápio que dá para
-          vender desde o primeiro dia.
+          {bodyText ?? (
+            <>
+              Pare de desperdiçar ingredientes inventando receitas do zero. Com o passo a passo pronto você faz sabores
+              de chocolate, frutas, doce de leite, leite condensado e sobremesas famosas, e monta um cardápio que dá
+              para vender desde o primeiro dia.
+            </>
+          )}
         </p>
 
         <ul className="mt-5 grid w-full grid-cols-2 gap-3 text-left">
-          {bullets.map((bullet) => (
+          {(bulletItems ?? bullets).map((bullet) => (
             <li key={bullet} className="flex items-start gap-2 rounded-2xl bg-card p-3 shadow-sm">
               <CheckIcon />
               <span className="text-sm font-semibold leading-snug text-chocolate">{bullet}</span>
