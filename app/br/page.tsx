@@ -22,8 +22,8 @@ export default function Page() {
         }
         subheadline={
           <span className="mt-2 block">
-            Para quem quer ganhar dinheiro em casa sem precisar de ingredientes caros nem passar horas inventando
-            receitas.
+            Torne o seu começo na venda de picolés mais fácil e rápido, mesmo sem experiência, com receitas testadas e
+            aprovadas por mais de 3 mil pessoas.
           </span>
         }
         imageSrc="/images/br-hero-mockup.png"
