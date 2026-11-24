@@ -1,18 +1,18 @@
 const items = [
   {
-    title: "Montar um cardápio variado",
+    title: "Para você que quer montar um cardápio variado de picolés recheados",
     text: "Tenha opções cremosas, com frutas, econômicas e premium para diferentes clientes.",
   },
   {
-    title: "Melhorar a textura",
+    title: "Para você que quer picolés mais cremosos, com a textura certa",
     text: "Siga quantidades e recomendações que ajudam a reduzir os erros mais comuns.",
   },
   {
-    title: "Evitar testes desnecessários",
+    title: "Para você que quer evitar testes e desperdício de ingredientes",
     text: "Não desperdice tempo nem ingredientes inventando cada combinação do zero.",
   },
   {
-    title: "Começar do zero como iniciante",
+    title: "Para você que está começando do zero, sem nenhuma experiência",
     text: "Consulte instruções claras e organizadas, mesmo que você nunca tenha feito picolés recheados.",
   },
 ]

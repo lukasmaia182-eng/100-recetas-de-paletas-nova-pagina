@@ -3,42 +3,38 @@
 import { useState } from "react"
 import { BuyButton } from "../buy-button"
 
-const buildFaqs = (price: string) => [
-  {
-    q: "O produto é físico ou digital?",
-    a: "É um produto totalmente digital. Você não vai receber nenhum material físico em casa.",
-  },
+const buildFaqs = () => [
   {
     q: "Como vou receber o acesso?",
-    a: "Depois da confirmação do pagamento, você recebe as instruções para acessar o livro de receitas digital.",
+    a: "Logo após a confirmação do pagamento, você recebe o acesso por e-mail.",
   },
   {
     q: "Preciso ter experiência?",
-    a: "Não. O conteúdo foi organizado para iniciantes, com ingredientes, quantidades e preparo passo a passo.",
+    a: "Não. O passo a passo é ilustrado e feito para iniciantes.",
   },
   {
     q: "Consigo ver pelo celular?",
-    a: "Sim. Você pode consultar o material pelo celular, computador ou tablet.",
+    a: "Sim, o material é digital e abre no celular, tablet ou computador.",
   },
   {
     q: "Os ingredientes são fáceis de achar?",
-    a: "Sim. As receitas priorizam ingredientes acessíveis e fáceis de encontrar em supermercados e lojas de confeitaria do Brasil. Algumas opções premium podem usar ingredientes específicos, mas você também encontra alternativas mais econômicas.",
+    a: "Sim, as receitas usam ingredientes encontrados em mercados comuns.",
   },
   {
     q: "Preciso de uma máquina profissional?",
-    a: "Não. Você pode começar com utensílios básicos de cozinha e formas para picolés. Os materiais necessários podem variar conforme a receita.",
+    a: "Não. É possível preparar as receitas com utensílios básicos de cozinha e formas para picolés.",
   },
   {
     q: "Tenho que pagar todo mês?",
-    a: `Não. O preço de ${price} é um pagamento único.`,
+    a: "Não. O pagamento é único, sem mensalidades.",
   },
   {
     q: "Posso imprimir o material?",
-    a: "Sim. Você pode imprimir as páginas que preferir usar durante o preparo.",
+    a: "Sim, o PDF pode ser impresso.",
   },
   {
     q: "As receitas servem para vender?",
-    a: "Sim. O material tem opções econômicas, premium, recheadas e mini picolés que podem ser usados para montar um cardápio. Os resultados dependem de fatores como execução, qualidade, custos, preços, divulgação e demanda local. O produto não garante ganhos.",
+    a: "Sim. As receitas e o cardápio foram pensados para você produzir e vender.",
   },
 ]
 
@@ -50,7 +46,7 @@ export function FaqSectionBr({
   checkoutUrl?: string
 } = {}) {
   const [open, setOpen] = useState<number | null>(0)
-  const faqs = buildFaqs(price)
+  const faqs = buildFaqs()
 
   return (
     <section className="px-5 py-8">
